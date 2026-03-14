@@ -1,30 +1,17 @@
 from __future__ import annotations
 
 import json
-import re
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 from datasets import load_dataset
+from huggingface_hub import snapshot_download
 
 from gaia_bot.models import TaskRecord
+from gaia_bot.scoring import score_prediction
 
 
-def _normalize_answer(value: str | None) -> str:
-    if value is None:
-        return ""
-    collapsed = re.sub(r"\s+", " ", value.strip().casefold())
-    collapsed = re.sub(r"[^\w\s\.\-/:]", "", collapsed)
-    return collapsed
-
-
-def score_prediction(predicted: str, expected: str | None) -> float | None:
-    if expected is None:
-        return None
-    return 1.0 if _normalize_answer(predicted) == _normalize_answer(expected) else 0.0
-
-
-def _task_from_mapping(payload: dict) -> TaskRecord:
+def _task_from_mapping(payload: dict, *, dataset_root: str | None = None) -> TaskRecord:
     task_id = str(
         payload.get("task_id")
         or payload.get("id")
@@ -39,7 +26,12 @@ def _task_from_mapping(payload: dict) -> TaskRecord:
         payload.get("answer")
         or payload.get("expected_answer")
         or payload.get("final_answer")
+        or payload.get("Final answer")
     )
+    attachment_name = payload.get("file_name")
+    attachment_path = payload.get("file_path")
+    split = payload.get("split")
+    level = payload.get("level") or payload.get("Level")
     ignored_keys = {
         "task_id",
         "id",
@@ -51,16 +43,23 @@ def _task_from_mapping(payload: dict) -> TaskRecord:
         "answer",
         "expected_answer",
         "final_answer",
+        "Final answer",
+        "file_name",
+        "file_path",
+        "split",
+        "level",
+        "Level",
     }
-    metadata = {
-        key: value
-        for key, value in payload.items()
-        if key not in ignored_keys
-    }
+    metadata = {key: value for key, value in payload.items() if key not in ignored_keys}
     return TaskRecord(
         task_id=task_id,
         question=question,
         expected_answer=expected_answer,
+        attachment_name=attachment_name,
+        attachment_path=attachment_path,
+        dataset_root=dataset_root,
+        split=split,
+        level=int(level) if level is not None and str(level).isdigit() else None,
         metadata=metadata,
     )
 
@@ -68,9 +67,12 @@ def _task_from_mapping(payload: dict) -> TaskRecord:
 def _load_json_file(path: Path) -> list[TaskRecord]:
     payload = json.loads(path.read_text())
     if isinstance(payload, list):
-        return [_task_from_mapping(item) for item in payload]
+        return [_task_from_mapping(item, dataset_root=str(path.parent)) for item in payload]
     if isinstance(payload, dict) and "tasks" in payload:
-        return [_task_from_mapping(item) for item in payload["tasks"]]
+        return [
+            _task_from_mapping(item, dataset_root=str(path.parent))
+            for item in payload["tasks"]
+        ]
     raise ValueError(f"Unsupported JSON dataset structure in {path}")
 
 
@@ -80,18 +82,19 @@ def _load_jsonl_file(path: Path) -> list[TaskRecord]:
         stripped = line.strip()
         if not stripped:
             continue
-        tasks.append(_task_from_mapping(json.loads(stripped)))
+        tasks.append(_task_from_mapping(json.loads(stripped), dataset_root=str(path.parent)))
     return tasks
 
 
 def _load_huggingface_dataset(dataset_uri: str) -> list[TaskRecord]:
     parsed = urlparse(dataset_uri)
-    dataset_name = f"{parsed.netloc}{parsed.path}"
+    repo_id = f"{parsed.netloc}{parsed.path}"
     params = parse_qs(parsed.query)
     split = params.get("split", ["validation"])[0]
     subset = params.get("subset", [None])[0]
-    dataset = load_dataset(dataset_name, subset, split=split)
-    return [_task_from_mapping(item) for item in dataset]  # type: ignore[arg-type]
+    local_root = snapshot_download(repo_id=repo_id, repo_type="dataset")
+    dataset = load_dataset(local_root, subset, split=split)
+    return [_task_from_mapping(item, dataset_root=local_root) for item in dataset]  # type: ignore[arg-type]
 
 
 def load_tasks(dataset_path: str | Path) -> list[TaskRecord]:
@@ -129,5 +132,8 @@ def select_subset(
     return [
         task
         for task in tasks
-        if task.metadata.get("split") == subset or task.task_id == subset
+        if task.split == subset or task.metadata.get("split") == subset or task.task_id == subset
     ]
+
+
+__all__ = ["load_tasks", "score_prediction", "select_subset"]

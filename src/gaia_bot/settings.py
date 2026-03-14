@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from pydantic import SecretStr
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -48,20 +48,26 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    anthropic_api_key: SecretStr | None = None
-    e2b_api_key: SecretStr | None = None
-    anthropic_model_main: str = "claude-sonnet-4-20250514"
-    anthropic_model_judge: str = "claude-sonnet-4-20250514"
-    gaia_data_path: str | None = None
-    results_dir: Path = Path("artifacts/results")
-    max_turns: int = 10
-    sandbox_timeout_seconds: int = 90
-    http_timeout_seconds: int = 20
-    max_search_results: int = 5
-    max_fetch_chars: int = 18000
-    retry_attempts: int = 1
-    claude_cli_path: str = "claude"
-    working_directory: Path = Path.cwd()
+    anthropic_api_key: SecretStr | None = Field(default=None, alias="ANTHROPIC_API_KEY")
+    e2b_api_key: SecretStr | None = Field(default=None, alias="E2B_API_KEY")
+    anthropic_model_main: str = Field(
+        default="claude-sonnet-4-20250514",
+        alias="ANTHROPIC_MODEL_MAIN",
+    )
+    anthropic_model_judge: str = Field(
+        default="claude-sonnet-4-20250514",
+        alias="ANTHROPIC_MODEL_JUDGE",
+    )
+    gaia_data_path: str | None = Field(default=None, alias="GAIA_DATA_PATH")
+    results_dir: Path = Field(default=Path("artifacts/results"), alias="RESULTS_DIR")
+    max_turns: int = Field(default=10, alias="MAX_TURNS")
+    sandbox_timeout_seconds: int = Field(default=90, alias="SANDBOX_TIMEOUT_SECONDS")
+    http_timeout_seconds: int = Field(default=20, alias="HTTP_TIMEOUT_SECONDS")
+    max_search_results: int = Field(default=5, alias="MAX_SEARCH_RESULTS")
+    max_fetch_chars: int = Field(default=18000, alias="MAX_FETCH_CHARS")
+    retry_attempts: int = Field(default=1, alias="RETRY_ATTEMPTS")
+    claude_cli_path: str = Field(default="claude", alias="CLAUDE_CLI_PATH")
+    working_directory: Path = Field(default=Path.cwd(), alias="WORKING_DIRECTORY")
 
     def require_service_credentials(
         self,

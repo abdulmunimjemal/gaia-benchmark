@@ -5,7 +5,13 @@ import asyncio
 
 from gaia_bot.agent import GaiaAgent
 from gaia_bot.benchmark import load_tasks
-from gaia_bot.results import create_run_id, ensure_run_directory, write_task_result
+from gaia_bot.results import (
+    create_run_id,
+    ensure_run_directory,
+    task_workspace,
+    write_run_manifest,
+    write_task_result,
+)
 from gaia_bot.settings import SettingsError, load_settings
 
 
@@ -23,8 +29,16 @@ async def _run_task(task_id: str, dataset_override: str | None = None) -> None:
 
     agent = GaiaAgent(settings)
     run_id = create_run_id()
-    result = await agent.solve(task, run_id=run_id)
     run_dir = ensure_run_directory(settings.results_dir, run_id)
+    write_run_manifest(
+        run_dir,
+        {"dataset": settings.gaia_data_path, "mode": "single", "task_id": task_id},
+    )
+    result = await agent.solve(
+        task,
+        run_id=run_id,
+        task_workspace=task_workspace(run_dir, task.task_id),
+    )
     destination = write_task_result(run_dir, result)
     print(destination)
 

@@ -38,3 +38,9 @@ def test_write_result_and_summary(tmp_path) -> None:
     assert task_path.exists()
     assert summary_path.exists()
     assert '"average_score": 1.0' in summary_path.read_text()
+
+
+def test_create_run_id_includes_subsecond_precision() -> None:
+    run_id = create_run_id(datetime(2026, 3, 14, 12, 0, 0, 123456, tzinfo=UTC))
+
+    assert run_id == "20260314T120000123456Z"
