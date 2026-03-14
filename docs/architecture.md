@@ -1,5 +1,9 @@
 # Architecture
 
+Docs: [Index](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/README.md)
+Previous: [docs/README.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/README.md)
+Next: [docs/repo-layout.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/repo-layout.md)
+
 ## Overview
 
 `gaia_bot` is a benchmark-oriented agent runtime. It combines:
@@ -97,3 +101,6 @@ The current structure favors iteration speed over deep framework abstraction.
 - Follow the repo convention that shared structured data contracts should live in
   `contracts/basemodels.py`, mirroring the explicit workflow-contract style used in
   `cadence-backend`.
+
+Previous: [docs/README.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/README.md)
+Next: [docs/repo-layout.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/repo-layout.md)

@@ -161,11 +161,22 @@ See [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/doc
 
 ## Documentation Index
 
+Recommended flow:
+
+1. [docs/README.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/README.md)
+2. [docs/architecture.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/architecture.md)
+3. [docs/repo-layout.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/repo-layout.md)
+4. [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md)
+5. [docs/submission-checklist.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/submission-checklist.md)
+
+Supporting docs:
+
 - [CLAUDE.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/CLAUDE.md)
 - [AGENTS.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/AGENTS.md)
+- [docs/README.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/README.md)
 - [docs/architecture.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/architecture.md)
-- [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md)
 - [docs/repo-layout.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/repo-layout.md)
+- [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md)
 - [docs/submission-checklist.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/submission-checklist.md)
 - [skills/README.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/skills/README.md)
 

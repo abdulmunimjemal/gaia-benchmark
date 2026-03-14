@@ -1,5 +1,9 @@
 # Submission Checklist
 
+Docs: [Index](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/README.md)
+Previous: [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md)
+Next: [README.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/README.md)
+
 Use this before packaging the paid-trial handoff.
 
 ## Code and History
@@ -37,3 +41,6 @@ Record any failures or skipped checks explicitly if credentials or live services
 - run comparison against a prior baseline
 - short note on known failure modes still being worked
 - partial validation statistics if the full run is not yet stable
+
+Previous: [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md)
+Next: [README.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/README.md)

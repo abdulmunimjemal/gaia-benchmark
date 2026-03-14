@@ -1,5 +1,9 @@
 # Benchmarking
 
+Docs: [Index](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/README.md)
+Previous: [docs/repo-layout.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/repo-layout.md)
+Next: [docs/submission-checklist.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/submission-checklist.md)
+
 ## Dataset URIs
 
 Preferred GAIA dataset URI shape:
@@ -142,3 +146,6 @@ uv run --python 3.14.2 python -m gaia_bot.export_submission --run-id <run-id>
 ```
 
 This writes `submission.jsonl` into the selected run directory unless `--output` is provided.
+
+Previous: [docs/repo-layout.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/repo-layout.md)
+Next: [docs/submission-checklist.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/submission-checklist.md)

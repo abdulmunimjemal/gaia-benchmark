@@ -1,5 +1,9 @@
 # Repo Layout
 
+Docs: [Index](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/README.md)
+Previous: [docs/architecture.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/architecture.md)
+Next: [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md)
+
 ## Top Level
 
 - `README.md`
@@ -97,3 +101,6 @@
 - `skills/README.md`
 - `skills/gaia-benchmark-ops/SKILL.md`
 - `skills/gaia-failure-triage/SKILL.md`
+
+Previous: [docs/architecture.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/architecture.md)
+Next: [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md)
