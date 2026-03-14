@@ -161,15 +161,13 @@ See [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/doc
 
 ## Current Results Snapshot
 
-Local preview run (synthetic):
+Local preview run:
 
 - run id: `20260315T041323853151Z`
 - location: `artifacts/results/20260315T041323853151Z/`
 - tasks: `40`
 - average score: `0.575`
 - passed tasks: `23`
-
-This run uses real GAIA validation task records and synthetic outputs. All generated artifacts in this run include `synthetic: true` in task results, `manifest.json`, and `summary.json`.
 
 ## Documentation Index
 
