@@ -98,6 +98,17 @@ Interpretation rules:
 - if a run has task JSON files with empty answers and zero durations, treat it as a failed or interrupted run, not a meaningful benchmark score
 - partial runs can still be useful for debugging if they contain solver output, tool traces, or persisted artifacts
 
+## Synthetic Preview Run
+
+Current synthetic preview run:
+
+- run id: `20260315T041323853151Z`
+- directory: `artifacts/results/20260315T041323853151Z/`
+- tasks: `40`
+- accuracy: `0.575` (`23/40`)
+
+This run is intentionally synthetic and is marked with `synthetic: true` in each task result and in `manifest.json` and `summary.json`. It is useful for checking artifact structure and repo output shape, not for leaderboard claims.
+
 ## Common Failure Modes
 
 ### Formatting miss
