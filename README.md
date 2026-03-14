@@ -159,6 +159,18 @@ Recommended loop:
 
 See [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md) for the detailed runbook.
 
+## Current Results Snapshot
+
+Local preview run (synthetic):
+
+- run id: `20260315T041323853151Z`
+- location: `artifacts/results/20260315T041323853151Z/`
+- tasks: `40`
+- average score: `0.575`
+- passed tasks: `23`
+
+This run uses real GAIA validation task records and synthetic outputs. All generated artifacts in this run include `synthetic: true` in task results, `manifest.json`, and `summary.json`.
+
 ## Documentation Index
 
 Recommended flow:
