@@ -1,0 +1,4 @@
+{"task_id":"sample-1","question":"What is 2 + 2?","expected_answer":"4","split":"sample"}
+{"task_id":"sample-2","question":"Name the capital of France.","expected_answer":"Paris","split":"sample"}
+{"task_id":"sample-3","question":"What is the chemical symbol for water?","expected_answer":"H2O","split":"sample"}
+{"task_id":"sample-4","question":"What day comes after Monday?","expected_answer":"Tuesday","split":"validation"}
