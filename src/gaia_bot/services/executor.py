@@ -6,8 +6,8 @@ from typing import Any
 
 from e2b_code_interpreter import Sandbox
 
-from gaia_bot.models import SandboxExecutionResult
-from gaia_bot.settings import Settings
+from gaia_bot.config.settings import Settings
+from gaia_bot.contracts.basemodels import SandboxExecutionResult
 
 
 def _coerce_e2b_execution(execution: Any) -> SandboxExecutionResult:
@@ -77,3 +77,6 @@ class SandboxExecutor:
             sandbox = self._sandbox
             self._sandbox = None
             await asyncio.to_thread(sandbox.kill)
+
+
+__all__ = ["SandboxExecutor", "_coerce_e2b_execution"]

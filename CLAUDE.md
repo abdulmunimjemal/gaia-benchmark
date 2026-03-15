@@ -42,14 +42,26 @@ uv run --python 3.14.2 pytest
 
 Adopted from the stronger conventions in `cadence-backend`:
 
-- structured contracts belong in `src/gaia_bot/basemodels.py`
-- `src/gaia_bot/models.py` is now a compatibility re-export layer
+- structured contracts belong in `src/gaia_bot/contracts/basemodels.py`
+- `src/gaia_bot/models.py` is a compatibility re-export layer
+- settings live in `src/gaia_bot/config/settings.py`
 - when a module grows into a multi-part workflow unit, prefer splitting it into:
   - `main.py`
   - `basemodels.py`
   - `constants.py`
   - `states.py`
 - keep explicit exports in public-facing `__init__.py` files
+
+Current package layout:
+
+- `src/gaia_bot/agent/`
+- `src/gaia_bot/benchmark/`
+- `src/gaia_bot/services/`
+- `src/gaia_bot/routing/`
+- `src/gaia_bot/prompts/`
+- `src/gaia_bot/config/`
+- `src/gaia_bot/contracts/`
+- `src/gaia_bot/cli/`
 
 ## Debugging Norms
 

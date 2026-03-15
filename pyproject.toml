@@ -29,11 +29,11 @@ dependencies = [
 ]
 
 [project.scripts]
-gaia-smoke = "gaia_bot.smoke:main"
-gaia-run = "gaia_bot.run:main"
-gaia-eval = "gaia_bot.eval:main"
-gaia-export = "gaia_bot.export_submission:main"
-gaia-compare = "gaia_bot.compare_runs:main"
+gaia-smoke = "gaia_bot.cli.smoke:main"
+gaia-run = "gaia_bot.cli.run:main"
+gaia-eval = "gaia_bot.cli.eval:main"
+gaia-export = "gaia_bot.cli.export_submission:main"
+gaia-compare = "gaia_bot.cli.compare_runs:main"
 
 [project.optional-dependencies]
 dev = [

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from types import SimpleNamespace
 
-from gaia_bot.executor import _coerce_e2b_execution
+from gaia_bot.services.executor import _coerce_e2b_execution
 
 
 def test_coerce_e2b_execution_collects_logs_and_errors() -> None:

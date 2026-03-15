@@ -1,7 +1,4 @@
-"""Compatibility re-export for settings.
-
-Prefer importing from :mod:`gaia_bot.config.settings` in new code.
-"""
+"""Configuration package."""
 
 from gaia_bot.config.settings import Settings, SettingsError, load_dotenv_file, load_settings
 

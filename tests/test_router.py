@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from gaia_bot.models import TaskRecord
-from gaia_bot.router import heuristic_route
+from gaia_bot.routing import heuristic_route
 
 
 def test_heuristic_route_detects_direct_task() -> None:

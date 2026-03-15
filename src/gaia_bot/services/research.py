@@ -9,8 +9,8 @@ from bs4 import BeautifulSoup
 from ddgs import DDGS
 from pypdf import PdfReader
 
-from gaia_bot.models import SearchHit
-from gaia_bot.settings import Settings
+from gaia_bot.config.settings import Settings
+from gaia_bot.contracts.basemodels import SearchHit
 
 
 class WebResearchClient:
@@ -98,3 +98,6 @@ def _search_priority(hit: SearchHit) -> tuple[int, str]:
     if any(token in host for token in weak_hosts):
         return (2, host)
     return (1, host)
+
+
+__all__ = ["WebResearchClient"]

@@ -1,6 +1,10 @@
 from __future__ import annotations
 
-from gaia_bot.scoring import format_benchmark_answer, normalize_exact_match, score_prediction
+from gaia_bot.benchmark.scoring import (
+    format_benchmark_answer,
+    normalize_exact_match,
+    score_prediction,
+)
 
 
 def test_format_benchmark_answer_preserves_leading_article() -> None:

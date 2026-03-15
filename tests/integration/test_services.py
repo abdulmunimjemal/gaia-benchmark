@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 
 from gaia_bot.agent import GaiaAgent
-from gaia_bot.executor import SandboxExecutor
+from gaia_bot.services.executor import SandboxExecutor
 from gaia_bot.settings import load_settings
 
 pytestmark = pytest.mark.integration

@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from gaia_bot.models import TaskRunResult
+from gaia_bot.contracts.basemodels import TaskRunResult
 
 FINAL_ANSWER_RE = re.compile(r"final answer\s*:\s*(.*)", re.IGNORECASE | re.DOTALL)
 SEPARATOR_RE = re.compile(r"\s*,\s*")
@@ -123,3 +123,14 @@ def score_breakdown(results: list[TaskRunResult]) -> dict[str, Any]:
         "tool_counts": tool_counts,
         "error_taxonomy_counts": error_counts,
     }
+
+
+__all__ = [
+    "classify_failure",
+    "extract_final_answer",
+    "format_benchmark_answer",
+    "infer_answer_shape",
+    "normalize_exact_match",
+    "score_breakdown",
+    "score_prediction",
+]

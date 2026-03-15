@@ -7,8 +7,7 @@ from urllib.parse import parse_qs, urlparse
 from datasets import load_dataset
 from huggingface_hub import snapshot_download
 
-from gaia_bot.models import TaskRecord
-from gaia_bot.scoring import score_prediction
+from gaia_bot.contracts.basemodels import TaskRecord
 
 
 def _task_from_mapping(payload: dict, *, dataset_root: str | None = None) -> TaskRecord:
@@ -136,4 +135,4 @@ def select_subset(
     ]
 
 
-__all__ = ["load_tasks", "score_prediction", "select_subset"]
+__all__ = ["load_tasks", "select_subset"]

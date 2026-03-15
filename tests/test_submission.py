@@ -3,9 +3,9 @@ from __future__ import annotations
 import json
 from datetime import UTC, datetime
 
+from gaia_bot.benchmark.results import ensure_run_directory, write_task_result
 from gaia_bot.export_submission import export_submission
 from gaia_bot.models import JudgeOutput, PlannerDecision, SolverOutput, TaskRunResult
-from gaia_bot.results import ensure_run_directory, write_task_result
 
 
 def test_export_submission_writes_jsonl(tmp_path, monkeypatch) -> None:

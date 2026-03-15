@@ -3,8 +3,8 @@ from __future__ import annotations
 import zipfile
 from pathlib import Path
 
-from gaia_bot.artifacts import TaskArtifactManager
 from gaia_bot.models import TaskRecord
+from gaia_bot.services.artifacts import TaskArtifactManager
 from gaia_bot.settings import Settings
 
 

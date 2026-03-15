@@ -19,12 +19,12 @@ Turn a benchmark miss into a concrete diagnosis and the smallest defensible fix.
 4. Inspect `_artifacts/<task-id>/` for fetched pages or extracted files.
 5. Use dry-run examples when explaining the bug.
 6. Patch the narrowest layer responsible:
-   - `scoring.py` for formatting
-   - `router.py` for route choice
-   - `prompts.py` for benchmark guidance
-   - `research.py` for search/fetch issues
-   - `artifacts.py` for attachment extraction
-   - `agent.py` / `eval.py` for runtime control flow
+   - `src/gaia_bot/benchmark/scoring.py` for formatting
+   - `src/gaia_bot/routing/main.py` for route choice
+   - `src/gaia_bot/prompts/` for benchmark guidance
+   - `src/gaia_bot/services/research.py` for search/fetch issues
+   - `src/gaia_bot/services/artifacts.py` for attachment extraction
+   - `src/gaia_bot/agent/main.py` or `src/gaia_bot/cli/eval.py` for runtime control flow
 7. Re-run the failing task or a small subset before escalating.
 
 ## Useful Commands

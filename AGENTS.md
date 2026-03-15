@@ -29,11 +29,12 @@ Borrowing the strongest convention from `cadence-backend`, keep contracts and pr
 
 Current guidance for this repo:
 
-- structured data contracts belong in `basemodels.py`
-- prompts and hardcoded benchmark instructions belong in `prompts.py`
-- routing rules belong in `router.py`
-- scoring rules belong in `scoring.py`
-- artifact parsing belongs in `artifacts.py`
+- shared structured data contracts belong in `src/gaia_bot/contracts/basemodels.py`
+- prompts and hardcoded benchmark instructions belong in `src/gaia_bot/prompts/`
+- routing rules belong in `src/gaia_bot/routing/`
+- scoring and run persistence belong in `src/gaia_bot/benchmark/`
+- artifact parsing and service adapters belong in `src/gaia_bot/services/`
+- CLI implementations belong in `src/gaia_bot/cli/`
 
 If a module grows significantly, prefer splitting it into:
 
@@ -43,6 +44,9 @@ If a module grows significantly, prefer splitting it into:
 - `states.py`
 
 Only do that when the file is genuinely becoming multi-purpose.
+
+Top-level compatibility entrypoints at `src/gaia_bot/*.py` are intentionally thin shims for
+`python -m gaia_bot.<command>`. Do not put real logic there.
 
 ## Coding Best Practices
 

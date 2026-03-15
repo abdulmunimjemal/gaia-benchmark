@@ -1,4 +1,4 @@
-"""Compatibility re-export for structured benchmark models."""
+"""Shared structured contracts for benchmark execution."""
 
 from gaia_bot.contracts.basemodels import (
     ArtifactObservation,

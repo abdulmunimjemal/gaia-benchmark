@@ -105,8 +105,8 @@ Example:
 
 Fix in:
 
-- `src/gaia_bot/scoring.py`
-- `src/gaia_bot/prompts.py`
+- `src/gaia_bot/benchmark/scoring.py`
+- `src/gaia_bot/prompts/`
 
 ### Runtime or transport failure
 
@@ -118,8 +118,8 @@ Example symptoms:
 
 Fix in:
 
-- `src/gaia_bot/agent.py`
-- `src/gaia_bot/eval.py`
+- `src/gaia_bot/agent/main.py`
+- `src/gaia_bot/cli/eval.py`
 
 ### Attachment routing failure
 
@@ -129,9 +129,9 @@ Example:
 
 Fix in:
 
-- `src/gaia_bot/router.py`
-- `src/gaia_bot/agent.py`
-- `src/gaia_bot/artifacts.py`
+- `src/gaia_bot/routing/main.py`
+- `src/gaia_bot/agent/main.py`
+- `src/gaia_bot/services/artifacts.py`
 
 ## Submission Export
 

@@ -27,40 +27,54 @@
 
 ## Source Package
 
-- `agent.py`
-  - solve loop and Claude Agent SDK integration
-- `artifacts.py`
-  - task attachment extraction and persistence
-- `benchmark.py`
-  - dataset loading and subset selection
+- `agent/`
+  - agent orchestration and Claude Agent SDK integration
+  - `main.py`
+    - `GaiaAgent`, verification flow, answer finalization
+  - `runtime.py`
+    - MCP runtime, tool registration, and trace capture
+  - `constants.py`
+    - runtime-level tool and prompt defaults
+  - `basemodels.py`
+    - agent-scoped contracts if needed beyond shared contracts
+- `benchmark/`
+  - evaluation and scoring package
+  - `dataset.py`
+    - dataset loading and subset selection
+  - `scoring.py`
+    - answer normalization and exact-match scoring
+  - `results.py`
+    - run directories, per-task outputs, and summaries
+  - `submission.py`
+    - leaderboard JSONL export helpers
+  - `compare.py`
+    - run diff helpers
 - `compare_runs.py`
-  - run diff CLI
+  - compatibility shim for `python -m gaia_bot.compare_runs`
 - `eval.py`
-  - evaluation CLI and parallel runner
-- `executor.py`
-  - E2B sandbox execution wrapper
+  - compatibility shim for `python -m gaia_bot.eval`
 - `export_submission.py`
-  - submission JSONL export CLI
-- `basemodels.py`
-  - structured pydantic contracts for tasks, traces, and results
+  - compatibility shim for `python -m gaia_bot.export_submission`
 - `models.py`
-  - compatibility re-export for older imports
-- `prompts.py`
-  - system, routing, solving, verifier prompts
-- `research.py`
-  - web search and fetch helpers
-- `results.py`
-  - run directory, task results, summaries, comparisons
-- `router.py`
-  - heuristic task routing
+  - compatibility re-export for shared contracts
 - `run.py`
-  - single-task CLI
-- `scoring.py`
-  - answer normalization and exact-match scoring
+  - compatibility shim for `python -m gaia_bot.run`
 - `settings.py`
-  - settings and dotenv validation
+  - compatibility re-export for config loading
 - `smoke.py`
-  - live smoke test CLI
+  - compatibility shim for `python -m gaia_bot.smoke`
+- `cli/`
+  - console script implementations
+- `config/`
+  - settings and dotenv validation
+- `contracts/`
+  - structured pydantic contracts for tasks, traces, and results
+- `prompts/`
+  - system, routing, solving, and verifier prompt builders/constants
+- `routing/`
+  - heuristic task routing and route constants
+- `services/`
+  - E2B sandbox execution, web research, and artifact extraction
 
 ## Test Layout
 

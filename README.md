@@ -105,7 +105,7 @@ For GAIA on Hugging Face, a config name is required. Valid benchmark configs inc
 Top-level structure:
 
 - `src/gaia_bot/`
-  - runtime code, routing, scoring, artifact extraction, benchmark runners
+  - modular runtime packages, benchmark logic, and compatibility entrypoints
 - `tests/`
   - unit and integration coverage
 - `docs/`
@@ -119,16 +119,43 @@ Top-level structure:
 
 See [docs/repo-layout.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/repo-layout.md) for a more detailed map.
 
+Primary source packages:
+
+- `src/gaia_bot/agent/`
+  - agent orchestration, runtime wiring, and agent-scoped constants
+- `src/gaia_bot/benchmark/`
+  - dataset loading, scoring, results, submission export, and run comparison
+- `src/gaia_bot/services/`
+  - E2B execution, web research, and artifact extraction
+- `src/gaia_bot/routing/`
+  - heuristic route selection and routing constants
+- `src/gaia_bot/prompts/`
+  - benchmark prompt builders and prompt constants
+- `src/gaia_bot/config/`
+  - typed settings and dotenv validation
+- `src/gaia_bot/contracts/`
+  - shared pydantic contracts
+- `src/gaia_bot/cli/`
+  - console entrypoints
+
+Compatibility shims remain at the package root for:
+
+- `python -m gaia_bot.smoke`
+- `python -m gaia_bot.run`
+- `python -m gaia_bot.eval`
+- `python -m gaia_bot.export_submission`
+- `python -m gaia_bot.compare_runs`
+
 ## Benchmark Workflow
 
 Recommended loop:
 
-1. `gaia_bot.smoke` to verify Anthropic, Claude Agent SDK, and E2B.
-2. `gaia_bot.run` on a single failing task while iterating on prompts or routing.
-3. `gaia_bot.eval --subset ... --parallel 3` for fast benchmark feedback.
-4. `gaia_bot.compare_runs` to measure deltas before broader runs.
-5. `gaia_bot.eval --full` only after subset behavior is stable.
-6. `gaia_bot.export_submission` once a run is worth packaging.
+1. `python -m gaia_bot.smoke` to verify Anthropic, Claude Agent SDK, and E2B.
+2. `python -m gaia_bot.run` on a single failing task while iterating on prompts or routing.
+3. `python -m gaia_bot.eval --subset ... --parallel 3` for fast benchmark feedback.
+4. `python -m gaia_bot.compare_runs` to measure deltas before broader runs.
+5. `python -m gaia_bot.eval --full` only after subset behavior is stable.
+6. `python -m gaia_bot.export_submission` once a run is worth packaging.
 
 See [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md) for the detailed runbook.
 

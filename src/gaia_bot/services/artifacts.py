@@ -15,8 +15,8 @@ from bs4 import BeautifulSoup
 from docx import Document
 from pypdf import PdfReader
 
-from gaia_bot.models import ArtifactObservation, TaskRecord
-from gaia_bot.settings import Settings
+from gaia_bot.config.settings import Settings
+from gaia_bot.contracts.basemodels import ArtifactObservation, TaskRecord
 
 TEXT_EXTENSIONS = {
     ".txt",
@@ -246,3 +246,6 @@ def _take(items: Iterable[list[str]], count: int) -> list[list[str]]:
         if len(output) >= count:
             break
     return output
+
+
+__all__ = ["TaskArtifactManager"]

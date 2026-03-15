@@ -2,63 +2,9 @@ from __future__ import annotations
 
 import re
 
-from gaia_bot.models import PlannerDecision, TaskRecord
-from gaia_bot.scoring import infer_answer_shape
-
-DIRECT_PATTERNS = [
-    re.compile(r"^\s*what is\s+\d+\s*[-+*/]\s*\d+\??\s*$", re.IGNORECASE),
-    re.compile(r"^\s*what is the capital of ", re.IGNORECASE),
-    re.compile(r"^\s*what day comes after ", re.IGNORECASE),
-]
-
-CODE_HINTS = (
-    "calculate",
-    "calculation",
-    "compute",
-    "average",
-    "count",
-    "unique",
-    "sum",
-    "difference",
-    "how many more",
-    "compared to",
-    "compare",
-    "ratio",
-    "convert",
-    "distance",
-    "geographical distance",
-    "furthest",
-    "westernmost",
-    "easternmost",
-    "pace",
-    "speed",
-    "time would it take",
-    "as of",
-    "prior to",
-    "before",
-    "for each day",
-    "times was",
-    "round your result",
-    "spreadsheet",
-    "csv",
-    "tsv",
-    "xlsx",
-    "excel",
-)
-WEB_HINTS = (
-    "website",
-    "official",
-    "current",
-    "latest",
-    "today",
-    "article",
-    "published",
-    "url",
-    "wikipedia",
-    "history",
-    "version",
-    "news",
-)
+from gaia_bot.benchmark.scoring import infer_answer_shape
+from gaia_bot.contracts.basemodels import PlannerDecision, TaskRecord
+from gaia_bot.routing.constants import CODE_HINTS, DIRECT_PATTERNS, WEB_HINTS, WIKIPEDIA_PAGE_RE
 
 
 def heuristic_route(task: TaskRecord) -> PlannerDecision:
@@ -156,11 +102,7 @@ def heuristic_route(task: TaskRecord) -> PlannerDecision:
 
 def _seed_queries(question: str) -> list[str]:
     cleaned = re.sub(r"\s+", " ", question).strip(" ?")
-    wikipedia_page = re.search(
-        r"wikipedia page for ([A-Za-z0-9'()/ -]+)",
-        question,
-        re.IGNORECASE,
-    )
+    wikipedia_page = WIKIPEDIA_PAGE_RE.search(question)
     if wikipedia_page:
         page = wikipedia_page.group(1).strip().rstrip(".")
         return [f"site:wikipedia.org {page}"]
@@ -228,3 +170,6 @@ def _needs_external_research(lowered: str) -> bool:
             "as of",
         )
     )
+
+
+__all__ = ["heuristic_route"]
