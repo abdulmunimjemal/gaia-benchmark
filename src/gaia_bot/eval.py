@@ -2,13 +2,16 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+from pathlib import Path
 
 from gaia_bot.agent import GaiaAgent
 from gaia_bot.benchmark import load_tasks, select_subset
+from gaia_bot.models import JudgeOutput, PlannerDecision, SolverOutput, TaskRecord, TaskRunResult
 from gaia_bot.results import (
     completed_task_ids,
     create_run_id,
     ensure_run_directory,
+    load_task_results,
     task_workspace,
     write_run_manifest,
     write_summary,
@@ -22,6 +25,7 @@ async def _evaluate(
     full: bool,
     dataset_override: str | None = None,
     resume_run_id: str | None = None,
+    parallel: int | None = None,
 ) -> None:
     settings = load_settings()
     if dataset_override:
@@ -36,6 +40,7 @@ async def _evaluate(
 
     run_id = resume_run_id or create_run_id()
     run_dir = ensure_run_directory(settings.results_dir, run_id)
+    concurrency = max(1, parallel or settings.max_parallel_tasks)
     write_run_manifest(
         run_dir,
         {
@@ -43,29 +48,94 @@ async def _evaluate(
             "subset": subset,
             "full": full,
             "resume_run_id": resume_run_id,
+            "parallel": concurrency,
         },
     )
     done = completed_task_ids(run_dir)
-    agent = GaiaAgent(settings)
-    results = []
-    for task in selected:
-        if task.task_id in done:
-            continue
-        result = await agent.solve(
-            task,
-            run_id=run_id,
-            task_workspace=task_workspace(run_dir, task.task_id),
-        )
-        results.append(result)
-        write_task_result(run_dir, result)
+    pending = [task for task in selected if task.task_id not in done]
+    results = await _run_parallel(
+        tasks=pending,
+        settings=settings,
+        run_id=run_id,
+        run_dir=run_dir,
+        concurrency=concurrency,
+    )
 
-    all_results = results
-    if done:
-        from gaia_bot.results import load_task_results
-
-        all_results = load_task_results(run_dir)
+    all_results = load_task_results(run_dir) if (done or results) else []
     summary_path = write_summary(run_dir, all_results)
     print(summary_path)
+
+
+async def _run_parallel(
+    *,
+    tasks: list[TaskRecord],
+    settings,
+    run_id: str,
+    run_dir: Path,
+    concurrency: int,
+) -> list[TaskRunResult]:
+    if not tasks:
+        return []
+
+    semaphore = asyncio.Semaphore(concurrency)
+
+    async def _worker(task: TaskRecord) -> TaskRunResult:
+        async with semaphore:
+            agent = GaiaAgent(settings)
+            try:
+                result = await agent.solve(
+                    task,
+                    run_id=run_id,
+                    task_workspace=task_workspace(run_dir, task.task_id),
+                )
+            except BaseException as exc:
+                if isinstance(exc, KeyboardInterrupt | SystemExit):
+                    raise
+                result = _failure_result(task, run_id=run_id, error=exc)
+            write_task_result(run_dir, result)
+            return result
+
+    coroutines = [_worker(task) for task in tasks]
+    return [await future for future in asyncio.as_completed(coroutines)]
+
+
+def _failure_result(task: TaskRecord, *, run_id: str, error: BaseException) -> TaskRunResult:
+    planner = PlannerDecision(
+        route="web",
+        risk="high",
+        use_verifier=False,
+        answer_shape="short",
+        working_plan=["Task failed before completion."],
+    )
+    solver = SolverOutput(
+        answer="",
+        confidence="low",
+        citations=[],
+        reasoning_summary=f"{type(error).__name__}: {error}",
+    )
+    judge = JudgeOutput(is_sufficient=False, issues=[str(error)], revised_answer="")
+    return TaskRunResult(
+        run_id=run_id,
+        task_id=task.task_id,
+        question=task.question,
+        answer="",
+        raw_answer="",
+        scorer_answer="",
+        expected_answer=task.expected_answer,
+        score=0.0 if task.expected_answer is not None else None,
+        passed=False if task.expected_answer is not None else None,
+        route="web",
+        risk="high",
+        retry_count=0,
+        error_taxonomy="tool_failure",
+        planner=planner,
+        solver=solver,
+        judge=judge,
+        tool_calls=[],
+        artifacts_used=[],
+        duration_seconds=0.0,
+        metadata={**task.metadata, "failure_type": type(error).__name__},
+    )
 
 
 def main() -> None:
@@ -74,6 +144,7 @@ def main() -> None:
     parser.add_argument("--full", action="store_true", help="Run the full benchmark.")
     parser.add_argument("--dataset")
     parser.add_argument("--resume-run-id")
+    parser.add_argument("--parallel", type=int)
     args = parser.parse_args()
     asyncio.run(
         _evaluate(
@@ -81,6 +152,7 @@ def main() -> None:
             full=args.full,
             dataset_override=args.dataset,
             resume_run_id=args.resume_run_id,
+            parallel=args.parallel,
         )
     )
 

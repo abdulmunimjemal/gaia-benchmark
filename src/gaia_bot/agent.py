@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import json
 import re
 import time
@@ -17,7 +18,6 @@ from claude_agent_sdk import (
     query,
     tool,
 )
-from tenacity import retry, stop_after_attempt, wait_fixed
 
 from gaia_bot.artifacts import TaskArtifactManager
 from gaia_bot.models import (
@@ -106,7 +106,11 @@ class GaiaAgent:
             and not planner.needs_code
         ):
             solver = await self._solve_direct(task, planner)
-            final_answer = format_benchmark_answer(solver.answer, planner.answer_shape)
+            final_answer = format_benchmark_answer(
+                solver.answer,
+                planner.answer_shape,
+                question=task.question,
+            )
             judge = JudgeOutput(is_sufficient=True, issues=[], revised_answer=final_answer)
         else:
             self.settings.require_service_credentials(require_anthropic=True, require_e2b=True)
@@ -117,7 +121,11 @@ class GaiaAgent:
                     runtime,
                     attachment_summary=attachment_summary,
                 )
-                final_answer = format_benchmark_answer(solver.answer, planner.answer_shape)
+                final_answer = format_benchmark_answer(
+                    solver.answer,
+                    planner.answer_shape,
+                    question=task.question,
+                )
                 judge = JudgeOutput(is_sufficient=True, issues=[], revised_answer=final_answer)
 
                 if planner.use_verifier:
@@ -134,6 +142,7 @@ class GaiaAgent:
                         final_answer = format_benchmark_answer(
                             solver.answer,
                             planner.answer_shape,
+                            question=task.question,
                         )
                         judge = await self._verify(task, planner, solver)
                 tool_calls = runtime.trace
@@ -141,6 +150,7 @@ class GaiaAgent:
         final_answer = format_benchmark_answer(
             judge.revised_answer or final_answer,
             planner.answer_shape,
+            question=task.question,
         )
         score = score_prediction(final_answer, task.expected_answer)
 
@@ -171,6 +181,15 @@ class GaiaAgent:
     async def _route(self, task: TaskRecord) -> PlannerDecision:
         heuristic = heuristic_route(task)
         if heuristic.route == "direct" and heuristic.risk == "low":
+            return heuristic
+        if heuristic.route == "artifact":
+            return heuristic
+        if (
+            heuristic.route == "code"
+            and heuristic.risk == "high"
+            and heuristic.needs_web
+            and heuristic.needs_code
+        ):
             return heuristic
 
         payload = await self._run_structured_query(
@@ -293,8 +312,37 @@ class GaiaAgent:
         )
         return JudgeOutput.model_validate(payload)
 
-    @retry(stop=stop_after_attempt(2), wait=wait_fixed(1))
     async def _run_structured_query(
+        self,
+        *,
+        prompt: str,
+        output_schema: dict[str, Any],
+        model: str,
+        max_turns: int,
+        mcp_server: Any | None = None,
+    ) -> dict[str, Any]:
+        attempts = max(2, self.settings.retry_attempts + 1)
+        last_error: Exception | None = None
+        for attempt in range(1, attempts + 1):
+            try:
+                return await self._attempt_structured_query(
+                    prompt=prompt,
+                    output_schema=output_schema,
+                    model=model,
+                    max_turns=max_turns,
+                    mcp_server=mcp_server,
+                )
+            except BaseException as exc:
+                if isinstance(exc, KeyboardInterrupt | SystemExit):
+                    raise
+                last_error = _coerce_runtime_error(exc)
+                if attempt == attempts:
+                    break
+                await asyncio.sleep(min(attempt, 3))
+        assert last_error is not None
+        raise AgentRuntimeError(str(last_error))
+
+    async def _attempt_structured_query(
         self,
         *,
         prompt: str,
@@ -311,6 +359,7 @@ class GaiaAgent:
             "Do not include markdown, explanations, headings, or prose outside the JSON.\n"
             f"Schema:\n{schema_text}\n"
         )
+        use_native_schema = mcp_server is None
         options = ClaudeAgentOptions(
             tools=[],
             mcp_servers={"gaia": mcp_server} if mcp_server is not None else {},
@@ -333,21 +382,21 @@ class GaiaAgent:
             max_turns=max_turns,
             cli_path=self.settings.claude_cli_path,
             env=env,
-            output_format=output_schema,
+            output_format=output_schema if use_native_schema else None,
         )
         result = await _collect_result(query(prompt=structured_prompt, options=options))
-        if result.structured_output is None:
-            if result.result is None:
-                raise AgentRuntimeError(
-                    "Claude Agent SDK returned no structured output or text result."
-                )
-            try:
-                return _extract_json_object(result.result)
-            except json.JSONDecodeError as exc:
-                raise AgentRuntimeError(
-                    f"Failed to decode Claude Agent SDK output as JSON: {result.result}"
-                ) from exc
-        return result.structured_output
+        if result.structured_output is not None:
+            return result.structured_output
+        if result.result is None:
+            raise AgentRuntimeError(
+                "Claude Agent SDK returned no structured output or text result."
+            )
+        try:
+            return _extract_json_object(result.result)
+        except json.JSONDecodeError as exc:
+            raise AgentRuntimeError(
+                f"Failed to decode Claude Agent SDK output as JSON: {result.result}"
+            ) from exc
 
 
 async def _collect_result(messages: AsyncIterator[Any]) -> ResultMessage:
@@ -631,3 +680,9 @@ def _extract_json_object(text: str) -> dict[str, Any]:
             return candidate
 
     raise json.JSONDecodeError("No JSON object found", stripped, 0)
+
+
+def _coerce_runtime_error(exc: BaseException) -> AgentRuntimeError:
+    if isinstance(exc, AgentRuntimeError):
+        return exc
+    return AgentRuntimeError(f"{type(exc).__name__}: {exc}")

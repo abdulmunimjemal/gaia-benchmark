@@ -7,7 +7,16 @@ SYSTEM_PROMPT = """You are an autonomous GAIA benchmark agent.
 Optimize for exact benchmark correctness, not for prose quality.
 Use tools aggressively on risky tasks, but skip them on trivial tasks.
 When using sources, prefer authoritative pages and quote only the needed facts.
+Prefer primary sources, official pages, and Wikipedia over SEO listicles or recap sites.
+Honor every time boundary exactly.
+If the task says "as of", "prior to", or specifies a historical version,
+do not answer from newer summary pages unless you verify the boundary explicitly.
 When using the sandbox, compute and verify exact intermediate results.
+For counting, comparison, sorting, and coordinate/distance tasks, gather the facts,
+then use code instead of mental math.
+Preserve exact title wording,
+including leading articles such as "A" or "The",
+when the task asks for a complete name.
 The final answer must be minimal and score-friendly: no explanation, no markdown, no extra words.
 """
 
@@ -63,8 +72,16 @@ def solver_prompt(
     query_lines = "\n".join(f"- {query}" for query in planner.research_queries) or "- None"
 
     route_guidance = {
-        "web": "Use broad search first, then fetch the best sources and cite the exact urls used.",
-        "code": "Use the sandbox early for calculations, parsing, and reproducible transforms.",
+        "web": (
+            "Start with targeted search terms, prefer authoritative domains, "
+            "and avoid answering from recap or listicle pages when a primary "
+            "source or Wikipedia page can answer the task more directly."
+        ),
+        "code": (
+            "Fetch only the exact facts needed, then use the sandbox early for "
+            "calculations, parsing, counting, sorting, "
+            "and reproducible transforms."
+        ),
         "artifact": (
             "Inspect the task attachment first. "
             "Extract the artifact contents before searching the web."
@@ -97,6 +114,11 @@ Attachment summary:
 
 Route guidance:
 {route_guidance}
+
+Benchmark constraints:
+- Respect exact temporal cutoffs in the question.
+- Preserve leading articles in titles and names when they are part of the answer.
+- If the answer depends on counting or comparing facts, use the sandbox to verify the final value.
 
 {critique_text}
 

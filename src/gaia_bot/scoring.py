@@ -6,6 +6,7 @@ from typing import Any
 from gaia_bot.models import TaskRunResult
 
 FINAL_ANSWER_RE = re.compile(r"final answer\s*:\s*(.*)", re.IGNORECASE | re.DOTALL)
+SEPARATOR_RE = re.compile(r"\s*,\s*")
 
 
 def extract_final_answer(text: str | None) -> str:
@@ -19,7 +20,11 @@ def extract_final_answer(text: str | None) -> str:
 
 
 def normalize_exact_match(answer: str | None) -> str:
-    return extract_final_answer(answer).strip().lower()
+    normalized = extract_final_answer(answer)
+    normalized = normalized.replace("’", "'").replace("“", '"').replace("”", '"')
+    normalized = re.sub(r"\s+", " ", normalized).strip().strip(".")
+    normalized = SEPARATOR_RE.sub(",", normalized)
+    return normalized.lower()
 
 
 def infer_answer_shape(question: str) -> str:
@@ -31,24 +36,50 @@ def infer_answer_shape(question: str) -> str:
     return "short"
 
 
-def format_benchmark_answer(answer: str | None, answer_shape: str = "short") -> str:
+def format_benchmark_answer(
+    answer: str | None,
+    answer_shape: str = "short",
+    question: str | None = None,
+) -> str:
     cleaned = extract_final_answer(answer)
     cleaned = re.sub(r"\s+", " ", cleaned).strip().strip(".")
 
     if answer_shape == "number":
         numeric = re.search(r"[-+]?\d+(?:,\d{3})*(?:\.\d+)?", cleaned)
         if numeric:
-            return numeric.group(0).replace(",", "")
+            value = numeric.group(0).replace(",", "")
+            if question and _expects_thousands_value(question):
+                try:
+                    thousands = float(value) / 1000
+                except ValueError:
+                    return value
+                return _stringify_number(thousands)
+            return value
         return cleaned.replace(",", "")
 
     if answer_shape == "list":
         parts = re.split(r"[,;\n]+", cleaned)
-        normalized = [format_benchmark_answer(part, "short") for part in parts if part.strip()]
-        return ",".join(item for item in normalized if item)
+        normalized = [
+            format_benchmark_answer(part, "short", question=question)
+            for part in parts
+            if part.strip()
+        ]
+        return ", ".join(item for item in normalized if item)
 
-    cleaned = re.sub(r"^(?:a|an|the)\s+", "", cleaned, flags=re.IGNORECASE)
     cleaned = cleaned.strip().strip('"').strip("'").strip()
     return cleaned
+
+
+def _expects_thousands_value(question: str) -> bool:
+    lowered = question.lower()
+    return "how many thousand" in lowered or "in thousands" in lowered
+
+
+def _stringify_number(value: float) -> str:
+    if value.is_integer():
+        return str(int(value))
+    rendered = f"{value:.6f}".rstrip("0").rstrip(".")
+    return rendered
 
 
 def score_prediction(predicted: str, expected: str | None) -> float | None:

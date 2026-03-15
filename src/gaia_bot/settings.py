@@ -65,7 +65,8 @@ class Settings(BaseSettings):
     http_timeout_seconds: int = Field(default=20, alias="HTTP_TIMEOUT_SECONDS")
     max_search_results: int = Field(default=5, alias="MAX_SEARCH_RESULTS")
     max_fetch_chars: int = Field(default=18000, alias="MAX_FETCH_CHARS")
-    retry_attempts: int = Field(default=1, alias="RETRY_ATTEMPTS")
+    max_parallel_tasks: int = Field(default=3, alias="MAX_PARALLEL_TASKS")
+    retry_attempts: int = Field(default=2, alias="RETRY_ATTEMPTS")
     claude_cli_path: str = Field(default="claude", alias="CLAUDE_CLI_PATH")
     working_directory: Path = Field(default=Path.cwd(), alias="WORKING_DIRECTORY")
 
