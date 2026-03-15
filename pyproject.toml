@@ -28,6 +28,13 @@ dependencies = [
   "tenacity>=9.1.2,<10.0.0",
 ]
 
+[project.scripts]
+gaia-smoke = "gaia_bot.smoke:main"
+gaia-run = "gaia_bot.run:main"
+gaia-eval = "gaia_bot.eval:main"
+gaia-export = "gaia_bot.export_submission:main"
+gaia-compare = "gaia_bot.compare_runs:main"
+
 [project.optional-dependencies]
 dev = [
   "pytest>=8.3.5,<9.0.0",
