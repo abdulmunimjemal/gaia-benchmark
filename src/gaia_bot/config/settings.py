@@ -60,13 +60,14 @@ class Settings(BaseSettings):
     )
     gaia_data_path: str | None = Field(default=None, alias="GAIA_DATA_PATH")
     results_dir: Path = Field(default=Path("artifacts/results"), alias="RESULTS_DIR")
-    max_turns: int = Field(default=10, alias="MAX_TURNS")
-    sandbox_timeout_seconds: int = Field(default=90, alias="SANDBOX_TIMEOUT_SECONDS")
-    http_timeout_seconds: int = Field(default=20, alias="HTTP_TIMEOUT_SECONDS")
+    max_turns: int = Field(default=25, alias="MAX_TURNS")
+    sandbox_timeout_seconds: int = Field(default=180, alias="SANDBOX_TIMEOUT_SECONDS")
+    http_timeout_seconds: int = Field(default=45, alias="HTTP_TIMEOUT_SECONDS")
     max_search_results: int = Field(default=5, alias="MAX_SEARCH_RESULTS")
-    max_fetch_chars: int = Field(default=18000, alias="MAX_FETCH_CHARS")
+    max_fetch_chars: int = Field(default=30000, alias="MAX_FETCH_CHARS")
     max_parallel_tasks: int = Field(default=3, alias="MAX_PARALLEL_TASKS")
-    retry_attempts: int = Field(default=2, alias="RETRY_ATTEMPTS")
+    retry_attempts: int = Field(default=3, alias="RETRY_ATTEMPTS")
+    query_timeout_seconds: int = Field(default=480, alias="QUERY_TIMEOUT_SECONDS")
     claude_cli_path: str = Field(default="claude", alias="CLAUDE_CLI_PATH")
     working_directory: Path = Field(default=Path.cwd(), alias="WORKING_DIRECTORY")
 
@@ -86,7 +87,13 @@ class Settings(BaseSettings):
             raise SettingsError(f"Missing required environment variables: {joined}")
 
     def runtime_env(self) -> dict[str, str]:
-        env: dict[str, str] = {}
+        # Start from the full current environment so the subprocess
+        # inherits PATH, HF_TOKEN, and other needed variables.
+        env = dict(os.environ)
+        # Strip the Claude Code session guard — the claude CLI refuses
+        # to start when CLAUDECODE is set (nested-session protection).
+        env.pop("CLAUDECODE", None)
+        # Inject live credentials, overriding anything stale in the env.
         if self.anthropic_api_key is not None:
             env["ANTHROPIC_API_KEY"] = self.anthropic_api_key.get_secret_value()
         if self.e2b_api_key is not None:

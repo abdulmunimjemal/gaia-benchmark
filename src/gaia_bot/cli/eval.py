@@ -89,15 +89,22 @@ async def _run_parallel(
         async with semaphore:
             agent = GaiaAgent(settings)
             try:
-                result = await agent.solve(
-                    task,
-                    run_id=run_id,
-                    task_workspace=task_workspace(run_dir, task.task_id),
+                result = await asyncio.wait_for(
+                    agent.solve(
+                        task,
+                        run_id=run_id,
+                        task_workspace=task_workspace(
+                            run_dir, task.task_id
+                        ),
+                    ),
+                    timeout=720,  # 12 min per task hard limit
                 )
             except BaseException as exc:
                 if isinstance(exc, KeyboardInterrupt | SystemExit):
                     raise
-                result = _failure_result(task, run_id=run_id, error=exc)
+                result = _failure_result(
+                    task, run_id=run_id, error=exc
+                )
             write_task_result(run_dir, result)
             return result
 

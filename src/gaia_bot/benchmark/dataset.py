@@ -128,6 +128,10 @@ def select_subset(
     lowered = subset.lower()
     if lowered in {"sample", "smoke"}:
         return tasks[:3]
+    # Support comma-separated task IDs
+    if "," in subset:
+        ids = {tid.strip() for tid in subset.split(",")}
+        return [task for task in tasks if task.task_id in ids]
     return [
         task
         for task in tasks

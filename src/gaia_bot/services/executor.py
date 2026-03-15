@@ -62,15 +62,41 @@ class SandboxExecutor:
         language: str = "python",
         timeout: int | None = None,
     ) -> SandboxExecutionResult:
-        sandbox = await self.ensure_started()
-        execution = await asyncio.to_thread(
-            sandbox.run_code,
-            code=code,
-            language=language,
-            timeout=timeout or self.settings.sandbox_timeout_seconds,
-            request_timeout=self.settings.sandbox_timeout_seconds,
-        )
-        return _coerce_e2b_execution(execution)
+        max_retries = 2
+        for attempt in range(1, max_retries + 1):
+            try:
+                sandbox = await self.ensure_started()
+                execution = await asyncio.to_thread(
+                    sandbox.run_code,
+                    code=code,
+                    language=language,
+                    timeout=timeout or self.settings.sandbox_timeout_seconds,
+                    request_timeout=self.settings.sandbox_timeout_seconds,
+                )
+                return _coerce_e2b_execution(execution)
+            except Exception as exc:
+                err_msg = str(exc).lower()
+                is_sandbox_gone = (
+                    "502" in err_msg
+                    or "sandbox not found" in err_msg
+                    or "stream closed" in err_msg
+                    or "connection" in err_msg
+                )
+                if is_sandbox_gone and attempt < max_retries:
+                    # Sandbox died — tear down and recreate
+                    await self._force_recreate()
+                    await asyncio.sleep(2)
+                    continue
+                raise
+
+    async def _force_recreate(self) -> None:
+        """Kill the current sandbox and create a fresh one."""
+        if self._sandbox is not None:
+            try:
+                await asyncio.to_thread(self._sandbox.kill)
+            except Exception:
+                pass
+            self._sandbox = None
 
     async def close(self) -> None:
         if self._sandbox is not None:

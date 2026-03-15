@@ -21,17 +21,50 @@ def extract_final_answer(text: str | None) -> str:
 
 def normalize_exact_match(answer: str | None) -> str:
     normalized = extract_final_answer(answer)
-    normalized = normalized.replace("’", "'").replace("“", '"').replace("”", '"')
+    # Normalize unicode quotes and dashes
+    normalized = normalized.replace("\u2019", "'").replace("\u2018", "'")
+    normalized = normalized.replace("\u201c", '"').replace("\u201d", '"')
+    normalized = normalized.replace("\u2013", "-").replace("\u2014", "-")
+    # Collapse whitespace and strip trailing punctuation
     normalized = re.sub(r"\s+", " ", normalized).strip().strip(".")
     normalized = SEPARATOR_RE.sub(",", normalized)
+    # Strip wrapping quotes if present
+    if len(normalized) >= 2 and normalized[0] == normalized[-1] and normalized[0] in {'"', "'"}:
+        normalized = normalized[1:-1].strip()
     return normalized.lower()
 
 
 def infer_answer_shape(question: str) -> str:
     lowered = question.lower()
-    if any(token in lowered for token in ["how many", "what is the number", "what was the total"]):
+    number_tokens = [
+        "how many",
+        "what is the number",
+        "what was the total",
+        "what is the total",
+        "how much",
+        "what percentage",
+        "what is the difference",
+        "how far",
+        "how long",
+        "how old",
+        "what year",
+        "in what year",
+        "what was the population",
+        "round to",
+        "decimal places",
+    ]
+    if any(token in lowered for token in number_tokens):
         return "number"
-    if any(token in lowered for token in ["list", "comma-separated", "which of the following"]):
+    list_tokens = [
+        "list",
+        "comma-separated",
+        "which of the following",
+        "name all",
+        "list all",
+        "what are the",
+        "name the",
+    ]
+    if any(token in lowered for token in list_tokens):
         return "list"
     return "short"
 
@@ -91,10 +124,20 @@ def score_prediction(predicted: str, expected: str | None) -> float | None:
 def classify_failure(result: TaskRunResult) -> str | None:
     if result.score is None or result.passed:
         return None
+
+    # "Unable to determine" style answers are retrieval failures, not format misses
+    answer_lower = (result.answer or "").lower()
+    is_punt = any(
+        phrase in answer_lower
+        for phrase in ("unable to determine", "cannot process", "unable to")
+    )
+
     if any(not tool.success for tool in result.tool_calls):
         return "tool_failure"
     if result.route == "artifact" and not result.artifacts_used:
         return "parsing_miss"
+    if is_punt:
+        return "retrieval_miss"
     if result.route in {"web", "artifact"} and not result.solver.citations:
         return "retrieval_miss"
     if result.raw_answer and extract_final_answer(result.raw_answer) != (result.answer or ""):
