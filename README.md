@@ -198,14 +198,3 @@ Primary verification commands:
 uv run --python 3.14.2 ruff check .
 uv run --python 3.14.2 pytest
 ```
-
-## Submission Artifacts
-
-For the paid-trial handoff, the repository should be accompanied by:
-
-- benchmark run directories or exported results
-- git history
-- exported Claude Code conversations under `artifacts/conversations/`
-- submission JSONL generated from a selected run
-
-Use [docs/submission-checklist.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/submission-checklist.md) as the final handoff checklist.
