@@ -1,0 +1,102 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "e961a717-6b25-4175-8a68-874d28190ee4",
+  "question": "According to wikipedia, how many Asian countries still have a monarchy and access to the sea in 2021?",
+  "answer": "12",
+  "raw_answer": "12",
+  "scorer_answer": "12",
+  "expected_answer": "12",
+  "score": 1.0,
+  "passed": true,
+  "route": "code",
+  "risk": "high",
+  "retry_count": 0,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "code",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "According to wikipedia, how many Asian countries still have a monarchy and access to the sea in 2021",
+      "According to wikipedia, how many Asian countries still",
+      "monarchy and access to the sea in 2021"
+    ],
+    "working_plan": [
+      "Fetch only the specific cited source or page requested by the task.",
+      "Extract the exact factual inputs needed for the calculation.",
+      "Use sandboxed code for the computation and rounding.",
+      "Return only the final benchmark-formatted answer."
+    ],
+    "answer_shape": "number"
+  },
+  "solver": {
+    "answer": "12",
+    "confidence": "high",
+    "citations": [
+      "https://en.wikipedia.org/wiki/Monarchies_in_Asia"
+    ],
+    "reasoning_summary": "Found 13 Asian countries with monarchies in 2021 from Wikipedia's 'Monarchies in Asia' page. Of these, 12 have access to the sea while only Bhutan is landlocked. The 12 countries with both monarchy and sea access are: Bahrain, Brunei, Cambodia, Japan, Jordan, Kuwait, Malaysia, Oman, Qatar, Saudi Arabia, Thailand, and UAE."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:wikipedia.org Asian countries monarchy 2021",
+        "max_results": 5
+      },
+      "summary": "Monarchies in Asia - Wikipedia: https://en.wikipedia.org/wiki/Monarchies_in_Asia | List of current non-sovereign Asian monarchs - Wikipedia: https://en.wikipedia.org/wiki/List_of_current_non-sovereign_Asian_monarchs | List of current monarchs of sovereign states - Wikipedia: https://en.wikipedia.org/wiki/List_of_current_monarchs_of_sovereign_states",
+      "success": true,
+      "created_at": "2026-03-16T23:37:24.839083Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Monarchies_in_Asia"
+      },
+      "summary": "Title: Monarchies in Asia - Wikipedia\n\nMonarchies in Asia - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in ",
+      "success": true,
+      "created_at": "2026-03-16T23:37:29.830162Z"
+    },
+    {
+      "name": "sandbox_exec",
+      "category": "code",
+      "arguments": {
+        "code": "# List of Asian monarchies from the Wikipedia table (as of 2021)\nasian_monarchies = [\n    \"Kingdom of Bahrain\",\n    \"Kingdom of Bhutan\", \n    \"Brunei Darussalam\",\n    \"Kingdom of Cambodia\",\n    \"Japan\",\n    \"Hashemite Kingdom of Jordan\",\n    \"State of Kuwait\",\n    \"Malaysia\", \n    \"Sultanate of Oman\",\n    \"State of Qatar\",\n    \"Kingdom of Saudi Arabia\",\n    \"Kingdom of Thailand\",\n    \"United Arab Emirates\"\n]\n\nprint(f\"Total Asian monarchies: {len(asian_monarchies)}\")\nprint(\"\\nAsian monarchies:\")\nfor i, country in enumerate(asian_monarchies, 1):\n    print(f\"{i}. {country}\")"
+      },
+      "summary": "stdout=Total Asian monarchies: 13\n\nAsian monarchies:\n1. Kingdom of Bahrain\n2. Kingdom of Bhutan\n3. Brunei Darussalam\n4. Kingdom of Cambodia\n5. Japan\n6. Hashemite Kingd",
+      "success": true,
+      "created_at": "2026-03-16T23:37:45.746256Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_en_wikipedia_org_wiki_Monarchies_in_Asia",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Monarchies_in_Asia",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e961a717-6b25-4175-8a68-874d28190ee4/https_en_wikipedia_org_wiki_Monarchies_in_Asia.txt",
+      "excerpt": "Title: Monarchies in Asia - Wikipedia\n\nMonarchies in Asia - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 National monarchies 2 Constituent monarchies Toggle Constituent monarchies subsection 2.1 United Arab Emirates (UAE) 2.1.1 Gallery 2.2 Malaysia 2.2.1 Gallery 3 Ot"
+    }
+  ],
+  "duration_seconds": 160.07034958401346,
+  "created_at": "2026-03-16T23:39:34.870028Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Search the internet for \"asian monarchies\"\n2. Navigate to from the search results \n3. Switch to the history tab\n4. Locate and navigate to a revision from 2021\n5. Open the articles for each listed monarchy in new tabs\n6. Verify access to the sea for each country using the provided maps and optionally Google Maps",
+      "Number of steps": "6",
+      "How long did this take?": "10 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Computer vision\n3. Google Maps",
+      "Number of tools": "4"
+    }
+  }
+}

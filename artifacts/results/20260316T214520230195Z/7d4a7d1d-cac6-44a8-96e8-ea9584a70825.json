@@ -1,0 +1,124 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "7d4a7d1d-cac6-44a8-96e8-ea9584a70825",
+  "question": "According to Girls Who Code, how long did it take in years for the percentage of computer scientists that were women to change by 13% from a starting point of 37%?",
+  "answer": "22",
+  "raw_answer": "22",
+  "scorer_answer": "22",
+  "expected_answer": "22",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "medium",
+  "retry_count": 0,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "medium",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "Girls Who Code women computer science percentage statistics",
+      "Girls Who Code research report women in computing historical data",
+      "Girls Who Code 37% women computer scientists timeline",
+      "Girls Who Code women in tech statistics over time",
+      "Girls Who Code gender gap computer science historical trends"
+    ],
+    "working_plan": [
+      "Search for Girls Who Code's official reports and data on women in computer science percentages",
+      "Locate the specific data point where women comprised 37% of computer scientists",
+      "Find when this percentage changed by 13% (either increased to 50% or decreased to 24%)",
+      "Calculate the time difference between these two data points",
+      "Verify the calculation and ensure answer is in years as requested"
+    ],
+    "answer_shape": "number"
+  },
+  "solver": {
+    "answer": "22",
+    "confidence": "medium",
+    "citations": [
+      "https://www.accenture.com/content/dam/accenture/final/a-com-migration/pdf/pdf-150/accenture-cracking-the-gender-code-report.pdf"
+    ],
+    "reasoning_summary": "Based on data from the Accenture/Girls Who Code report 'Cracking the Gender Code,' women's representation in computer science declined from 37% in 1984 to 18% by 2016. This represents a 19% decline over 32 years, or approximately 0.594% per year. For a 13% change from the starting point of 37%, it would take approximately 22 years to reach 24% representation, assuming a linear decline rate."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Girls Who Code women computer science percentage 37% statistics official report",
+        "max_results": 5
+      },
+      "summary": "Girls Who Code works to close tech industry's gender gap: https://19thnews.org/2022/11/girls-who-code-tech-gender-gap/ | Girls Who Code - 2022 Annual Report: https://girlswhocode.com/2022report/ | PDFCRACKING THE GENDER CODE - Accenture: https://www.accenture.com/content/dam/accenture/final/a-com-migration/pdf/pdf-150/accenture-cracking-the-gender-code-report.pdf",
+      "success": true,
+      "created_at": "2026-03-16T22:49:28.621288Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Girls Who Code research report women computing statistics historical trends percentage",
+        "max_results": 5
+      },
+      "summary": "Girls Who Code | Research: https://girlswhocode.com/about-us/research | NCWIT Scorecard: The Status of Women’s Participation in Computing: https://ncwit.org/resource/scorecard/ | Women in Tech Statistics 2026 | Gender Gap Data, Pay Equity ...: https://womenhack.com/women-in-tech-statistics/",
+      "success": true,
+      "created_at": "2026-03-16T22:49:42.160060Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://girlswhocode.com/about-us/research"
+      },
+      "summary": "Title: Girls Who Code | Research\n\nGirls Who Code | Research Research We implement data-driven solutions to address the gender gap in tech Our research shows we can close the gender gap in new entry-level tech jobs by 2030. And we're committed to evaluating our work, and industry data, to get us there. 760,000 girls, women and nonbinary individuals served Our programs have served 760,000 girls, wom",
+      "success": true,
+      "created_at": "2026-03-16T22:49:54.370520Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.accenture.com/content/dam/accenture/final/a-com-migration/pdf/pdf-150/accenture-cracking-the-gender-code-report.pdf"
+      },
+      "summary": "GET 3X MORE WOMEN \nIN COMPUTING\nCRACKING \nTHE GENDER \nCODE\nA research report \nproduced jointly by\nThe gender gap in computing is getting worse \nand has severe implications for the U.S. economy. \nNew research by Accenture and Girls Who Code \nshows that the share of women in computing jobs \nis in decline and suggests that universal access  \nto computing in schools will not address the \ngender gap. O",
+      "success": true,
+      "created_at": "2026-03-16T22:49:58.874639Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_girlswhocode_com_about_us_research",
+      "source_type": "web_fetch",
+      "source_uri": "https://girlswhocode.com/about-us/research",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/7d4a7d1d-cac6-44a8-96e8-ea9584a70825/https_girlswhocode_com_about_us_research.txt",
+      "excerpt": "Title: Girls Who Code | Research\n\nGirls Who Code | Research Research We implement data-driven solutions to address the gender gap in tech Our research shows we can close the gender gap in new entry-level tech jobs by 2030. And we're committed to evaluating our work, and industry data, to get us there. 760,000 girls, women and nonbinary individuals served Our programs have served 760,000 girls, women and nonbinary individuals across the country and around the world since 2012. 50% Historically Underrepresented Groups Over half of the girls we serve come from historically underrepresented groups"
+    },
+    {
+      "name": "https_www_accenture_com_content_dam_accenture_final_a_com_migration_pdf_pdf_150_",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.accenture.com/content/dam/accenture/final/a-com-migration/pdf/pdf-150/accenture-cracking-the-gender-code-report.pdf",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/7d4a7d1d-cac6-44a8-96e8-ea9584a70825/https_www_accenture_com_content_dam_accenture_final_a_com_migration_pdf_pdf_150.txt",
+      "excerpt": "GET 3X MORE WOMEN \nIN COMPUTING\nCRACKING \nTHE GENDER \nCODE\nA research report \nproduced jointly by\nThe gender gap in computing is getting worse \nand has severe implications for the U.S. economy. \nNew research by Accenture and Girls Who Code \nshows that the share of women in computing jobs \nis in decline and suggests that universal access  \nto computing in schools will not address the \ngender gap. Only by tailoring courses to girls’ \nspecific needs can we boost their commitment  \nto computing. \nThis report recommends a fresh approach \nthat could increase the number of women in \ncomputing to 3.9 "
+    }
+  ],
+  "duration_seconds": 231.14538212498883,
+  "created_at": "2026-03-16T22:52:48.060302Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"Girls Who Code\" on Google.\n2. Opened https://girlswhocode.com/.\n3. Clicked \"About Us\".\n4. Noted that the chart started at 37% and declined to 24%.\n5. Subtracted the marked years to find the number of years (2017 - 1995 = 22).",
+      "Number of steps": "5",
+      "How long did this take?": "10 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Calculator",
+      "Number of tools": "3"
+    }
+  }
+}

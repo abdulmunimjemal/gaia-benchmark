@@ -1,0 +1,134 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "3627a8be-a77f-41bb-b807-7e1bd4c0ebdf",
+  "question": "The object in the British Museum's collection with a museum number of 2012,5015.17 is the shell of a particular mollusk species. According to the abstract of a research article published in Science Advances in 2021, beads made from the shells of this species were found that are at least how many thousands of years old?",
+  "answer": "142",
+  "raw_answer": "142",
+  "scorer_answer": "142",
+  "expected_answer": "142",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 0,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "British Museum collection 2012,5015.17 mollusk shell",
+      "Science Advances 2021 beads mollusk shells archaeological",
+      "Science Advances 2021 shell beads thousands years old",
+      "archaeological beads mollusk shells ancient dating 2021",
+      "prehistoric beads marine shells Science Advances"
+    ],
+    "working_plan": [
+      "Look up British Museum object 2012,5015.17 to identify the specific mollusk species",
+      "Search Science Advances journal for 2021 papers about beads made from mollusk/shell materials",
+      "Find the paper that mentions beads from the identified mollusk species",
+      "Extract the age information from the abstract, ensuring it's given in thousands of years",
+      "Verify the connection between the museum specimen and the research paper"
+    ],
+    "answer_shape": "number"
+  },
+  "solver": {
+    "answer": "142",
+    "confidence": "high",
+    "citations": [
+      "https://en.wikipedia.org/wiki/Tritia_gibbosula",
+      "https://www.science.org/doi/10.1126/sciadv.abi8620",
+      "https://www.natureasia.com/en/nmiddleeast/article/10.1038/nmiddleeast.2021.79",
+      "https://www.thearchaeologist.org/blog/morocco-archaeologists-discovered-the-worlds-oldest-jewelry"
+    ],
+    "reasoning_summary": "Identified British Museum object 2012,5015.17 as Tritia gibbosula mollusk shell. Found Science Advances 2021 paper about shell beads from this species discovered in Bizmoune Cave, Morocco. Multiple sources consistently reported these beads as being 142,000 years old, which equals 142 thousands of years."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "British Museum collection 2012,5015.17 mollusk shell",
+        "max_results": 5
+      },
+      "summary": "British Museum Collections Online - Medieval Digital Resources: https://mdr-maa.org/resource/british-museum/ | Search: museum number 2012,5015.17 shell of a particular mollusk ...: https://records.data.kew.org/occurrences/search?q=museum+number+2012,5015.17+shell+of+a+particular+mollusk+species+in+the+British+Museum+collection+is+the+shell+of+Tritia+gibbosula&fq=-species_group:*&lang=en-US | Nomenclature of molluscous animals and shells in the collection of the ...: https://www.biodiversitylibrary.org/item/121495",
+      "success": true,
+      "created_at": "2026-03-16T23:14:50.876073Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:britishmuseum.org 2012,5015.17",
+        "max_results": 5
+      },
+      "summary": "Collections Online | British Museum: https://www.britishmuseum.org/collection/term/x22682 | drawing; album | British Museum: https://www.britishmuseum.org/collection/object/G_2013-5015-1-116 | Collections Online | British Museum: https://www.britishmuseum.org/collection/term/BIOG58609",
+      "success": true,
+      "created_at": "2026-03-16T23:14:58.609069Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Tritia gibbosula\" mollusk shell species",
+        "max_results": 5
+      },
+      "summary": "Tritia - Wikipedia: https://en.wikipedia.org/wiki/Tritia | Tritia gibbosula - Wikipedia: https://en.wikipedia.org/wiki/Tritia_gibbosula | Sea Shells and Sea Shell Collecting | Sea Life, Islands and: https://ioa.factsanddetails.com/article/entry-272.html",
+      "success": true,
+      "created_at": "2026-03-16T23:15:08.397997Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Science Advances 2021 Tritia gibbosula beads archaeological",
+        "max_results": 5
+      },
+      "summary": "MOROCCO | ARCHAEOLOGY WORLD: https://archaeology-world.com/category/morocco/ | Archaeologists Just Discovered the World\u2019s Oldest: https://news.artnet.com/art-world/worlds-oldest-jewelry-morocco-2037635 | Are These Snail Shells the World's Oldest Known Beads?: https://www.smithsonianmag.com/smart-news/worlds-oldest-jewelry-discovered-in-moroccan-cave-180978766/",
+      "success": true,
+      "created_at": "2026-03-16T23:15:16.359665Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Science Advances\" 2021 beads shell Morocco archaeological dating",
+        "max_results": 5
+      },
+      "summary": "News - Shell Beads in Morocco May Be World\u2019s Oldest ...: https://archaeology.org/news/2021/09/24/210927-morocco-shell-beads/ | Archaeologists find the oldest-known shell beads: https://leakeyfoundation.org/archaeologists-find-the-oldest-known-shell-beads/ | Moroccan cave reveals world\u2019s oldest shell beads - News ...: https://www.natureasia.com/en/nmiddleeast/article/10.1038/nmiddleeast.2021.79",
+      "success": true,
+      "created_at": "2026-03-16T23:15:22.141306Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Early Middle Stone Age personal ornaments from Bizmoune Cave\" Science Advances abstract 2021",
+        "max_results": 5
+      },
+      "summary": "African archaeology - Wikipedia: https://en.wikipedia.org/wiki/African_archaeology | Aberystwyth University Early Middle Stone Age personal ...: https://pure.aber.ac.uk/ws/portalfiles/portal/50806586/sciadv.abi8620_sm.pdf | Early Middle Stone Age personal ornaments from... : Science ...: https://www.ovid.com/journals/sciad/fulltext/10.1126/sciadv.abi8620~early-middle-stone-age-personal-ornaments-from-bizmoune-cave",
+      "success": true,
+      "created_at": "2026-03-16T23:15:38.630108Z"
+    }
+  ],
+  "artifacts_used": [],
+  "duration_seconds": 144.10637987498194,
+  "created_at": "2026-03-16T23:16:49.264845Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Use search engine to search for \"British Museum search collection\" and navigate to the British Museum's collection search webpage.\n2. Select \"Museum number\" as search field and \"2012,5015.17\" in text box, then run search.\n3. Open the page for the single result and note that the description says that this is the shell of an individual of the Nassa gibbosula species.\n4. Use search engine to search for \"Nassa gibbosula\".\n5. Note that according to the search result from the World Register of Marine Species website, Nassa gibbosula is not an accepted species name.\n6. Open the page for Nassa gibbosula on the World Register of Marine Species website.\n7. Scan the page and note that the accepted species name is Tritia gibbosula.\n8. Use search engine to search for \"Science Advances 2021 Tritia gibbosula\".\n9. Find that the top result is an article from 2021 in Science Advances titled \"Early Middle Stone Age personal ornaments from Bizmoune Cave, Essaouira, Morocco\".\n10. Scan abstract and note that the article discusses beads made from Tritia gibbosula shells that date to at least 142 thousand years ago, giving a final answer of 142.",
+      "Number of steps": "10",
+      "How long did this take?": "12 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  }
+}

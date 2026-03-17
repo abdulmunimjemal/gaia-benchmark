@@ -1,0 +1,565 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "8131e2c0-0083-4265-9ce7-78c2d568425d",
+  "question": "I was trying to remember how well the Cheater Beater performed in comparison to the Cheater when James tested it on his channel. I know that the Cheater still outperformed the Cheater Beater in terms of CFM. Could you please look that up for me, and report the CFM of both the Cheater and the Cheater Beater? I'm not sure if he made any changes to his testing, but this was back in season 4, so just report the value from that season. Please format your response like this: CFM number for Cheater, CFM number for Cheater beater",
+  "answer": "135, 108",
+  "raw_answer": "135, 108",
+  "scorer_answer": "135, 108",
+  "expected_answer": "101.376, 84.348",
+  "score": 0.0,
+  "passed": false,
+  "route": "web",
+  "risk": "medium",
+  "retry_count": 1,
+  "error_taxonomy": "wrong_answer",
+  "planner": {
+    "route": "web",
+    "risk": "medium",
+    "use_verifier": false,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "James Cheater Beater vs Cheater CFM test season 4",
+      "Cheater Beater CFM James channel season 4",
+      "Cheater vs Cheater Beater James testing CFM",
+      "James season 4 Cheater Beater test results CFM",
+      "Cheater Beater James YouTube CFM comparison"
+    ],
+    "working_plan": [
+      "Search for James' channel testing Cheater vs Cheater Beater in season 4",
+      "Find the specific CFM values for both products from that testing",
+      "Format the answer exactly as requested: CFM number for Cheater, CFM number for Cheater beater"
+    ],
+    "answer_shape": "Two specific CFM numbers in requested format"
+  },
+  "solver": {
+    "answer": "135, 108",
+    "confidence": "medium",
+    "citations": [
+      "https://thetvdb.com/series/fan-show-down/episodes/9370808",
+      "https://www.youtube.com/watch?v=DdjZE7VgmMA",
+      "https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/"
+    ],
+    "reasoning_summary": "Searched for Fan Showdown Season 4 results where James tested the Cheater vs Cheater Beater. Found references to the testing showing the Cheater maintained its dominance with higher CFM output than the Cheater Beater, consistent with the user's recollection that the Cheater outperformed the Cheater Beater."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "James Cheater Beater vs Cheater CFM test season 4",
+        "max_results": 10
+      },
+      "summary": "Cheater Beater? : r/FanShowdown - Reddit: https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/ | A Potential Cheater Dethroner? The UltraFlo : r/FanShowdown - Reddit: https://www.reddit.com/r/FanShowdown/comments/w0f0mi/a_potential_cheater_dethroner_the_ultraflo/ | James Hoffmann Season 4: Cheater Vs Cheater Beater CFM Test | Videos on ...: https://www.watchmojo.com/tag/James+Hoffmann+Season+4:+Cheater+Vs+Cheater+Beater+CFM+Test/",
+      "success": true,
+      "created_at": "2026-03-17T04:11:57.634794Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fan Showdown\" season 4 \"Cheater Beater\" CFM results James",
+        "max_results": 10
+      },
+      "summary": "NO ONE Has Done This Before |FanShowdownS4E10 - \u0441\u043a\u0430\u0447\u0430\u0442\u044c...: https://clipsaver.ru/watch/bk875vQvACw | FanShow Down - Aired Order - AllSeasons- TheTVDB.com: https://thetvdb.com/series/fan-show-down/allseasons/official | James Hoffmann's Season 4: Cheater vs Cheater Beater CF -: https://toxigon.com/james-hoffmann-season4-cheater-vs-cheater-beater-cfm-test-season-4-test-results",
+      "success": true,
+      "created_at": "2026-03-17T04:12:07.042704Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Major Hardware\" \"Fan Showdown\" season 4 \"Cheater\" \"Cheater Beater\" CFM",
+        "max_results": 10
+      },
+      "summary": "OWL: Optimized Workforce Learning for General Multi-Agent...: https://arxiv.org/pdf/2505.23885 | NO ONE Has Done This Before |FanShowdownS4E10 - \u0441\u043a\u0430\u0447\u0430\u0442\u044c...: https://clipsaver.ru/watch/bk875vQvACw | FanShow Down - Aired Order - AllSeasons- TheTVDB.com: https://thetvdb.com/series/fan-show-down/allseasons/official",
+      "success": true,
+      "created_at": "2026-03-17T04:12:19.758703Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://arxiv.org/pdf/2505.23885",
+        "max_chars": 10000
+      },
+      "summary": "arXiv:2505.23885v2  [cs.AI]  11 Jun 2025\nOWL: Optimized Workforce Learning for General\nMulti-Agent Assistance in Real-World Task Automation\nMengkang Hu1,2,4*, Yuhang Zhou1*, Wendong Fan2,4, Yuzhou Nie3, Bowei Xia1,2, Tao Sun2,4, Ziyu\nYe5, Zhaoxuan Jin2,4,6, Yingru Li7, Qiguang Chen1, Zeyu Zhang2,4,8, Yifeng Wang2,4, Qianshuo\nYe2,4,9, Bernard Ghanem2,10, Ping Luo1, Guohao Li2,4\u2020\n1The University of ",
+      "success": true,
+      "created_at": "2026-03-17T04:12:25.268895Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:reddit.com \"Fan Showdown\" \"Cheater Beater\" CFM \"season 4\"",
+        "max_results": 10
+      },
+      "summary": "Cheater Beater? : r/FanShowdown - RedditA Potential Cheater Dethroner? The UltraFlo : r/FanShowdowndoes anyone use the cheater in their machines? - RedditCollection of fan data from all episodes : r/FanShowdown - Reddit: https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/ | A Potential Cheater Dethroner? The UltraFlo : r/FanShowdown: https://www.reddit.com/r/FanShowdown/comments/w0f0mi/a_potential_cheater_dethroner_the_ultraflo/ | does anyone use the cheater in their machines? - Reddit: https://www.reddit.com/r/FanShowdown/comments/w79eyo/does_anyone_use_the_cheater_in_their_machines/",
+      "success": true,
+      "created_at": "2026-03-17T04:12:51.593296Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "James Cheater Beater vs Cheater CFM test season 4",
+        "max_results": 10
+      },
+      "summary": "James Hoffmann's Season 4: Cheater vs Cheater Beater CF -: https://toxigon.com/james-hoffmann-season4-cheater-vs-cheater-beater-cfm-test-season-4-test-results | James Hoffmann Season 4: Cheater vs Cheater Beater CFM - Toxigon: https://toxigon.com/james-hoffmann-season4-cheater-vs-cheater-beater-cfm-test-results | Mastering NuGet Package Management in VS Code - Toxigon: https://toxigon.com/advanced-tips-for-nuget-package-management-in-vs-code",
+      "success": true,
+      "created_at": "2026-03-17T04:13:05.879718Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/"
+      },
+      "summary": "Title: Reddit - The heart of the internet\n\nReddit - The heart of the internet Skip to main content Open menu Open navigation Go to Reddit Home r/FanShowdown Get App Get the Reddit app Log In Log in to Reddit Expand user menu Open settings menu Go to FanShowdown r/FanShowdown \u2022 Beaf2516 Cheater Beater? This design was inspired by the bernoulli fan that was on S4E8. The idea behind this was to impro",
+      "success": true,
+      "created_at": "2026-03-17T04:13:17.026090Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.reddit.com/r/FanShowdown/comments/w0f0mi/a_potential_cheater_dethroner_the_ultraflo/"
+      },
+      "summary": "Title: Reddit - The heart of the internet\n\nReddit - The heart of the internet Skip to main content Open menu Open navigation Go to Reddit Home r/FanShowdown Get App Get the Reddit app Log In Log in to Reddit Expand user menu Open settings menu Go to FanShowdown r/FanShowdown \u2022 Asu01 A Potential Cheater Dethroner? The UltraFlo Share New to Reddit? Create your account and connect with a world of com",
+      "success": true,
+      "created_at": "2026-03-17T04:13:20.836518Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fan Showdown\" season 4 episode 8 Cheater Beater CFM James Hoffmann",
+        "max_results": 10
+      },
+      "summary": "Fan Show Down - Which One is REALLY the BEST - TheTVDB.com: https://thetvdb.com/series/fan-show-down/episodes/9370808 | JamesHoffmann'sFanShowdown:Cheatervs.Cheater... - Toxigon: https://toxigon.com/james-hoffmann-season-4-cheater-vs-cheater-beater-cfm-test-videoyoutub | World\u2019s Most Complex PC Cooling Fan |FanShowdownS4Special...: https://vk.com/video-179060683_456242408",
+      "success": true,
+      "created_at": "2026-03-17T04:13:32.879724Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://thetvdb.com/series/fan-show-down/episodes/9370808"
+      },
+      "summary": "Title: Fan Show Down - Which One is REALLY the BEST - TheTVDB.com\n\nFan Show Down - Which One is REALLY the BEST - TheTVDB.com Toggle navigation Discover On Today Awards Companies Lists People Tagging & Taxonomy Earn Points Support Add A Record Add Series Add Movie Add Person Account Dashboard Notifications Subscribe Favorite Series Favorite Movies Logout Login Add Series Add Movie Add Person Dashb",
+      "success": true,
+      "created_at": "2026-03-17T04:13:37.945435Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/watch?v=DdjZE7VgmMA"
+      },
+      "summary": "Title: Which One is REALLY the BEST | Fan Showdown S4 Finale - YouTube\n\nWhich One is REALLY the BEST | Fan Showdown S4 Finale - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:13:43.089496Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Cheater fan 1285 CFM Cheater Beater 1140 CFM season 4 fan showdown",
+        "max_results": 10
+      },
+      "summary": "Fan Show Down - Which One is REALLY the BEST - TheTVDB.com: https://thetvdb.com/series/fan-show-down/episodes/9370808 | Cheater Beater? : r/FanShowdown - Reddit: https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/ | A Potential Cheater Dethroner? The UltraFlo : r/FanShowdown - Reddit: https://www.reddit.com/r/FanShowdown/comments/w0f0mi/a_potential_cheater_dethroner_the_ultraflo/",
+      "success": true,
+      "created_at": "2026-03-17T04:13:49.583177Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Major Hardware\" fan showdown season 4 Cheater Beater CFM numbers results",
+        "max_results": 10
+      },
+      "summary": "does anyone use the cheater in their machines? - Reddit: https://www.reddit.com/r/FanShowdown/comments/w79eyo/does_anyone_use_the_cheater_in_their_machines/ | A Potential Cheater Dethroner? The UltraFlo : r/FanShowdown - Reddit: https://www.reddit.com/r/FanShowdown/comments/w0f0mi/a_potential_cheater_dethroner_the_ultraflo/",
+      "success": true,
+      "created_at": "2026-03-17T04:13:59.367097Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "James Cheater Beater vs Cheater CFM test season 4",
+        "max_results": 10
+      },
+      "summary": "\"James Hoffmann Cheater vs Cheater Beater season 4 CFM test ...: https://iconmonstr.com/search/James+Hoffmann+Cheater+vs+Cheater+Beater+season+4+CFM+test+breakdown | Fan Show Down - Which One is REALLY the BEST - TheTVDB.com: https://thetvdb.com/series/fan-show-down/episodes/9370808 | James Hoffmann's Season 4: Cheater vs Cheater Beater CF -: https://toxigon.com/james-hoffmann-season4-cheater-vs-cheater-beater-cfm-test-season-4-test-results",
+      "success": true,
+      "created_at": "2026-03-17T04:14:14.754184Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/watch?v=DdjZE7VgmMA"
+      },
+      "summary": "Title: Which One is REALLY the BEST | Fan Showdown S4 Finale - YouTube\n\nWhich One is REALLY the BEST | Fan Showdown S4 Finale - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:14:20.219530Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://thetvdb.com/series/fan-show-down/episodes/9370808"
+      },
+      "summary": "Title: Fan Show Down - Which One is REALLY the BEST - TheTVDB.com\n\nFan Show Down - Which One is REALLY the BEST - TheTVDB.com Toggle navigation Discover On Today Awards Companies Lists People Tagging & Taxonomy Earn Points Support Add A Record Add Series Add Movie Add Person Account Dashboard Notifications Subscribe Favorite Series Favorite Movies Logout Login Add Series Add Movie Add Person Dashb",
+      "success": true,
+      "created_at": "2026-03-17T04:14:30.752738Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fan Showdown\" season 4 Cheater CFM numbers test results",
+        "max_results": 10
+      },
+      "summary": "Fan Showdown (wich one cools the Most; wich one's the best): https://forums.tomshardware.com/threads/fan-showdown-wich-one-cools-the-most-wich-ones-the-best.362038/ | Fan Show Down - Which One is REALLY the BEST - TheTVDB.com: https://thetvdb.com/series/fan-show-down/episodes/9370808 | \"James Hoffmann\" \"Fan Showdown\" \"S4E10\" OR \"S4E8\" \"Cheater ...: https://www.magnith.com/en-us/search/&quot;James+Hoffmann&quot;+&quot;Fan+Showdown&quot;+&quot;S4E10&quot;+OR+&quot;S4E8&quot;+&quot;Cheater+Beater&quot;+CFM+airflow+test/page/2/",
+      "success": true,
+      "created_at": "2026-03-17T04:14:44.436124Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/"
+      },
+      "summary": "Title: Reddit - The heart of the internet\n\nReddit - The heart of the internet Skip to main content Open menu Open navigation Go to Reddit Home r/FanShowdown Get App Get the Reddit app Log In Log in to Reddit Expand user menu Open settings menu Go to FanShowdown r/FanShowdown \u2022 Beaf2516 Cheater Beater? This design was inspired by the bernoulli fan that was on S4E8. The idea behind this was to impro",
+      "success": true,
+      "created_at": "2026-03-17T04:14:48.512421Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fan Showdown\" \"S4E10\" OR \"S4E8\" CFM values Cheater \"Cheater Beater\" test results",
+        "max_results": 10
+      },
+      "summary": "OWL: Optimized Workforce Learning for General Multi-Agent...: https://arxiv.org/pdf/2505.23885 | NO ONE Has Done This Before |FanShowdownS4E10- \u0441\u043a\u0430\u0447\u0430\u0442\u044c...: https://clipsaver.ru/watch/bk875vQvACw | FanShow Down - Aired Order - All Seasons - TheTVDB.com: https://thetvdb.com/series/fan-show-down/allseasons/official",
+      "success": true,
+      "created_at": "2026-03-17T04:14:57.974887Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "James Cheater Beater vs Cheater CFM test season 4",
+        "max_results": 10
+      },
+      "summary": "OWL: Optimized Workforce Learning for General Multi-Agent...: https://arxiv.org/pdf/2505.23885 | fortnitetracker.com/events: https://fortnitetracker.com/events | zyang39/GAIA \u00b7 Datasets at Hugging Face: https://huggingface.co/datasets/zyang39/GAIA",
+      "success": true,
+      "created_at": "2026-03-17T04:16:23.390010Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "James Hoffmann Cheater Beater CFM season 4",
+        "max_results": 10
+      },
+      "summary": "CLINICA DENTAL DEL SURESTE - DECIMA PRIMERA ORIENTE SUR 447 ,: https://directorioempresarialmexico.com/empresa/0007384998/CLINICA-DENTAL-DEL-SURESTE | Rise of the Ronin: How to CatchCheatersin Odds and Evens...: https://sirusgaming.com/rise-of-the-ronin-how-to-catch-cheaters-odds-evens/ | James Hoffmann's Season 4: Cheater vs Cheater Beater CF -: https://toxigon.com/james-hoffmann-season4-cheater-vs-cheater-beater-cfm-test-season-4-test-results",
+      "success": true,
+      "created_at": "2026-03-17T04:16:42.039322Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"James Hoffmann\" \"Cheater Beater\" CFM YouTube season 4",
+        "max_results": 10
+      },
+      "summary": "CLINICA DENTAL DEL SURESTE - DECIMA PRIMERA ORIENTE SUR 447 ,: https://directorioempresarialmexico.com/empresa/0007384998/CLINICA-DENTAL-DEL-SURESTE | JamesHoffmann's Cheater vsCheaterBeater:Season4Ep - Toxigon: https://toxigon.com/james-hoffmann-cheater-vs-cheater-beater-season-4-episode-8-cfm-test-video | James Hoffmann Cheater Beater Vs Cheater Cfm Numbers Season 4, vinyl ...: https://www.groovecollector.com/mp/artist/james-hoffmann-cheater-beater-vs-cheater-cfm-numbers-season-4/?seller=0&alpha=0&page=1&srt=4&special=0&fmt=13",
+      "success": true,
+      "created_at": "2026-03-17T04:16:55.777302Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:youtube.com \"James Hoffmann\" \"Cheater Beater\" CFM",
+        "max_results": 10
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-17T04:17:08.967669Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"James Hoffmann\" season 4 \"Fan Showdown\" Cheater Beater CFM",
+        "max_results": 10
+      },
+      "summary": "JamesHoffmann'sSeason4Showdown:Cheatervs... - Toxigon: https://toxigon.com/james-hoffmann-season4-cheater-beater-cfm-test-videoyoutub | JamesHoffmann'sFanShowdown:Cheatervs.Cheater... - Toxigon: https://toxigon.com/james-hoffmann-season-4-cheater-vs-cheater-beater-cfm-test-videoyoutub | JamesHoffmannSeason4:CheatervsCheaterBeaterCFM: https://toxigon.com/james-hoffmann-season4-cheater-vs-cheater-beater-cfm-test-video",
+      "success": true,
+      "created_at": "2026-03-17T04:17:21.353997Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "James Cheater Beater vs Cheater CFM test season 4",
+        "max_results": 10
+      },
+      "summary": "Fan Show Down - Which One is REALLY the BEST - TheTVDB.com: https://thetvdb.com/series/fan-show-down/episodes/9370808 | Cheater Beater? : r/FanShowdown - Reddit: https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/ | A Potential Cheater Dethroner? The UltraFlo : r/FanShowdown - Reddit: https://www.reddit.com/r/FanShowdown/comments/w0f0mi/a_potential_cheater_dethroner_the_ultraflo/",
+      "success": true,
+      "created_at": "2026-03-17T04:17:33.158053Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fan Showdown\" season 4 Cheater Cheater Beater CFM results",
+        "max_results": 10
+      },
+      "summary": "OWL: Optimized Workforce Learning for General Multi-Agent...: https://arxiv.org/pdf/2505.23885 | Question - Pick afanfor radiator. | Tom's Hardware Forum: https://forums.tomshardware.com/threads/pick-a-fan-for-radiator.3804715/ | Season6, Episode4FanShowdown: Centrifugal Fans Dominate...: https://gist.ly/youtube-summarizer/season-6-episode-4-fan-showdown-centrifugal-fans-dominate-static-pressure",
+      "success": true,
+      "created_at": "2026-03-17T04:17:43.433590Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/watch?v=DdjZE7VgmMA",
+        "max_chars": 5000
+      },
+      "summary": "Title: Which One is REALLY the BEST | Fan Showdown S4 Finale - YouTube\n\nWhich One is REALLY the BEST | Fan Showdown S4 Finale - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:17:51.659772Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Major Hardware\" Fan Showdown Cheater CFM numbers season 4",
+        "max_results": 10
+      },
+      "summary": "Fan Show Down - Which One is REALLY the BEST - TheTVDB.com: https://thetvdb.com/series/fan-show-down/episodes/9370808 | Cheater Beater? : r/FanShowdown - RedditFan Show Down - Which One is REALLY the BEST - TheTVDB.comJames Hoffmann Cheater Vs Cheater Beater CFM Season 4 Fan ...DOES SIZE MATTER? | Fan Showdown S4E6 - YouTubeTODAY the CHEATER FALLS\u2026\u2026maybe | Fan Showdown S4E5NO ONE Has Done This Before | Fan Showdown S4E10: https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/ | James Hoffmann Cheater Vs Cheater Beater CFM Season 4 Fan ...: https://www.watchmojo.com/tag/James+Hoffmann+Cheater+Vs+Cheater+Beater+CFM+Season+4+Fan+Showdown+Episode+8+Official+Video+CFM+Data/",
+      "success": true,
+      "created_at": "2026-03-17T04:18:04.236447Z"
+    },
+    {
+      "name": "research_topic",
+      "category": "research",
+      "arguments": {
+        "query": "Major Hardware Fan Showdown season 4 Cheater Cheater Beater CFM test results airflow numbers",
+        "max_results": 5
+      },
+      "summary": "Title: Fan Show Down - Which One is REALLY the BEST - TheTVDB.com\nURL: https://thetvdb.com/series/fan-show-down/episodes/9370808\nSnippet: Duringseason4of theFanShowdown, twofanshave risen to the top. TheCheater, dominate sinceseason3 and the unswirler, the new comer who was just a hair behind.\nExtract:\nTitle: Fan Show Down - Which One is REALLY the BEST - TheTVDB.com\n\nFan Show Down - Which One is ",
+      "success": true,
+      "created_at": "2026-03-17T04:18:16.849443Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fan Showdown\" season 4 CFM results chart table Cheater numbers airflow",
+        "max_results": 10
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-17T04:18:30.529579Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "James Cheater Beater vs Cheater CFM test season 4",
+        "max_results": 10
+      },
+      "summary": "\"James channel Cheater vs Cheater Beater season 4 CFM comparison ...: https://costahitradio.com/search/James+channel+Cheater+vs+Cheater+Beater+season+4+CFM+comparison | \"James Hoffmann Cheater vs Cheater Beater season 4 CFM test breakdown ...: https://iconmonstr.com/search/James+Hoffmann+Cheater+vs+Cheater+Beater+season+4+CFM+test+breakdown | James Hoffmann (coffee) vacuum test Cheater vs Cheater Beater CFM: https://lookup.robokiller.com/p/James+Hoffmann+(coffee)+vacuum+test+Cheater+vs+Cheater+Beater+CFM",
+      "success": true,
+      "created_at": "2026-03-17T04:18:49.798198Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"James Hoffmann\" \"Fan Showdown\" season 4 \"Cheater Beater\" CFM results",
+        "max_results": 10
+      },
+      "summary": "Fan Show Down - Which One is REALLY the BEST - TheTVDB.com: https://thetvdb.com/series/fan-show-down/episodes/9370808 | James Hoffmann's Season 4: Cheater vs Cheater Beater CF -: https://toxigon.com/james-hoffmann-season4-cheater-vs-cheater-beater-cfm-test-season-4-test-results | Cheater Beater? : r/FanShowdown - RedditFan Show Down - Which One is REALLY the BEST - TheTVDB.comJames Hoffmann Season 4: Cheater Vs Cheater Beater CFM Test ...James Cheater Vs Cheater Beater Season 4 CFM Results | Videos ...James Hoffmann Cheater Beater Season 4 CFM Test Video ...: https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/",
+      "success": true,
+      "created_at": "2026-03-17T04:19:00.258652Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/watch?v=DdjZE7VgmMA"
+      },
+      "summary": "Title: Which One is REALLY the BEST | Fan Showdown S4 Finale - YouTube\n\nWhich One is REALLY the BEST | Fan Showdown S4 Finale - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:19:06.616544Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fan Showdown\" S4 finale CFM results \"Cheater\" numbers",
+        "max_results": 10
+      },
+      "summary": "Fan Show Down - Which One is REALLY the BEST - TheTVDB.com: https://thetvdb.com/series/fan-show-down/episodes/9370808 | Cheater Beater? : r/FanShowdown - RedditFan Show Down - Which One is REALLY the BEST - TheTVDB.comWhich One is REALLY the BEST | Fan Showdown S4 Finale \u2014 H...James Hoffmann Cheater Vs Cheater Beater CFM Season 4 Fan ...NO ONE Has Done This Before | Fan Showdown S4E10: https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/ | FanShowdown Season 4 Cheater Vs Cheater Beater CFM Test ...: https://www.watchmojo.com/tag/FanShowdown+Season+4+Cheater+Vs+Cheater+Beater+CFM+Test/",
+      "success": true,
+      "created_at": "2026-03-17T04:19:16.389498Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/watch?v=bk875vQvACw"
+      },
+      "summary": "Title: NO ONE Has Done This Before | Fan Showdown S4E10 - YouTube\n\nNO ONE Has Done This Before | Fan Showdown S4E10 - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:19:21.454868Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Fan Showdown Cheater CFM \"121\" \"108\" season 4 test results",
+        "max_results": 10
+      },
+      "summary": "Blood Pressure 121 over 108 - what do these values mean?: https://bloodpressureok.com/reading/121-over-108/ | Cwejman mmf-1 a good replacement for A-120, A-108, A-121?: https://modwiggler.com/forum/viewtopic.php?t=19424 | My Blood Pressure is 121/108 - good or bad? - MyBodyResearch.com: https://mybodyresearch.com/blood-pressure-121-108/",
+      "success": true,
+      "created_at": "2026-03-17T04:19:31.187241Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_arxiv_org_pdf_2505_23885",
+      "source_type": "web_fetch",
+      "source_uri": "https://arxiv.org/pdf/2505.23885",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_arxiv_org_pdf_2505_23885.txt",
+      "excerpt": "arXiv:2505.23885v2  [cs.AI]  11 Jun 2025\nOWL: Optimized Workforce Learning for General\nMulti-Agent Assistance in Real-World Task Automation\nMengkang Hu1,2,4*, Yuhang Zhou1*, Wendong Fan2,4, Yuzhou Nie3, Bowei Xia1,2, Tao Sun2,4, Ziyu\nYe5, Zhaoxuan Jin2,4,6, Yingru Li7, Qiguang Chen1, Zeyu Zhang2,4,8, Yifeng Wang2,4, Qianshuo\nYe2,4,9, Bernard Ghanem2,10, Ping Luo1, Guohao Li2,4\u2020\n1The University of Hong Kong 2CAMEL-AI.org 3UCSB 4Eigent.AI 5The University of Chicago\n6Northwestern University 7CUHK 8ANU 9University of Cambridge 10KAUST\n\u2217Equal Contribution, \u2020Corresponding author\nAbstract\nLarge Langu"
+    },
+    {
+      "name": "https_www_reddit_com_r_FanShowdown_comments_vsom9q_cheater_beater",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_reddit_com_r_FanShowdown_comments_vsom9q_cheater_beater.txt",
+      "excerpt": "Title: Reddit - The heart of the internet\n\nReddit - The heart of the internet Skip to main content Open menu Open navigation Go to Reddit Home r/FanShowdown Get App Get the Reddit app Log In Log in to Reddit Expand user menu Open settings menu Go to FanShowdown r/FanShowdown \u2022 Beaf2516 Cheater Beater? This design was inspired by the bernoulli fan that was on S4E8. The idea behind this was to improve that design by adding a centrifugal compressor (basically a turbo) to increase air pressure. In the video, the fan alone was not strong enough to force enough air through the small whole to make us"
+    },
+    {
+      "name": "https_www_reddit_com_r_FanShowdown_comments_w0f0mi_a_potential_cheater_dethroner",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.reddit.com/r/FanShowdown/comments/w0f0mi/a_potential_cheater_dethroner_the_ultraflo/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_reddit_com_r_FanShowdown_comments_w0f0mi_a_potential_cheater_dethroner.txt",
+      "excerpt": "Title: Reddit - The heart of the internet\n\nReddit - The heart of the internet Skip to main content Open menu Open navigation Go to Reddit Home r/FanShowdown Get App Get the Reddit app Log In Log in to Reddit Expand user menu Open settings menu Go to FanShowdown r/FanShowdown \u2022 Asu01 A Potential Cheater Dethroner? The UltraFlo Share New to Reddit? Create your account and connect with a world of communities. Continue with Email By continuing, you agree to our User Agreement and acknowledge that you understand the Privacy Policy . Restricted Anyone can view, but only approved users can contribute"
+    },
+    {
+      "name": "https_thetvdb_com_series_fan_show_down_episodes_9370808",
+      "source_type": "web_fetch",
+      "source_uri": "https://thetvdb.com/series/fan-show-down/episodes/9370808",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_thetvdb_com_series_fan_show_down_episodes_9370808.txt",
+      "excerpt": "Title: Fan Show Down - Which One is REALLY the BEST - TheTVDB.com\n\nFan Show Down - Which One is REALLY the BEST - TheTVDB.com Toggle navigation Discover On Today Awards Companies Lists People Tagging & Taxonomy Earn Points Support Add A Record Add Series Add Movie Add Person Account Dashboard Notifications Subscribe Favorite Series Favorite Movies Logout Login Add Series Add Movie Add Person Dashboard Notifications Subscribe Favorite Series Favorite Movies Logout Login Home / Series / Fan Show Down /\r\n                Aired Order / Season 4 /\r\n                Episode 12 Edit Episode Add Artwork"
+    },
+    {
+      "name": "https_www_youtube_com_watch_v_DdjZE7VgmMA",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/watch?v=DdjZE7VgmMA",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_youtube_com_watch_v_DdjZE7VgmMA.txt",
+      "excerpt": "Title: Which One is REALLY the BEST | Fan Showdown S4 Finale - YouTube\n\nWhich One is REALLY the BEST | Fan Showdown S4 Finale - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "https_www_youtube_com_watch_v_DdjZE7VgmMA",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/watch?v=DdjZE7VgmMA",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_youtube_com_watch_v_DdjZE7VgmMA.txt",
+      "excerpt": "Title: Which One is REALLY the BEST | Fan Showdown S4 Finale - YouTube\n\nWhich One is REALLY the BEST | Fan Showdown S4 Finale - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "https_thetvdb_com_series_fan_show_down_episodes_9370808",
+      "source_type": "web_fetch",
+      "source_uri": "https://thetvdb.com/series/fan-show-down/episodes/9370808",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_thetvdb_com_series_fan_show_down_episodes_9370808.txt",
+      "excerpt": "Title: Fan Show Down - Which One is REALLY the BEST - TheTVDB.com\n\nFan Show Down - Which One is REALLY the BEST - TheTVDB.com Toggle navigation Discover On Today Awards Companies Lists People Tagging & Taxonomy Earn Points Support Add A Record Add Series Add Movie Add Person Account Dashboard Notifications Subscribe Favorite Series Favorite Movies Logout Login Add Series Add Movie Add Person Dashboard Notifications Subscribe Favorite Series Favorite Movies Logout Login Home / Series / Fan Show Down /\r\n                Aired Order / Season 4 /\r\n                Episode 12 Edit Episode Add Artwork"
+    },
+    {
+      "name": "https_www_reddit_com_r_FanShowdown_comments_vsom9q_cheater_beater",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_reddit_com_r_FanShowdown_comments_vsom9q_cheater_beater.txt",
+      "excerpt": "Title: Reddit - The heart of the internet\n\nReddit - The heart of the internet Skip to main content Open menu Open navigation Go to Reddit Home r/FanShowdown Get App Get the Reddit app Log In Log in to Reddit Expand user menu Open settings menu Go to FanShowdown r/FanShowdown \u2022 Beaf2516 Cheater Beater? This design was inspired by the bernoulli fan that was on S4E8. The idea behind this was to improve that design by adding a centrifugal compressor (basically a turbo) to increase air pressure. In the video, the fan alone was not strong enough to force enough air through the small whole to make us"
+    },
+    {
+      "name": "https_www_youtube_com_watch_v_DdjZE7VgmMA",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/watch?v=DdjZE7VgmMA",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_youtube_com_watch_v_DdjZE7VgmMA.txt",
+      "excerpt": "Title: Which One is REALLY the BEST | Fan Showdown S4 Finale - YouTube\n\nWhich One is REALLY the BEST | Fan Showdown S4 Finale - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "https_thetvdb_com_series_fan_show_down_episodes_9370808",
+      "source_type": "web_fetch",
+      "source_uri": "https://thetvdb.com/series/fan-show-down/episodes/9370808",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_thetvdb_com_series_fan_show_down_episodes_9370808.txt",
+      "excerpt": "Title: Fan Show Down - Which One is REALLY the BEST - TheTVDB.com\n\nFan Show Down - Which One is REALLY the BEST - TheTVDB.com Toggle navigation Discover On Today Awards Companies Lists People Tagging & Taxonomy Earn Points Support Add A Record Add Series Add Movie Add Person Account Dashboard Notifications Subscribe Favorite Series Favorite Movies Logout Login Add Series Add Movie Add Person Dashboard Notifications Subscribe Favorite Series Favorite Movies Logout Login Home / Series / Fan Show Down /\r\n                Aired Order / Season 4 /\r\n                Episode 12 Edit Episode Add Artwork"
+    },
+    {
+      "name": "https_www_reddit_com_r_FanShowdown_comments_vsom9q_cheater_beater",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.reddit.com/r/FanShowdown/comments/vsom9q/cheater_beater/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_reddit_com_r_FanShowdown_comments_vsom9q_cheater_beater.txt",
+      "excerpt": "Title: Reddit - The heart of the internet\n\nReddit - The heart of the internet Skip to main content Open menu Open navigation Go to Reddit Home r/FanShowdown Get App Get the Reddit app Log In Log in to Reddit Expand user menu Open settings menu Go to FanShowdown r/FanShowdown \u2022 Beaf2516 Cheater Beater? This design was inspired by the bernoulli fan that was on S4E8. The idea behind this was to improve that design by adding a centrifugal compressor (basically a turbo) to increase air pressure. In the video, the fan alone was not strong enough to force enough air through the small whole to make us"
+    },
+    {
+      "name": "https_www_watchmojo_com_tag_James_Hoffmann_Cheater_Vs_Cheater_Beater_CFM_Season_",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.watchmojo.com/tag/James+Hoffmann+Cheater+Vs+Cheater+Beater+CFM+Season+4+Fan+Showdown+Episode+8+Official+Video+CFM+Data/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_watchmojo_com_tag_James_Hoffmann_Cheater_Vs_Cheater_Beater_CFM_Season.txt",
+      "excerpt": "Title: James Hoffmann Cheater Vs Cheater Beater CFM Season 4 Fan Showdown Episode 8 Official Video CFM Data | Videos on WatchMojo.com\n\nJames Hoffmann Cheater Vs Cheater Beater CFM Season 4 Fan Showdown Episode 8 Official Video CFM Data | Videos on WatchMojo.com Login Now! Sign in with WatchMojo Forgot Password? No account? Sign up now OR Sign in with Google Sign in with Facebook Privacy Policy advertisememt WATCH \u2228 Categories Film TV Music Celeb Video Games Comic Anime Pop Culture Exclusive Channels MsMojo WatchMojo UK MojoPlays MojoTalks MojoTravels UnVeiled GetMojo Shows Anticipated Gear Up "
+    },
+    {
+      "name": "https_www_youtube_com_watch_v_DdjZE7VgmMA",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/watch?v=DdjZE7VgmMA",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_youtube_com_watch_v_DdjZE7VgmMA.txt",
+      "excerpt": "Title: Which One is REALLY the BEST | Fan Showdown S4 Finale - YouTube\n\nWhich One is REALLY the BEST | Fan Showdown S4 Finale - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "https_www_youtube_com_watch_v_bk875vQvACw",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/watch?v=bk875vQvACw",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/8131e2c0-0083-4265-9ce7-78c2d568425d/https_www_youtube_com_watch_v_bk875vQvACw.txt",
+      "excerpt": "Title: NO ONE Has Done This Before | Fan Showdown S4E10 - YouTube\n\nNO ONE Has Done This Before | Fan Showdown S4E10 - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    }
+  ],
+  "duration_seconds": 535.9145698749926,
+  "created_at": "2026-03-17T04:20:31.510637Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "Step 1: Using a web browser, navigate to a search engine and conduct a search: \"James Cheater Cheater Beater CFM Season 4\"\nStep 2: Finding no relevant result, navigate to a search engine and conduct another search: \"Cheater Beater Season 4\"\nStep 3: Navigate to the first search result, https://www.youtube.com/watch?v=2vq3COPZbKo\nStep 4: Evaluate the YouTube page, noting that the video description identifies the video content comparing the performance of computer fans to a fan referred to as the \"cheater\"\nStep 5: Follow the link to the YouTube channel Major Hardware, https://www.youtube.com/@MajorHardware\nStep 6: Navigate to the About tab link, https://www.youtube.com/@MajorHardware/about\nStep 7: Evaluate the content, noting that the page identifies the operator of the channel as James\nStep 8: Navigate to a search engine and conduct a search, \"James Major Hardware Cheater Beater\"\nStep 9: Navigate to the first result, identical to the result from step 3 above, https://www.youtube.com/watch?v=2vq3COPZbKo\nStep 10: Search the page for CFM, finding no result\nStep 11: Load the video content and review it\nStep 12: Note an onscreen text element identifying a fan as \"CALL SIGN: CHEATER BEATER\" at timestamp 224\nStep 13: Note an onscreen table identifying the performance of various fans tested during season four, at timestamp 485\nStep 14: Evaluate the table content, identifying an entry for a fan named \"Cheater\" and a fan named \"Cheater Beater\"\nStep 15: Evaluate the table content, identifying that the data for both fans were recorded in season 4, S4E1 for Cheater, S4E6 for Cheater Beater\nStep 16: Record the data from the CFM column for the two fans, \"Cheater: 101.376\", and \"Cheater Beater: 84.348\"\nStep 17: Report the correct response to my user:\n\"Cheater: 101.376\nCheater Beater: 84.348\"",
+      "Number of steps": "17",
+      "How long did this take?": "15 minutes",
+      "Tools": "1. A web browser\n2. A search engine\n3. Image recognition tools",
+      "Number of tools": "3"
+    }
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "853c8244-429e-46ca-89f2-addf40dfb2bd",
+  "question": "In the 2015 Metropolitan Museum of Art exhibition titled after the Chinese zodiac animal of 2015, how many of the \"twelve animals of the Chinese zodiac\" have a hand visible?",
+  "answer": "1",
+  "raw_answer": "1",
+  "scorer_answer": "1",
+  "expected_answer": "11",
+  "score": 0.0,
+  "passed": false,
+  "route": "web",
+  "risk": "medium",
+  "retry_count": 2,
+  "error_taxonomy": "wrong_answer",
+  "planner": {
+    "route": "web",
+    "risk": "medium",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "2015 Chinese zodiac animal year of goat sheep",
+      "Metropolitan Museum of Art 2015 exhibition goat sheep Chinese zodiac",
+      "Met Museum 2015 Chinese zodiac animals exhibition twelve animals hands visible",
+      "Metropolitan Museum 2015 Year of Goat exhibition catalog artworks",
+      "Met Museum Chinese zodiac exhibition 2015 animals depicted hands"
+    ],
+    "working_plan": [
+      "Confirm 2015 was Year of the Goat/Sheep in Chinese zodiac",
+      "Search for Met Museum exhibitions from 2015 with goat/sheep theme",
+      "Find the specific exhibition title and details",
+      "Locate information about the twelve zodiac animals displayed in the exhibition",
+      "Examine each of the twelve animals to count how many show a visible hand",
+      "Verify the count by double-checking the visual descriptions or images"
+    ],
+    "answer_shape": "number"
+  },
+  "solver": {
+    "answer": "1",
+    "confidence": "low",
+    "citations": [
+      "https://www.metmuseum.org/press-releases/year-of-the-ram-2015-exhibitions",
+      "https://chinesenewyear.net/zodiac/goat/"
+    ],
+    "reasoning_summary": "I identified the 2015 Met Museum exhibition 'Celebration of the Year of the Ram' which corresponded to the 2015 Chinese zodiac animal (Goat/Sheep). However, due to technical access issues preventing detailed examination of the specific artworks, I cannot definitively count hands visible on the twelve zodiac animals. Based on typical Chinese zodiac representations where only the monkey among the twelve animals would naturally have hands, I estimate 1, though this requires visual verification of the actual exhibition pieces which I could not access."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "RETRIEVAL ERROR: Failed to access detailed information about the specific artworks in the exhibition needed to count hands visible on the twelve zodiac animals",
+      "REASONING ERROR: Made assumptions based on general knowledge about zodiac animals (only monkeys have hands) rather than examining the actual artworks displayed in the specific 2015 Met exhibition",
+      "COMPLETENESS: Did not fulfill the core requirement to examine the actual twelve zodiac animal artworks in the exhibition and count visible hands"
+    ],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "2015 Chinese zodiac animal year of goat sheep",
+        "max_results": 5
+      },
+      "summary": "Goat (zodiac) - WikipediaSheep/Goat/Ram Chinese Horoscope 2015 - Sheep/Goat/Ram ...2015 Chinese Zodiac: Year of the Goat: https://en.wikipedia.org/wiki/Goat_(zodiac) | Chinese Astrology: 2015 Horoscopes Year of the Goat or Sheep: https://cafeastrology.com/articles/chinese_2015_horoscope_year_of_goat_sheep.html | Year of the Goat: Fortune, Personality, Horoscope (2026): https://chinesenewyear.net/zodiac/goat/",
+      "success": true,
+      "created_at": "2026-03-16T23:35:01.825938Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Metropolitan Museum of Art 2015 exhibition goat sheep Chinese zodiac",
+        "max_results": 5
+      },
+      "summary": "Goat(zodiac) - Wikipedia: https://en.wikipedia.org/wiki/Goat_(zodiac) | Exhibitions- TheMetropolitanMuseumofArt: https://www.metmuseum.org/exhibitions | 2015ChineseNew Year of theSheep, Ram,GoatChineseZodiac...: https://www.pinterest.com/pin/2015-chinese-new-year-of-the-sheep-ram-goat-chinese-by-zenbrush--703756170632272/",
+      "success": true,
+      "created_at": "2026-03-16T23:35:07.257605Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Metropolitan Museum of Art\" 2015 exhibitions \"Year of the Goat\"",
+        "max_results": 5
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T23:35:15.451453Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Met Museum 2015 exhibitions list Chinese art zodiac",
+        "max_results": 5
+      },
+      "summary": "China: Through the Looking Glass - Wikipedia: https://en.wikipedia.org/wiki/China:_Through_the_Looking_Glass | #MetKids—Lunar New Year Festival 2015 - - MetKids - The Metropolitan ...: https://archived.metmuseum.org/art/online-features/metkids/videos/MetKids-Lunar-New-Year-Festival-2015 | China: Through the Looking Glass - The Metropolitan Museum of Art: https://www.metmuseum.org/exhibitions/listings/2015/china-through-the-looking-glass",
+      "success": true,
+      "created_at": "2026-03-16T23:35:20.189888Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.metmuseum.org/art/collection/search/42102"
+      },
+      "summary": "Title: Twelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art\n\nTwelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership The Met Collection Search Art Twelve animals of",
+      "success": true,
+      "created_at": "2026-03-16T23:35:25.612663Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Met Museum \"Twelve animals of the Chinese zodiac\" jade hands visible description",
+        "max_results": 5
+      },
+      "summary": "清乾隆 青玉雕十二生肖|Twelve Animals of the Chinese Zodiac: https://artsandculture.google.com/asset/清乾隆-青玉雕十二生肖-twelve-animals-of-the-chinese-zodiac/mAHZE_GVjXfiwA | Twelve Animals of the Chinese Zodiac. Culture: China ... - Alamy: https://www.alamy.com/twelve-animals-of-the-chinese-zodiac-culture-china-dimensions-overall-each-approx-h-2-14-in-57-cm-w-1-34-in-44-cm-date-18th-century-the-twelve-animals-of-the-chinese-zodiac-are-popular-decorative-motifs-and-have-been-used-in-various-media-this-set-made-of-flawless-pale-green-jade-must-have-been-particularly-prized-during-the-qing-dynasty-two-additional-identical-sets-from-the-imperial-collection-are-known-now-in-the-palace-museum-beijing-with-extraordinary-talent-and-skill-the-master-carvers-have-created-a-lively-group-of-individual-characters-with-varied-post-image213118901.html | 清中期 玉十二生肖俑|Twelve animals of the Chinese zodiac: https://www.artheonmuseum.org/artwork/twelve-animals-of-the-chinese-zodiac-42102",
+      "success": true,
+      "created_at": "2026-03-16T23:35:33.313940Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.metmuseum.org/art/collection/search/60009519?gallerynos=222"
+      },
+      "summary": "Title: Twelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art\n\nTwelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership The Met Collection Search Art Twelve animals of",
+      "success": true,
+      "created_at": "2026-03-16T23:35:38.380439Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Met Museum\" jade zodiac animals \"hands\" snake horse fan sleeves description",
+        "max_results": 5
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T23:35:48.240663Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Metropolitan Museum\" 2015 \"Asian Art\" centennial \"Year of the Ram\" exhibitions",
+        "max_results": 5
+      },
+      "summary": "Metropolitan Museum's Lunar New Year Festival to Celebrate Year of the Ram: https://cititour.com/NYC_Events/Metropolitan-Museums-Lunar-New-Year-Festival-to-Celebrate-Year-of-the-Ram/26018 | Asian Art 100 - The Metropolitan Museum of Art: https://www.metmuseum.org/press-releases/asian-art-100-release-2015-exhibitions | Schedule of Exhibitions - The Metropolitan Museum of Art: https://www.metmuseum.org/press-releases/schedule-of-exhibitions-through-december-2015-2015-exhibitions",
+      "success": true,
+      "created_at": "2026-03-16T23:35:57.421867Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "2015 Chinese zodiac animal year of goat sheep",
+        "max_results": 3
+      },
+      "summary": "Goat (zodiac) - WikipediaSheep/Goat/Ram Chinese Horoscope 2015 - Sheep/Goat/Ram ...2015 Chinese Zodiac: Year of the Goat: https://en.wikipedia.org/wiki/Goat_(zodiac) | Chinese Astrology: 2015 Horoscopes Year of the Goat or Sheep: https://cafeastrology.com/articles/chinese_2015_horoscope_year_of_goat_sheep.html | A Detailed Analysis Of The 2015 Chinese Animal ...: https://www.chineseastrologyyear.com/archives/26327",
+      "success": true,
+      "created_at": "2026-03-16T23:36:06.213503Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Metropolitan Museum of Art 2015 exhibition goat sheep Chinese zodiac",
+        "max_results": 5
+      },
+      "summary": "Year of the Ram, Sheep, Goat | Hudson Valley Fiber Arts ...: https://www.hudsonvalleyfiberartsnetwork.com/blog/?p=36 | 2015 Metropolitan Museum Of Art Exhibition Chinese Zodiac Animal: https://www.instagram.com/popular/2015-metropolitan-museum-of-art-exhibition-chinese-zodiac-animal/ | Celebration of the Year of the Ram - The Metropolitan Museum ...: https://www.metmuseum.org/exhibitions/listings/2015/year-of-the-ram",
+      "success": true,
+      "created_at": "2026-03-16T23:36:12.295777Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.metmuseum.org/exhibitions/listings/2015/year-of-the-ram"
+      },
+      "summary": "Title: Celebration of the Year of the Ram | The Metropolitan Museum of Art\n\nCelebration of the Year of the Ram | The Metropolitan Museum of Art Exhibitions / Celebration of the Year of the Ram Jump to content tickets Member | Make a donation Search Visit Plan Your Visit Buy Tickets Become a Member Free Tours Museum Map Food and Drink Accessibility Group Visits Exhibitions and Events Exhibitions Ev",
+      "success": true,
+      "created_at": "2026-03-16T23:36:16.338920Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Met Museum \"Celebration of the Year of the Ram\" 2015 twelve zodiac animals hands visible",
+        "max_results": 5
+      },
+      "summary": "Celebration of the Year of the Ram - The Metropolitan Museum of Art: https://www.metmuseum.org/exhibitions/listings/2015/year-of-the-ram | Celebration of the Year of the Ram - The Metropolitan Museum of Art: https://www.metmuseum.org/press-releases/year-of-the-ram-2015-exhibitions",
+      "success": true,
+      "created_at": "2026-03-16T23:36:27.424522Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Met Museum 2015 \"twelve animals Chinese zodiac\" exhibition ram sheep hands visible",
+        "max_results": 5
+      },
+      "summary": "#MetKids—Lunar New Year Festival 2015 - - MetKids - The ...: https://archived.metmuseum.org/art/online-features/metkids/videos/MetKids-Lunar-New-Year-Festival-2015 | Twelve Animals Of The Chinese Zodiac Metropolitan Museum 2015 ...: https://www.instagram.com/popular/twelve-animals-of-the-chinese-zodiac-metropolitan-museum-2015-exhibition/ | Celebration of the Year of the Ram - The Metropolitan Museum ...: https://www.metmuseum.org/press-releases/year-of-the-ram-2015-exhibitions",
+      "success": true,
+      "created_at": "2026-03-16T23:36:35.419990Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.metmuseum.org/art/collection/search/42102"
+      },
+      "summary": "Title: Twelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art\n\nTwelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership The Met Collection Search Art Twelve animals of",
+      "success": true,
+      "created_at": "2026-03-16T23:36:43.507067Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "2015 Chinese zodiac animal year",
+        "max_results": 3
+      },
+      "summary": "Chinese Zodiac Years - 12 Chinese New Year Animals Chart: https://www.chinahighlights.com/travelguide/chinese-zodiac/years.htm | A Detailed Analysis of the 2015 Chinese Animal: https://www.chineseastrologyyear.com/archives/26327 | 2015 Chinese Zodiac, Wood Sheep: 2026 Horoscope, Fortune: https://www.travelchinaguide.com/intro/2015-chinese-zodiac-sheep-year.htm",
+      "success": true,
+      "created_at": "2026-03-16T23:37:46.021311Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Metropolitan Museum of Art 2015 exhibition sheep goat Chinese zodiac",
+        "max_results": 5
+      },
+      "summary": "Year of the Ram, Sheep, Goat | Hudson Valley Fiber Arts Network Blog: https://www.hudsonvalleyfiberartsnetwork.com/blog/?p=36 | 2015 Metropolitan Museum Of Art Exhibition Chinese Zodiac ... - Instagram: https://www.instagram.com/popular/2015-metropolitan-museum-of-art-exhibition-chinese-zodiac-animal-title/ | Celebration of the Year of the Ram - The Metropolitan Museum of Art: https://www.metmuseum.org/press-releases/year-of-the-ram-2015-exhibitions",
+      "success": true,
+      "created_at": "2026-03-16T23:38:04.875378Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.metmuseum.org/press-releases/year-of-the-ram-2015-exhibitions"
+      },
+      "summary": "Title: Celebration of the Year of the Ram - The Metropolitan Museum of Art\n\nCelebration of the Year of the Ram - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership Press All Press Releases Celebration of the Year of the Ram Celebration of the Year of the Ram December 14, 2014 January ",
+      "success": true,
+      "created_at": "2026-03-16T23:38:10.791637Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "2015 Chinese zodiac animal year of sheep goat"
+      },
+      "summary": "Chinese Astrology: 2015 Horoscopes Year of the Goat or Sheep: https://cafeastrology.com/articles/chinese_2015_horoscope_year_of_goat_sheep.html | The Goat: 2015 Chinese New Year Zodiac Animal: https://party.alibaba.com/newyear/what-animal-is-celebrated-this-chinese-new-year-2015 | 2015 Chinese New Year Astrology | February 19, 2015 | The Year of the Goat: https://www.chineseastrologyonline.com/2015.htm",
+      "success": true,
+      "created_at": "2026-03-16T23:39:26.248236Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Metropolitan Museum of Art\" 2015 exhibition \"year of goat\" OR \"year of sheep\" Chinese zodiac"
+      },
+      "summary": "A guide to the Chinese zodiac through art - Catawiki: https://www.catawiki.com/en/stories/6303-a-guide-to-the-chinese-zodiac-through-art | 2015 Year of Sheep/Goat Victorinox Knife Chinese Zodiac ...: https://www.ebay.com/itm/286255054467 | Chinese Mothers Not Keen On Births During Year Of The Sheep ...羊 . Year of the Goat . 2015 - Kai . | Goat in japanese2015 Year of Sheep/Goat Victorinox Knife Chinese Zodiac ...A guide to the Chinese zodiac through art - Catawiki2015 Chinese Zodiac New Year of the Green Sheep, GoatFor the Year-of-the-Sheep : Sheep in Japanese History and ...: https://www.ibtimes.com/chinese-mothers-not-keen-births-during-year-sheep-because-zodiac-superstitions-1821524",
+      "success": true,
+      "created_at": "2026-03-16T23:39:43.768200Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:metmuseum.org 2015 exhibitions \"year of\" Chinese zodiac goat sheep"
+      },
+      "summary": "#MetKids—Lunar New Year Festival 2015 - - MetKids - The ...: https://archived.metmuseum.org/art/online-features/metkids/videos/MetKids-Lunar-New-Year-Festival-2015 | Zodiac figure: goat - China - Qing dynasty (1644–1911) - The ...: https://www.metmuseum.org/art/collection/search/44680 | Twelve animals of the Chinese zodiac - China - Qing dynasty ...: https://www.metmuseum.org/art/collection/search/42102",
+      "success": true,
+      "created_at": "2026-03-16T23:39:57.880507Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.metmuseum.org/press-releases/schedule-of-exhibitions-through-december-2015-2015-exhibitions"
+      },
+      "summary": "Title: Schedule of Exhibitions\nThrough December 2015 - The Metropolitan Museum of Art\n\nSchedule of Exhibitions\nThrough December 2015 - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership Press All Press Releases Schedule of Exhibitions Through December 2015 Schedule of Exhibitions Thro",
+      "success": true,
+      "created_at": "2026-03-16T23:40:04.339383Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "2015 Chinese zodiac animal year of goat sheep",
+        "max_results": 5
+      },
+      "summary": "Chinese Astrology: 2015 Horoscopes Year of the Goat or Sheep: https://cafeastrology.com/articles/chinese_2015_horoscope_year_of_goat_sheep.html | Year of the Goat: Fortune, Personality, Horoscope (2026): https://chinesenewyear.net/zodiac/goat/ | Sheep/Goat/Ram Chinese Horoscope 2015 - Sheep/Goat/Ram Chinese ...: https://www.astrosage.com/2015/sheepchinesehoroscope2015.asp",
+      "success": true,
+      "created_at": "2026-03-16T23:41:44.754449Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Metropolitan Museum Art 2015 Chinese zodiac goat sheep exhibition",
+        "max_results": 5
+      },
+      "summary": "Year of the Ram, Sheep, Goat | Hudson Valley Fiber Arts Network Blog: https://www.hudsonvalleyfiberartsnetwork.com/blog/?p=36 | 2015 Metropolitan Museum Of Art Chinese Zodiac Exhibition: https://www.instagram.com/popular/2015-metropolitan-museum-of-art-chinese-zodiac-exhibition/ | Celebration of the Year of the Ram - The Metropolitan Museum of Art: https://www.metmuseum.org/press-releases/year-of-the-ram-2015-exhibitions",
+      "success": true,
+      "created_at": "2026-03-16T23:42:19.052422Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.metmuseum.org/press-releases/year-of-the-ram-2015-exhibitions"
+      },
+      "summary": "Title: Celebration of the Year of the Ram - The Metropolitan Museum of Art\n\nCelebration of the Year of the Ram - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership Press All Press Releases Celebration of the Year of the Ram Celebration of the Year of the Ram December 14, 2014 January ",
+      "success": true,
+      "created_at": "2026-03-16T23:42:25.428105Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_www_metmuseum_org_art_collection_search_42102",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.metmuseum.org/art/collection/search/42102",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/853c8244-429e-46ca-89f2-addf40dfb2bd/https_www_metmuseum_org_art_collection_search_42102.txt",
+      "excerpt": "Title: Twelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art\n\nTwelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership The Met Collection Search Art Twelve animals of the Chinese zodiac Twelve animals of the Chinese zodiac China 18th–19th century On view at The Met Fifth Avenue in Gallery 207 The twelve animals of the Chinese zodiac are popular decorative motifs t"
+    },
+    {
+      "name": "https_www_metmuseum_org_art_collection_search_60009519_gallerynos_222",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.metmuseum.org/art/collection/search/60009519?gallerynos=222",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/853c8244-429e-46ca-89f2-addf40dfb2bd/https_www_metmuseum_org_art_collection_search_60009519_gallerynos_222.txt",
+      "excerpt": "Title: Twelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art\n\nTwelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership The Met Collection Search Art Twelve animals of the Chinese zodiac Twelve animals of the Chinese zodiac China 18th–19th century On view at The Met Fifth Avenue in Gallery 207 The twelve animals of the Chinese zodiac are popular decorative motifs t"
+    },
+    {
+      "name": "https_www_metmuseum_org_exhibitions_listings_2015_year_of_the_ram",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.metmuseum.org/exhibitions/listings/2015/year-of-the-ram",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/853c8244-429e-46ca-89f2-addf40dfb2bd/https_www_metmuseum_org_exhibitions_listings_2015_year_of_the_ram.txt",
+      "excerpt": "Title: Celebration of the Year of the Ram | The Metropolitan Museum of Art\n\nCelebration of the Year of the Ram | The Metropolitan Museum of Art Exhibitions / Celebration of the Year of the Ram Jump to content tickets Member | Make a donation Search Visit Plan Your Visit Buy Tickets Become a Member Free Tours Museum Map Food and Drink Accessibility Group Visits Exhibitions and Events Exhibitions Events Free Tours Performances Art The Met Collection Curatorial Areas Conservation and Scientific Research Learn with Us Learning Resources Publications Timeline of Art History Workshops and Activities"
+    },
+    {
+      "name": "https_www_metmuseum_org_art_collection_search_42102",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.metmuseum.org/art/collection/search/42102",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/853c8244-429e-46ca-89f2-addf40dfb2bd/https_www_metmuseum_org_art_collection_search_42102.txt",
+      "excerpt": "Title: Twelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art\n\nTwelve animals of the Chinese zodiac - China - Qing dynasty (1644–1911) - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership The Met Collection Search Art Twelve animals of the Chinese zodiac Twelve animals of the Chinese zodiac China 18th–19th century On view at The Met Fifth Avenue in Gallery 207 The twelve animals of the Chinese zodiac are popular decorative motifs t"
+    },
+    {
+      "name": "https_www_metmuseum_org_press_releases_year_of_the_ram_2015_exhibitions",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.metmuseum.org/press-releases/year-of-the-ram-2015-exhibitions",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/853c8244-429e-46ca-89f2-addf40dfb2bd/https_www_metmuseum_org_press_releases_year_of_the_ram_2015_exhibitions.txt",
+      "excerpt": "Title: Celebration of the Year of the Ram - The Metropolitan Museum of Art\n\nCelebration of the Year of the Ram - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership Press All Press Releases Celebration of the Year of the Ram Celebration of the Year of the Ram December 14, 2014 January 17-April 19, 2015 Installation Location: Weber Galleries, Part of Gallery 207 The Metropolitan Museum of Art presents seven Chinese sculptures in the shape of the ram as well as a 14th-century paintin"
+    },
+    {
+      "name": "https_www_metmuseum_org_press_releases_schedule_of_exhibitions_through_december_",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.metmuseum.org/press-releases/schedule-of-exhibitions-through-december-2015-2015-exhibitions",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/853c8244-429e-46ca-89f2-addf40dfb2bd/https_www_metmuseum_org_press_releases_schedule_of_exhibitions_through_december.txt",
+      "excerpt": "Title: Schedule of Exhibitions\nThrough December 2015 - The Metropolitan Museum of Art\n\nSchedule of Exhibitions\nThrough December 2015 - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership Press All Press Releases Schedule of Exhibitions Through December 2015 Schedule of Exhibitions Through December 2015 November 16, 2012 EDITORS PLEASE NOTE: Information provided below is subject to change. To confirm scheduling and dates, call the Communications Department at (212) 570-3951. CONTACT"
+    },
+    {
+      "name": "https_www_metmuseum_org_press_releases_year_of_the_ram_2015_exhibitions",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.metmuseum.org/press-releases/year-of-the-ram-2015-exhibitions",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/853c8244-429e-46ca-89f2-addf40dfb2bd/https_www_metmuseum_org_press_releases_year_of_the_ram_2015_exhibitions.txt",
+      "excerpt": "Title: Celebration of the Year of the Ram - The Metropolitan Museum of Art\n\nCelebration of the Year of the Ram - The Metropolitan Museum of Art Skip to main content Tickets Donate Membership Tickets Visit Exhibitions and Events Art Learn with Us Research Shop Tickets Membership Press All Press Releases Celebration of the Year of the Ram Celebration of the Year of the Ram December 14, 2014 January 17-April 19, 2015 Installation Location: Weber Galleries, Part of Gallery 207 The Metropolitan Museum of Art presents seven Chinese sculptures in the shape of the ram as well as a 14th-century paintin"
+    }
+  ],
+  "duration_seconds": 572.4398794580193,
+  "created_at": "2026-03-16T23:44:07.943796Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Search \"2015 Chinese zodiac animal\" on Google search.\n2. Note the animal (ram).\n3. Search \"Metropolitan Museum of Art\" on Google search.\n4. Open the Metropolitan Museum of Art website.\n5. Click \"Exhibitions\" under \"Exhibitions and Events\" \n6. Click \"Past\".\n7. Set the year to 2015.\n8. Scroll to find the exhibit mentioning rams and click \"Celebration of the Year of the Ram\".\n9. Click \"View All Objects\".\n10. Click \"Twelve animals of the Chinese zodiac\" to open the image.\n11. Count how many have a visible hand.",
+      "Number of steps": "11",
+      "How long did this take?": "10 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Image recognition tools",
+      "Number of tools": "3"
+    }
+  }
+}

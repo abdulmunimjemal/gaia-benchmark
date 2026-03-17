@@ -1,0 +1,318 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "de9887f5-ead8-4727-876f-5a4078f8598c",
+  "question": "What integer-rounded percentage of the total length of the harlequin shrimp recorded in Omar Valencfia-Mendez 2017 paper was the sea star fed to the same type of shrimp in G. Curt Fiedler's 2002 paper?",
+  "answer": "22",
+  "raw_answer": "22",
+  "scorer_answer": "22",
+  "expected_answer": "22",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 1,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "Omar Valencia-Mendez 2017 harlequin shrimp length paper",
+      "G. Curt Fiedler 2002 harlequin shrimp sea star feeding paper",
+      "Omar Valencia-Mendez harlequin shrimp total length measurement",
+      "G Curt Fiedler 2002 sea star size harlequin shrimp experiment",
+      "harlequin shrimp Hymenocera picta Valencia-Mendez 2017"
+    ],
+    "working_plan": [
+      "Search for Omar Valencia-Mendez 2017 paper on harlequin shrimp and find total length measurement",
+      "Search for G. Curt Fiedler 2002 paper on harlequin shrimp feeding and find sea star size",
+      "Extract the numerical values from both papers",
+      "Calculate percentage: (sea star size / harlequin shrimp length) * 100",
+      "Round to nearest integer",
+      "Verify the calculation and source accuracy"
+    ],
+    "answer_shape": "single integer"
+  },
+  "solver": {
+    "answer": "22",
+    "confidence": "high",
+    "citations": [
+      "https://www.researchgate.net/publication/319493831_A_new_record_of_Harlequin_Shrimp_Malacostraca_Decapoda_Palaemonidae_Hymenocera_picta_Dana_1852_in_the_southern_Mexican_pacific_reefs",
+      "http://umijin.com/reprint-download/fiedler_2002.pdf"
+    ],
+    "reasoning_summary": "Found both required papers: Omar Valencia-Mendez 2017 recorded harlequin shrimp total length as ~4.5cm, and G. Curt Fiedler 2002 fed sea star pieces of approximately 1cm to the same species. Calculated percentage: (1cm / 4.5cm) × 100 = 22.222%, which rounds to 22."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Omar Valencia-Mendez 2017 harlequin shrimp length paper",
+        "max_results": 5
+      },
+      "summary": "Journal of Threatened Taxa A new record of Harlequin Shrimp ...: https://digitalnz.org/records?text=Journal+of+Threatened+Taxa+A+new+record+of+Harlequin+Shrimp+(Malacostraca:+Decapoda:+Palaemonidae:+Hymenocera+picta+Dana,+1852)+in+the+southern+Mexican+Pacific+Reefs+full+text | A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae ...: https://doaj.org/article/ce8031ca01564784aaac700596eb88e0 | A New Record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae ...: https://docslib.org/doc/3755418/a-new-record-of-harlequin-shrimp-malacostraca-decapoda-palaemonidae-hymenocera-picta-dana-1852-in-the-southern",
+      "success": true,
+      "created_at": "2026-03-17T00:30:55.072955Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://threatenedtaxa.org/index.php/JoTT/article/view/3238"
+      },
+      "summary": "Title: A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs       | Journal of Threatened Taxa\n\nA new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs       | Journal of Threatened Taxa Skip to main content Skip to main navigation",
+      "success": true,
+      "created_at": "2026-03-17T00:31:01.365165Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://doaj.org/article/ce8031ca01564784aaac700596eb88e0"
+      },
+      "summary": "Title: A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs – DOAJ\n\nA new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs – DOAJ This website uses cookies to ensure you get the best experience. Learn more about DOAJ’s privacy pol",
+      "success": true,
+      "created_at": "2026-03-17T00:31:13.526492Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "G. Curt Fiedler 2002 harlequin shrimp sea star feeding paper",
+        "max_results": 5
+      },
+      "summary": "The Influence of Social Environment on Sex Determination in Harlequin ...: https://www.academia.edu/108287212/The_Influence_of_Social_Environment_on_Sex_Determination_in_Harlequin_Shrimp_Hymenocera_Picta_Decapoda_Gnathophyllidae_ | Influence of Social Environment on Sex Determination in Harlequin ...: https://academic.oup.com/jcb/article-abstract/22/4/750/2679743 | Vol. 22, No. 4, Nov., 2002 of Journal of Crustacean Biology on ... - JSTOR: https://www.jstor.org/stable/i269445",
+      "success": true,
+      "created_at": "2026-03-17T00:31:21.445263Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.academia.edu/108287212/The_Influence_of_Social_Environment_on_Sex_Determination_in_Harlequin_Shrimp_Hymenocera_Picta_Decapoda_Gnathophyllidae_"
+      },
+      "summary": "Title: (PDF) The Influence of Social Environment on Sex Determination in Harlequin Shrimp (Hymenocera Picta: Decapoda, Gnathophyllidae)\n\n(PDF) The Influence of Social Environment on Sex Determination in Harlequin Shrimp (Hymenocera Picta: Decapoda, Gnathophyllidae) Log In Sign Up Log In Sign Up more About Press Papers Terms Privacy Copyright We're Hiring! Help Center less Outline keyboard_arrow_do",
+      "success": true,
+      "created_at": "2026-03-17T00:31:36.573234Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Omar Valencia-Mendez 2017 harlequin shrimp length paper",
+        "max_results": 5
+      },
+      "summary": "A new record of Harlequin Shrimp (Malacostraca: Decapoda ...: https://www.periodicos.capes.gov.br/index.php/acervo/buscador.html?task=detalhes&source=all&id=W2746425030 | A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae ...: https://doaj.org/article/ce8031ca01564784aaac700596eb88e0 | A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae ...: https://threatenedtaxa.org/index.php/JoTT/article/view/3238",
+      "success": true,
+      "created_at": "2026-03-17T00:31:49.488972Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://threatenedtaxa.org/index.php/JoTT/article/view/3238/4135"
+      },
+      "summary": "Title: View of A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs\n\t\t\t\t\t\t\t| Journal of Threatened Taxa\n\nView of A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs\n\t\t\t\t\t\t\t| Journal of Threatened Taxa Return to Article Details ",
+      "success": true,
+      "created_at": "2026-03-17T00:31:53.873411Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://threatenedtaxa.org/index.php/JoTT/article/view/3238"
+      },
+      "summary": "Title: A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs       | Journal of Threatened Taxa\n\nA new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs       | Journal of Threatened Taxa Skip to main content Skip to main navigation",
+      "success": true,
+      "created_at": "2026-03-17T00:32:02.761665Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Omar Valencia-Mendez\" 2017 \"Hymenocera picta\" \"total length\" measurements",
+        "max_results": 5
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-17T00:32:13.116285Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "G. Curt Fiedler 2002 harlequin shrimp sea star feeding paper",
+        "max_results": 5
+      },
+      "summary": "The Influence of Social Environment on Sex Determination in Harlequin ...: https://www.academia.edu/108287212/The_Influence_of_Social_Environment_on_Sex_Determination_in_Harlequin_Shrimp_Hymenocera_Picta_Decapoda_Gnathophyllidae_ | The Influence of Social Environment on Sex Determination in Harlequin ...: https://bioone.org/journals/journal-of-crustacean-biology/volume-22/issue-4/0278-0372(2002)022[0750:TIOSES]2.0.CO;2/THE-INFLUENCE-OF-SOCIAL-ENVIRONMENT-ON-SEX-DETERMINATION-IN-HARLEQUIN/10.1651/0278-0372(2002)022[0750:TIOSES]2.0.CO;2.full | Vol. 22, No. 4, Nov., 2002 of Journal of Crustacean Biology on ... - JSTOR: https://www.jstor.org/stable/i269445",
+      "success": true,
+      "created_at": "2026-03-17T00:32:18.909635Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://bioone.org/journals/journal-of-crustacean-biology/volume-22/issue-4/0278-0372(2002)022[0750:TIOSES]2.0.CO;2/THE-INFLUENCE-OF-SOCIAL-ENVIRONMENT-ON-SEX-DETERMINATION-IN-HARLEQUIN/10.1651/0278-0372(2002)022[0750:TIOSES]2.0.CO;2.full"
+      },
+      "summary": "Title: \n\nRequest unsuccessful. Incapsula incident ID: 524000330512803652-6279581523511371",
+      "success": true,
+      "created_at": "2026-03-17T00:32:23.115575Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fiedler 2002\" harlequin shrimp \"Hymenocera picta\" sea star size feeding",
+        "max_results": 5
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-17T00:32:30.514879Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Omar Valencia-Mendez 2017 harlequin shrimp total length measurement paper",
+        "max_results": 5
+      },
+      "summary": "A New Record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae ...: https://docslib.org/doc/3755418/a-new-record-of-harlequin-shrimp-malacostraca-decapoda-palaemonidae-hymenocera-picta-dana-1852-in-the-southern | A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae ...: https://threatenedtaxa.org/index.php/JoTT/article/view/3238 | View of A new record of Harlequin Shrimp (Malacostraca: Decapoda ...: https://threatenedtaxa.org/index.php/JoTT/article/view/3238/4135",
+      "success": true,
+      "created_at": "2026-03-17T00:33:48.911422Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://threatenedtaxa.org/index.php/JoTT/article/view/3238/4135"
+      },
+      "summary": "Title: View of A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs\n\t\t\t\t\t\t\t| Journal of Threatened Taxa\n\nView of A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs\n\t\t\t\t\t\t\t| Journal of Threatened Taxa Return to Article Details ",
+      "success": true,
+      "created_at": "2026-03-17T00:33:53.437578Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.researchgate.net/publication/319493831_A_new_record_of_Harlequin_Shrimp_Malacostraca_Decapoda_Palaemonidae_Hymenocera_picta_Dana_1852_in_the_southern_Mexican_pacific_reefs"
+      },
+      "summary": "Title: (PDF) A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican pacific reefs\n\n(PDF) A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican pacific reefs Article PDF Available A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenoce",
+      "success": true,
+      "created_at": "2026-03-17T00:33:58.228823Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "G. Curt Fiedler 2002 harlequin shrimp sea star feeding paper",
+        "max_results": 5
+      },
+      "summary": "Volume 22 Issue 4 | Journal of Crustacean Biology | Oxford ...: https://academic.oup.com/jcb/issue/22/4 | Volume 22 Issue 4 | Journal of Crustacean Biology - BioOne: https://bioone.org/journals/journal-of-crustacean-biology/volume-22/issue-4 | G. Curt Fiedler - Google Scholar: https://scholar.google.com/citations?user=95vw2xQAAAAJ&hl=en",
+      "success": true,
+      "created_at": "2026-03-17T00:34:08.758616Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://umijin.com/reprint-download/fiedler_2002.pdf"
+      },
+      "summary": "THE INFLUENCE OF SOCIAL ENVIRONMENT\nON SEX DETERMINATION IN HARLEQUIN SHRIMP\n(HYMENOCERA PICTA : DECAPODA, GNATHOPHYLLIDAE)\nG. Curt Fiedler\nSesoko Station, Tropical Biosphere Research Center, University of the Ryukyus, 3422 Sesoko,\nMotobu-cho, Okinawa 905-0227, Japan (e-mail: kaatosan@hotmail.com)\nABSTRACT\nHarlequin shrimp, Hymenocera picta , are monogamous and pair-bonding, and are usually found ",
+      "success": true,
+      "created_at": "2026-03-17T00:34:14.043531Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_threatenedtaxa_org_index_php_JoTT_article_view_3238",
+      "source_type": "web_fetch",
+      "source_uri": "https://threatenedtaxa.org/index.php/JoTT/article/view/3238",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/de9887f5-ead8-4727-876f-5a4078f8598c/https_threatenedtaxa_org_index_php_JoTT_article_view_3238.txt",
+      "excerpt": "Title: A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs       | Journal of Threatened Taxa\n\nA new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs       | Journal of Threatened Taxa Skip to main content Skip to main navigation menu Skip to site footer Open Menu Current Archives JoTT ZPJ About About the Journal Aims and scope Names and Affiliations of the Editorial Board Editorial policies Peer Review Process APC Policies o"
+    },
+    {
+      "name": "https_doaj_org_article_ce8031ca01564784aaac700596eb88e0",
+      "source_type": "web_fetch",
+      "source_uri": "https://doaj.org/article/ce8031ca01564784aaac700596eb88e0",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/de9887f5-ead8-4727-876f-5a4078f8598c/https_doaj_org_article_ce8031ca01564784aaac700596eb88e0.txt",
+      "excerpt": "Title: A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs – DOAJ\n\nA new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs – DOAJ This website uses cookies to ensure you get the best experience. Learn more about DOAJ’s privacy policy. Hide this message The Directory of Open Access Journals DOAJ Logotype Open Global Trusted Main actions Support Institutions and libraries Publishers Institutional and library supporters Funders A"
+    },
+    {
+      "name": "https_www_academia_edu_108287212_The_Influence_of_Social_Environment_on_Sex_Dete",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.academia.edu/108287212/The_Influence_of_Social_Environment_on_Sex_Determination_in_Harlequin_Shrimp_Hymenocera_Picta_Decapoda_Gnathophyllidae_",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/de9887f5-ead8-4727-876f-5a4078f8598c/https_www_academia_edu_108287212_The_Influence_of_Social_Environment_on_Sex_Dete.txt",
+      "excerpt": "Title: (PDF) The Influence of Social Environment on Sex Determination in Harlequin Shrimp (Hymenocera Picta: Decapoda, Gnathophyllidae)\n\n(PDF) The Influence of Social Environment on Sex Determination in Harlequin Shrimp (Hymenocera Picta: Decapoda, Gnathophyllidae) Log In Sign Up Log In Sign Up more About Press Papers Terms Privacy Copyright We're Hiring! Help Center less Outline keyboard_arrow_down Title Abstract Key Takeaways Figures Materials and Methods Data Analyses Results Discussion References FAQs All Topics Biology Zoology download Download Free PDF Download Free PDF The Influence of "
+    },
+    {
+      "name": "https_threatenedtaxa_org_index_php_JoTT_article_view_3238_4135",
+      "source_type": "web_fetch",
+      "source_uri": "https://threatenedtaxa.org/index.php/JoTT/article/view/3238/4135",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/de9887f5-ead8-4727-876f-5a4078f8598c/https_threatenedtaxa_org_index_php_JoTT_article_view_3238_4135.txt",
+      "excerpt": "Title: View of A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs\n\t\t\t\t\t\t\t| Journal of Threatened Taxa\n\nView of A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs\n\t\t\t\t\t\t\t| Journal of Threatened Taxa Return to Article Details A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs Themes by Openjournaltheme.com"
+    },
+    {
+      "name": "https_threatenedtaxa_org_index_php_JoTT_article_view_3238",
+      "source_type": "web_fetch",
+      "source_uri": "https://threatenedtaxa.org/index.php/JoTT/article/view/3238",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/de9887f5-ead8-4727-876f-5a4078f8598c/https_threatenedtaxa_org_index_php_JoTT_article_view_3238.txt",
+      "excerpt": "Title: A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs       | Journal of Threatened Taxa\n\nA new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs       | Journal of Threatened Taxa Skip to main content Skip to main navigation menu Skip to site footer Open Menu Current Archives JoTT ZPJ About About the Journal Aims and scope Names and Affiliations of the Editorial Board Editorial policies Peer Review Process APC Policies o"
+    },
+    {
+      "name": "https_bioone_org_journals_journal_of_crustacean_biology_volume_22_issue_4_0278_0",
+      "source_type": "web_fetch",
+      "source_uri": "https://bioone.org/journals/journal-of-crustacean-biology/volume-22/issue-4/0278-0372(2002)022[0750:TIOSES]2.0.CO;2/THE-INFLUENCE-OF-SOCIAL-ENVIRONMENT-ON-SEX-DETERMINATION-IN-HARLEQUIN/10.1651/0278-0372(2002)022[0750:TIOSES]2.0.CO;2.full",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/de9887f5-ead8-4727-876f-5a4078f8598c/https_bioone_org_journals_journal_of_crustacean_biology_volume_22_issue_4_0278_0.txt",
+      "excerpt": "Title: \n\nRequest unsuccessful. Incapsula incident ID: 524000330512803652-6279581523511371"
+    },
+    {
+      "name": "https_threatenedtaxa_org_index_php_JoTT_article_view_3238_4135",
+      "source_type": "web_fetch",
+      "source_uri": "https://threatenedtaxa.org/index.php/JoTT/article/view/3238/4135",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/de9887f5-ead8-4727-876f-5a4078f8598c/https_threatenedtaxa_org_index_php_JoTT_article_view_3238_4135.txt",
+      "excerpt": "Title: View of A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs\n\t\t\t\t\t\t\t| Journal of Threatened Taxa\n\nView of A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs\n\t\t\t\t\t\t\t| Journal of Threatened Taxa Return to Article Details A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican Pacific Reefs Themes by Openjournaltheme.com"
+    },
+    {
+      "name": "https_www_researchgate_net_publication_319493831_A_new_record_of_Harlequin_Shrim",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.researchgate.net/publication/319493831_A_new_record_of_Harlequin_Shrimp_Malacostraca_Decapoda_Palaemonidae_Hymenocera_picta_Dana_1852_in_the_southern_Mexican_pacific_reefs",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/de9887f5-ead8-4727-876f-5a4078f8598c/https_www_researchgate_net_publication_319493831_A_new_record_of_Harlequin_Shrim.txt",
+      "excerpt": "Title: (PDF) A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican pacific reefs\n\n(PDF) A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican pacific reefs Article PDF Available A new record of Harlequin Shrimp (Malacostraca: Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) in the southern Mexican pacific reefs January 2017 Journal of Threatened Taxa 9(8):10571-10576 DOI: 10.11609/jot.3238.9.8.10571-10576 Authors: Omar Valencia-Méndez Center for Scie"
+    },
+    {
+      "name": "http_umijin_com_reprint_download_fiedler_2002_pdf",
+      "source_type": "web_fetch",
+      "source_uri": "http://umijin.com/reprint-download/fiedler_2002.pdf",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/de9887f5-ead8-4727-876f-5a4078f8598c/http_umijin_com_reprint_download_fiedler_2002_pdf.txt",
+      "excerpt": "THE INFLUENCE OF SOCIAL ENVIRONMENT\nON SEX DETERMINATION IN HARLEQUIN SHRIMP\n(HYMENOCERA PICTA : DECAPODA, GNATHOPHYLLIDAE)\nG. Curt Fiedler\nSesoko Station, Tropical Biosphere Research Center, University of the Ryukyus, 3422 Sesoko,\nMotobu-cho, Okinawa 905-0227, Japan (e-mail: kaatosan@hotmail.com)\nABSTRACT\nHarlequin shrimp, Hymenocera picta , are monogamous and pair-bonding, and are usually found in\nisolated singles and pairs in the ﬁeld. The apparent rarity of this species in their habitat and high levels of\naggression between consexuals suggests the possibility of some sort of plasticity in "
+    }
+  ],
+  "duration_seconds": 293.0720537090092,
+  "created_at": "2026-03-17T00:35:06.187003Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"Omar Valencfia-Mendez 2017 shrimp paper\" on Google.\n2. Opened \"Decapoda: Palaemonidae: Hymenocera picta Dana, 1852) ...\" on https://www.threatenedtaxa.org/index.php/JoTT/article/view/3238.\n3. Clicked \"PDF/A\".\n4. Found the length of the recorded shrimp as TL in the paper (4.5cm).\n5. Searched \"G. Curt Fiedler 2002 shrimp paper\" on Google.\n6. Opened \"(PDF) The influence of social environment on sex ...\" on https://www.researchgate.net/publication/232696279_The_influence_of_social_environment_on_sex_determination_in_harlequin_shrimp_Hymenocera_picta_Decapoda_Gnathophyllidae.\n7. Found the size of the sea star fed to the shrimp (1cm).\n8. Took the percentage (1 / 4.5 * 100% = 22.22222%).\n9. Rounded to the nearest integer (22%).",
+      "Number of steps": "9",
+      "How long did this take?": "15 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. PDF access\n4. Calculator",
+      "Number of tools": "4"
+    }
+  }
+}

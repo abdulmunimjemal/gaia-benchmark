@@ -1,0 +1,242 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "3ff6b7a9-a5bd-4412-ad92-0cd0d45c0fee",
+  "question": "The longest-lived vertebrate is named after an island.  According to Wikipedia as of January 1, 2021, what is the 2020 estimated population of that island, to the nearest thousand?",
+  "answer": "56000",
+  "raw_answer": "56000",
+  "scorer_answer": "56000",
+  "expected_answer": "56000",
+  "score": 1.0,
+  "passed": true,
+  "route": "code",
+  "risk": "high",
+  "retry_count": 1,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "code",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "The longest-lived vertebrate is named after an island. According to Wikipedia as of January 1, 2021, what is the 2020 estimated population of that island, to the nearest thousand",
+      "The longest-lived vertebrate is named after an island.",
+      "population of that island, to the nearest thousand"
+    ],
+    "working_plan": [
+      "Fetch only the specific cited source or page requested by the task.",
+      "Extract the exact factual inputs needed for the calculation.",
+      "Use sandboxed code for the computation and rounding.",
+      "Return only the final benchmark-formatted answer."
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "56000",
+    "confidence": "high",
+    "citations": [
+      "https://en.wikipedia.org/wiki/Demographics_of_Greenland",
+      "https://en.wikipedia.org/wiki/Greenland_shark"
+    ],
+    "reasoning_summary": "The Greenland shark is the longest-lived vertebrate and is named after Greenland island. The Demographics of Greenland Wikipedia page shows the 2020 average population as 56,000 in its vital statistics table, which rounds to 56,000 when rounded to the nearest thousand."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "longest-lived vertebrate named after island"
+      },
+      "summary": "Greenland shark - Wikipedia: https://en.wikipedia.org/wiki/Greenland_shark | Greenland shark named longest-living vertebrate | CNN: https://edition.cnn.com/2016/08/11/health/greenland-sharks-long-lives/index.html | The longest-living vertebrate genome - Faculty of Science - University ...: https://science.ku.dk/english/press/news/2024/the-longest-living-vertebrate-genome/",
+      "success": true,
+      "created_at": "2026-03-17T00:00:14.303577Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Greenland"
+      },
+      "summary": "Title: Greenland - Wikipedia\n\nGreenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to s",
+      "success": true,
+      "created_at": "2026-03-17T00:00:19.286825Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "longest-lived vertebrate named after island"
+      },
+      "summary": "Greenland shark - Wikipedia: https://en.wikipedia.org/wiki/Greenland_shark | What is the longest-lived vertebrate? – The Institute for ...: https://iere.org/what-is-the-longest-lived-vertebrate/ | The Longest Living Vertebrate is… a Shark: https://learningenglish.voanews.com/a/longest-living-vertebrate-is-greenland-shark/3475289.html",
+      "success": true,
+      "created_at": "2026-03-17T00:02:58.575212Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Greenland population 2020 site:wikipedia.org"
+      },
+      "summary": "Demographics of Greenland - Wikipedia: https://en.wikipedia.org/wiki/Demographics_of_Greenland | Greenland - Wikipedia: https://en.wikipedia.org/wiki/Greenland | 2020 in Greenland - Wikipedia: https://en.wikipedia.org/wiki/2020_in_Greenland",
+      "success": true,
+      "created_at": "2026-03-17T00:03:05.694629Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Greenland"
+      },
+      "summary": "Title: Greenland - Wikipedia\n\nGreenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to s",
+      "success": true,
+      "created_at": "2026-03-17T00:03:09.481090Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Demographics_of_Greenland"
+      },
+      "summary": "Title: Demographics of Greenland - Wikipedia\n\nDemographics of Greenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create a",
+      "success": true,
+      "created_at": "2026-03-17T00:03:14.786325Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Greenland population 2020\" \"56770\" OR \"56,770\" site:wikipedia.org"
+      },
+      "summary": "Greenland - Wikipedia: https://en.wikipedia.org/wiki/Greenland | Demographics of Denmark - Wikipedia: https://en.wikipedia.org/wiki/Demographics_of_Denmark | County of Greenland - Wikipedia: https://en.wikipedia.org/wiki/County_of_Greenland",
+      "success": true,
+      "created_at": "2026-03-17T00:03:35.215046Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Greenland population 2020 estimate 56770 wikipedia archive January 2021"
+      },
+      "summary": "Demographics of Greenland - Wikipedia: https://en.wikipedia.org/wiki/Demographics_of_Greenland | Table Data - Population, Total for Greenland - St. Louis Fed: https://fred.stlouisfed.org/data/POPTOTGLA647NWDB | PDFPopulation 2020 - stat.gl: https://stat.gl/publ/en/BE/202001/pdf/Population+2020.pdf",
+      "success": true,
+      "created_at": "2026-03-17T00:03:41.977868Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://stat.gl/publ/en/BE/202001/pdf/Population+2020.pdf"
+      },
+      "summary": "Title: Grønlands Statistik\n\nGrønlands Statistik Pilluta Saqqaa Nukissiuuteqarneq Endnu ikke oversat / not translated © Kalaallit Nunaanni Naatsorsueqqissaartarfik · Sipisaq Avannarleq 1 ·  Postboks 1025 · DK-3900 Nuuk · Kalaallit Nunaat Tlf.: +299 34 57 70 · CVR: 41587865 E-mail: stat@stat.gl",
+      "success": true,
+      "created_at": "2026-03-17T00:03:51.696677Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "longest-lived vertebrate named after island"
+      },
+      "summary": "Greenland shark - Wikipedia: https://en.wikipedia.org/wiki/Greenland_shark | Greenland shark named longest-living vertebrate | CNN: https://edition.cnn.com/2016/08/11/health/greenland-sharks-long-lives/index.html | The longest-living vertebrate genome - Faculty of Science - University ...: https://science.ku.dk/english/press/news/2024/the-longest-living-vertebrate-genome/",
+      "success": true,
+      "created_at": "2026-03-17T00:04:03.870641Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Greenland population 2020 site:wikipedia.org"
+      },
+      "summary": "Demographics of Greenland - Wikipedia: https://en.wikipedia.org/wiki/Demographics_of_Greenland | Greenland - Wikipedia: https://en.wikipedia.org/wiki/Greenland | 2020 in Greenland - Wikipedia: https://en.wikipedia.org/wiki/2020_in_Greenland",
+      "success": true,
+      "created_at": "2026-03-17T00:04:10.422249Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Demographics_of_Greenland"
+      },
+      "summary": "Title: Demographics of Greenland - Wikipedia\n\nDemographics of Greenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create a",
+      "success": true,
+      "created_at": "2026-03-17T00:04:14.917374Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Greenland"
+      },
+      "summary": "Title: Greenland - Wikipedia\n\nGreenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to s",
+      "success": true,
+      "created_at": "2026-03-17T00:04:22.598038Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_en_wikipedia_org_wiki_Greenland",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Greenland",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/3ff6b7a9-a5bd-4412-ad92-0cd0d45c0fee/https_en_wikipedia_org_wiki_Greenland.txt",
+      "excerpt": "Title: Greenland - Wikipedia\n\nGreenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Etymology 2 History Toggle History subsection 2.1 Early Palaeo-Inuit cultures 2.2 Norse settlement 2.3 Thule culture 2.4 European interest 2.5 Treaty of Kiel to World War II (1814–"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Greenland",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Greenland",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/3ff6b7a9-a5bd-4412-ad92-0cd0d45c0fee/https_en_wikipedia_org_wiki_Greenland.txt",
+      "excerpt": "Title: Greenland - Wikipedia\n\nGreenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Etymology 2 History Toggle History subsection 2.1 Early Palaeo-Inuit cultures 2.2 Norse settlement 2.3 Thule culture 2.4 European interest 2.5 Treaty of Kiel to World War II (1814–"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Demographics_of_Greenland",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Demographics_of_Greenland",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/3ff6b7a9-a5bd-4412-ad92-0cd0d45c0fee/https_en_wikipedia_org_wiki_Demographics_of_Greenland.txt",
+      "excerpt": "Title: Demographics of Greenland - Wikipedia\n\nDemographics of Greenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Populations Toggle Populations subsection 1.1 Structure of the population 2 Vital statistics Toggle Vital statistics subsection 2.1 Life expectancy "
+    },
+    {
+      "name": "https_stat_gl_publ_en_BE_202001_pdf_Population_2020_pdf",
+      "source_type": "web_fetch",
+      "source_uri": "https://stat.gl/publ/en/BE/202001/pdf/Population+2020.pdf",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/3ff6b7a9-a5bd-4412-ad92-0cd0d45c0fee/https_stat_gl_publ_en_BE_202001_pdf_Population_2020_pdf.txt",
+      "excerpt": "Title: Grønlands Statistik\n\nGrønlands Statistik Pilluta Saqqaa Nukissiuuteqarneq Endnu ikke oversat / not translated © Kalaallit Nunaanni Naatsorsueqqissaartarfik · Sipisaq Avannarleq 1 ·  Postboks 1025 · DK-3900 Nuuk · Kalaallit Nunaat Tlf.: +299 34 57 70 · CVR: 41587865 E-mail: stat@stat.gl"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Demographics_of_Greenland",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Demographics_of_Greenland",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/3ff6b7a9-a5bd-4412-ad92-0cd0d45c0fee/https_en_wikipedia_org_wiki_Demographics_of_Greenland.txt",
+      "excerpt": "Title: Demographics of Greenland - Wikipedia\n\nDemographics of Greenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Populations Toggle Populations subsection 1.1 Structure of the population 2 Vital statistics Toggle Vital statistics subsection 2.1 Life expectancy "
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Greenland",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Greenland",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/3ff6b7a9-a5bd-4412-ad92-0cd0d45c0fee/https_en_wikipedia_org_wiki_Greenland.txt",
+      "excerpt": "Title: Greenland - Wikipedia\n\nGreenland - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Etymology 2 History Toggle History subsection 2.1 Early Palaeo-Inuit cultures 2.2 Norse settlement 2.3 Thule culture 2.4 European interest 2.5 Treaty of Kiel to World War II (1814–"
+    }
+  ],
+  "duration_seconds": 314.969842874998,
+  "created_at": "2026-03-17T00:05:16.086528Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Do a web search for \"longest-lived vertebrate\"\n2. Find the answer, \"Greenland shark\"\n3. Find the Wikipedia entry for Greenland\n4. Look at the first revision dated January 1, 2021\n5. Find the 2020 population estimate, 56081\n6. Round to the nearest thousand, 56000",
+      "Number of steps": "6",
+      "How long did this take?": "30 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Access to Wikipedia\n4. Natural language processor",
+      "Number of tools": "4"
+    }
+  }
+}

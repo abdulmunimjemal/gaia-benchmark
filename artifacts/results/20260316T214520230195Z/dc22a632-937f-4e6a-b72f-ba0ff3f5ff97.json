@@ -1,0 +1,348 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "dc22a632-937f-4e6a-b72f-ba0ff3f5ff97",
+  "question": "What was the complete title of the book in which two James Beard Award winners recommended the restaurant where Ali Khan enjoyed a New Mexican staple in his cost-conscious TV show that started in 2015? Write the numbers in plain text if there are some in the title.",
+  "answer": "Five Hundred Things to Eat Before It's Too Late: And the Very Best Places to Eat Them",
+  "raw_answer": "Five Hundred Things to Eat Before It's Too Late: And the Very Best Places to Eat Them",
+  "scorer_answer": "Five Hundred Things to Eat Before It's Too Late: And the Very Best Places to Eat Them",
+  "expected_answer": "Five Hundred Things To Eat Before It's Too Late: and the Very Best Places to Eat Them",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 0,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "Ali Khan cost-conscious TV show 2015",
+      "Ali Khan New Mexican food restaurant episode",
+      "James Beard Award winners restaurant book recommendations",
+      "Ali Khan Cheap Eats Food Network New Mexico",
+      "James Beard Award winners cookbook restaurant guide New Mexico"
+    ],
+    "working_plan": [
+      "Identify Ali Khan's cost-conscious TV show that started in 2015",
+      "Find specific episodes where he featured New Mexican cuisine",
+      "Identify the restaurant where he enjoyed the New Mexican staple",
+      "Search for books by James Beard Award winners that recommend this restaurant",
+      "Locate the complete title of the book and convert any numbers to plain text"
+    ],
+    "answer_shape": "book title with numbers written as words"
+  },
+  "solver": {
+    "answer": "Five Hundred Things to Eat Before It's Too Late: And the Very Best Places to Eat Them",
+    "confidence": "high",
+    "citations": [
+      "https://en.wikipedia.org/wiki/Cheap_Eats",
+      "https://www.nmgastronome.com/?p=4572",
+      "https://www.amazon.com/500-Things-Eat-Before-Late/dp/0547059078"
+    ],
+    "reasoning_summary": "Found that Ali Khan's cost-conscious TV show starting in 2015 was 'Cheap Eats' on Cooking Channel. In the Albuquerque episode, he visited Papa Felipe's Mexican Restaurant where he enjoyed carne adovada (New Mexican staple). Papa Felipe's is recommended in the book '500 Things to Eat Before It's Too Late: And the Very Best Places to Eat Them' by James Beard Award-winning food journalists Jane and Michael Stern. Converted '500' to 'Five Hundred' as requested."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Ali Khan cost-conscious TV show 2015 Food Network",
+        "max_results": 5
+      },
+      "summary": "Cheap Eats - Wikipedia: https://en.wikipedia.org/wiki/Cheap_Eats | Watch Cheap Eats (2015) Online | Free Trial | The Roku ...: https://therokuchannel.roku.com/details/8af27ee84c675a628001e4b8f83848b2/cheap-eats?source=google | Cheap Eats | The Best Of | Food Network: https://www.foodnetwork.com/shows/the-best-of/episodes/cheap-eats",
+      "success": true,
+      "created_at": "2026-03-16T23:04:25.110011Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Ali Khan Cheap Eats New Mexico Santa Fe Albuquerque episode restaurant",
+        "max_results": 5
+      },
+      "summary": "\"Cheap Eats\" Albuquerque (TV Episode 2016) - IMDb: https://m.imdb.com/title/tt5742724/ | Watch Cheap Eats, Season 1 | Prime Video - amazon.com: https://www.amazon.com/Cheap-Eats-Season-1/dp/B01EMG93W8 | Watch Cheap Eats | Season 1 Episode 3 | discovery+: https://www.discoveryplus.com/shows/cheap-eats/s1/43daa11e-05f2-4277-9212-961c9cc13b75/e3-albuquerque/66d223b0-4514-4449-8304-27ea5cb5ecb2",
+      "success": true,
+      "created_at": "2026-03-16T23:04:30.686227Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Cheap Eats\" Albuquerque episode restaurants Ali Khan green chile carne adovada",
+        "max_results": 5
+      },
+      "summary": "Watch Cheap Eats Albuquerque S1 E3 | DIRECTV: https://www.directv.com/guide/EPISODE/Cheap-Eats-Albuquerque-e5cc71c7-ac52-48b1-a9a2-5c3c471fa6db | Watch Cheap Eats | Season 1 Episode 3 | discovery+: https://www.discoveryplus.com/shows/cheap-eats/s1/43daa11e-05f2-4277-9212-961c9cc13b75/e3-albuquerque/66d223b0-4514-4449-8304-27ea5cb5ecb2 | \"Cheap Eats\" Albuquerque (TV Episode 2016) - IMDbWatch Cheap Eats Albuquerque S1 E3 | DIRECTVAlbuquerque - Cheap Eats (Season 1, Episode 3) - Apple TVWatch Cheap Eats · Season 1 Episode 3 · Albuquerque ... - Plex: https://www.imdb.com/title/tt5742724/",
+      "success": true,
+      "created_at": "2026-03-16T23:04:39.408790Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Cheap Eats Albuquerque restaurants \"Ali Khan\" tvfoodmaps episode list",
+        "max_results": 5
+      },
+      "summary": "Cheap Eats - Wikipedia: https://en.wikipedia.org/wiki/Cheap_Eats | Map of Restaurants on Cheap Eats near Albuquerque, NM: https://www.tvfoodmaps.com/restaurants_on/Cheap-Eats/NM/Albuquerque | Cheap Eats Restaurants | TVFoodMaps: https://www.tvfoodmaps.com/restaurants_on/Cheap-Eats",
+      "success": true,
+      "created_at": "2026-03-16T23:04:49.260902Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Blake's Lotaburger\" \"Cheap Eats\" Ali Khan Albuquerque green chile cheeseburger",
+        "max_results": 5
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T23:05:01.501321Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Sadie's of New Mexico\" \"Cheap Eats\" Ali Khan carne adovada Albuquerque",
+        "max_results": 5
+      },
+      "summary": "Papa Felipe's Mexican Restaurant - Albuquerque, New Mexico: https://www.nmgastronome.com/?p=4572",
+      "success": true,
+      "created_at": "2026-03-16T23:05:09.241112Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Cheap Eats\" season 1 episode 3 Albuquerque restaurant names list",
+        "max_results": 5
+      },
+      "summary": "Watch Cheap Eats · Season 1 Episode 3 · Albuquerque, NM Full Episode ...: https://watch.plex.tv/show/cheap-eats/season/1/episode/3 | Watch Cheap Eats | Season 1 Episode 3 | discovery+: https://www.discoveryplus.com/shows/cheap-eats/s1/43daa11e-05f2-4277-9212-961c9cc13b75/e3-albuquerque/66d223b0-4514-4449-8304-27ea5cb5ecb2 | \"Cheap Eats\" Albuquerque (TV Episode 2016) - IMDb: https://www.imdb.com/title/tt5742724/",
+      "success": true,
+      "created_at": "2026-03-16T23:05:14.404991Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"The Frontier Restaurant\" Albuquerque \"Cheap Eats\" \"Ali Khan\" green chile",
+        "max_results": 5
+      },
+      "summary": "Albuquerque - Cheap Eats (Season 1, Episode 3) - Apple TV: https://tv.apple.com/us/episode/albuquerque/umc.cmc.mnz0kxx6uiz96lvjsbews7b8 | Home | Frontier Restaurant: http://www.frontierrestaurant.com/ | Frontier, Albuquerque - Menu, Reviews (963), Photos (113 ...Frontier - Albuquerque, NMAlbuquerque - Cheap Eats (Season 1, Episode 3) - Apple TVFrontier - Albuquerque, NM | Review & What to EatHome |Frontier RestaurantFRONTIER,Albuquerque- Menu, Prices &RestaurantReviews - Tripa…Frontier,Albuquerque- Menu, Reviews (931), Photos (112) - Restaura…Watch Cheap Eats · Season 1 Episode 3 · Albuquerque ... - Plex: https://www.restaurantji.com/nm/albuquerque/frontier-/",
+      "success": true,
+      "created_at": "2026-03-16T23:05:21.622096Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Ali Khan cost-conscious TV show 2015 Food Network"
+      },
+      "summary": "Tags - Africa Tembelea: https://africatembelea.com/tags/ | Nida Khan | Hip-Hop and Politics: https://hiphopandpolitics.com/tag/nida-khan/ | Buyer Behaviour: https://www.buyerbehaviour.org/2015/06/",
+      "success": true,
+      "created_at": "2026-03-16T23:05:32.951126Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Ali Khan\" \"Cheap Eats\" Food Network 2015"
+      },
+      "summary": "Cheap Eats - Wikipedia: https://en.wikipedia.org/wiki/Cheap_Eats | Cooking Channel - Wikipedia: https://en.wikipedia.org/wiki/Cooking_Channel | About - Ali Khan Eats: https://alikhaneats.com/about/",
+      "success": true,
+      "created_at": "2026-03-16T23:05:37.827298Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Cheap_Eats"
+      },
+      "summary": "Title: Cheap Eats - Wikipedia\n\nCheap Eats - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to",
+      "success": true,
+      "created_at": "2026-03-16T23:05:41.412934Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Ali Khan\" \"Cheap Eats\" Albuquerque \"Carne Adovada\" restaurant episode"
+      },
+      "summary": "Cheap Eats - Wikipedia: https://en.wikipedia.org/wiki/Cheap_Eats | Watch Cheap Eats | Season 1 Episode 3 | discovery+: https://www.discoveryplus.com/shows/cheap-eats/s1/43daa11e-05f2-4277-9212-961c9cc13b75/e3-albuquerque/66d223b0-4514-4449-8304-27ea5cb5ecb2 | \"Cheap Eats\" Albuquerque (TV Episode 2016) - IMDbCheap Eats - Episode Guide | TVmazeCheap Eats - WikipediaMap of Restaurants on Cheap Eats near Albuquerque, NMPrime Video: Cheap Eats - Season 1\"Cheap Eats\"Albuquerque(TVEpisode2016) - IMDbPapa Felipe’s MexicanRestaurant–Albuquerque, New MexicoPapa Felipe’s MexicanRestaurant–Albuquerque, New MexicoMap of Restaurants onCheap EatsnearAlbuquerque, NMPapa Felipe’s Mexican Restaurant – Albuquerque, New Mexico: https://www.imdb.com/title/tt5742724/",
+      "success": true,
+      "created_at": "2026-03-16T23:05:50.344576Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Papa Felipe's\" Albuquerque \"James Beard Award\" book recommend"
+      },
+      "summary": "Delicias Cafe - Albuquerque, New Mexico - Gil's Thrilling: https://www.nmgastronome.com/?p=14851 | Pizza 9 - Albuquerque, New Mexico - Gil's Thrilling (And: https://www.nmgastronome.com/?p=2299 | Alien Brew Pub - Albuquerque, New Mexico - Gil's Thrilling: https://www.nmgastronome.com/?p=9664",
+      "success": true,
+      "created_at": "2026-03-16T23:06:00.119949Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"James Beard Award\" winners book New Mexico restaurants guide Papa Felipe's"
+      },
+      "summary": "AmbitiousnewMexicanrestaurantopens in familiar Memorial-area spot: https://houston.culturemap.com/news/restaurants-bars/11-30-21-maize-new-mexican-restaurant-memorial-energy-corridor-fabian-saldana-mark-cox-opening-date/ | The 2025JamesBeardAwardwinners| The Week: https://theweek.com/culture-life/food-drink/2025-james-beard-award-winners | NewOrleansJamesBeardAwardWinners: https://www.neworleans.com/restaurants/where-to-eat/new-orleans-james-beard-award-winners/",
+      "success": true,
+      "created_at": "2026-03-16T23:06:07.847553Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.nmgastronome.com/?p=4572"
+      },
+      "summary": "Title: Papa Felipe's Mexican Restaurant - Albuquerque, New Mexico - Gil's Thrilling (And Filling) Blog\n\nPapa Felipe's Mexican Restaurant - Albuquerque, New Mexico - Gil's Thrilling (And Filling) Blog Skip to content Monday, March 16, 2026 facebook Instagram Gil's Thrilling (And Filling) Blog Follow the Culinary Ruminations of New Mexico's Sesquipedalian Sybarite.  1,519  Restaurant Reviews, More T",
+      "success": true,
+      "created_at": "2026-03-16T23:06:14.554785Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Jane Stern\" \"Michael Stern\" \"James Beard Award\" winners \"500 Things to Eat Before It's Too Late\""
+      },
+      "summary": "Intelligent-Internet/GAIA-Subset-Benchmark · Datasets at Hugging Face: https://huggingface.co/datasets/Intelligent-Internet/GAIA-Subset-Benchmark/viewer | 500ThingstoEatBeforeIt'sTooLate: And the Very... - AbeBooks: https://www.abebooks.co.uk/9780547059075/500-Things-Eat-Before-Late-0547059078/plp | Amazon.com:500ThingstoEatBeforeIt'sTooLate: and the Very...: https://www.amazon.com/500-Things-Eat-Before-Late-ebook/dp/B002L4QOYO",
+      "success": true,
+      "created_at": "2026-03-16T23:06:26.973328Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Ali Khan cost-conscious TV show 2015 Food Network"
+      },
+      "summary": "Tags - Africa Tembelea: https://africatembelea.com/tags/ | Nida Khan | Hip-Hop and Politics: https://hiphopandpolitics.com/tag/nida-khan/ | Buyer Behaviour: https://www.buyerbehaviour.org/2015/06/",
+      "success": true,
+      "created_at": "2026-03-16T23:06:37.226626Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Ali Khan\" \"Cheap Eats\" Food Network 2015"
+      },
+      "summary": "Cheap Eats - Wikipedia: https://en.wikipedia.org/wiki/Cheap_Eats | Cooking Channel - Wikipedia: https://en.wikipedia.org/wiki/Cooking_Channel | About - Ali Khan Eats: https://alikhaneats.com/about/",
+      "success": true,
+      "created_at": "2026-03-16T23:06:42.412304Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Cheap_Eats"
+      },
+      "summary": "Title: Cheap Eats - Wikipedia\n\nCheap Eats - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to",
+      "success": true,
+      "created_at": "2026-03-16T23:06:45.520848Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Ali Khan\" \"Cheap Eats\" Albuquerque \"Carne Adovada\" restaurant"
+      },
+      "summary": "Albuquerque - Cheap Eats (Season 1, Episode 3) - Apple TV: https://tv.apple.com/us/episode/albuquerque/umc.cmc.mnz0kxx6uiz96lvjsbews7b8 | Watch Cheap Eats | Season 1 Episode 3 | discovery+: https://www.discoveryplus.com/shows/cheap-eats/s1/43daa11e-05f2-4277-9212-961c9cc13b75/e3-albuquerque/66d223b0-4514-4449-8304-27ea5cb5ecb2 | \"Cheap Eats\" Albuquerque (TV Episode 2016) - IMDb: https://www.imdb.com/title/tt5742724/",
+      "success": true,
+      "created_at": "2026-03-16T23:06:52.703233Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.nmgastronome.com/?p=4572"
+      },
+      "summary": "Title: Papa Felipe's Mexican Restaurant - Albuquerque, New Mexico - Gil's Thrilling (And Filling) Blog\n\nPapa Felipe's Mexican Restaurant - Albuquerque, New Mexico - Gil's Thrilling (And Filling) Blog Skip to content Monday, March 16, 2026 facebook Instagram Gil's Thrilling (And Filling) Blog Follow the Culinary Ruminations of New Mexico's Sesquipedalian Sybarite.  1,519  Restaurant Reviews, More T",
+      "success": true,
+      "created_at": "2026-03-16T23:06:57.684413Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Jane and Michael Stern\" \"James Beard Award\" winners \"500 Things to Eat Before It's Too Late\""
+      },
+      "summary": "Camp Washington Chili - Wikipedia: https://en.wikipedia.org/wiki/Camp_Washington_Chili | 500ThingstoEatBeforeIt'sTooLate: And the Very... - AbeBooks: https://www.abebooks.co.uk/9780547059075/500-Things-Eat-Before-Late-0547059078/plp | 500ThingsToEatBeforeIt'sTooLate: and the Very Best Places to...: https://www.amazon.com/500-Things-Eat-Before-Late/dp/0547059078",
+      "success": true,
+      "created_at": "2026-03-16T23:07:09.755993Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"500 Things to Eat Before It's Too Late: and the Very Best Places to Eat Them\" Jane Michael Stern complete title"
+      },
+      "summary": "Kopp's Frozen Custard - Wikipedia: https://en.wikipedia.org/wiki/Kopp's_Frozen_Custard | Shoofly pie - Wikipedia: https://en.wikipedia.org/wiki/Shoofly_pie | Idaho Candy Company - Wikipedia: https://en.wikipedia.org/wiki/Idaho_Candy_Company",
+      "success": true,
+      "created_at": "2026-03-16T23:07:16.214252Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "exact title \"500 Things to Eat Before It's Too Late\" subtitle Jane Michael Stern book"
+      },
+      "summary": "500 Things to Eat Before It's Too Late - Google Books: https://books.google.com/books/about/500_Things_to_Eat_Before_It_s_Too_Late.html?id=uha0mHZ-N8oC | 500 Things to Eat Before It's Too Late: And the Very Best Places to Eat ...: https://app.1000cookbooks.com/books/0547059078/500-things-to-eat-before-its-too-late-and-the-very-best-places-to-eat-them | 500 Things To Eat Before It's Too Late: and the Very Best Places to Eat ...: https://www.amazon.com/500-Things-Eat-Before-Late/dp/0547059078",
+      "success": true,
+      "created_at": "2026-03-16T23:07:25.636261Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_en_wikipedia_org_wiki_Cheap_Eats",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Cheap_Eats",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/dc22a632-937f-4e6a-b72f-ba0ff3f5ff97/https_en_wikipedia_org_wiki_Cheap_Eats.txt",
+      "excerpt": "Title: Cheap Eats - Wikipedia\n\nCheap Eats - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Season 1 2 Season 2 3 References Toggle the table of contents Cheap Eats Add languages Add links Article Talk English Read Edit View history Tools Tools move to sidebar hide Acti"
+    },
+    {
+      "name": "https_www_nmgastronome_com_p_4572",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.nmgastronome.com/?p=4572",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/dc22a632-937f-4e6a-b72f-ba0ff3f5ff97/https_www_nmgastronome_com_p_4572.txt",
+      "excerpt": "Title: Papa Felipe's Mexican Restaurant - Albuquerque, New Mexico - Gil's Thrilling (And Filling) Blog\n\nPapa Felipe's Mexican Restaurant - Albuquerque, New Mexico - Gil's Thrilling (And Filling) Blog Skip to content Monday, March 16, 2026 facebook Instagram Gil's Thrilling (And Filling) Blog Follow the Culinary Ruminations of New Mexico's Sesquipedalian Sybarite.  1,519  Restaurant Reviews, More Than 14,800 Visitor Comments…And Counting! Home About This Blog Albuquerque Restaurant Index New Mexico Restaurant Index Santa Fe Restaurant Index USA Restaurant Index Gone But Not Forgotten Your Feedb"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Cheap_Eats",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Cheap_Eats",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/dc22a632-937f-4e6a-b72f-ba0ff3f5ff97/https_en_wikipedia_org_wiki_Cheap_Eats.txt",
+      "excerpt": "Title: Cheap Eats - Wikipedia\n\nCheap Eats - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Season 1 2 Season 2 3 References Toggle the table of contents Cheap Eats Add languages Add links Article Talk English Read Edit View history Tools Tools move to sidebar hide Acti"
+    },
+    {
+      "name": "https_www_nmgastronome_com_p_4572",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.nmgastronome.com/?p=4572",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/dc22a632-937f-4e6a-b72f-ba0ff3f5ff97/https_www_nmgastronome_com_p_4572.txt",
+      "excerpt": "Title: Papa Felipe's Mexican Restaurant - Albuquerque, New Mexico - Gil's Thrilling (And Filling) Blog\n\nPapa Felipe's Mexican Restaurant - Albuquerque, New Mexico - Gil's Thrilling (And Filling) Blog Skip to content Monday, March 16, 2026 facebook Instagram Gil's Thrilling (And Filling) Blog Follow the Culinary Ruminations of New Mexico's Sesquipedalian Sybarite.  1,519  Restaurant Reviews, More Than 14,800 Visitor Comments…And Counting! Home About This Blog Albuquerque Restaurant Index New Mexico Restaurant Index Santa Fe Restaurant Index USA Restaurant Index Gone But Not Forgotten Your Feedb"
+    }
+  ],
+  "duration_seconds": 236.56014333301573,
+  "created_at": "2026-03-16T23:07:59.833083Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"Ali Khan New Mexico staple TV show\" on Google.\n2. Opened \"Albuquerque | Cheap Eats\" at https://www.cookingchanneltv.com/shows/cheap-eats/episodes/albuquerque.\n3. Noted the New Mexico staple and the list of restaurants.\n4. Searched \"Albuquerque Cheap Eats carne avodava\" on Google.\n5. Confirmed the restaurant name (Papa Felipe's) from the results.\n6. Searched \"James Beard Award winners Papa Felipe's\" on Google.\n7. Opened \"Papa Felipe's Mexican Restaurant - Albuquerque, New ...\" at https://www.nmgastronome.com/?p=4572.\n8. Clicked the link on the book title.\n9. Copied the full book title from Amazon.",
+      "Number of steps": "9",
+      "How long did this take?": "15 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  }
+}

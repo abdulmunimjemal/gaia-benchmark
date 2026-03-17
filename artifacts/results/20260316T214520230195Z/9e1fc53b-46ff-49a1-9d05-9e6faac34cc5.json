@@ -1,0 +1,131 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "9e1fc53b-46ff-49a1-9d05-9e6faac34cc5",
+  "question": "A 5-man group made up of one tank, one healer, and three DPS is doing a dungeon that was just released in World of Warcraft. Two are plate wearers and two are cloth wearers. At the final boss, both the tank and the healer are casting holy spells. Ice and fire are being used, each one by a different DPS. A bear from the group is attacking the boss. Metamorphosis is cast. The Kilt of the Forgotten One drops as loot, but no one can use it. If all classes were using their class abilities and all classes are unique, what are the five classes in the group in alphabetical order separated by commas?",
+  "answer": "Death Knight, Druid, Paladin, Priest, Warlock",
+  "raw_answer": "Death Knight, Druid, Paladin, Priest, Warlock",
+  "scorer_answer": "Death Knight, Druid, Paladin, Priest, Warlock",
+  "expected_answer": "Death Knight, Hunter, Paladin, Priest, Warlock",
+  "score": 0.0,
+  "passed": false,
+  "route": "web",
+  "risk": "medium",
+  "retry_count": 0,
+  "error_taxonomy": "wrong_answer",
+  "planner": {
+    "route": "web",
+    "risk": "medium",
+    "use_verifier": false,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "World of Warcraft classes armor types plate cloth leather mail by class",
+      "World of Warcraft holy spells by class paladin priest",
+      "World of Warcraft bear form druid shapeshift abilities",
+      "World of Warcraft metamorphosis ability demon hunter warlock",
+      "Kilt of the Forgotten One World of Warcraft item class restrictions"
+    ],
+    "working_plan": [
+      "Research WoW class roles (tank/heal/DPS) and armor types for each class",
+      "Identify which classes can cast holy spells as tank and healer",
+      "Identify which classes use ice and fire magic as DPS",
+      "Identify which class has bear form transformation",
+      "Identify which class has metamorphosis ability",
+      "Research Kilt of the Forgotten One item and which classes can equip it",
+      "Use process of elimination with all constraints to determine the 5 unique classes",
+      "List the classes in alphabetical order"
+    ],
+    "answer_shape": "comma-separated list"
+  },
+  "solver": {
+    "answer": "Death Knight, Druid, Paladin, Priest, Warlock",
+    "confidence": "high",
+    "citations": [
+      "https://wowpedia.fandom.com/wiki/Druid",
+      "https://wowpedia.fandom.com/wiki/Metamorphosis_(warlock_ability)",
+      "https://wowwiki-archive.fandom.com/wiki/Plate_armor",
+      "https://wowwiki-archive.fandom.com/wiki/Bear_Form"
+    ],
+    "reasoning_summary": "Solved through constraint analysis: Paladin tank and Priest healer for holy spells requirement, Druid for bear form (leather armor), Warlock for metamorphosis and fire magic (cloth), Death Knight for ice magic and second plate wearer. This satisfies all role, armor type, and ability constraints with 5 unique classes."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "World of Warcraft classes armor types plate cloth leather mail by class roles tank healer DPS"
+      },
+      "summary": "Predicting the Second WoW Hero Class | Wolfshead Online: https://wolfsheadonline.com/predicting-the-second-wow-hero-class/ | Armor - World of Warcraft: https://www.wowhead.com/items/armor/min-level:830/max-level:830/slot:5 | Attributes - Wowpedia - Your wiki guide to the World of Warcraft: https://wowpedia.fandom.com/wiki/Attributes",
+      "success": true,
+      "created_at": "2026-03-17T00:25:39.319561Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "WoW class armor type list \"plate mail\" \"cloth leather\" paladin warrior priest mage"
+      },
+      "summary": "WoW Covenant Armor Sets Boost (Transmogs Farming): https://gamingcy.com/en-us/product/wow-covenant-sets | Mail armor | WoWWiki | Fandom: https://wowwiki-archive.fandom.com/wiki/Mail_armor | Plate armor | WoWWiki | Fandom: https://wowwiki-archive.fandom.com/wiki/Plate_armor",
+      "success": true,
+      "created_at": "2026-03-17T00:25:51.601868Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"holy spells\" World of Warcraft paladin priest classes tank healer"
+      },
+      "summary": "Soooholypriests!? - #31 by Amantha-ragnaros -Priest-Worldof...: https://us.forums.blizzard.com/en/wow/t/sooo-holy-priests/587385/31 | 14/12/05Classconcerns summary -Priests- Blue Tracker: https://www.bluetracker.gg/wow/topic/eu-en/14551542-14-12-05-class-concerns-summary-priests/ | Method DisciplinePriestGuide - Talents - Midnight 12.0.1: https://www.method.gg/guides/discipline-priest/talents",
+      "success": true,
+      "created_at": "2026-03-17T00:26:05.359966Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "World of Warcraft bear form druid shapeshift ability"
+      },
+      "summary": "World of Warcraft: Dragonflight - Druid Talents and Abilities: https://www.mmo-champion.com/content/10619-World-of-Warcraft-Dragonflight-Druid-Talents-and-Abilities-Preview | Druid - Wowpedia - Your wiki guide to the World of Warcraft: https://wowpedia.fandom.com/wiki/Druid | Lea Stonepaw - Wowpedia - Your wiki guide to the World of: https://wowpedia.fandom.com/wiki/Lea_Stonepaw",
+      "success": true,
+      "created_at": "2026-03-17T00:26:12.933093Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "World of Warcraft metamorphosis ability demon hunter warlock class"
+      },
+      "summary": "Blood Pact: Metamorphosis and the Demonologist fantasy: https://blizzardwatch.com/2015/08/15/blood-pact-metamorphosis-demonologist-fantasy/ | Formerly Hardcore #14: Demon Hunters :: World of Warcraft :: ZAM: https://wow.allakhazam.com/story.html?story=36381 | Metamorphosis (warlock ability) - Wowpedia - Your wiki guide to: https://wowpedia.fandom.com/wiki/Metamorphosis_(warlock_ability)",
+      "success": true,
+      "created_at": "2026-03-17T00:26:20.610223Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "World of Warcraft ice fire magic DPS classes mage frost fire spec"
+      },
+      "summary": "Frost Mage DPS Guide - Midnight 12.0.1 - gamer-choice.com: https://gamer-choice.com/guides/wow/mage/frost/ | Frostfire Frost Mage Mythic+ PvE Guide - Midnight Pre-Season: https://murlok.io/mage/frost/frostfire/m+ | Frost Mage DPS Spec, Builds, and Talents — Midnight (12.0.1): https://www.icy-veins.com/wow/frost-mage-pve-dps-spec-builds-talents",
+      "success": true,
+      "created_at": "2026-03-17T00:26:25.353430Z"
+    }
+  ],
+  "artifacts_used": [],
+  "duration_seconds": 208.37525087501854,
+  "created_at": "2026-03-17T00:28:37.850965Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"WoW classes\" on Google.\n2. Opened \"https://worldofwarcraft.blizzard.com/en-us/game/classes\".\n3. Made an alphabetical list of all WoW classes: Death Knight, Demon Hunter, Druid, Evoker, Hunter, Mage, Monk, Paladin, Priest, Rogue, Shaman, Warlock, and Warrior.\n4. Opened each page and noted the armor type: Death Knight (plate), Demon Hunter (leather), Druid (leather), Evoker (mail), Hunter (mail), Mage (cloth), Monk (leather), Paladin (plate), Priest (cloth), Rogue (leather), Shaman (mail), Warlock (cloth), and Warrior (plate).\n5. Looked up \"Kilt of the Forgotten One\" on Google.\n6. Opened https://www.wowhead.com/wotlk/item=37616/kilt-of-the-forgotten-one.\n7. Noted that it is leather, and none of the classes can use it, so the remaining classes are: Death Knight (plate), Evoker (mail), Hunter (mail), Mage (cloth), Paladin (plate), Priest (cloth), Shaman (mail), Warlock (cloth), and Warrior (plate).\n8. Noted that it was added in Wrath of the Lich King, so if the dungeon is newly released, the era is the Wrath of the Lich King expansion.\n9. Searched \"Wrath of the Lich King class abilities\" on Google.\n10. Opened https://www.wowhead.com/wotlk/spells/abilities.\n11. Sorted by class and noted that Evokers, Demon Hunters, and Monks did not exist yet, so the remaining classes are: Death Knight (plate), Hunter (mail), Mage (cloth), Paladin (plate), Priest (cloth), Shaman (mail), Warlock (cloth), and Warrior (plate).\n12. Checked which classes use Holy school abilities, Paladin (plate) and Priest (cloth), so they must be in the group as tank and healer.\n13. Checked which classes use ice (Frost) and fire abilities, Death Knight (plate), Mage (cloth), Shaman (mail), and Warlock (cloth).\n14. There can only be one other plate class, so it must be Death Knight or Warrior, and one other cloth class, so it must be Mage or Warlock.\n15. Metamorphosis is a Warlock ability in Wrath of the Lich King, so it must be the other cloth class, and the group so far is Paladin, Priest, Warlock, plate DPS, and other DPS, with remaining options of Death Knight (plate), Hunter (mail), Mage (cloth), Shaman (mail), and Warrior (plate).\n16. There cannot be another cloth class, so the remaining options are Death Knight (plate), Hunter (mail), Shaman (mail), and Warrior (plate).\n17. There is a bear attacking the boss and there is no Druid to shapeshift into a bear, so it must be a Hunter's pet, making the group Paladin, Priest, Warlock, Hunter, and plate DPS, with remaining options of Death Knight (plate), Hunter (mail), Mage (cloth), Shaman (mail), and Warrior (plate).\n18. The last class is plate, leaving only Death Knight and Warrior.\n19. Hunters and Warlocks can both cast Fire abilities but cannot cast Frost abilities, so the last DPS must cast ice (Frost) abilities, making the last DPS a Frost Death Knight since Warriors have no Frost abilities.\n20. Order the group alphabetically: Death Knight, Hunter, Paladin, Priest, Warlock.",
+      "Number of steps": "20",
+      "How long did this take?": "20 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  }
+}

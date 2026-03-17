@@ -1,0 +1,54 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "2d83110e-a098-4ebb-9987-066c06fa42d0",
+  "question": ".rewsna eht sa \"tfel\" drow eht fo etisoppo eht etirw ,ecnetnes siht dnatsrednu uoy fI",
+  "answer": "right",
+  "raw_answer": "right",
+  "scorer_answer": "right",
+  "expected_answer": "Right",
+  "score": 1.0,
+  "passed": true,
+  "route": "direct",
+  "risk": "low",
+  "retry_count": 0,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "direct",
+    "risk": "low",
+    "use_verifier": false,
+    "needs_web": false,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [],
+    "working_plan": [
+      "Recognize the question is written backwards",
+      "Reverse the text to understand: 'If you understand this sentence, write the opposite of the word \"left\" as the answer.'",
+      "Identify that the opposite of 'left' is 'right'"
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "right",
+    "confidence": "high",
+    "citations": [],
+    "reasoning_summary": "The sentence is written backwards and reads 'If you understand this sentence, write the opposite of the word \"left\" as the answer.' The opposite of 'left' is 'right'."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [],
+  "artifacts_used": [],
+  "duration_seconds": 28.185904957994353,
+  "created_at": "2026-03-16T22:24:55.964106Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Read the instructions in reverse",
+      "Number of steps": "1",
+      "How long did this take?": "1 minute",
+      "Tools": "1. A word reversal tool / script",
+      "Number of tools": "0"
+    }
+  }
+}

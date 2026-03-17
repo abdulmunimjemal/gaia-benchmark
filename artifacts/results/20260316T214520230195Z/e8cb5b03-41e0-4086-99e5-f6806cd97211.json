@@ -1,0 +1,339 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "e8cb5b03-41e0-4086-99e5-f6806cd97211",
+  "question": "I went to Virtue restaurant & bar in Chicago for my birthday on March 22, 2021 and the main course I had was delicious!  Unfortunately, when I went back about a month later on April 21, it was no longer on the dinner menu.  Using the Wayback Machine, can you help me figure out which main course was on the dinner menu for Virtue on March 22, 2021 but not April 21, 2021? Answer using the singular form, without articles.",
+  "answer": "shrimp",
+  "raw_answer": "shrimp marsh hen mill buttered grit",
+  "scorer_answer": "shrimp",
+  "expected_answer": "shrimp",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "Virtue restaurant bar Chicago website URL",
+      "Virtue Chicago restaurant menu March 2021 Wayback Machine",
+      "Virtue Chicago restaurant menu April 2021 Wayback Machine"
+    ],
+    "working_plan": [
+      "Find the official website URL for Virtue restaurant & bar in Chicago",
+      "Use Wayback Machine to access the website's dinner menu as it appeared on or around March 22, 2021",
+      "Use Wayback Machine to access the website's dinner menu as it appeared on or around April 21, 2021",
+      "Compare the two menus to identify main courses present in March but not in April",
+      "Format the answer in singular form without articles"
+    ],
+    "answer_shape": "short phrase describing a main course dish"
+  },
+  "solver": {
+    "answer": "shrimp marsh hen mill buttered grit",
+    "confidence": "high",
+    "citations": [
+      "https://web.archive.org/web/20210322/https://www.virtuerestaurant.com/menus/",
+      "https://web.archive.org/web/20210421/https://www.virtuerestaurant.com/menus/"
+    ],
+    "reasoning_summary": "Using Wayback Machine snapshots, I compared Virtue restaurant's dinner menu from March 22, 2021 and April 21, 2021. The March 22 menu listed 'Shrimp marsh hen mill buttered grits' ($22) under Large Rations, but by April 21, this dish was no longer available and had been replaced by 'Walleye crawfish & shrimp \u00e9touff\u00e9e, buttered grits' ($25). Converting the full dish name to singular form without articles gives 'shrimp marsh hen mill buttered grit'."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "Capitalization error: The original menu item 'Shrimp marsh hen mill buttered grits' has capital 'S' in 'Shrimp'. The transformation should preserve this capitalization, resulting in 'Shrimp marsh hen mill buttered grit' rather than 'shrimp marsh hen mill buttered grit'."
+    ],
+    "revised_answer": "Shrimp marsh hen mill buttered grit"
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Virtue restaurant bar Chicago official website URL",
+        "max_results": 5
+      },
+      "summary": "Virtue - Chicago - a MICHELIN Guide Restaurant: https://guide.michelin.com/us/en/illinois/chicago/restaurant/virtue | Virtue Restaurant & Bar - Choose Chicago: https://www.choosechicago.com/listing/virtue-restaurant-bar/ | Virtue Restaurant - Chicago, IL | OpenTable: https://www.opentable.com/r/virtue-chicago",
+      "success": true,
+      "created_at": "2026-03-16T22:57:38.918124Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"web.archive.org\" virtuerestaurant.com March 2021",
+        "max_results": 5
+      },
+      "summary": "Internet Archive: Wayback Machine: https://archive.org/web/web-advancedsearch.php | Archived Web - Visit offline websites by searching cached pages: https://archivedweb.com/ | Retrieving and Archiving Information from Websites \u2014 The Kit ...: https://kit.exposingtheinvisible.org/en/web-archive.html",
+      "success": true,
+      "created_at": "2026-03-16T22:57:57.474585Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/20210322000000*/https://www.virtuerestaurant.com"
+      },
+      "summary": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building fa\u00e7ade. Web icon An illustration of a computer\n                            application win",
+      "success": true,
+      "created_at": "2026-03-16T22:58:02.574630Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/*/https://www.virtuerestaurant.com"
+      },
+      "summary": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building fa\u00e7ade. Web icon An illustration of a computer\n                            application win",
+      "success": true,
+      "created_at": "2026-03-16T22:58:07.259657Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Virtue restaurant\" Chicago menu March 2021 April 2021 removed discontinued",
+        "max_results": 5
+      },
+      "summary": "All Items matching: which main course was removed from the dinner menu ...: https://www.comc.com/Cards,=which+main+course+was+removed+from+the+dinner+menu+of+Virtue+restaurant+in+Chicago+between+March+22+2021+and+April+21+2021+via+the+Wayback+Machine | Choose Chicago restaurant week starts... - Virtue Restaurant | Facebook: https://www.facebook.com/virtuerestaurant/posts/choose-chicago-restaurant-week-starts-fridayjambalaya-carrot-cake-moremenu-here-/904413993702710/ | Virtue Restaurant Chicago Menu Changes March To April 2021: https://www.instagram.com/popular/virtue-restaurant-chicago-menu-changes-march-to-april-2021/",
+      "success": true,
+      "created_at": "2026-03-16T22:58:14.186786Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.instagram.com/popular/virtue-restaurant-chicago-menu-changes-march-to-april-2021/"
+      },
+      "summary": "Title: Virtue Restaurant Chicago Menu Changes March To April 2021\n\nVirtue Restaurant Chicago Menu Changes March To April 2021 Instagram Log In Sign Up Meta About Blog Jobs Help API Privacy Terms Locations Instagram Lite Meta AI Threads Contact Uploading & Non-Users Meta Verified English Down chevron icon Afrikaans \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u010ce\u0161tina Dansk Deutsch \u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac English English (UK) Espa\u00f1ol (Espa\u00f1a) Espa\u00f1ol",
+      "success": true,
+      "created_at": "2026-03-16T22:58:18.806930Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Virtue restaurant\" Chicago March 2021 review menu \"main course\" dish",
+        "max_results": 5
+      },
+      "summary": "Virtue Chicago Dinner Menu March 2021 - Instagram: https://www.instagram.com/popular/virtue-chicago-dinner-menu-march-2021/ | Virtue - Review - Hyde Park - Chicago - The Infatuation: https://www.theinfatuation.com/chicago/reviews/virtue | Dinning in a great place - Review of Virtue Restaurant & Bar ...Virtue RestaurantVirtue Restaurant & Bar, Chicago - Hyde Park - Menu, Prices ...Virtue Restaurant Chicago Dinner Menu March 2021 - Instagram: https://www.tripadvisor.com/ShowUserReviews-g35805-d15548339-r831131475-Virtue_Restaurant_Bar-Chicago_Illinois.html",
+      "success": true,
+      "created_at": "2026-03-16T22:58:28.052404Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Virtue restaurant bar Chicago official website URL",
+        "max_results": 5
+      },
+      "summary": "Virtue \u2013 Chicago - a MICHELIN Guide Restaurant: https://guide.michelin.com/us/en/illinois/chicago/restaurant/virtue | Virtue Restaurant - Chicago, IL | OpenTableVirtue \u2013 Chicago - a MICHELIN Guide RestaurantMenus - Virtue RestaurantReservations - Virtue RestaurantHours & Location - Virtue Restaurantdinner menu - Virtue Restaurant: https://www.opentable.com/r/virtue-chicago | Virtue Restaurant: https://www.virtuerestaurant.com/",
+      "success": true,
+      "created_at": "2026-03-16T22:59:40.998128Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:web.archive.org virtuerestaurant.com menu March 2021",
+        "max_results": 5
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T22:59:50.255186Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "web.archive.org wayback machine virtuerestaurant.com March 2021",
+        "max_results": 5
+      },
+      "summary": "Virtue restaurant & bar Chicago March 22 2021 Wayback Machine ...: https://diva.sfsu.edu/collections/sfbatv/search?q=Virtue+restaurant+&+bar+Chicago+March+22+2021+Wayback+Machine+archive&page=1&sort=divadoc_date_dt&dir=desc&facets[type][0]=video&facets[tags][0]=black+panther+party | Wayback Machine: http://search.archive.org/ | Wayback Classic: https://wayback-classic.net/",
+      "success": true,
+      "created_at": "2026-03-16T22:59:57.053936Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/20210322000000*/https://www.virtuerestaurant.com/menus/"
+      },
+      "summary": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building fa\u00e7ade. Web icon An illustration of a computer\n                            application win",
+      "success": true,
+      "created_at": "2026-03-16T23:00:02.161740Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"web.archive.org\" \"virtuerestaurant.com\" \"2021-03\"",
+        "max_results": 5
+      },
+      "summary": "Equipo Pok\u00e9mon de yuliesky: https://pokemon.vukki.net/es/equipo/nombre/yuliesky/",
+      "success": true,
+      "created_at": "2026-03-16T23:00:09.367893Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/2021/https://www.virtuerestaurant.com/menus/"
+      },
+      "summary": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Valentine's Day Dine In Valentines Day Takeout Reservations Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Valentine's Day Dine In Valentines Day Takeout Reservations Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 146",
+      "success": true,
+      "created_at": "2026-03-16T23:00:15.071916Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/20210322/https://www.virtuerestaurant.com/menus/"
+      },
+      "summary": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Easter 2021 Reservations Order Online Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Easter 2021 Reservations Order Online Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 1462 E 53rd St., Chicago, IL 60615 powered by B",
+      "success": true,
+      "created_at": "2026-03-16T23:00:23.886529Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/20210421/https://www.virtuerestaurant.com/menus/"
+      },
+      "summary": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Order Online Reservations Mother's Day Orders Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Order Online Reservations Mother's Day Orders Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 1462 E 53rd St., Chicago, IL 60",
+      "success": true,
+      "created_at": "2026-03-16T23:00:30.838820Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Virtue restaurant bar Chicago website URL",
+        "max_results": 5
+      },
+      "summary": "VirtueRestaurant&Bar\u00b7 Apple Maps: https://maps.apple.com/place?q=Virtue+Restaurant&ll=41.7996976,-87.5894058&auid=6966716254016681032&lsp=9902&address=1462+E+53rd+St,+Chicago,+IL++60615,+United+States | VirtueRestaurant&Bar| ChooseChicago: https://www.choosechicago.com/listing/virtue-restaurant-bar/ | VIRTUERESTAURANT&BAR,Chicago- Hyde Park... - Tripadvisor: https://www.tripadvisor.com/Restaurant_Review-g35805-d15548339-Reviews-or75-Virtue_Restaurant_Bar-Chicago_Illinois.html",
+      "success": true,
+      "created_at": "2026-03-16T23:02:50.280417Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "web.archive.org https://www.virtuerestaurant.com/menus/ 2021",
+        "max_results": 5
+      },
+      "summary": "Internet Archive: Digital Library of Free & Borrowable Texts ...: https://archive.org/ | Virtue Restaurant Menu (New on the 2025): https://virtue-restaurant.wherevi.com/menu.html | Virtue menu - Chicago IL 60615 - (773) 839-7672 - Allmenus: https://www.allmenus.com/il/chicago/664697-virtue/menu/",
+      "success": true,
+      "created_at": "2026-03-16T23:03:06.104511Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/20210322/https://www.virtuerestaurant.com/menus/"
+      },
+      "summary": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Easter 2021 Reservations Order Online Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Easter 2021 Reservations Order Online Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 1462 E 53rd St., Chicago, IL 60615 powered by B",
+      "success": true,
+      "created_at": "2026-03-16T23:03:10.437373Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/20210421/https://www.virtuerestaurant.com/menus/"
+      },
+      "summary": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Order Online Reservations Mother's Day Orders Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Order Online Reservations Mother's Day Orders Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 1462 E 53rd St., Chicago, IL 60",
+      "success": true,
+      "created_at": "2026-03-16T23:03:16.760432Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_web_archive_org_web_20210322000000_https_www_virtuerestaurant_com",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/20210322000000*/https://www.virtuerestaurant.com",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e8cb5b03-41e0-4086-99e5-f6806cd97211/https_web_archive_org_web_20210322000000_https_www_virtuerestaurant_com.txt",
+      "excerpt": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building fa\u00e7ade. Web icon An illustration of a computer\n                            application window Wayback Machine Texts icon An illustration of an open book. Texts Video icon An illustration of two cells of a film\n                            strip. Video Audio icon An illustration of an audio "
+    },
+    {
+      "name": "https_web_archive_org_web_https_www_virtuerestaurant_com",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/*/https://www.virtuerestaurant.com",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e8cb5b03-41e0-4086-99e5-f6806cd97211/https_web_archive_org_web_https_www_virtuerestaurant_com.txt",
+      "excerpt": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building fa\u00e7ade. Web icon An illustration of a computer\n                            application window Wayback Machine Texts icon An illustration of an open book. Texts Video icon An illustration of two cells of a film\n                            strip. Video Audio icon An illustration of an audio "
+    },
+    {
+      "name": "https_www_instagram_com_popular_virtue_restaurant_chicago_menu_changes_march_to_",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.instagram.com/popular/virtue-restaurant-chicago-menu-changes-march-to-april-2021/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e8cb5b03-41e0-4086-99e5-f6806cd97211/https_www_instagram_com_popular_virtue_restaurant_chicago_menu_changes_march_to.txt",
+      "excerpt": "Title: Virtue Restaurant Chicago Menu Changes March To April 2021\n\nVirtue Restaurant Chicago Menu Changes March To April 2021 Instagram Log In Sign Up Meta About Blog Jobs Help API Privacy Terms Locations Instagram Lite Meta AI Threads Contact Uploading & Non-Users Meta Verified English Down chevron icon Afrikaans \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u010ce\u0161tina Dansk Deutsch \u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac English English (UK) Espa\u00f1ol (Espa\u00f1a) Espa\u00f1ol \u0641\u0627\u0631\u0633\u06cc Suomi Fran\u00e7ais \u05e2\u05d1\u05e8\u05d9\u05ea Bahasa Indonesia Italiano \u65e5\u672c\u8a9e \ud55c\uad6d\uc5b4 Bahasa Melayu Norsk Nederlands Polski Portugu\u00eas (Brasil) Portugu\u00eas (Portugal) \u0420\u0443\u0441\u0441\u043a\u0438\u0439 Svenska \u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22 Filipino T\u00fcrk\u00e7e \u4e2d\u6587(\u7b80\u4f53) \u4e2d\u6587(\u53f0\u7063) \u09ac\u09be\u0982\u09b2\u09be "
+    },
+    {
+      "name": "https_web_archive_org_web_20210322000000_https_www_virtuerestaurant_com_menus",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/20210322000000*/https://www.virtuerestaurant.com/menus/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e8cb5b03-41e0-4086-99e5-f6806cd97211/https_web_archive_org_web_20210322000000_https_www_virtuerestaurant_com_menus.txt",
+      "excerpt": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building fa\u00e7ade. Web icon An illustration of a computer\n                            application window Wayback Machine Texts icon An illustration of an open book. Texts Video icon An illustration of two cells of a film\n                            strip. Video Audio icon An illustration of an audio "
+    },
+    {
+      "name": "https_web_archive_org_web_2021_https_www_virtuerestaurant_com_menus",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/2021/https://www.virtuerestaurant.com/menus/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e8cb5b03-41e0-4086-99e5-f6806cd97211/https_web_archive_org_web_2021_https_www_virtuerestaurant_com_menus.txt",
+      "excerpt": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Valentine's Day Dine In Valentines Day Takeout Reservations Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Valentine's Day Dine In Valentines Day Takeout Reservations Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 1462 E 53rd St., Chicago, IL 60615 powered by BentoBox Main content starts here, tab to start navigating Scroll Down to Content dinner menu sweet rations beverages spirits wine list Small Rations biscuit"
+    },
+    {
+      "name": "https_web_archive_org_web_20210322_https_www_virtuerestaurant_com_menus",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/20210322/https://www.virtuerestaurant.com/menus/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e8cb5b03-41e0-4086-99e5-f6806cd97211/https_web_archive_org_web_20210322_https_www_virtuerestaurant_com_menus.txt",
+      "excerpt": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Easter 2021 Reservations Order Online Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Easter 2021 Reservations Order Online Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 1462 E 53rd St., Chicago, IL 60615 powered by BentoBox Main content starts here, tab to start navigating Scroll Down to Content black expression series restaurant week dinner menu sweet rations beverages pickup beverages at the dinner table : a se"
+    },
+    {
+      "name": "https_web_archive_org_web_20210421_https_www_virtuerestaurant_com_menus",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/20210421/https://www.virtuerestaurant.com/menus/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e8cb5b03-41e0-4086-99e5-f6806cd97211/https_web_archive_org_web_20210421_https_www_virtuerestaurant_com_menus.txt",
+      "excerpt": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Order Online Reservations Mother's Day Orders Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Order Online Reservations Mother's Day Orders Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 1462 E 53rd St., Chicago, IL 60615 powered by BentoBox Main content starts here, tab to start navigating Scroll Down to Content dinner menu sweet rations beverages spirits click here to order dinner to go! Small Rations hoe cakes p"
+    },
+    {
+      "name": "https_web_archive_org_web_20210322_https_www_virtuerestaurant_com_menus",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/20210322/https://www.virtuerestaurant.com/menus/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e8cb5b03-41e0-4086-99e5-f6806cd97211/https_web_archive_org_web_20210322_https_www_virtuerestaurant_com_menus.txt",
+      "excerpt": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Easter 2021 Reservations Order Online Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Easter 2021 Reservations Order Online Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 1462 E 53rd St., Chicago, IL 60615 powered by BentoBox Main content starts here, tab to start navigating Scroll Down to Content black expression series restaurant week dinner menu sweet rations beverages pickup beverages at the dinner table : a se"
+    },
+    {
+      "name": "https_web_archive_org_web_20210421_https_www_virtuerestaurant_com_menus",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/20210421/https://www.virtuerestaurant.com/menus/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e8cb5b03-41e0-4086-99e5-f6806cd97211/https_web_archive_org_web_20210421_https_www_virtuerestaurant_com_menus.txt",
+      "excerpt": "Title: Menus | Virtue Restaurant\n\nMenus | Virtue Restaurant Skip to main content 1462 E 53rd St., Chicago, IL 60615 Order Online Reservations Mother's Day Orders Store Menus About Join Our Team Press 1462 E 53rd St., Chicago, IL 60615 Toggle Navigation Order Online Reservations Mother's Day Orders Store Menus About Join Our Team Press Contact Facebook Instagram Yelp 1462 E 53rd St., Chicago, IL 60615 powered by BentoBox Main content starts here, tab to start navigating Scroll Down to Content dinner menu sweet rations beverages spirits click here to order dinner to go! Small Rations hoe cakes p"
+    }
+  ],
+  "duration_seconds": 456.8025583749986,
+  "created_at": "2026-03-16T23:04:51.811507Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for \"Virtue restaurant & bar Chicago\"\n2. Find the restaurant's website, https://www.virtuerestaurant.com\n3. Find the page for the dinner menu, https://www.virtuerestaurant.com/menus/\n4. Paste the URL of this page into the Wayback Machine at web.archive.org\n5. Open the versions of the page archived on March 22, 2021 and April 21, 2021\n6. Ensure that both pages are open to the \"dinner menu\" tab\n7. Find the \"large ration\" that was present on the March 22 version of the menu but not April 21: shrimp",
+      "Number of steps": "7",
+      "How long did this take?": "30 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Access to the Internet Archive, web.archive.org\n4. Text processing/diff tool",
+      "Number of tools": "4"
+    }
+  }
+}

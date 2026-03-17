@@ -1,0 +1,822 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "ad2b4d70-9314-4fe6-bfbe-894a45f6055f",
+  "question": "Eva Draconis has a personal website which can be accessed on her YouTube page. What is the meaning of the only symbol seen in the top banner that has a curved line that isn't a circle or a portion of a circle? Answer without punctuation.",
+  "answer": "infinity",
+  "raw_answer": "infinity",
+  "scorer_answer": "infinity",
+  "expected_answer": "War is not here this is a land of peace",
+  "score": 0.0,
+  "passed": false,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": "wrong_answer",
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "Eva Draconis YouTube channel",
+      "Eva Draconis personal website",
+      "Eva Draconis website banner symbols"
+    ],
+    "working_plan": [
+      "Search for Eva Draconis YouTube channel",
+      "Access YouTube page and locate personal website link",
+      "Navigate to her personal website",
+      "Examine top banner for symbols with curved lines",
+      "Identify symbol with curved line that isn't circle/circle portion",
+      "Research meaning of the identified symbol",
+      "Format answer without punctuation"
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "infinity",
+    "confidence": "medium",
+    "citations": [
+      "http://www.orionmindproject.com/orion.html"
+    ],
+    "reasoning_summary": "Found Eva Draconis's website at orionmindproject.com and confirmed its connection to The Orion Project. While technical issues prevented direct banner access, based on the site's themes of eternal alien contact and Orion constellation content, the most logical symbol with curved lines that isn't circular would be an infinity symbol, meaning infinity."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "REASONING ERROR: The candidate admits 'technical issues prevented direct banner access' but then provides an answer about what symbol is seen in the banner. You cannot answer about visual content you haven't observed.",
+      "RETRIEVAL ERROR: The answer is based on speculation about site themes rather than actual visual inspection of the banner as required by the question.",
+      "COMPLETENESS: The question asks specifically about 'the only symbol seen in the top banner' - without accessing the banner, this cannot be answered accurately."
+    ],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Eva Draconis YouTube channel",
+        "max_results": 5
+      },
+      "summary": "Eva Draconis's Most Recent YouTube Videos - Social Blade: https://socialblade.com/youtube/handle/evadraconis/videos | Eva Draconis's YouTube Statistics - Social Blade: https://socialblade.com/youtube/handle/evadraconis | Eva Draconis - YouTube: https://www.youtube.com/c/EvaDraconis/videos",
+      "success": true,
+      "created_at": "2026-03-17T04:07:47.532802Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/c/EvaDraconis/videos"
+      },
+      "summary": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:07:52.034707Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Eva Draconis\" YouTube channel personal website",
+        "max_results": 5
+      },
+      "summary": "Eva Draconis's YouTube Statistics - Social Blade: https://socialblade.com/youtube/handle/evadraconis | Mary Roswell - The website Orion Mind Project is partially ... - Facebook: https://www.facebook.com/maryroswell.blog/posts/the-website-orion-mind-project-is-partially-downi-have-no-idea-how-many-people-h/1034292435365438/ | Eva Draconis Personal Website - Instagram: https://www.instagram.com/popular/eva-draconis-personal-website/",
+      "success": true,
+      "created_at": "2026-03-17T04:07:57.436960Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Orion Mind Project\" Eva Draconis website",
+        "max_results": 5
+      },
+      "summary": "Orion Project takes readers down the proverbial rabbit hole: https://mjbookreviews.blogspot.com/2013/12/orion-project-takes-readers-down.html | The Orion Project: Real? Or Imaginary? Censored - amazon.comEva Draconis - YouTubeThe Orion Project - Reticulan WritingOrion Project takes readers down the proverbial rabbit hole: https://www.amazon.com/Orion-Project-Real-Imaginary-Censored/dp/1492296066 | Mary Roswell - The website Orion Mind Project is partially ...: https://www.facebook.com/maryroswell.blog/posts/the-website-orion-mind-project-is-partially-downi-have-no-idea-how-many-people-h/1034292435365438/",
+      "success": true,
+      "created_at": "2026-03-17T04:08:05.816951Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com"
+      },
+      "summary": "Title:",
+      "success": true,
+      "created_at": "2026-03-17T04:08:09.544664Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/orion.html"
+      },
+      "summary": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human im",
+      "success": true,
+      "created_at": "2026-03-17T04:08:13.728696Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Eva Draconis\" \"Orion Mind Project\" banner symbols curved line",
+        "max_results": 5
+      },
+      "summary": "Me & Paranormal You soundcloud channel archive... : Internet Archive: https://archive.org/details/soundcloud-meandparanormalyou | Woman Claims Sexual Relations With Reptilian Aliens | Before It's News: https://beforeitsnews.com/paranormal/2013/10/woman-claims-sexual-relations-with-reptilian-aliens-2458254.html | Where is the enigmatic Ken Bakeman? | I am Exopolitician, iXossana...: https://exopolitician.wordpress.com/2015/10/26/where-is-the-enigmatic-ken-bakeman/",
+      "success": true,
+      "created_at": "2026-03-17T04:08:26.086585Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:web.archive.org orionmindproject.com banner symbols",
+        "max_results": 3
+      },
+      "summary": "adcherry - customize pre-madebannerads to save time and money: http://web.archive.org/web/20090401052155/http://www.adcherry.com/ | Internetworking (1.3): Article-BannerBlindness: https://web.archive.org/web/20130515063241/http://www.internettg.org/newsletter/dec98/banner_blindness.html | The Orion Project: https://web.archive.org/web/20240324075001/http://orionmindproject.com/",
+      "success": true,
+      "created_at": "2026-03-17T04:08:35.044489Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Eva Draconis YouTube channel",
+        "max_results": 10
+      },
+      "summary": "Eva Bartlett | Conspiracy Daily Update: https://conspiracydailyupdate.com/tag/eva-bartlett/ | White House Shocker: Biden Steps Over Boundaries with Eva: https://conspiracydailyupdate.com/2023/08/12/white-house-shocker-biden-steps-over-boundaries-with-eva-longoria/ | The false narrative of the Syrian rebels \u2013 Eva Bartlett: https://conspiracydailyupdate.com/2017/04/10/the-false-narrative-of-the-syrian-rebels-eva-bartlett-video/",
+      "success": true,
+      "created_at": "2026-03-17T04:09:58.848468Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Eva Draconis\" YouTube",
+        "max_results": 10
+      },
+      "summary": "Draconis - EVA-8 Skin in Apex Legends: https://apexitemstore.com/guns/shotguns/draconis/ | Eva Bartlett | Conspiracy Daily Update: https://conspiracydailyupdate.com/tag/eva-bartlett/ | Skin eva 8 draconis | EA Forums - 12751278: https://forums.ea.com/discussions/apex-legends-technical-issues-fr/skin-eva-8-draconis/12751278",
+      "success": true,
+      "created_at": "2026-03-17T04:10:05.740353Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/c/EvaDraconis/videos",
+        "max_chars": 5000
+      },
+      "summary": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:10:13.360940Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/c/EvaDraconis",
+        "max_chars": 10000
+      },
+      "summary": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:10:18.965461Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Eva Draconis\" \"Orion Mind Project\" personal website",
+        "max_results": 10
+      },
+      "summary": "Me & Paranormal You soundcloud channel archive... : Internet Archive: https://archive.org/details/soundcloud-meandparanormalyou | Woman Claims Sexual Relations With Reptilian Aliens | Before It's News: https://beforeitsnews.com/paranormal/2013/10/woman-claims-sexual-relations-with-reptilian-aliens-2458254.html | Where is the enigmatic Ken Bakeman? | I am Exopolitician, iXossana...: https://exopolitician.wordpress.com/2015/10/26/where-is-the-enigmatic-ken-bakeman/",
+      "success": true,
+      "created_at": "2026-03-17T04:10:26.866414Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/",
+        "max_chars": 10000
+      },
+      "summary": "Title:",
+      "success": true,
+      "created_at": "2026-03-17T04:10:31.580313Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/orion.html",
+        "max_chars": 10000
+      },
+      "summary": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human im",
+      "success": true,
+      "created_at": "2026-03-17T04:10:35.239568Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/reticulanwriting.html",
+        "max_chars": 10000
+      },
+      "summary": "Title: The Orion Project - Reticulan Writing\n\nThe Orion Project - Reticulan Writing < RETICULANS ALPHA RETICULAN WRITING written 13 November 2016 I think it started with an Alpha Reticulan showing me a mental image of the first example of their writing, the one to the top left that says \"Hello\". I then asked them how would I write... about all these different words that you see here, and they show",
+      "success": true,
+      "created_at": "2026-03-17T04:10:40.202595Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"orionmindproject.com\" banner symbols website design",
+        "max_results": 10
+      },
+      "summary": "PreFlect: From Retrospective to Prospective Reflection in Large ...: https://arxiv.org/html/2602.07187 | II-Agent - Intelligent Internet: https://ii.inc/web/blog/post/ii-agent | The Orion Project History - Sphinx People: http://www.orionmindproject.com/history/sphinxpeople.html",
+      "success": true,
+      "created_at": "2026-03-17T04:10:52.855059Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Eva Draconis YouTube channel",
+        "max_results": 5
+      },
+      "summary": "The Orion Project: Real? Or Imaginary? Censored -EvaDraconis: https://books.google.ru/books/about/The_Orion_Project.html?id=fci9ngEACAAJ&redir_esc=y | Draconis'YouTubestats, analytics, and sponsorship insights: https://app.thoughtleaders.io/youtube/alpha-draconis | CelestialDraconisYouTubeChannelAnalytics and... - NoxInfluencer: https://www.noxinfluencer.com/youtube/channel/UCkJF-bR6DLAT_7xv0OLDJzA",
+      "success": true,
+      "created_at": "2026-03-17T04:11:02.953359Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/channel/UCYxwJRiWbMysWyezLBTlY_g"
+      },
+      "summary": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:11:06.758910Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Eva Draconis\" personal website",
+        "max_results": 5
+      },
+      "summary": "The Orion Project: Real? Or Imaginary? Censored -EvaDraconis: https://books.google.ru/books/about/The_Orion_Project.html?id=fci9ngEACAAJ&redir_esc=y | EvaDraconis| I am Exopolitician, iXossana reincarnated: https://exopolitician.wordpress.com/tag/eva-draconis/ | The Orion Project: Letters to SETI 2: 9781491265482:Draconis,Eva...: https://www.amazon.com/Orion-Project-Letters-SETI/dp/1491265485",
+      "success": true,
+      "created_at": "2026-03-17T04:11:14.539650Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Orion Mind Project\" Eva Draconis website",
+        "max_results": 5
+      },
+      "summary": "Orion Project takes readers down the proverbial rabbit hole: https://mjbookreviews.blogspot.com/2013/12/orion-project-takes-readers-down.html | The Orion Project: Real? Or Imaginary? Censored - amazon.comEva Draconis - YouTubeThe Orion Project - Reticulan WritingOrion Project takes readers down the proverbial rabbit hole: https://www.amazon.com/Orion-Project-Real-Imaginary-Censored/dp/1492296066 | Mary Roswell - The website Orion Mind Project is partially ...: https://www.facebook.com/maryroswell.blog/posts/the-website-orion-mind-project-is-partially-downi-have-no-idea-how-many-people-h/1034292435365438/",
+      "success": true,
+      "created_at": "2026-03-17T04:11:20.622819Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com"
+      },
+      "summary": "Title:",
+      "success": true,
+      "created_at": "2026-03-17T04:11:24.627320Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/orion.html"
+      },
+      "summary": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human im",
+      "success": true,
+      "created_at": "2026-03-17T04:11:27.843354Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:orionmindproject.com banner symbols",
+        "max_results": 5
+      },
+      "summary": "The Orion Project History - Juudah Story: http://orionmindproject.com/history/juudahstory.html | The Orion Project - Reticulan Writing: http://www.orionmindproject.com/reticulanwriting.html | The Orion Project - Vega: http://www.orionmindproject.com/vega.html",
+      "success": true,
+      "created_at": "2026-03-17T04:11:37.656754Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/reticulanwriting.html"
+      },
+      "summary": "Title: The Orion Project - Reticulan Writing\n\nThe Orion Project - Reticulan Writing < RETICULANS ALPHA RETICULAN WRITING written 13 November 2016 I think it started with an Alpha Reticulan showing me a mental image of the first example of their writing, the one to the top left that says \"Hello\". I then asked them how would I write... about all these different words that you see here, and they show",
+      "success": true,
+      "created_at": "2026-03-17T04:11:44.863383Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "orionmindproject.com header banner curved symbols",
+        "max_results": 5
+      },
+      "summary": "Orion Mindy Project Website Eva Draconis Archive Banner Symbols: https://www.etsy.com/market/orion_mindy_project_website_eva_draconis_archive_banner_symbols | Curved banner shape Images - Free Download on Freepik: https://www.freepik.com/free-photos-vectors/curved-banner-shape | The Orion Project - Reticulan Writing - orionmindproject.com: http://www.orionmindproject.com/reticulanwriting.html",
+      "success": true,
+      "created_at": "2026-03-17T04:11:55.136921Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Eva Draconis YouTube channel",
+        "max_results": 5
+      },
+      "summary": "Eva Bartlett | Conspiracy Daily Update: https://conspiracydailyupdate.com/tag/eva-bartlett/ | White House Shocker: Biden Steps Over Boundaries with Eva: https://conspiracydailyupdate.com/2023/08/12/white-house-shocker-biden-steps-over-boundaries-with-eva-longoria/ | The false narrative of the Syrian rebels \u2013 Eva Bartlett: https://conspiracydailyupdate.com/2017/04/10/the-false-narrative-of-the-syrian-rebels-eva-bartlett-video/",
+      "success": true,
+      "created_at": "2026-03-17T04:12:09.879529Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Eva Draconis\" YouTube",
+        "max_results": 5
+      },
+      "summary": "Experience 195 - Eva Draconis, Alien Contactee & The Orion Mind Project ...: https://creators.spotify.com/pod/profile/meandparanormalyou/episodes/Experience-195---Eva-Draconis--Alien-Contactee--The-Orion-Mind-Project-e4i1ro | Eva Draconis's YouTube Statistics - Social Blade: https://socialblade.com/youtube/handle/evadraconis | Eva Draconis's Most Recent YouTube Videos - Social Blade: https://socialblade.com/youtube/handle/evadraconis/videos",
+      "success": true,
+      "created_at": "2026-03-17T04:12:15.790540Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/c/EvaDraconis/videos"
+      },
+      "summary": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:12:19.843649Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.orionmindproject.com"
+      },
+      "summary": "Title:",
+      "success": true,
+      "created_at": "2026-03-17T04:12:25.270555Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Eva Draconis\" personal website \"orion mind project\"",
+        "max_results": 5
+      },
+      "summary": "Woman Claims Sexual Relations With Reptilian Aliens | Before It's News: https://beforeitsnews.com/paranormal/2013/10/woman-claims-sexual-relations-with-reptilian-aliens-2458254.html | Experience 195 - Eva Draconis, Alien Contactee & The Orion Mind Project ...: https://creators.spotify.com/pod/profile/meandparanormalyou/episodes/Experience-195---Eva-Draconis--Alien-Contactee--The-Orion-Mind-Project-e4i1ro | Where is the enigmatic Ken Bakeman? | I am Exopolitician, iXossana...: https://exopolitician.wordpress.com/2015/10/26/where-is-the-enigmatic-ken-bakeman/",
+      "success": true,
+      "created_at": "2026-03-17T04:12:32.247472Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com"
+      },
+      "summary": "Title:",
+      "success": true,
+      "created_at": "2026-03-17T04:12:36.119813Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"orion mind project\" website banner symbols Eva Draconis",
+        "max_results": 5
+      },
+      "summary": "Orionmindproject Top Banner Symbol Curved Line Meaning Eva ...: https://www.etsy.com/in-en/market/orionmindproject_top_banner_symbol_curved_line_meaning_eva_draconis | The Orion Project - Alpha Orionis: http://www.orionmindproject.com/orion.html | The Orion Project - Reticulan Writing: http://www.orionmindproject.com/reticulanwriting.html",
+      "success": true,
+      "created_at": "2026-03-17T04:12:48.818446Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/reticulanwriting.html"
+      },
+      "summary": "Title: The Orion Project - Reticulan Writing\n\nThe Orion Project - Reticulan Writing < RETICULANS ALPHA RETICULAN WRITING written 13 November 2016 I think it started with an Alpha Reticulan showing me a mental image of the first example of their writing, the one to the top left that says \"Hello\". I then asked them how would I write... about all these different words that you see here, and they show",
+      "success": true,
+      "created_at": "2026-03-17T04:12:52.531295Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/index.html"
+      },
+      "summary": "Title:",
+      "success": true,
+      "created_at": "2026-03-17T04:12:56.283939Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/orion.html"
+      },
+      "summary": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human im",
+      "success": true,
+      "created_at": "2026-03-17T04:12:58.942868Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Eva Draconis YouTube channel",
+        "max_results": 5
+      },
+      "summary": "Eva Draconis's Most Recent YouTube Videos - Social Blade: https://socialblade.com/youtube/handle/evadraconis/videos | Eva Draconis's YouTube Statistics - Social Blade: https://socialblade.com/youtube/handle/evadraconis | Eva Draconis - YouTube: https://www.youtube.com/c/EvaDraconis/videos",
+      "success": true,
+      "created_at": "2026-03-17T04:13:57.287935Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/c/EvaDraconis/videos"
+      },
+      "summary": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:14:00.815708Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Eva Draconis personal website orion mind project",
+        "max_results": 5
+      },
+      "summary": "GitHub - legiz-ru/Orion:Orion: A modern, fast, and responsive...: https://github.com/legiz-ru/Orion | orionstars: http://web.orionstars.org/play/orionstars/ | TheOrionProject: Letters to SETI 2: 9781491265482:Draconis,Eva...: https://www.amazon.com/Orion-Project-Letters-SETI/dp/1491265485",
+      "success": true,
+      "created_at": "2026-03-17T04:14:05.353703Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"orionmindproject.com\" Eva Draconis",
+        "max_results": 5
+      },
+      "summary": "The Orion Project: Real? Or Imaginary? Censored -EvaDraconis: https://books.google.ru/books/about/The_Orion_Project.html?id=fci9ngEACAAJ&redir_esc=y | The Orion Project - Thoughts: https://orionmindproject.com/2013September05.html | Amazon.com: The Orion Project: Real? Or Imaginary? Censored...: https://www.amazon.com/Orion-Project-Real-Imaginary-Censored/dp/1492296066",
+      "success": true,
+      "created_at": "2026-03-17T04:14:15.667088Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://orionmindproject.com"
+      },
+      "summary": "Title:",
+      "success": true,
+      "created_at": "2026-03-17T04:14:21.459439Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "orionmindproject.com banner symbols infinity curve",
+        "max_results": 5
+      },
+      "summary": "Orion Mindy Project Website Eva Draconis Archive Banner Symbols: https://www.etsy.com/market/orion_mindy_project_website_eva_draconis_archive_banner_symbols | Infinity Icons & Symbols - Flaticon: https://www.flaticon.com/free-icons/infinity | New Infinity Minecraft Banners & Capes - Planet Minecraft: https://www.planetminecraft.com/banners/infinity/",
+      "success": true,
+      "created_at": "2026-03-17T04:14:33.006063Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"orionmindproject.com\" archive.org wayback machine",
+        "max_results": 3
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-17T04:14:41.808164Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Eva Draconis\" \"orionmindproject\" banner symbol meaning curved line",
+        "max_results": 5
+      },
+      "summary": "api.github.com: https://api.github.com/repos/camel-ai/camel/issues/1406 | II-Agent - Intelligent Internet: https://ii.inc/web/blog/post/ii-agent | Orion Project takes readers down the proverbial rabbit hole: https://mjbookreviews.blogspot.com/2013/12/orion-project-takes-readers-down.html",
+      "success": true,
+      "created_at": "2026-03-17T04:14:48.999850Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Eva Draconis YouTube channel",
+        "max_results": 5
+      },
+      "summary": "Draconis - YouTube Music: https://music.youtube.com/channel/UCGJJdds_nv2t-Ke9HHJqU7A | Eva Draconis's Most Recent YouTube Videos - Social Blade: https://socialblade.com/youtube/handle/evadraconis/videos | Eva Draconis's YouTube Statistics - Social Blade: https://socialblade.com/youtube/handle/evadraconis",
+      "success": true,
+      "created_at": "2026-03-17T04:15:00.132173Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Eva Draconis\" site:youtube.com",
+        "max_results": 5
+      },
+      "summary": "EvaDraconis- YouTube: https://www.youtube.com/channel/UCYxwJRiWbMysWyezLBTlY_g | What I Thinks Of Eva Draconis Story - YouTube: https://www.youtube.com/watch?v=O5DzKHsS60c | Eva Draconis - YouTube: https://www.youtube.com/c/EvaDraconis/videos",
+      "success": true,
+      "created_at": "2026-03-17T04:15:15.417345Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/channel/UCYxwJRiWbMysWyezLBTlY_g"
+      },
+      "summary": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:15:20.807749Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.youtube.com/c/EvaDraconis/videos"
+      },
+      "summary": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC",
+      "success": true,
+      "created_at": "2026-03-17T04:15:26.189344Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Eva Draconis \"orion project\" personal website",
+        "max_results": 5
+      },
+      "summary": "The Orion Project: Real? Or Imaginary? Censored - AmazonThe Orion Project: Real? Or Imaginary? Censored - Eva ...Phantoms & Monsters - Phantoms and Monsters: https://www.amazon.com/Orion-Project-Real-Imaginary-Censored/dp/1492296066 | Mary Roswell - The website Orion Mind Project is partially ...: https://www.facebook.com/maryroswell.blog/posts/the-website-orion-mind-project-is-partially-downi-have-no-idea-how-many-people-h/1034292435365438/ | Eva Draconis (Author of The Orion Project) - GoodreadsMary Roswell - The website Orion Mind Project is partially ...The Orion Project: Real? Or Imaginary? Censored - AmazonThe Orion Project: Real? Or Imaginary? Censored - Eva ...Phantoms & Monsters - Phantoms and Monsters: https://www.goodreads.com/author/show/7398867.Eva_Draconis",
+      "success": true,
+      "created_at": "2026-03-17T04:15:37.039589Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com"
+      },
+      "summary": "Title:",
+      "success": true,
+      "created_at": "2026-03-17T04:15:41.224422Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/orion.html"
+      },
+      "summary": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human im",
+      "success": true,
+      "created_at": "2026-03-17T04:15:44.411767Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.orionmindproject.com/"
+      },
+      "summary": "Title:",
+      "success": true,
+      "created_at": "2026-03-17T04:15:49.382055Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_www_youtube_com_c_EvaDraconis_videos",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/c/EvaDraconis/videos",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_www_youtube_com_c_EvaDraconis_videos.txt",
+      "excerpt": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "http_www_orionmindproject_com",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com.txt",
+      "excerpt": "Title:"
+    },
+    {
+      "name": "http_www_orionmindproject_com_orion_html",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/orion.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com_orion_html.txt",
+      "excerpt": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human imagination or whether this is genuine telepathic contact with persons from outer space, Orion. In this section, let us look closer into their supposed home of origin and see if that can offer some clue"
+    },
+    {
+      "name": "https_www_youtube_com_c_EvaDraconis_videos",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/c/EvaDraconis/videos",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_www_youtube_com_c_EvaDraconis_videos.txt",
+      "excerpt": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "https_www_youtube_com_c_EvaDraconis",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/c/EvaDraconis",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_www_youtube_com_c_EvaDraconis.txt",
+      "excerpt": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "http_www_orionmindproject_com",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com.txt",
+      "excerpt": "Title:"
+    },
+    {
+      "name": "http_www_orionmindproject_com_orion_html",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/orion.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com_orion_html.txt",
+      "excerpt": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human imagination or whether this is genuine telepathic contact with persons from outer space, Orion. In this section, let us look closer into their supposed home of origin and see if that can offer some clue"
+    },
+    {
+      "name": "http_www_orionmindproject_com_reticulanwriting_html",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/reticulanwriting.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com_reticulanwriting_html.txt",
+      "excerpt": "Title: The Orion Project - Reticulan Writing\n\nThe Orion Project - Reticulan Writing < RETICULANS ALPHA RETICULAN WRITING written 13 November 2016 I think it started with an Alpha Reticulan showing me a mental image of the first example of their writing, the one to the top left that says \"Hello\". I then asked them how would I write... about all these different words that you see here, and they showed me mental images to guide me how to write them. Read an analysis at the bottom of the page. Click on the image below to see a larger size of the image. The new page that appears with the image lets"
+    },
+    {
+      "name": "https_www_youtube_com_channel_UCYxwJRiWbMysWyezLBTlY_g",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/channel/UCYxwJRiWbMysWyezLBTlY_g",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_www_youtube_com_channel_UCYxwJRiWbMysWyezLBTlY_g.txt",
+      "excerpt": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "http_www_orionmindproject_com",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com.txt",
+      "excerpt": "Title:"
+    },
+    {
+      "name": "http_www_orionmindproject_com_orion_html",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/orion.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com_orion_html.txt",
+      "excerpt": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human imagination or whether this is genuine telepathic contact with persons from outer space, Orion. In this section, let us look closer into their supposed home of origin and see if that can offer some clue"
+    },
+    {
+      "name": "http_www_orionmindproject_com_reticulanwriting_html",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/reticulanwriting.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com_reticulanwriting_html.txt",
+      "excerpt": "Title: The Orion Project - Reticulan Writing\n\nThe Orion Project - Reticulan Writing < RETICULANS ALPHA RETICULAN WRITING written 13 November 2016 I think it started with an Alpha Reticulan showing me a mental image of the first example of their writing, the one to the top left that says \"Hello\". I then asked them how would I write... about all these different words that you see here, and they showed me mental images to guide me how to write them. Read an analysis at the bottom of the page. Click on the image below to see a larger size of the image. The new page that appears with the image lets"
+    },
+    {
+      "name": "https_www_youtube_com_c_EvaDraconis_videos",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/c/EvaDraconis/videos",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_www_youtube_com_c_EvaDraconis_videos.txt",
+      "excerpt": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "https_www_orionmindproject_com",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.orionmindproject.com",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_www_orionmindproject_com.txt",
+      "excerpt": "Title:"
+    },
+    {
+      "name": "http_www_orionmindproject_com",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com.txt",
+      "excerpt": "Title:"
+    },
+    {
+      "name": "http_www_orionmindproject_com_reticulanwriting_html",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/reticulanwriting.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com_reticulanwriting_html.txt",
+      "excerpt": "Title: The Orion Project - Reticulan Writing\n\nThe Orion Project - Reticulan Writing < RETICULANS ALPHA RETICULAN WRITING written 13 November 2016 I think it started with an Alpha Reticulan showing me a mental image of the first example of their writing, the one to the top left that says \"Hello\". I then asked them how would I write... about all these different words that you see here, and they showed me mental images to guide me how to write them. Read an analysis at the bottom of the page. Click on the image below to see a larger size of the image. The new page that appears with the image lets"
+    },
+    {
+      "name": "http_www_orionmindproject_com_index_html",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/index.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com_index_html.txt",
+      "excerpt": "Title:"
+    },
+    {
+      "name": "http_www_orionmindproject_com_orion_html",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/orion.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com_orion_html.txt",
+      "excerpt": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human imagination or whether this is genuine telepathic contact with persons from outer space, Orion. In this section, let us look closer into their supposed home of origin and see if that can offer some clue"
+    },
+    {
+      "name": "https_www_youtube_com_c_EvaDraconis_videos",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/c/EvaDraconis/videos",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_www_youtube_com_c_EvaDraconis_videos.txt",
+      "excerpt": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "https_orionmindproject_com",
+      "source_type": "web_fetch",
+      "source_uri": "https://orionmindproject.com",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_orionmindproject_com.txt",
+      "excerpt": "Title:"
+    },
+    {
+      "name": "https_www_youtube_com_channel_UCYxwJRiWbMysWyezLBTlY_g",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/channel/UCYxwJRiWbMysWyezLBTlY_g",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_www_youtube_com_channel_UCYxwJRiWbMysWyezLBTlY_g.txt",
+      "excerpt": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "https_www_youtube_com_c_EvaDraconis_videos",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.youtube.com/c/EvaDraconis/videos",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/https_www_youtube_com_c_EvaDraconis_videos.txt",
+      "excerpt": "Title: Eva Draconis - YouTube\n\nEva Draconis - YouTube \u062d\u0648\u0644 \u0627\u0644\u0635\u062d\u0627\u0641\u0629 \u062d\u0642\u0648\u0642 \u0627\u0644\u0637\u0628\u0639 \u0648\u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0645\u0637\u0648\u0651\u0631\u0648 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u0623\u062d\u0643\u0627\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0648\u0627\u0644\u0623\u0645\u0627\u0646 \u0622\u0644\u064a\u0629 \u0639\u0645\u0644 YouTube \u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u00a9 2026 Google LLC"
+    },
+    {
+      "name": "http_www_orionmindproject_com",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com.txt",
+      "excerpt": "Title:"
+    },
+    {
+      "name": "http_www_orionmindproject_com_orion_html",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/orion.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com_orion_html.txt",
+      "excerpt": "Title: The Orion Project - Alpha Orionis\n\nThe Orion Project - Alpha Orionis < ORIONS ALPHA ORIONIS Image from On the first night the otherwordly person introduced himself as being from Orion. Let's remind ourselves that the objective of this project is, other than to document a case of experienced telepathic contact with an alien being, to try to determine whether the experience is purely human imagination or whether this is genuine telepathic contact with persons from outer space, Orion. In this section, let us look closer into their supposed home of origin and see if that can offer some clue"
+    },
+    {
+      "name": "http_www_orionmindproject_com",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.orionmindproject.com/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/ad2b4d70-9314-4fe6-bfbe-894a45f6055f/http_www_orionmindproject_com.txt",
+      "excerpt": "Title:"
+    }
+  ],
+  "duration_seconds": 581.6491858330264,
+  "created_at": "2026-03-17T04:16:58.160117Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. By googling Eva Draconis youtube, you can find her channel.\n2. In her about section, she has written her website URL, orionmindproject.com.\n3. Entering this website, you can see a series of symbols at the top, and the text \"> see what the symbols mean here\" below it.\n4. Reading through the entries, you can see a short description of some of the symbols.\n5. The only symbol with a curved line that isn't a circle or a portion of a circle is the last one.\n6. Note that the symbol supposedly means \"War is not here, this is a land of peace.\"",
+      "Number of steps": "6",
+      "How long did this take?": "30 minutes.",
+      "Tools": "1. A web browser.\n2. A search engine.\n3. Access to YouTube\n4. Image recognition tools",
+      "Number of tools": "4"
+    }
+  }
+}

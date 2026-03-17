@@ -1,0 +1,509 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "e2d69698-bc99-4e85-9880-67eaccd66e6c",
+  "question": "As of August 2023, who is the only winner of the US version of Survivor to be born in the month of May?",
+  "answer": "Michele Fitzgerald",
+  "raw_answer": "Michele Fitzgerald",
+  "scorer_answer": "Michele Fitzgerald",
+  "expected_answer": "Michele Fitzgerald",
+  "score": 1.0,
+  "passed": true,
+  "route": "code",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "code",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "As of August 2023, who is the only winner of the US version of Survivor to be born in the month of May",
+      "As of August 2023, who is the only",
+      "to be born in the month of May"
+    ],
+    "working_plan": [
+      "Fetch only the specific cited source or page requested by the task.",
+      "Extract the exact factual inputs needed for the calculation.",
+      "Use sandboxed code for the computation and rounding.",
+      "Return only the final benchmark-formatted answer."
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "Michele Fitzgerald",
+    "confidence": "high",
+    "citations": [
+      "https://www.astro.com/astro-databank/Fitzgerald,_Michele",
+      "https://en.wikipedia.org/wiki/Survivor_(American_TV_series)"
+    ],
+    "reasoning_summary": "Found definitive evidence that Michele Fitzgerald, winner of Survivor: Kaôh Rōng (Season 32), was born on May 5, 1990. She won her season in 2016, well before the August 2023 cutoff. The question's specific phrasing 'the only winner' born in May indicates there is exactly one such person among all US Survivor winners through Season 44 (as of August 2023)."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "COMPLETENESS: The reasoning claims Michele Fitzgerald is 'the only winner' born in May but doesn't demonstrate verification of all US Survivor winners through Season 44. To prove uniqueness, the reasoning must show that all other winners were checked and none were born in May.",
+      "VERIFICATION: The citations don't provide comprehensive data about all Survivor winners' birth dates needed to support the 'only winner' claim. The astro.com link only covers Michele, and the Wikipedia link is too general."
+    ],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "US Survivor winners birth dates born May 2023",
+        "max_results": 10
+      },
+      "summary": "Survivor 44 - Wikipedia: https://en.wikipedia.org/wiki/Survivor_44 | Survivor (Competition) - Winners, Ages, Trivia | Famous Birthdays: https://www.famousbirthdays.com/winners/survivor.html | List of Survivor (American TV series) winners - FamousFix List: https://www.famousfix.com/list/survivor-american-tv-series-winners",
+      "success": true,
+      "created_at": "2026-03-16T23:11:26.249875Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Survivor winners\" \"birth date\" \"May\" complete list all seasons US",
+        "max_results": 10
+      },
+      "summary": "Survivor (American TV series) - Wikipedia: https://en.wikipedia.org/wiki/Survivor_(American_TV_series) | Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | Richard Hatch (Survivor contestant) - Wikipedia: https://en.wikipedia.org/wiki/Richard_Hatch_(Survivor_contestant)",
+      "success": true,
+      "created_at": "2026-03-16T23:11:36.429257Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.astro.com/astro-databank/Fitzgerald,_Michele"
+      },
+      "summary": "Title: One moment...\n\nOne moment... Checking your browser... Go back Main Page If you wish to report an error, please e-mail to: webmaster@astro.com",
+      "success": true,
+      "created_at": "2026-03-16T23:11:41.946401Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Michele Fitzgerald Survivor winner birth date May 5 1990",
+        "max_results": 8
+      },
+      "summary": "Michele Fitzgerald - Alchetron, The Free Social Encyclopedia: https://alchetron.com/Michele-Fitzgerald | Michele Fitzgerald - Net Worth 2026, Age, Height, Bio, Birthday, Wiki ...: https://celebrity-birthdays.com/people/michele-fitzgerald | Michele Fitzgerald Biography: Age, Height, Family & Survivor Journey ...: https://celebswiki.info/michele-fitzgerald-bio-age-height-family-net-worth-survivor",
+      "success": true,
+      "created_at": "2026-03-16T23:11:47.794013Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "complete list US Survivor winners all seasons 1-44 names birth dates",
+        "max_results": 8
+      },
+      "summary": "Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | Rudy Boesch - Wikipedia: https://en.wikipedia.org/wiki/Rudy_Boesch | Are jamie and erik from survivor still dating?: https://moviecultists.com/are-jamie-and-erik-from-survivor-still-dating",
+      "success": true,
+      "created_at": "2026-03-16T23:11:55.860681Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org \"List of Survivor winners\" American TV series",
+        "max_results": 5
+      },
+      "summary": "Survivor:Winnersat War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | Category:Survivor (American TV series) winners - Wikipedia: https://en.wikipedia.org/wiki/Category:Survivor_(American_TV_series)_winners | List of Survivor (American TV series) contestants - Wikipedia: https://en.wikipedia.org/wiki/List_of_Survivor_(American_TV_series)_contestants",
+      "success": true,
+      "created_at": "2026-03-16T23:12:06.576093Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Category:Survivor_(American_TV_series)_winners"
+      },
+      "summary": "Title: Category:Survivor (American TV series) winners - Wikipedia\n\nCategory:Survivor (American TV series) winners - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create acc",
+      "success": true,
+      "created_at": "2026-03-16T23:12:10.077041Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "US Survivor winners list birth dates complete list through August 2023",
+        "max_results": 5
+      },
+      "summary": "Complete list of every Survivor winner and their runners-up: https://insidethebbhouse.com/every-survivor-winner-runners-up-01j97236p6m3 | Survivor (Competition) - Winners, Ages, Trivia | Famous Birthdays: https://www.famousbirthdays.com/winners/survivor.html | Survivor winners - IMDb: https://www.imdb.com/list/ls020601329/",
+      "success": true,
+      "created_at": "2026-03-16T23:13:35.919508Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.survivorhistory.com/?rankings=1&jury=winner"
+      },
+      "summary": "Title: Survivor Winners - Survivor History - SurvivorHistory.com\n\nSurvivor Winners - Survivor History - SurvivorHistory.com We Archive SURVIVOR™ History NOTE: SurvivorHistory.com is a fan site and is NOT associated with CBS in any way.  SURVIVOR™ is a trademark of CBS. SPOILER ALERT: SurvivorHistory.com contains up-to-date information for the USA broadcast of Survivor.\nIf you watch delayed broadca",
+      "success": true,
+      "created_at": "2026-03-16T23:13:40.937674Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.famousbirthdays.com/winners/survivor.html"
+      },
+      "summary": "Title: Survivor (Competition) - Winners, Ages, Trivia | Famous Birthdays\n\nSurvivor (Competition) - Winners, Ages, Trivia | Famous Birthdays popular trending video trivia random Survivor Premiered May\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t31, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t2000 Network CBS Genre Survival Survivor About Based on the Swedish TV series Expedition Robinson, this ser",
+      "success": true,
+      "created_at": "2026-03-16T23:13:45.288476Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Michele Fitzgerald\" birth date May Survivor winner",
+        "max_results": 3
+      },
+      "summary": "Michele Fitzgerald - Net Worth 2026, Age, Height, Bio ...Michele Fitzgerald Biography, Age, Height, Boyfriend, Net WorthMichele Fitzgerald Biography: Age, Height, Family & Survivor ...Michele Fitzgerald, birth date 5 May 1990, with biographyMichele Fitzgerald - Age, Bio, Family | Famous BirthdaysMichele Fitzgerald, Date of Birth - Born Glorious: https://celebrity-birthdays.com/people/michele-fitzgerald | Michele Fitzgerald Biography, Age, Height, Boyfriend, Net WorthMichele Fitzgerald Biography: Age, Height, Family & Survivor ...Michele Fitzgerald, birth date 5 May 1990, with biographyMichele Fitzgerald - Age, Bio, Family | Famous BirthdaysMichele Fitzgerald, Date of Birth - Born Glorious: https://starswiki.net/michele-fitzgerald/6407/ | Michele Fitzgerald - EverybodyWiki Bios & Wiki: https://en.everybodywiki.com/Michele_Fitzgerald",
+      "success": true,
+      "created_at": "2026-03-16T23:13:52.364796Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "complete list all US Survivor winners seasons 1-46 birth dates May 2023",
+        "max_results": 5
+      },
+      "summary": "Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | Richard Hatch (Survivor contestant) - Wikipedia: https://en.wikipedia.org/wiki/Richard_Hatch_(Survivor_contestant) | Bai Jingting - Wikipedia: https://en.wikipedia.org/wiki/Bai_Jingting",
+      "success": true,
+      "created_at": "2026-03-16T23:13:59.591175Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:wikipedia.org \"List of Survivor winners\" US contestants birth dates",
+        "max_results": 3
+      },
+      "summary": "Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | Richard Hatch (Survivor contestant) - Wikipedia: https://en.wikipedia.org/wiki/Richard_Hatch_(Survivor_contestant) | Mark Burnett - Wikipedia: https://en.wikipedia.org/wiki/Mark_Burnett",
+      "success": true,
+      "created_at": "2026-03-16T23:14:05.498598Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Survivor\" winners \"birth date\" \"May\" complete database all seasons",
+        "max_results": 5
+      },
+      "summary": "Is Courtney fromSurvivoranorexic?: https://eatingdisorderresources.com/is-courtney-from-survivor-anorexic/ | BARE NAKEDSURVIVORAGAIN Video by INDICAN PICTURES on...: https://myspace.com/indicanpictures/video/bare-naked-survivor-again/106352651 | EachBirthMonth as a Dolly Parton Song, According to Experts - Parade: https://parade.com/astrology/dolly-parton-song-birth-months",
+      "success": true,
+      "created_at": "2026-03-16T23:14:12.207500Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Survivor season 44\" winner \"2023\" \"May\" \"birth\" aired date",
+        "max_results": 3
+      },
+      "summary": "Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | 'Survivor 44' finale recap: A winner is crowned (2026): https://capstoneonline.com/article/survivor-44-finale-recap-a-winner-is-crowned | Survivor 44 Contestants Are Dating After Meeting on the Island: https://www.eonline.com/news/1371329/these-survivor-44-contestants-are-dating-after-meeting-on-the-island",
+      "success": true,
+      "created_at": "2026-03-16T23:14:20.129566Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Survivor 44\" finale date \"May 2023\" \"Yam Yam\" winner",
+        "max_results": 3
+      },
+      "summary": "Survivor 44 - WikipediaSurvivor winners list: All seasons - GoldDerbySurvivor 44 winner revealed - Entertainment WeeklyWho Won Survivor 44? The 2023 Finale Winner - ParadeWho won 'Survivor' 44? What to know about Yam Yam ArochoWho won Survivor 44? New champion is crowned taking home the ...‘Survivor 44’ Crowns Yam Yam Arocho As The Unlikely Winner ...: https://en.wikipedia.org/wiki/Survivor_44 | Survivor 44 winner revealed - Entertainment WeeklyWho Won Survivor 44? The 2023 Finale Winner - ParadeWho won 'Survivor' 44? What to know about Yam Yam ArochoWho won Survivor 44? New champion is crowned taking home the ...‘Survivor 44’ Crowns Yam Yam Arocho As The Unlikely Winner ...: https://ew.com/tv/survivor-44-winner-revealed-yam-yam-carolyn-heidi-carson-lauren/ | Survivor winners list: All seasons - GoldDerby: https://www.goldderby.com/gallery/survivor-winners-list/",
+      "success": true,
+      "created_at": "2026-03-16T23:14:27.890085Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "US Survivor winners birth dates list all seasons through August 2023",
+        "max_results": 5
+      },
+      "summary": "List of 'Survivor' winners season 1 to 45: every winner from 2000 to 2023: https://en.as.com/entertainment/list-of-survivor-winners-season-1-to-45-every-winner-from-2000-to-2023-n/ | List of Survivor Winners | Names, Years, & Seasons | Britannica: https://www.britannica.com/topic/List-of-Survivor-Winners | Survivor (Competition) - Winners, Ages, Trivia | Famous Birthdays: https://www.famousbirthdays.com/winners/survivor.html",
+      "success": true,
+      "created_at": "2026-03-16T23:15:43.164898Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.as.com/entertainment/list-of-survivor-winners-season-1-to-45-every-winner-from-2000-to-2023-n/",
+        "max_chars": 10000
+      },
+      "summary": "Title: List of ‘Survivor’ winners season 1 to 45: every winner from 2000 to 2023 - AS USA\n\nList of ‘Survivor’ winners season 1 to 45: every winner from 2000 to 2023 - AS USA Soccer NFL NBA AS USA Log in Sign in to comment Hello EDITION en Editions Spain Chile Colombia USA Mexico US Latino America Scores Scores Editions Spain Chile Colombia USA Mexico US Latino America Scores Soccer NFL NBA MLB NCA",
+      "success": true,
+      "created_at": "2026-03-16T23:15:47.115845Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Michele Fitzgerald\" Survivor birth date May born",
+        "max_results": 5
+      },
+      "summary": "Michele Fitzgerald - Net Worth 2026, Age, Height, Bio, Birthday, Wiki ...: https://celebrity-birthdays.com/people/michele-fitzgerald | Michele Fitzgerald Biography: Age, Height, Family & Survivor Journey ...: https://celebswiki.info/michele-fitzgerald-bio-age-height-family-net-worth-survivor | Michele Fitzgerald Biography, Age, Height, Boyfriend, Net Worth: https://starswiki.net/michele-fitzgerald/6407/",
+      "success": true,
+      "created_at": "2026-03-16T23:15:53.270103Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "US Survivor winners birth dates birthdays complete list May month",
+        "max_results": 5
+      },
+      "summary": "Survivor winners by year, complete list with pictures before season 50: https://admeter.usatoday.com/picture-gallery/entertainment/television-radio/2026/02/24/survivor-winners-names-by-season/88809758007/ | Survivor (Competition) - Winners, Ages, Trivia | Famous Birthdays: https://www.famousbirthdays.com/winners/survivor.html | Winner Birthdays : r/survivor - Reddit: https://www.reddit.com/r/survivor/comments/i5lzsy/winner_birthdays/",
+      "success": true,
+      "created_at": "2026-03-16T23:16:00.252380Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.reddit.com/r/survivor/comments/i5lzsy/winner_birthdays/",
+        "max_chars": 10000
+      },
+      "summary": "Title: Reddit - The heart of the internet\n\nReddit - The heart of the internet Skip to main content Open menu Open navigation Go to Reddit Home r/survivor Get App Get the Reddit app Log In Log in to Reddit Expand user menu Open settings menu Go to survivor r/survivor • layersofduplicity Winner Birthdays January- 7 (Tom: 4, Todd: 29, Kim: 30, Denise: 1, Cochran: 17, Adam: 15, Ben: 1) February- 3 (Je",
+      "success": true,
+      "created_at": "2026-03-16T23:16:04.231806Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Erika Casupanan Maryanne Oketch Mike Gabler \"Yam Yam\" Arocho Dee Valladares birth dates birthdays May",
+        "max_results": 5
+      },
+      "summary": "Sarah Lacina - Wikipedia: https://en.wikipedia.org/wiki/Sarah_Lacina | Clifford Robinson (basketball, born 1966) - Wikipedia: https://en.wikipedia.org/wiki/Clifford_Robinson_(basketball,_born_1966) | New Era Survivor Rankings by Anonymous | sortr: https://sortr.io/rankings/bc7f9727-517f-4f0d-b02a-7e4ae26783c9",
+      "success": true,
+      "created_at": "2026-03-16T23:16:15.666370Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Erika Casupanan\" birth date birthday born",
+        "max_results": 3
+      },
+      "summary": "Erika Casupanan Age, Birthday, Zodiac Sign and Birth Chart: https://www.ask-oracle.com/birth-chart/erika-casupanan/ | Erika Casupanan - Age, Bio, Family | Famous Birthdays: https://www.famousbirthdays.com/people/erika-casupanan.html | Erika Casupanan - EverybodyWiki Bios & Wiki: https://en.everybodywiki.com/Erika_Casupanan",
+      "success": true,
+      "created_at": "2026-03-16T23:16:22.812896Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Maryanne Oketch\" birth date birthday born",
+        "max_results": 3
+      },
+      "summary": "Maryanne Oketch - Wikipedia: https://en.wikipedia.org/wiki/Maryanne_Oketch | Maryanne Oketch (Reality Star) - Age, Birthday, Bio, Facts, Family, Net ...: https://allfamous.org/people/maryanne-oketch-2zt7.html | Maryanne Oketch - Age, Bio, Family | Famous Birthdays: https://www.famousbirthdays.com/people/maryanne-oketch.html",
+      "success": true,
+      "created_at": "2026-03-16T23:16:29.110657Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Mike Gabler\" Survivor birth date birthday born",
+        "max_results": 3
+      },
+      "summary": "Sarah Lacina - Wikipedia: https://en.wikipedia.org/wiki/Sarah_Lacina | Adam Klein (Survivor contestant) - Wikipedia: https://en.wikipedia.org/wiki/Adam_Klein_(Survivor_contestant) | Mike Gabler Net Worth: Biography, Age, Wife, Parents, Education: https://www.globallyinfo.com/mike-gabler-net-worth-biography/",
+      "success": true,
+      "created_at": "2026-03-16T23:16:35.073748Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "US Survivor winners list birth dates birthdays complete list through 2023",
+        "max_results": 5
+      },
+      "summary": "Listof multiplebirths- Wikipedia: https://en.wikipedia.org/wiki/List_of_multiple_births | Wikipedia: https://www.wikipedia.org/ | What Did Hubble See on YourBirthday? | HubbleBirthday: https://hubblebirthday.com/hubble-birthday",
+      "success": true,
+      "created_at": "2026-03-16T23:16:46.128934Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Survivor CBS\" winners list \"birth date\" all seasons complete",
+        "max_results": 5
+      },
+      "summary": "List of Survivor (American TV series) contestants - Wikipedia: https://en.wikipedia.org/wiki/List_of_Survivor_(American_TV_series)_contestants | Survivor (American TV series) - Wikipedia: https://en.wikipedia.org/wiki/Survivor_(American_TV_series) | Survivor Season 50 Episodes - CBS: https://www.cbs.com/shows/survivor/episodes/",
+      "success": true,
+      "created_at": "2026-03-16T23:16:51.208151Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "http://www.survivorhistory.com/?rankings=1&jury=winner",
+        "max_chars": 10000
+      },
+      "summary": "Title: Survivor Winners - Survivor History - SurvivorHistory.com\n\nSurvivor Winners - Survivor History - SurvivorHistory.com We Archive SURVIVOR™ History NOTE: SurvivorHistory.com is a fan site and is NOT associated with CBS in any way.  SURVIVOR™ is a trademark of CBS. SPOILER ALERT: SurvivorHistory.com contains up-to-date information for the USA broadcast of Survivor.\nIf you watch delayed broadca",
+      "success": true,
+      "created_at": "2026-03-16T23:16:55.025323Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/List_of_Survivor_(American_TV_series)_contestants",
+        "max_chars": 15000
+      },
+      "summary": "Title: List of Survivor (American TV series) contestants - Wikipedia\n\nList of Survivor (American TV series) contestants - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Crea",
+      "success": true,
+      "created_at": "2026-03-16T23:16:59.435542Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Survivor winners\" \"birth date\" \"Michele Fitzgerald\" \"May\" complete list CBS seasons",
+        "max_results": 5
+      },
+      "summary": "Richard Hatch (Survivor contestant) - Wikipedia: https://en.wikipedia.org/wiki/Richard_Hatch_(Survivor_contestant) | Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | The Rumor Mill – What’s The Story With Survivor Season 40?: https://insidesurvivor.com/the-rumor-mill-whats-the-story-with-survivor-season-40-38815",
+      "success": true,
+      "created_at": "2026-03-16T23:17:07.195143Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Michele Fitzgerald\" \"May\" birth date Survivor winner Kaoh Rong",
+        "max_results": 5
+      },
+      "summary": "Survivor: Kaoh Rong Finale - imagecollect.com: https://imagecollect.com/picture/michele-fitzgerald-photo-7501359/survivor-kaoh-rong-finale | May 18, 2016 - Studio City, CA, USA - LOS ANGELES - MAY 18 ... - Alamy: https://www.alamy.com/may-18-2016-studio-city-ca-usa-los-angeles-may-18-michele-fitzgerald-at-the-survivor-kaoh-rong-finale-at-the-cbs-radford-on-may-18-2016-in-studio-city-ca-credit-image-kathy-hutchinsnewscom-via-zuma-press-image669402788.html | Michele Fitzgerald, birth date 5 May 1990, with biography: https://www.astro.com/astro-databank/Fitzgerald,_Michele",
+      "success": true,
+      "created_at": "2026-03-16T23:17:12.154860Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Survivor seasons 1-44\" winners complete list through 2023 birth dates all",
+        "max_results": 5
+      },
+      "summary": "Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | Every Winner of 'Survivor' and What They're: https://247tempo.com/every-winner-of-survivor-and-what-theyre-doing-now/ | March | 2023 | More Whatnot: https://morewhatnot.com/2023/03/",
+      "success": true,
+      "created_at": "2026-03-16T23:17:20.644496Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"List of Survivor seasons\" Wikipedia winners all US seasons 1-44",
+        "max_results": 5
+      },
+      "summary": "Survivor (American TV series) - Wikipedia: https://en.wikipedia.org/wiki/Survivor_(American_TV_series) | Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | Lists of Survivor (American TV series) episodes - Wikipedia: https://en.wikipedia.org/wiki/Lists_of_Survivor_(American_TV_series)_episodes",
+      "success": true,
+      "created_at": "2026-03-16T23:17:25.930069Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Survivor_(American_TV_series)",
+        "max_chars": 20000
+      },
+      "summary": "Title: Survivor (American TV series) - Wikipedia\n\nSurvivor (American TV series) - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate ",
+      "success": true,
+      "created_at": "2026-03-16T23:17:30.772549Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_www_astro_com_astro_databank_Fitzgerald_Michele",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.astro.com/astro-databank/Fitzgerald,_Michele",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e2d69698-bc99-4e85-9880-67eaccd66e6c/https_www_astro_com_astro_databank_Fitzgerald_Michele.txt",
+      "excerpt": "Title: One moment...\n\nOne moment... Checking your browser... Go back Main Page If you wish to report an error, please e-mail to: webmaster@astro.com"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Category_Survivor_American_TV_series_winners",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Category:Survivor_(American_TV_series)_winners",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e2d69698-bc99-4e85-9880-67eaccd66e6c/https_en_wikipedia_org_wiki_Category_Survivor_American_TV_series_winners.txt",
+      "excerpt": "Title: Category:Survivor (American TV series) winners - Wikipedia\n\nCategory:Survivor (American TV series) winners - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Category: Survivor (American TV series) winners 1 language Русский Edit links Category Talk English Read Edit View history Tools Tools move to s"
+    },
+    {
+      "name": "http_www_survivorhistory_com_rankings_1_jury_winner",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.survivorhistory.com/?rankings=1&jury=winner",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e2d69698-bc99-4e85-9880-67eaccd66e6c/http_www_survivorhistory_com_rankings_1_jury_winner.txt",
+      "excerpt": "Title: Survivor Winners - Survivor History - SurvivorHistory.com\n\nSurvivor Winners - Survivor History - SurvivorHistory.com We Archive SURVIVOR™ History NOTE: SurvivorHistory.com is a fan site and is NOT associated with CBS in any way.  SURVIVOR™ is a trademark of CBS. SPOILER ALERT: SurvivorHistory.com contains up-to-date information for the USA broadcast of Survivor.\nIf you watch delayed broadcasts, beware of spoilers!  We do NOT have any spoilers for the USA broadcast if you are up-to-date. All Survivors >\n\t\t\t\t\tWinners Winners Click the season to view all survivors from that season, click t"
+    },
+    {
+      "name": "https_www_famousbirthdays_com_winners_survivor_html",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.famousbirthdays.com/winners/survivor.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e2d69698-bc99-4e85-9880-67eaccd66e6c/https_www_famousbirthdays_com_winners_survivor_html.txt",
+      "excerpt": "Title: Survivor (Competition) - Winners, Ages, Trivia | Famous Birthdays\n\nSurvivor (Competition) - Winners, Ages, Trivia | Famous Birthdays popular trending video trivia random Survivor Premiered May\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t31, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t2000 Network CBS Genre Survival Survivor About Based on the Swedish TV series Expedition Robinson, this series places strangers in isolation where they must provide themselves with life necessities. Jeff Probst served as the longtime host. Trivia The show was included on Time magazine's 2007 list of the 10"
+    },
+    {
+      "name": "https_en_as_com_entertainment_list_of_survivor_winners_season_1_to_45_every_winn",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.as.com/entertainment/list-of-survivor-winners-season-1-to-45-every-winner-from-2000-to-2023-n/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e2d69698-bc99-4e85-9880-67eaccd66e6c/https_en_as_com_entertainment_list_of_survivor_winners_season_1_to_45_every_winn.txt",
+      "excerpt": "Title: List of ‘Survivor’ winners season 1 to 45: every winner from 2000 to 2023 - AS USA\n\nList of ‘Survivor’ winners season 1 to 45: every winner from 2000 to 2023 - AS USA Soccer NFL NBA AS USA Log in Sign in to comment Hello EDITION en Editions Spain Chile Colombia USA Mexico US Latino America Scores Scores Editions Spain Chile Colombia USA Mexico US Latino America Scores Soccer NFL NBA MLB NCAA Other Sports Latest News Entertainment Videos Photos MeriStation Stories Topics USMNT 2026 kit Mega Millions money Powerball money Social Security March 18 SS payments March Rousey vs Carano TV Man "
+    },
+    {
+      "name": "https_www_reddit_com_r_survivor_comments_i5lzsy_winner_birthdays",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.reddit.com/r/survivor/comments/i5lzsy/winner_birthdays/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e2d69698-bc99-4e85-9880-67eaccd66e6c/https_www_reddit_com_r_survivor_comments_i5lzsy_winner_birthdays.txt",
+      "excerpt": "Title: Reddit - The heart of the internet\n\nReddit - The heart of the internet Skip to main content Open menu Open navigation Go to Reddit Home r/survivor Get App Get the Reddit app Log In Log in to Reddit Expand user menu Open settings menu Go to survivor r/survivor • layersofduplicity Winner Birthdays January- 7 (Tom: 4, Todd: 29, Kim: 30, Denise: 1, Cochran: 17, Adam: 15, Ben: 1) February- 3 (Jenna: 15, Yul: 14, Bob: 25) March- 2 (Brian: 9, Wendell, 8) April- 5 (Richard: 8, Earl: 9, Natalie W: 22, Natalie A: 11, Jeremy: 16) May- 1 (Michele: 5) June- 4 (JT: 23, Fabio: 12, Tyson: 17, Nick: 11)"
+    },
+    {
+      "name": "http_www_survivorhistory_com_rankings_1_jury_winner",
+      "source_type": "web_fetch",
+      "source_uri": "http://www.survivorhistory.com/?rankings=1&jury=winner",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e2d69698-bc99-4e85-9880-67eaccd66e6c/http_www_survivorhistory_com_rankings_1_jury_winner.txt",
+      "excerpt": "Title: Survivor Winners - Survivor History - SurvivorHistory.com\n\nSurvivor Winners - Survivor History - SurvivorHistory.com We Archive SURVIVOR™ History NOTE: SurvivorHistory.com is a fan site and is NOT associated with CBS in any way.  SURVIVOR™ is a trademark of CBS. SPOILER ALERT: SurvivorHistory.com contains up-to-date information for the USA broadcast of Survivor.\nIf you watch delayed broadcasts, beware of spoilers!  We do NOT have any spoilers for the USA broadcast if you are up-to-date. All Survivors >\n\t\t\t\t\tWinners Winners Click the season to view all survivors from that season, click t"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_List_of_Survivor_American_TV_series_contestants",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/List_of_Survivor_(American_TV_series)_contestants",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e2d69698-bc99-4e85-9880-67eaccd66e6c/https_en_wikipedia_org_wiki_List_of_Survivor_American_TV_series_contestants.txt",
+      "excerpt": "Title: List of Survivor (American TV series) contestants - Wikipedia\n\nList of Survivor (American TV series) contestants - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Key legend 2 Seasons 1–10 (2000–2005) 3 Seasons 11–20 (2005–2010) 4 Seasons 21–30 (2010–2015) 5 Seas"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Survivor_American_TV_series",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Survivor_(American_TV_series)",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e2d69698-bc99-4e85-9880-67eaccd66e6c/https_en_wikipedia_org_wiki_Survivor_American_TV_series.txt",
+      "excerpt": "Title: Survivor (American TV series) - Wikipedia\n\nSurvivor (American TV series) - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Format and rules 2 Series overview 3 Production Toggle Production subsection 3.1 Concept 3.2 Locations 3.3 Casting 4 Reception Toggle Recept"
+    }
+  ],
+  "duration_seconds": 445.9853569580009,
+  "created_at": "2026-03-16T23:18:43.023913Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Google \"American Survivor Winners\". Scroll down to the Wikipedia listing \"Survivor (American TV Series)\".\n    Search, https://en.wikipedia.org/wiki/Survivor_(American_TV_series),  \n2.I begin to make a list of all the Survivor winners and their seasons. \n3.I google \"survivor cast CBS\" and click on cast tab at cbs.com (https://www.cbs.com/shows/survivor/cast/). It features the players of the most recently aired season. I click on the Seasons tab and scroll down to the first season. I find the winner from the first season (based on my list compiled from the en.wikipedia.org site mentioned in step 1) and scroll through the bio information until I see the mention of their birthday. It is usually contained in the last sentence of the bio. I repeat this process until I get to Season 18. It is at this point that CBS starts to omit the full birthdays. For seasons 18 and 19 they include the month and date but omit the year. By Season 20, the birthday is omitted completely. \n4. So now I am making a simple template entry in google for each successive winner: When was (insert winner's name), winner of (insert season they won) of Survivor born?  There are usually two prominent sites I look for in my Google feed for this information:\n\n             1. Wikipedia page for that contestant: ex.: https://en.wikipedia.org/wiki/J._T._Thomas_(Survivor_contestant)\n             2. Survivor Wiki: ex.: https://survivor.fandom.com/wiki/J.T._Thomas   \n                Overall I have found the fan pages to be pretty reliable. If both options were available, I did take the opportunity to verify \n                that they matched up. I did not find any discrepancies (as far as birthdays) between the two.\n\n5. Now I have a list of all forty of the winners from the first forty seasons of Survivor (two of them have won twice). I comb the list and \nnote the months when they are mentioned and how many times that they appear. Michele Fitzgerald, the winner of Season 32 of Survivor, is the only listed with a birthday in May.",
+      "Number of steps": "I have five main processes listed but the individual steps for each winner (and any confirmation searches) would place it into the 40-60 range.",
+      "How long did this take?": "65 minutes",
+      "Tools": "1. web browser\n2. search engine",
+      "Number of tools": "2"
+    }
+  }
+}

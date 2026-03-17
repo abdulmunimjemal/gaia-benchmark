@@ -1,0 +1,317 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "e29834fd-413a-455c-a33e-c3915b07401c",
+  "question": "I'd like to learn more about some popular reality television competition shows. As of the end of the 44th season of the American version of Survivor, how many more unique winners have there been compared to the number of winners of American Idol?",
+  "answer": "21",
+  "raw_answer": "21",
+  "scorer_answer": "21",
+  "expected_answer": "21",
+  "score": 1.0,
+  "passed": true,
+  "route": "code",
+  "risk": "high",
+  "retry_count": 1,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "code",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "I'd like to learn more about some popular reality television competition shows. As of the end of the 44th season of the American version of Survivor, how many more unique winners have there been compared to the number of winners of American Idol",
+      "I'd like to learn more about some popular",
+      "to the number of winners of American Idol"
+    ],
+    "working_plan": [
+      "Fetch only the specific cited source or page requested by the task.",
+      "Extract the exact factual inputs needed for the calculation.",
+      "Use sandboxed code for the computation and rounding.",
+      "Return only the final benchmark-formatted answer."
+    ],
+    "answer_shape": "number"
+  },
+  "solver": {
+    "answer": "21",
+    "confidence": "high",
+    "citations": [
+      "https://en.wikipedia.org/wiki/Survivor_(American_TV_series)"
+    ],
+    "reasoning_summary": "From the Wikipedia Survivor seasons table, there were 44 total wins through season 44, but Sandra Diaz-Twine won twice (seasons 7, 20) and Tony Vlachos won twice (seasons 28, 40), giving 42 unique winners. The verifier confirmed American Idol had 21 winners by May 2023 when Survivor 44 ended. Therefore: 42 - 21 = 21."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "American Survivor winners season 44 complete list unique winners",
+        "max_results": 5
+      },
+      "summary": "Survivor 44 - Wikipedia: https://en.wikipedia.org/wiki/Survivor_44 | List of all the winners of Survivor over the years - Soap Central: https://www.soapcentral.com/shows/list-of-all-the-winners-of-survivor-over-the-years | Survivor 44 | Survivor Wiki | Fandom: https://survivor.fandom.com/wiki/Survivor_44",
+      "success": true,
+      "created_at": "2026-03-16T22:02:15.886609Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.goldderby.com/gallery/survivor-winners-list/"
+      },
+      "summary": "Title: Survivor winners list: All seasons\n\nSurvivor winners list: All seasons × Emmy Awards Nominations 2026 Comedy Series Only Murders in the Building 96.0% Comedy Actress Jean Smart (Hacks) 94.7% Comedy Actor Jason Segel (Shrinking) 96.7% Comedy Supporting Actress Janelle James (Abbott Elementary) 96.1% Comedy Supporting Actor Harrison Ford (Shrinking) 97.5% Drama Series The Pitt 96.2% Drama Act",
+      "success": true,
+      "created_at": "2026-03-16T22:02:21.156839Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "American Idol winners complete list total number",
+        "max_results": 5
+      },
+      "summary": "The Complete List of American Idol Winners By Season: https://entertainmentnow.com/american-idol/complete-list-winners-by-season/ | American Idol winners | In Order, Names, Seasons, & Years | Britannica: https://www.britannica.com/topic/American-Idol-winners-2229597 | The Complete List of 'American Idol' Winners - Entertainment Tonight: https://www.etonline.com/gallery/the-complete-list-of-american-idol-winners-21116",
+      "success": true,
+      "created_at": "2026-03-16T22:02:40.660150Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://entertainmentnow.com/american-idol/complete-list-winners-by-season/"
+      },
+      "summary": "Title: The Complete List of American Idol Winners By Season\n\nThe Complete List of American Idol Winners By Season Skip to content Menu Getty EntertainmentNow.com American Idol Now! > Who Has Won ‘American Idol’: Full List of Winners by Season Over the Years Who Has Won ‘American Idol’: Full List of Winners by Season Over the Years Since its debut in 2002, “ American Idol ” has been a launchpad for",
+      "success": true,
+      "created_at": "2026-03-16T22:02:44.733775Z"
+    },
+    {
+      "name": "sandbox_exec",
+      "category": "code",
+      "arguments": {
+        "code": "# Let me list and count the unique Survivor winners through season 44\nsurvivor_winners = [\n    \"Richard Hatch\",  # S1\n    \"Tina Wesson\",   # S2  \n    \"Ethan Zohn\",    # S3\n    \"Vecepia Towery\", # S4\n    \"Brian Heidik\",  # S5\n    \"Jenna Morasca\", # S6\n    \"Sandra Diaz-Twine\", # S7 (also won S20, but counting as unique person)\n    \"Amber Brkich\",  # S8\n    \"Chris Daugherty\", # S9\n    \"Tom Westman\",   # S10\n    \"Danni Boatwright\", # S11\n    \"Aras Baskauskas\", # S12\n    \"Yul Kwon\",      # S13\n    \"Earl Cole\",     # S14\n    \"Todd Herzog\",   # S15\n    \"Parvati Shallow\", # S16\n    \"Bob Crowley\",   # S17\n    \"J.T. Thomas\",   # S18\n    \"Natalie White\", # S19\n    # S20: Sandra Diaz-Twine (already counted)\n    \"Jud 'Fabio' Birza\", # S21\n    \"'Boston' Rob Mariano\", # S22\n    \"Sophie Clarke\", # S23\n    \"Kim Spradlin\",  # S24\n    \"Denise Stapley\", # S25\n    \"John Cochran\",  # S26\n    \"Tyson Apostol\", # S27\n    \"Tony Vlachos\",  # S28 (also won S40, but counting as unique person)\n    \"Natalie Anderson\", # S29\n    \"Mike Holloway\", # S30\n    \"Jeremy Collins\", # S31\n    \"Michele Fitzgerald\", # S32\n    \"Adam Klein\",    # S33\n    \"Sarah Lacina\",  # S34\n    \"Ben Driebergen\", # S35\n    \"Wendell Holland\", # S36\n    \"Nick Wilson\",   # S37\n    \"Chris Underwood\", # S38\n    \"Tommy Sheehan\", # S39\n    # S40: Tony Vlachos (already counted)\n    \"Erika Casupanan\", # S41\n    \"Maryanne Oketch\", # S42\n    \"Mike Gabler\",   # S43\n    \"Yamil 'Yam Yam' Arocho\" # S44\n]\n\nprint(f\"Unique Survivor winners through season 44: {len(survivor_winners)}\")\nprint()\n\n# Now let me list and count American Idol winners\namerican_idol_winners = [\n    \"Kelly Clarkson\",   # S1 2002\n    \"Ruben Studdard\",   # S2 2003  \n    \"Fantasia Barrino\", # S3 2004\n    \"Carrie Underwood\", # S4 2005\n    \"Taylor Hicks\",     # S5 2006\n    \"Jordin Sparks\",    # S6 2007\n    \"David Cook\",       # S7 2008\n    \"Kris Allen\",       # S8 2009\n    \"Lee DeWyze\",       # S9 2010\n    \"Scotty McCreery\",  # S10 2011\n    \"Phillip Phillips\",  # S11 2012\n    \"Candice Glover\",   # S12 2013\n    \"Caleb Johnson\",    # S13 2014\n    \"Nick Fradiani\",    # S14 2015\n    \"Trent Harmon\",     # S15 2016\n    # ABC Revival\n    \"Maddie Poppe\",     # S16 2018\n    \"Laine Hardy\",      # S17 2019\n    \"Just Sam\",         # S18 2020\n    \"Chayce Beckham\",   # S19 2021\n    \"Noah Thompson\",    # S20 2022\n    \"Iam Tongi\",        # S21 2023\n    \"Abi Carter\",       # S22 2024\n    \"Jamal Roberts\"     # S23 2025\n]\n\nprint(f\"American Idol winners total: {len(american_idol_winners)}\")\nprint()\n\n# Calculate the difference\ndifference = len(survivor_winners) - len(american_idol_winners)\nprint(f\"Difference (Survivor unique winners - American Idol winners): {difference}\")",
+        "language": "python"
+      },
+      "summary": "stdout=Unique Survivor winners through season 44: 42\n\nAmerican Idol winners total: 23\n\nDifference (Survivor unique winners - American Idol winners): 19\n",
+      "success": true,
+      "created_at": "2026-03-16T22:03:03.582013Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Survivor season 44 finale date end American version 2023"
+      },
+      "summary": "Survivor 44 - Wikipedia: https://en.wikipedia.org/wiki/Survivor_44 | Survivor 41 - Wikipedia: https://en.wikipedia.org/wiki/Survivor_41 | Survivor 47 - Wikipedia: https://en.wikipedia.org/wiki/Survivor_47",
+      "success": true,
+      "created_at": "2026-03-16T22:04:04.205101Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Survivor_44"
+      },
+      "summary": "Title: Survivor 44 - Wikipedia\n\nSurvivor 44 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move ",
+      "success": true,
+      "created_at": "2026-03-16T22:04:07.055330Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "list of Survivor winners seasons 1-44 American version complete list"
+      },
+      "summary": "Survivor (American TV series) - Wikipedia: https://en.wikipedia.org/wiki/Survivor_(American_TV_series) | Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | Survivor (franchise) - Wikipedia: https://en.wikipedia.org/wiki/Survivor_(franchise)",
+      "success": true,
+      "created_at": "2026-03-16T22:04:13.078920Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Survivor_(American_TV_series)"
+      },
+      "summary": "Title: Survivor (American TV series) - Wikipedia\n\nSurvivor (American TV series) - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate ",
+      "success": true,
+      "created_at": "2026-03-16T22:04:16.501232Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "American Idol winners list all seasons 2023 May complete"
+      },
+      "summary": "Who won 'American Idol'? Full list of former winners and runners-up: https://abcnews.com/GMA/Culture/won-won-american-idol-full-list-winners-runners-up/story?id=83063673 | The Complete List of American Idol Winners By Season: https://entertainmentnow.com/american-idol/complete-list-winners-by-season/ | The Complete List of 'American Idol' Winners - Entertainment Tonight: https://www.etonline.com/gallery/the-complete-list-of-american-idol-winners-21116",
+      "success": true,
+      "created_at": "2026-03-16T22:04:33.675514Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://abcnews.com/GMA/Culture/won-won-american-idol-full-list-winners-runners-up/story?id=83063673"
+      },
+      "summary": "Title: Who won 'American Idol'? Full list of former winners and runners-up - ABC News\n\nWho won 'American Idol'? Full list of former winners and runners-up - ABC News ABC News Live Video Shows Shop Interest Successfully Added We'll notify you here with news about Turn on desktop notifications for breaking stories about interest? Off On Stream on Culture Who won 'American Idol'? Full list of former ",
+      "success": true,
+      "created_at": "2026-03-16T22:04:39.483687Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"American Idol season 21\" finale date end 2023 Iam Tongi winner"
+      },
+      "summary": "Very Emotional AMERICAN IDOL Season 21 Live Finale Recap &: https://hollywoodjunket.com/very-emotional-american-idol-season-21-live-finale-recap-winner-revealed/ | American Idol 2023 Winner Iam Tongi Makes History - OtakuKart: https://otakukart.com/394024/american-idol-2023-winner-iam-tongi-makes-history/ | 'American Idol' Finale Winner: Iam Tongi — Season: https://tvline.com/lists/american-idol-finale-winner-iam-tongi-season-21-voting-results/",
+      "success": true,
+      "created_at": "2026-03-16T22:04:54.545747Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Survivor season 44 American version end date finale 2023",
+        "max_results": 5
+      },
+      "summary": "Survivor 44 - Wikipedia: https://en.wikipedia.org/wiki/Survivor_44 | Survivor Season 44 Crowns Its Winner - E! Online: https://www.eonline.com/news/1375314/survivor-season-44-crowns-its-winner | When is the Survivor 44 season finale? - Monsters and Critics: https://www.monstersandcritics.com/tv/reality-tv/when-is-the-survivor-44-season-finale/",
+      "success": true,
+      "created_at": "2026-03-16T22:05:07.230935Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "complete list all Survivor winners seasons 1-44 American version unique contestants",
+        "max_results": 5
+      },
+      "summary": "Survivor (American TV series) - Wikipedia: https://en.wikipedia.org/wiki/Survivor_(American_TV_series) | Survivor: Winners at War - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Winners_at_War | Survivor: Samoa - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Samoa",
+      "success": true,
+      "created_at": "2026-03-16T22:05:13.790761Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Survivor winners\" list all seasons 1-44 comprehensive",
+        "max_results": 5
+      },
+      "summary": "Montclair State University - Wikipedia: https://en.wikipedia.org/wiki/Montclair_State_University | Wikipedia talk:WikiProject Television/Archive 38 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia_talk:WikiProject_Television/Archive_38 | Survivor Winners: List of Survivor Winners - Parade: https://parade.com/tv/survivor-winners",
+      "success": true,
+      "created_at": "2026-03-16T22:05:21.014758Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.oliandalex.com/complete-list-of-survivor-winners/"
+      },
+      "summary": "Title: Complete List of Survivor Winners - Oli And Alex\n\nComplete List of Survivor Winners - Oli And Alex Sign in Home Beauty & Style Fashion Hair Ideas Makeup Tips Skincare Health Fitness Diet & Nutrition Food Lifestyle Relationships Parenting Pets Entertainment Hobbies Home Improvement Life Tips Money Safety Tips Family Wedding Business E-Commerce Law Work Workplace Tech Travel Sign in Welcome! ",
+      "success": true,
+      "created_at": "2026-03-16T22:05:30.804109Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:wikipedia.org \"List of Survivor contestants\" OR \"Survivor winners by season\"",
+        "max_results": 5
+      },
+      "summary": "Wikipedia:Featured list removal candidates/log/December 2010 -: https://en.wikipedia.org/wiki/Wikipedia:Featured_list_removal_candidates/log/December_2010 | Wikipedia:Featured list candidates/Featured log/October 2007 -: https://en.wikipedia.org/wiki/Wikipedia:Featured_list_candidates/Featured_log/October_2007 | Wikipedia:Featured list candidates/Failed log/July 2007 -: https://en.wikipedia.org/wiki/Wikipedia:Featured_list_candidates/Failed_log/July_2007",
+      "success": true,
+      "created_at": "2026-03-16T22:05:39.260635Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"all Survivor winners\" American \"season 1\" \"season 44\" chronological list",
+        "max_results": 5
+      },
+      "summary": "Survivor: Gabon - Wikipedia: https://en.wikipedia.org/wiki/Survivor:_Gabon | Squid Game season 1 - Wikipedia: https://en.wikipedia.org/wiki/Squid_Game_season_1 | Survivor 47 - Wikipedia: https://en.wikipedia.org/wiki/Survivor_47",
+      "success": true,
+      "created_at": "2026-03-16T22:05:43.560181Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Survivor_(American_TV_series)"
+      },
+      "summary": "Title: Survivor (American TV series) - Wikipedia\n\nSurvivor (American TV series) - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate ",
+      "success": true,
+      "created_at": "2026-03-16T22:05:47.292184Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_www_goldderby_com_gallery_survivor_winners_list",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.goldderby.com/gallery/survivor-winners-list/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e29834fd-413a-455c-a33e-c3915b07401c/https_www_goldderby_com_gallery_survivor_winners_list.txt",
+      "excerpt": "Title: Survivor winners list: All seasons\n\nSurvivor winners list: All seasons × Emmy Awards Nominations 2026 Comedy Series Only Murders in the Building 96.0% Comedy Actress Jean Smart (Hacks) 94.7% Comedy Actor Jason Segel (Shrinking) 96.7% Comedy Supporting Actress Janelle James (Abbott Elementary) 96.1% Comedy Supporting Actor Harrison Ford (Shrinking) 97.5% Drama Series The Pitt 96.2% Drama Actress Rhea Seehorn (Pluribus) 97.0% Drama Actor Noah Wyle (The Pitt) 97.5% Drama Supporting Actress Katherine LaNasa (The Pitt) 96.1% Drama Supporting Actor Patrick Ball (The Pitt) 94.3% Limited Series"
+    },
+    {
+      "name": "https_entertainmentnow_com_american_idol_complete_list_winners_by_season",
+      "source_type": "web_fetch",
+      "source_uri": "https://entertainmentnow.com/american-idol/complete-list-winners-by-season/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e29834fd-413a-455c-a33e-c3915b07401c/https_entertainmentnow_com_american_idol_complete_list_winners_by_season.txt",
+      "excerpt": "Title: The Complete List of American Idol Winners By Season\n\nThe Complete List of American Idol Winners By Season Skip to content Menu Getty EntertainmentNow.com American Idol Now! > Who Has Won ‘American Idol’: Full List of Winners by Season Over the Years Who Has Won ‘American Idol’: Full List of Winners by Season Over the Years Since its debut in 2002, “ American Idol ” has been a launchpad for aspiring singers hoping to turn a breakout audition into a life-changing career. The show has been on for over two decades and on two different networks. During that time, it has crowned winners who "
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Survivor_44",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Survivor_44",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e29834fd-413a-455c-a33e-c3915b07401c/https_en_wikipedia_org_wiki_Survivor_44.txt",
+      "excerpt": "Title: Survivor 44 - Wikipedia\n\nSurvivor 44 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Production 2 Contestants Toggle Contestants subsection 2.1 Future appearances 3 Season summary 4 Episodes 5 Voting history 6 Reception 7 References 8 External links Toggle the "
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Survivor_American_TV_series",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Survivor_(American_TV_series)",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e29834fd-413a-455c-a33e-c3915b07401c/https_en_wikipedia_org_wiki_Survivor_American_TV_series.txt",
+      "excerpt": "Title: Survivor (American TV series) - Wikipedia\n\nSurvivor (American TV series) - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Format and rules 2 Series overview 3 Production Toggle Production subsection 3.1 Concept 3.2 Locations 3.3 Casting 4 Reception Toggle Recept"
+    },
+    {
+      "name": "https_abcnews_com_GMA_Culture_won_won_american_idol_full_list_winners_runners_up",
+      "source_type": "web_fetch",
+      "source_uri": "https://abcnews.com/GMA/Culture/won-won-american-idol-full-list-winners-runners-up/story?id=83063673",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e29834fd-413a-455c-a33e-c3915b07401c/https_abcnews_com_GMA_Culture_won_won_american_idol_full_list_winners_runners_up.txt",
+      "excerpt": "Title: Who won 'American Idol'? Full list of former winners and runners-up - ABC News\n\nWho won 'American Idol'? Full list of former winners and runners-up - ABC News ABC News Live Video Shows Shop Interest Successfully Added We'll notify you here with news about Turn on desktop notifications for breaking stories about interest? Off On Stream on Culture Who won 'American Idol'? Full list of former winners and runners-up Take a trip down \"American Idol\" memory lane! By Carson Blackwelder May 21, 2024, 9:29 AM 4:07 In this Sept. 4, 2002, file photo, 'American Idol\" winner Kelly Clarkson sings on "
+    },
+    {
+      "name": "https_www_oliandalex_com_complete_list_of_survivor_winners",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.oliandalex.com/complete-list-of-survivor-winners/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e29834fd-413a-455c-a33e-c3915b07401c/https_www_oliandalex_com_complete_list_of_survivor_winners.txt",
+      "excerpt": "Title: Complete List of Survivor Winners - Oli And Alex\n\nComplete List of Survivor Winners - Oli And Alex Sign in Home Beauty & Style Fashion Hair Ideas Makeup Tips Skincare Health Fitness Diet & Nutrition Food Lifestyle Relationships Parenting Pets Entertainment Hobbies Home Improvement Life Tips Money Safety Tips Family Wedding Business E-Commerce Law Work Workplace Tech Travel Sign in Welcome! Log into your account your username your password Forgot your password? Privacy Policy Password recovery Recover your password your email Search Sign in Welcome! Log into your account your username yo"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Survivor_American_TV_series",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Survivor_(American_TV_series)",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/e29834fd-413a-455c-a33e-c3915b07401c/https_en_wikipedia_org_wiki_Survivor_American_TV_series.txt",
+      "excerpt": "Title: Survivor (American TV series) - Wikipedia\n\nSurvivor (American TV series) - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Format and rules 2 Series overview 3 Production Toggle Production subsection 3.1 Concept 3.2 Locations 3.3 Casting 4 Reception Toggle Recept"
+    }
+  ],
+  "duration_seconds": 304.8995711670141,
+  "created_at": "2026-03-16T22:07:10.726652Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "Step 1: Using a web browser, access a search engine and conduct a search \"American Survivor Television Series winners\"\nStep 2: Navigate to the first result, https://en.wikipedia.org/wiki/Survivor_(American_TV_series)\nStep 3: Evaluate the article and count the number of unique winners of the program: 42 winners\nStep 4: Navigate back to a search engine and conduct a search \"American Idol Winners\"\nStep 5: Navigate to the first search result, https://www.etonline.com/gallery/the-complete-list-of-american-idol-winners-21116/season-21-iam-tongi-92872\nStep 6: Evaluate the article and count the number of unique winners of the program: 21\nStep 7: Using a calculator, subtract the number of American Idol winners from the number of Survivor winners, 42-21 = 21\nStep 8: Report the correct response to my user, \"21\"",
+      "Number of steps": "8",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. A web browser\n2. A search engine\n3. A calculator",
+      "Number of tools": "3"
+    }
+  }
+}

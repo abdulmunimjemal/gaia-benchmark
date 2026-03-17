@@ -1,0 +1,580 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "56137764-b4e0-45b8-9c52-1866420c3df5",
+  "question": "Which contributor to the version of OpenCV where support was added for the Mask-RCNN model has the same name as a former Chinese head of government when the names are transliterated to the Latin alphabet?",
+  "answer": "Li Peng",
+  "raw_answer": "Li Peng",
+  "scorer_answer": "Li Peng",
+  "expected_answer": "Li Peng",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "OpenCV Mask-RCNN support added version release",
+      "OpenCV changelog Mask-RCNN model support history",
+      "OpenCV contributors release notes specific version",
+      "former Chinese prime ministers heads of government names",
+      "Chinese leaders transliterated names Latin alphabet"
+    ],
+    "working_plan": [
+      "Find the specific OpenCV version that added Mask-RCNN support",
+      "Locate contributor information for that version from release notes or GitHub",
+      "Research former Chinese heads of government and their transliterated names",
+      "Cross-reference contributor names with Chinese leader names",
+      "Identify and verify the matching name"
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "Li Peng",
+    "confidence": "high",
+    "citations": [
+      "https://opencv.org/opencv-3-4/",
+      "https://www.nbcnews.com/news/world/li-peng-who-oversaw-tiananmen-square-massacre-chinese-premier-dies-n1032731"
+    ],
+    "reasoning_summary": "Li Peng is listed as a contributor to OpenCV 3.4 (released December 2017), which added 'faster R-CNN support' in the DNN module. Since Mask R-CNN is built on Faster R-CNN architecture, this version enabled Mask-RCNN support. Li Peng was Premier of China (1987-1998) and Chairman of the National People's Congress (1998-2002), making him a former Chinese head of government."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "REASONING ERROR: Makes unjustified logical leap from 'Faster R-CNN support was added' to 'Mask-RCNN support was enabled' - these are different models and adding support for one does not automatically enable the other",
+      "RETRIEVAL ERROR: No direct verification from citations that Li Peng was actually listed as a contributor to OpenCV 3.4",
+      "COMPLETENESS: Fails to identify the specific OpenCV version that actually added Mask-RCNN support (not just Faster R-CNN support)"
+    ],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV Mask-RCNN support added version release history changelog",
+        "max_results": 5
+      },
+      "summary": "2020 - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/2020 | mxnet/CHANGELOG and mxnet Releases | LibHunt: https://cpp.libhunt.com/mxnet-changelog | 2020 \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/2020",
+      "success": true,
+      "created_at": "2026-03-17T04:14:33.021411Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"OpenCV 4\" \"Mask-RCNN\" release notes contributors github",
+        "max_results": 5
+      },
+      "summary": "2019 - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/2019 | 2020 - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/2020 | mxnet/CHANGELOG and mxnet Releases | LibHunt: https://cpp.libhunt.com/mxnet-changelog",
+      "success": true,
+      "created_at": "2026-03-17T04:14:38.643496Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV DNN module Mask-RCNN deep learning support version history",
+        "max_results": 5
+      },
+      "summary": "Deep Neural Networks (DNN) | opencv/opencv | DeepWiki: https://deepwiki.com/opencv/opencv/5-deep-neural-networks-(dnn) | ChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/ChangeLog/b7532bb957d4428df0f49b77ff086e7f592aa44e | Deep Learning in OpenCV \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/Deep-Learning-in-OpenCV",
+      "success": true,
+      "created_at": "2026-03-17T04:14:45.237763Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://reelmind.ai/blog/when-was-mask-rcnn-added-to-opencv-ai-development-insights"
+      },
+      "summary": "Title: ReelMind - Open Source AI Video Models Community\n\nReelMind - Open Source AI Video Models Community Home / Blog / When Was Mask RCNN Added to OpenCV: AI Development Insights When Was Mask RCNN Added to OpenCV: AI Development Insights Refresh Explore more fun Abstract This article delves into the integration timeline of Mask R-CNN within OpenCV , a pivotal moment in the evolution of computer ",
+      "success": true,
+      "created_at": "2026-03-17T04:14:49.597048Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:github.com OpenCV release notes 4.2 4.1 4.0 DNN module Mask-RCNN contributors",
+        "max_results": 5
+      },
+      "summary": "Releases \u00b7 opencv/opencv - GitHub: https://github.com/opencv/opencv/releases | OpenCV: Open Source Computer Vision Library - GitHubOpenCV Change Logs \u00b7 opencv/opencv Wiki \u00b7 GitHubOpenCV \u00b7 GitHubReleases \u00b7 opencv/opencv-python - GitHubOpenCV Change Logs v2.2\u2010v4.10 \u00b7 opencv/opencv Wiki \u00b7 GitHubChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv | OpenCV Change Logs \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/OpenCV-Change-Logs",
+      "success": true,
+      "created_at": "2026-03-17T04:14:55.843514Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://github.com/opencv/opencv/releases"
+      },
+      "summary": "Title: Releases \u00b7 opencv/opencv \u00b7 GitHub\n\nReleases \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow",
+      "success": true,
+      "created_at": "2026-03-17T04:14:59.773029Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://github.com/opencv/opencv/wiki/OpenCV-Change-Logs"
+      },
+      "summary": "Title: OpenCV Change Logs \u00b7 opencv/opencv Wiki \u00b7 GitHub\n\nOpenCV Change Logs \u00b7 opencv/opencv Wiki \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS",
+      "success": true,
+      "created_at": "2026-03-17T04:15:05.629273Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV DNN Mask-RCNN first added version \"3.4\" \"4.0\" \"4.1\" \"4.2\"",
+        "max_results": 5
+      },
+      "summary": "2019 - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/2019 | 2022 \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/2022 | 2020 \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/2020",
+      "success": true,
+      "created_at": "2026-03-17T04:15:20.960297Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV Mask-RCNN support added version release changelog"
+      },
+      "summary": "Changelog - Supervision: https://supervision.roboflow.com/0.27.0/changelog/ | Changelog - Supervision: https://supervision.roboflow.com/0.24.0/changelog/ | Changelog - Supervision: https://supervision.roboflow.com/develop/changelog/",
+      "success": true,
+      "created_at": "2026-03-17T04:15:33.288956Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV DNN Mask-RCNN model support opencv.org release notes"
+      },
+      "summary": "OpenCV Mask R-CNN Object Detection: A Comprehensive Guide: https://coderivers.org/opencv/opencv-mask-rcnn-object-detection/ | Deep Neural Network module - OpenCV: https://docs.opencv.org/4.x/d6/d0f/group__dnn.html | Support Mask RCNN models \u00b7 Issue #11412 \u00b7 opencv/opencv - GitHub: https://github.com/opencv/opencv/issues/11412",
+      "success": true,
+      "created_at": "2026-03-17T04:15:38.250123Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://github.com/opencv/opencv/issues/11412"
+      },
+      "summary": "Title: Support Mask RCNN models \u00b7 Issue #11412 \u00b7 opencv/opencv \u00b7 GitHub\n\nSupport Mask RCNN models \u00b7 Issue #11412 \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate ex",
+      "success": true,
+      "created_at": "2026-03-17T04:15:43.019526Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV 3.4 4.0 changelog Mask RCNN support release notes opencv.org"
+      },
+      "summary": "ChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/ChangeLog/b7532bb957d4428df0f49b77ff086e7f592aa44e | OpenCV 4.0-alpha - OpenCV: https://opencv.org/blog/opencv-4-0-alpha/ | Releases - OpenCV: https://opencv.org/releases/",
+      "success": true,
+      "created_at": "2026-03-17T04:15:47.927894Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://github.com/opencv/opencv/wiki/ChangeLog"
+      },
+      "summary": "Title: ChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub\n\nChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate ",
+      "success": true,
+      "created_at": "2026-03-17T04:15:51.376063Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV 3.4.1 3.4.2 release notes DNN Mask RCNN opencv.org"
+      },
+      "summary": "OpenCV Mask R-CNN Object Detection: A Comprehensive Guide: https://coderivers.org/opencv/opencv-mask-rcnn-object-detection/ | Releases \u00b7 opencv/opencv - GitHub: https://github.com/opencv/opencv/releases | ChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/ChangeLog/b7532bb957d4428df0f49b77ff086e7f592aa44e",
+      "success": true,
+      "created_at": "2026-03-17T04:15:58.547038Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://github.com/opencv/opencv/releases"
+      },
+      "summary": "Title: Releases \u00b7 opencv/opencv \u00b7 GitHub\n\nReleases \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow",
+      "success": true,
+      "created_at": "2026-03-17T04:16:02.820056Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:github.com/opencv/opencv/releases \"3.4\" Mask RCNN DNN"
+      },
+      "summary": "Releases \u00b7 opencv/opencv: https://github.com/opencv/opencv/releases",
+      "success": true,
+      "created_at": "2026-03-17T04:16:13.601971Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://pyimagesearch.com/2018/11/19/mask-r-cnn-with-opencv/"
+      },
+      "summary": "Title: Mask R-CNN with OpenCV - PyImageSearch\n\nMask R-CNN with OpenCV - PyImageSearch Stop Building Toy Demos. Back the YOLO Kickstarter to Ship Real CV Apps. Secure your 560-page definitive guide, 11 expert-led videos, and the complete, production-ready source code before the campaign ends. 0 days 0 hours 0 minutes 0 seconds Skip to primary navigation Skip to main content Skip to primary sidebar ",
+      "success": true,
+      "created_at": "2026-03-17T04:16:18.710748Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV Mask-RCNN support added version release history changelog"
+      },
+      "summary": "2020 - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/2020 | mxnet/CHANGELOG and mxnet Releases | LibHunt: https://cpp.libhunt.com/mxnet-changelog | 2020 \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/2020",
+      "success": true,
+      "created_at": "2026-03-17T04:17:51.237405Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"OpenCV 3.4\" \"Mask R-CNN\" \"Mask-RCNN\" release notes changelog"
+      },
+      "summary": "TensorFlow Object Detection API \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API | GitHub - AutoRoboCulture/Nindamani-the-weed-removal-robot:: https://github.com/AutoRoboCulture/Nindamani-the-weed-removal-robot | Instance segmentation with OpenCV - PyImageSearch: https://pyimagesearch.com/2018/11/26/instance-segmentation-with-opencv/",
+      "success": true,
+      "created_at": "2026-03-17T04:18:04.239686Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://pyimagesearch.com/2018/11/26/instance-segmentation-with-opencv/"
+      },
+      "summary": "Title: Instance segmentation with OpenCV - PyImageSearch\n\nInstance segmentation with OpenCV - PyImageSearch Stop Building Toy Demos. Back the YOLO Kickstarter to Ship Real CV Apps. Secure your 560-page definitive guide, 11 expert-led videos, and the complete, production-ready source code before the campaign ends. 0 days 0 hours 0 minutes 0 seconds Skip to primary navigation Skip to main content Sk",
+      "success": true,
+      "created_at": "2026-03-17T04:18:08.355077Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV 3.4.2 release notes contributors changelog \"Mask R-CNN\" \"Mask-RCNN\""
+      },
+      "summary": "mxnet/CHANGELOG and mxnet Releases | LibHunt: https://cpp.libhunt.com/mxnet-changelog | GitHub - rbgirshick/py-faster-rcnn: Faster R-CNN (Python: https://github.com/rbgirshick/py-faster-rcnn | TensorFlow Object Detection API \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API",
+      "success": true,
+      "created_at": "2026-03-17T04:18:19.825224Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:github.com opencv 3.4.2 release notes"
+      },
+      "summary": "Releases \u00b7 opencv/opencv - GitHub: https://github.com/opencv/opencv/releases | ChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/ChangeLog | Releases \u00b7 opencv/opencv-python - GitHub: https://github.com/opencv/opencv-python/releases",
+      "success": true,
+      "created_at": "2026-03-17T04:18:29.465055Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://github.com/opencv/opencv/releases"
+      },
+      "summary": "Title: Releases \u00b7 opencv/opencv \u00b7 GitHub\n\nReleases \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow",
+      "success": true,
+      "created_at": "2026-03-17T04:18:33.378546Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV Mask-RCNN support first added version changelog release notes"
+      },
+      "summary": "[1703.06870] Mask R-CNN - ar5iv: https://ar5iv.labs.arxiv.org/html/1703.06870 | OpenCV4.0 Change Logs_jinhanfakawang.top-CSDN\u535a\u5ba2: https://blog.csdn.net/maweifei/article/details/83070167 | OpenCV Mask R-CNN Object Detection: A Comprehensive Guide: https://coderivers.org/opencv/opencv-mask-rcnn-object-detection/",
+      "success": true,
+      "created_at": "2026-03-17T04:19:55.910414Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://github.com/opencv/opencv/wiki/ChangeLog/b7532bb957d4428df0f49b77ff086e7f592aa44e"
+      },
+      "summary": "Title: ChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub\n\nChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate ",
+      "success": true,
+      "created_at": "2026-03-17T04:20:03.327056Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"OpenCV\" \"Mask R-CNN\" \"DNN\" version 3.4.2 changelog release notes"
+      },
+      "summary": "TensorFlow Object Detection API - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/TensorFlow-Object-Detection-API | mxnet/CHANGELOG and mxnet Releases | LibHunt: https://cpp.libhunt.com/mxnet-changelog | GSoC_2017 \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/GSoC_2017",
+      "success": true,
+      "created_at": "2026-03-17T04:20:11.602462Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API"
+      },
+      "summary": "Title: TensorFlow Object Detection API \u00b7 opencv/opencv Wiki \u00b7 GitHub\n\nTensorFlow Object Detection API \u00b7 opencv/opencv Wiki \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external",
+      "success": true,
+      "created_at": "2026-03-17T04:20:16.826655Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"OpenCV\" \"3.4.1\" \"Mask-RCNN\" \"tf_text_graph_mask_rcnn.py\" contributors GitHub"
+      },
+      "summary": "I want to import TensorFlow 2.x - Object Detection - Mask R-CNN: https://forum.opencv.org/t/i-want-to-import-tensorflow-2-x-object-detection-mask-r-cnn-model-in-opencv-dnn-api/1937 | Error loading maskrcnn in opencv dnn - Python - OpenCV: https://forum.opencv.org/t/error-loading-maskrcnn-in-opencv-dnn/3140 | TensorFlow Object Detection API \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API",
+      "success": true,
+      "created_at": "2026-03-17T04:20:27.106310Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "GitHub \"opencv/opencv\" \"tf_text_graph_mask_rcnn.py\" commit contributors author"
+      },
+      "summary": "I want to import TensorFlow 2.x - Object Detection -Mask... -OpenCV: https://forum.opencv.org/t/i-want-to-import-tensorflow-2-x-object-detection-mask-r-cnn-model-in-opencv-dnn-api/1937 | TensorFlow Object Detection API \u00b7 opencv/opencv Wiki \u00b7 GitHub: https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API | opencv/samples/dnn/tf_text_graph_mask_rcnn.pyat...: https://github.com/opencv/opencv/blob/4.x/samples/dnn/tf_text_graph_mask_rcnn.py",
+      "success": true,
+      "created_at": "2026-03-17T04:20:33.228955Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"OpenCV 3.4.1\" release notes contributors changelog \"Mask R-CNN\""
+      },
+      "summary": "GSoC_2017 - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/GSoC_2017 | mxnet/CHANGELOG and mxnet Releases | LibHunt: https://cpp.libhunt.com/mxnet-changelog | GitHub - rbgirshick/py-faster-rcnn: Faster R-CNN (Python: https://github.com/rbgirshick/py-faster-rcnn",
+      "success": true,
+      "created_at": "2026-03-17T04:20:47.363162Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV Mask-RCNN support added version release notes changelog",
+        "max_results": 10
+      },
+      "summary": "TensorFlow Object Detection API - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/TensorFlow-Object-Detection-API | 2019 - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/2019 | mxnet/CHANGELOG and mxnet Releases | LibHunt: https://cpp.libhunt.com/mxnet-changelog",
+      "success": true,
+      "created_at": "2026-03-17T04:20:59.475431Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV 3.4.2 Mask R-CNN DNN module contributors release",
+        "max_results": 10
+      },
+      "summary": "OpenVINO\u2122 Blog | Category Page: Sample Code: https://blog.openvino.ai/category/sample-code | GSoC_2017 - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/GSoC_2017 | TensorFlow Object Detection API - tadeusz/opencv - Codeberg.org: https://codeberg.org/tadeusz/opencv/wiki/TensorFlow-Object-Detection-API",
+      "success": true,
+      "created_at": "2026-03-17T04:21:06.955516Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://codeberg.org/tadeusz/opencv/wiki/ChangeLog"
+      },
+      "summary": "Title: ChangeLog - tadeusz/opencv - Codeberg.org\n\nChangeLog - tadeusz/opencv - Codeberg.org Explore About FAQ Help Donate Register Sign in tadeusz / opencv Watch 1 Star 1 Fork You've already forked opencv 0 Code Issues Pull requests Projects Releases Packages Wiki Activity Page: ChangeLog Pages .clang_format 2018 2019 2020 2021 2022 Archive Branches BuildOpenCV4OpenVINO CI configuration CPU optimi",
+      "success": true,
+      "created_at": "2026-03-17T04:21:11.866148Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "OpenCV DNN module Mask R-CNN first support version 3.4.2 contributors",
+        "max_results": 10
+      },
+      "summary": "Deep Learning with OpenCV DNN Module, A Comprehensive Guide: https://bleedaiacademy.com/deep-learning-with-opencv-dnn-module-a-comprehensive-guide/ | OpenCV Mask R-CNN Object Detection: A Comprehensive Guide: https://coderivers.org/opencv/opencv-mask-rcnn-object-detection/ | Deep Neural Network module - OpenCV: https://docs.opencv.org/4.x/d6/d0f/group__dnn.html",
+      "success": true,
+      "created_at": "2026-03-17T04:21:19.296316Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://github.com/opencv/opencv/issues/11412"
+      },
+      "summary": "Title: Support Mask RCNN models \u00b7 Issue #11412 \u00b7 opencv/opencv \u00b7 GitHub\n\nSupport Mask RCNN models \u00b7 Issue #11412 \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate ex",
+      "success": true,
+      "created_at": "2026-03-17T04:21:25.068161Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://opencv.org/opencv-3-4/"
+      },
+      "summary": "Title: OpenCV 3.4 - OpenCV\n\nOpenCV 3.4 - OpenCV Register for OpenCV Conference 2026, May 4th, Los Angeles \u2192 Skip to primary navigation Skip to main content OpenCV Open Computer Vision Library Library Releases Platforms License Forum OpenCV Forum (New!) Askbot (Old Forum) OpenCV University All Courses Mastering OpenCV with Python Fundamentals of CV & IP Deep Learning with PyTorch Deep Learning with",
+      "success": true,
+      "created_at": "2026-03-17T04:21:29.356137Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Li Peng former Chinese head of government prime minister",
+        "max_results": 10
+      },
+      "summary": "Li Keqiang - Wikipedia: https://en.wikipedia.org/wiki/Li_Keqiang | Li Qiang - Wikipedia: https://en.wikipedia.org/wiki/Li_Qiang | archive.nytimes.com/www.nytimes.com/library/world/082096deng.html: https://archive.nytimes.com/www.nytimes.com/library/world/082096deng.html",
+      "success": true,
+      "created_at": "2026-03-17T04:21:39.398550Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.nbcnews.com/news/world/li-peng-who-oversaw-tiananmen-square-massacre-chinese-premier-dies-n1032731"
+      },
+      "summary": "Title: Li Peng, who oversaw Tiananmen Square massacre as Chinese premier, dies at 91\n\nLi Peng, who oversaw Tiananmen Square massacre as Chinese premier, dies at 91 IE 11 is not supported. For an optimal experience visit our site on another browser. Skip to Content NBC News Logo Politics U.S. News World Local New York Los Angeles Chicago Dallas-Fort Worth Philadelphia Washington, D.C. Boston Bay Ar",
+      "success": true,
+      "created_at": "2026-03-17T04:21:44.922769Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_reelmind_ai_blog_when_was_mask_rcnn_added_to_opencv_ai_development_insight",
+      "source_type": "web_fetch",
+      "source_uri": "https://reelmind.ai/blog/when-was-mask-rcnn-added-to-opencv-ai-development-insights",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_reelmind_ai_blog_when_was_mask_rcnn_added_to_opencv_ai_development_insight.txt",
+      "excerpt": "Title: ReelMind - Open Source AI Video Models Community\n\nReelMind - Open Source AI Video Models Community Home / Blog / When Was Mask RCNN Added to OpenCV: AI Development Insights When Was Mask RCNN Added to OpenCV: AI Development Insights Refresh Explore more fun Abstract This article delves into the integration timeline of Mask R-CNN within OpenCV , a pivotal moment in the evolution of computer vision and AI development . It explores the impact of this integration on object detection , segmentation , and the broader AI ecosystem , highlighting advancements in areas like video creation and di"
+    },
+    {
+      "name": "https_github_com_opencv_opencv_releases",
+      "source_type": "web_fetch",
+      "source_uri": "https://github.com/opencv/opencv/releases",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_github_com_opencv_opencv_releases.txt",
+      "excerpt": "Title: Releases \u00b7 opencv/opencv \u00b7 GitHub\n\nReleases \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your cod"
+    },
+    {
+      "name": "https_github_com_opencv_opencv_wiki_OpenCV_Change_Logs",
+      "source_type": "web_fetch",
+      "source_uri": "https://github.com/opencv/opencv/wiki/OpenCV-Change-Logs",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_github_com_opencv_opencv_wiki_OpenCV_Change_Logs.txt",
+      "excerpt": "Title: OpenCV Change Logs \u00b7 opencv/opencv Wiki \u00b7 GitHub\n\nOpenCV Change Logs \u00b7 opencv/opencv Wiki \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities"
+    },
+    {
+      "name": "https_github_com_opencv_opencv_issues_11412",
+      "source_type": "web_fetch",
+      "source_uri": "https://github.com/opencv/opencv/issues/11412",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_github_com_opencv_opencv_issues_11412.txt",
+      "excerpt": "Title: Support Mask RCNN models \u00b7 Issue #11412 \u00b7 opencv/opencv \u00b7 GitHub\n\nSupport Mask RCNN models \u00b7 Issue #11412 \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Secur"
+    },
+    {
+      "name": "https_github_com_opencv_opencv_wiki_ChangeLog",
+      "source_type": "web_fetch",
+      "source_uri": "https://github.com/opencv/opencv/wiki/ChangeLog",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_github_com_opencv_opencv_wiki_ChangeLog.txt",
+      "excerpt": "Title: ChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub\n\nChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Sec"
+    },
+    {
+      "name": "https_github_com_opencv_opencv_releases",
+      "source_type": "web_fetch",
+      "source_uri": "https://github.com/opencv/opencv/releases",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_github_com_opencv_opencv_releases.txt",
+      "excerpt": "Title: Releases \u00b7 opencv/opencv \u00b7 GitHub\n\nReleases \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your cod"
+    },
+    {
+      "name": "https_pyimagesearch_com_2018_11_19_mask_r_cnn_with_opencv",
+      "source_type": "web_fetch",
+      "source_uri": "https://pyimagesearch.com/2018/11/19/mask-r-cnn-with-opencv/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_pyimagesearch_com_2018_11_19_mask_r_cnn_with_opencv.txt",
+      "excerpt": "Title: Mask R-CNN with OpenCV - PyImageSearch\n\nMask R-CNN with OpenCV - PyImageSearch Stop Building Toy Demos. Back the YOLO Kickstarter to Ship Real CV Apps. Secure your 560-page definitive guide, 11 expert-led videos, and the complete, production-ready source code before the campaign ends. 0 days 0 hours 0 minutes 0 seconds Skip to primary navigation Skip to main content Skip to primary sidebar Skip to footer PyImageSearch You can master Computer Vision, Deep Learning, and OpenCV - PyImageSearch University Login Get Started Topics Deep Learning Dlib Library Embedded/IoT and Computer Vision F"
+    },
+    {
+      "name": "https_pyimagesearch_com_2018_11_26_instance_segmentation_with_opencv",
+      "source_type": "web_fetch",
+      "source_uri": "https://pyimagesearch.com/2018/11/26/instance-segmentation-with-opencv/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_pyimagesearch_com_2018_11_26_instance_segmentation_with_opencv.txt",
+      "excerpt": "Title: Instance segmentation with OpenCV - PyImageSearch\n\nInstance segmentation with OpenCV - PyImageSearch Stop Building Toy Demos. Back the YOLO Kickstarter to Ship Real CV Apps. Secure your 560-page definitive guide, 11 expert-led videos, and the complete, production-ready source code before the campaign ends. 0 days 0 hours 0 minutes 0 seconds Skip to primary navigation Skip to main content Skip to primary sidebar Skip to footer PyImageSearch You can master Computer Vision, Deep Learning, and OpenCV - PyImageSearch University Login Get Started Topics Deep Learning Dlib Library Embedded/IoT"
+    },
+    {
+      "name": "https_github_com_opencv_opencv_releases",
+      "source_type": "web_fetch",
+      "source_uri": "https://github.com/opencv/opencv/releases",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_github_com_opencv_opencv_releases.txt",
+      "excerpt": "Title: Releases \u00b7 opencv/opencv \u00b7 GitHub\n\nReleases \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your cod"
+    },
+    {
+      "name": "https_github_com_opencv_opencv_wiki_ChangeLog_b7532bb957d4428df0f49b77ff086e7f59",
+      "source_type": "web_fetch",
+      "source_uri": "https://github.com/opencv/opencv/wiki/ChangeLog/b7532bb957d4428df0f49b77ff086e7f592aa44e",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_github_com_opencv_opencv_wiki_ChangeLog_b7532bb957d4428df0f49b77ff086e7f59.txt",
+      "excerpt": "Title: ChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub\n\nChangeLog \u00b7 opencv/opencv Wiki \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Sec"
+    },
+    {
+      "name": "https_github_com_opencv_opencv_wiki_TensorFlow_Object_Detection_API",
+      "source_type": "web_fetch",
+      "source_uri": "https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_github_com_opencv_opencv_wiki_TensorFlow_Object_Detection_API.txt",
+      "excerpt": "Title: TensorFlow Object Detection API \u00b7 opencv/opencv Wiki \u00b7 GitHub\n\nTensorFlow Object Detection API \u00b7 opencv/opencv Wiki \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Fi"
+    },
+    {
+      "name": "https_codeberg_org_tadeusz_opencv_wiki_ChangeLog",
+      "source_type": "web_fetch",
+      "source_uri": "https://codeberg.org/tadeusz/opencv/wiki/ChangeLog",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_codeberg_org_tadeusz_opencv_wiki_ChangeLog.txt",
+      "excerpt": "Title: ChangeLog - tadeusz/opencv - Codeberg.org\n\nChangeLog - tadeusz/opencv - Codeberg.org Explore About FAQ Help Donate Register Sign in tadeusz / opencv Watch 1 Star 1 Fork You've already forked opencv 0 Code Issues Pull requests Projects Releases Packages Wiki Activity Page: ChangeLog Pages .clang_format 2018 2019 2020 2021 2022 Archive Branches BuildOpenCV4OpenVINO CI configuration CPU optimizations build options ChangeLog CiteOpenCV Coding_Style_Guide Compact build advice DNN Efficiency Deep Learning in OpenCV Documentation improvement plan Evolution Proposals FAQ GSoC_2017 GSoC_2018 GSo"
+    },
+    {
+      "name": "https_github_com_opencv_opencv_issues_11412",
+      "source_type": "web_fetch",
+      "source_uri": "https://github.com/opencv/opencv/issues/11412",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_github_com_opencv_opencv_issues_11412.txt",
+      "excerpt": "Title: Support Mask RCNN models \u00b7 Issue #11412 \u00b7 opencv/opencv \u00b7 GitHub\n\nSupport Mask RCNN models \u00b7 Issue #11412 \u00b7 opencv/opencv \u00b7 GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Secur"
+    },
+    {
+      "name": "https_opencv_org_opencv_3_4",
+      "source_type": "web_fetch",
+      "source_uri": "https://opencv.org/opencv-3-4/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_opencv_org_opencv_3_4.txt",
+      "excerpt": "Title: OpenCV 3.4 - OpenCV\n\nOpenCV 3.4 - OpenCV Register for OpenCV Conference 2026, May 4th, Los Angeles \u2192 Skip to primary navigation Skip to main content OpenCV Open Computer Vision Library Library Releases Platforms License Forum OpenCV Forum (New!) Askbot (Old Forum) OpenCV University All Courses Mastering OpenCV with Python Fundamentals of CV & IP Deep Learning with PyTorch Deep Learning with TensorFlow & Keras Advanced Vision Applications with Deep Learning & Transformers Mastering Generative AI for Art CVDL Master Program Courses [Enrolled Users] For Organizations Student Discount Caree"
+    },
+    {
+      "name": "https_www_nbcnews_com_news_world_li_peng_who_oversaw_tiananmen_square_massacre_c",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.nbcnews.com/news/world/li-peng-who-oversaw-tiananmen-square-massacre-chinese-premier-dies-n1032731",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/56137764-b4e0-45b8-9c52-1866420c3df5/https_www_nbcnews_com_news_world_li_peng_who_oversaw_tiananmen_square_massacre_c.txt",
+      "excerpt": "Title: Li Peng, who oversaw Tiananmen Square massacre as Chinese premier, dies at 91\n\nLi Peng, who oversaw Tiananmen Square massacre as Chinese premier, dies at 91 IE 11 is not supported. For an optimal experience visit our site on another browser. Skip to Content NBC News Logo Politics U.S. News World Local New York Los Angeles Chicago Dallas-Fort Worth Philadelphia Washington, D.C. Boston Bay Area South Florida San Diego Connecticut Sports Business Health Shopping Early Amazon Big Spring Sale Deals Tipline Culture Science Subscribe Share & Save\u00a0\u2014 Subscriber Hub Saved Newsletters Profile Subs"
+    }
+  ],
+  "duration_seconds": 523.739718790981,
+  "created_at": "2026-03-17T04:22:48.261528Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Use search engine to search for \"OpenCV change log\".\n2. Open the top result from GitHub and search the page for \"Mask-RCNN\".\n3. Observe that support for Mask-RCNN model was added in OpenCV version 4.0.0.\n4. Expand the two lists of contributors for version 4.0.0.\n5. Go to the Wikipedia page for head of government. \n6. Scan through and note that for China, the head of government is the premier.\n7. Go to the Wikipedia page for premier of the People's Republic of China.\n8. Go to the linked page for List of premiers of the People's Republic of China.\n9. Compare the list of OpenCV version 4.0.0 contributors' names and the list of premiers of China to find that Li Peng is present in both lists.",
+      "Number of steps": "9",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  }
+}

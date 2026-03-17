@@ -1,0 +1,415 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "e4e91f1c-1dcd-439e-9fdd-cb976f5293fd",
+  "question": "I need to fact-check a citation. This is the citation from the bibliography:\n\nGreetham, David. \"Uncoupled: OR, How I Lost My Author(s).\" Textual Cultures: Texts, Contexts, Interpretation, vol. 3 no. 1, 2008, p. 45-46. Project MUSE, doi:10.2979/tex.2008.3.1.44.\n\nAnd this is the in-line citation:\n\nOur relationship with the authors of the works we read can often be \u201cobscured not by a \"cloak of print\" but by the veil of scribal confusion and mis-transmission\u201d (Greetham 45-46).\n\nDoes the quoted text match what is actually in the article? If Yes, answer Yes, otherwise, give me the word in my citation that does not match with the correct one (without any article).",
+  "answer": "cloak",
+  "raw_answer": "cloak",
+  "scorer_answer": "cloak",
+  "expected_answer": "cloak",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "doi:10.2979/tex.2008.3.1.44",
+      "\"Uncoupled: OR, How I Lost My Author(s)\" David Greetham Textual Cultures",
+      "\"obscured not by a cloak of print but by the veil of scribal confusion and mis-transmission\" Greetham",
+      "Project MUSE Textual Cultures vol 3 2008 Greetham",
+      "David Greetham Uncoupled author textual cultures 2008"
+    ],
+    "working_plan": [
+      "Use the provided DOI to locate the original article",
+      "Search for the article on Project MUSE and other academic databases",
+      "Access pages 45-46 of the article to find the quoted passage",
+      "Compare the actual text word-by-word with the provided quote",
+      "Answer 'Yes' if exact match, or identify the specific mismatched word"
+    ],
+    "answer_shape": "Either 'Yes' or a single word"
+  },
+  "solver": {
+    "answer": "cloak",
+    "confidence": "medium",
+    "citations": [],
+    "reasoning_summary": "Unable to access the original article due to technical issues with web search tools. Based on analysis of textual criticism terminology, 'veil of print' is the established phrase in the field rather than 'cloak of print.' The parallel structure with 'veil of scribal confusion' in the same sentence also supports this correction. Greetham, as a prominent textual scholar, would likely use the standard terminology."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "Unable to access the original source material for verification",
+      "Answer based on speculation and linguistic analysis rather than actual fact-checking of the cited article",
+      "No citations provided to support the claim"
+    ],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "doi:10.2979/tex.2008.3.1.44 \"Uncoupled: OR, How I Lost My Author(s)\" David Greetham",
+        "max_results": 5
+      },
+      "summary": "DavidGreetham- Graduate Center of the City University of New York: https://gc-cuny.academia.edu/DavidGreetham | Self-Referential Artifacts: Hoccleve'sPersona as a Literary Device: https://www.journals.uchicago.edu/doi/10.1086/391702 | DavidGreetham| 2 Publications | 5 Citations | Related Authors: https://scispace.com/authors/david-greetham-7vepxzrq69",
+      "success": true,
+      "created_at": "2026-03-17T04:04:20.411067Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"obscured not by a cloak of print but by the veil of scribal confusion and mis-transmission\" Greetham",
+        "max_results": 5
+      },
+      "summary": "Torah as Blast: Did the original have spaces between words?: https://davidporush.com/2018/11/19/torah-as-a-blast-did-the-original-have-any-spaces-between-the-words/ | \u201cArise from the Dust\u201d: Insights from Dust-Related Themes in: https://journal.interpreterfoundation.org/arise-from-the-dust-insights-from-dust-related-themes-in-the-book-of-mormon-part-1-tracks-from-the-book-of-moses/ | Volunteer \u2013 the SCAllion: https://thescallion.blog/category/volunteer/",
+      "success": true,
+      "created_at": "2026-03-17T04:04:29.628909Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Project MUSE \"Textual Cultures\" vol 3 2008 Greetham Uncoupled",
+        "max_results": 5
+      },
+      "summary": "Project MUSE - Textual Cultures: Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008: https://muse.jhu.edu/issue/12954 | Textual Cultures: Texts, Contexts, Interpretation - Project MUSE: https://muse.jhu.edu/article/240795/summary | Vol. 3, No. 1, Spring, 2008 of Textual Cultures on JSTOR: https://www.jstor.org/stable/i30227895",
+      "success": true,
+      "created_at": "2026-03-17T04:04:42.466259Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://muse.jhu.edu/article/240795",
+        "max_chars": 15000
+      },
+      "summary": "Title: Project MUSE -- Verification required!\n\nProject MUSE -- Verification required! Verification required! In order to better serve you and keep this site secure,\n  please complete this challenge. If you are trying to perform text/data mining, please contact Customer Service for assistance.",
+      "success": true,
+      "created_at": "2026-03-17T04:04:52.621093Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"cloak of print\" \"veil of scribal confusion\" Greetham",
+        "max_results": 5
+      },
+      "summary": "David Greetham 'uncoupled' Quote 'obscured Not by a Cloak of Print but ...: https://etsy.com/market/david_greetham_'uncoupled'_quote_'obscured_not_by_a_cloak_of_print_but_by_the_veil_of_scribal_confusion_and_mis_transmission | ZhuofengLi/web-bench \u00b7 Datasets at Hugging Face: https://huggingface.co/datasets/ZhuofengLi/web-bench | Sermons about David Greetham Obscured By A Cloak Of Print But By The ...: https://sermoncentral.com/sermons/sermons-about-david-greetham-obscured-by-a-cloak-of-print-but-by-the-veil-of-scribal-confusion",
+      "success": true,
+      "created_at": "2026-03-17T04:05:14.352843Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "doi:10.2979/tex.2008.3.1.44 \"Uncoupled: OR, How I Lost My Author(s)\" David Greetham",
+        "max_results": 5
+      },
+      "summary": "DavidGreetham- Graduate Center of the City University of New York: https://gc-cuny.academia.edu/DavidGreetham | Project MUSE - Textual Cultures: Texts, Contexts,: https://muse.jhu.edu/issue/12954 | ZhuofengLi/web-bench \u00b7 Datasets at Hugging Face: https://huggingface.co/datasets/ZhuofengLi/web-bench",
+      "success": true,
+      "created_at": "2026-03-17T04:05:36.425394Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:muse.jhu.edu \"Uncoupled: OR, How I Lost My Author(s)\" Greetham 2008",
+        "max_results": 5
+      },
+      "summary": "Project MUSE - Textual Cultures: Texts, Contexts,: https://muse.jhu.edu/issue/12954",
+      "success": true,
+      "created_at": "2026-03-17T04:05:59.628177Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://muse.jhu.edu/issue/12954"
+      },
+      "summary": "Title: Project MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008\n\nProject MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008 This website uses cookies to ensure you get the best experience on our website. Without cookies your experience may not be seamless. [Skip to main content] Institutional Login LOG IN Accessibility",
+      "success": true,
+      "created_at": "2026-03-17T04:06:05.056886Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"obscured not by a cloak of print but by the veil of scribal confusion and mis-transmission\" Greetham",
+        "max_results": 5
+      },
+      "summary": "Torah as Blast: Did the original have spaces between words?: https://davidporush.com/2018/11/19/torah-as-a-blast-did-the-original-have-any-spaces-between-the-words/ | \u201cArise from the Dust\u201d: Insights from Dust-Related Themes in: https://journal.interpreterfoundation.org/arise-from-the-dust-insights-from-dust-related-themes-in-the-book-of-mormon-part-1-tracks-from-the-book-of-moses/ | Volunteer \u2013 the SCAllion: https://thescallion.blog/category/volunteer/",
+      "success": true,
+      "created_at": "2026-03-17T04:06:21.661676Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "doi:10.2979/tex.2008.3.1.44 David Greetham \"Uncoupled: OR, How I Lost My Author(s)\"",
+        "max_results": 5
+      },
+      "summary": "DavidGreetham- Graduate Center of the City University of New York: https://gc-cuny.academia.edu/DavidGreetham | Project MUSE - Textual Cultures: Texts, Contexts,: https://muse.jhu.edu/issue/12954 | Editors, Scholars, and the Social Text 9781442686465 - DOKUMEN.PUB: https://dokumen.pub/editors-scholars-and-the-social-text-9781442686465.html",
+      "success": true,
+      "created_at": "2026-03-17T04:06:55.448911Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://muse.jhu.edu/issue/12954"
+      },
+      "summary": "Title: Project MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008\n\nProject MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008 This website uses cookies to ensure you get the best experience on our website. Without cookies your experience may not be seamless. [Skip to main content] Institutional Login LOG IN Accessibility",
+      "success": true,
+      "created_at": "2026-03-17T04:07:04.995060Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"obscured not by a cloak of print but by the veil of scribal confusion and mis-transmission\" Greetham",
+        "max_results": 5
+      },
+      "summary": "Torah as Blast: Did the original have spaces between words?: https://davidporush.com/2018/11/19/torah-as-a-blast-did-the-original-have-any-spaces-between-the-words/ | check if exact quote \"obscured not by a cloak of print but by the veil ...: https://fiqh.world-federation.org/search/check+if+exact+quote+\"obscured+not+by+a+cloak+of+print+but+by+the+veil+of+scribal+confusion+and+mis-transmission\"+is+in+Greetham's+Uncoupled+page+45-46/ | \u201cArise from the Dust\u201d: Insights from Dust-Related Themes in: https://journal.interpreterfoundation.org/arise-from-the-dust-insights-from-dust-related-themes-in-the-book-of-mormon-part-1-tracks-from-the-book-of-moses/",
+      "success": true,
+      "created_at": "2026-03-17T04:07:25.091176Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "doi:10.2979/tex.2008.3.1.44 David Greetham Uncoupled"
+      },
+      "summary": "Chapter 25: The Resistance to Digital Humanities |DavidGreetham: https://dhdebates.gc.cuny.edu/read/untitled-88c11800-9446-469b-a3be-3fdb36bfbd1e/section/4110ccc9-920a-47a2-80eb-77a43f3d6e86 | DavidGreetham(textual scholar) - Wikipedia: https://en.wikipedia.org/wiki/David_Greetham_(textual_scholar) | Project MUSE - Textual Cultures: Texts, Contexts,: https://muse.jhu.edu/issue/12954",
+      "success": true,
+      "created_at": "2026-03-17T04:08:52.803430Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Uncoupled: OR, How I Lost My Author(s)\" David Greetham Textual Cultures 2008"
+      },
+      "summary": "DavidGreetham- Graduate Center of the City University of New York: https://gc-cuny.academia.edu/DavidGreetham | Project MUSE - Textual Cultures: Texts, Contexts,: https://muse.jhu.edu/issue/12954 | OpenResearcher/web-bench \u00b7 Datasets at Hugging Face: https://huggingface.co/datasets/OpenResearcher/web-bench",
+      "success": true,
+      "created_at": "2026-03-17T04:09:10.866599Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://muse.jhu.edu/issue/12954"
+      },
+      "summary": "Title: Project MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008\n\nProject MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008 This website uses cookies to ensure you get the best experience on our website. Without cookies your experience may not be seamless. [Skip to main content] Institutional Login LOG IN Accessibility",
+      "success": true,
+      "created_at": "2026-03-17T04:09:18.206169Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"obscured not by a cloak of print but by the veil of scribal confusion\" Greetham"
+      },
+      "summary": "Torah as Blast: Did the original have spaces between words?: https://davidporush.com/2018/11/19/torah-as-a-blast-did-the-original-have-any-spaces-between-the-words/ | \u201cArise from the Dust\u201d: Insights from Dust-Related Themes in: https://journal.interpreterfoundation.org/arise-from-the-dust-insights-from-dust-related-themes-in-the-book-of-mormon-part-1-tracks-from-the-book-of-moses/ | Volunteer \u2013 the SCAllion: https://thescallion.blog/category/volunteer/",
+      "success": true,
+      "created_at": "2026-03-17T04:09:36.835447Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "doi:10.2979/tex.2008.3.1.44",
+        "max_results": 5
+      },
+      "summary": "David Greetham (textual scholar) - Wikipedia: https://en.wikipedia.org/wiki/David_Greetham_(textual_scholar) | DOIName 10.48550 Values: https://doi.org/10.48550 | journals.sagepub.com/doi/10.1509/jmkg.68.1.1.24036: https://journals.sagepub.com/doi/10.1509/jmkg.68.1.1.24036",
+      "success": true,
+      "created_at": "2026-03-17T04:10:47.064833Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Uncoupled: OR, How I Lost My Author(s)\" David Greetham Textual Cultures 2008",
+        "max_results": 5
+      },
+      "summary": "DavidGreetham- Graduate Center of the City University of New York: https://gc-cuny.academia.edu/DavidGreetham | Project MUSE - Textual Cultures: Texts, Contexts,: https://muse.jhu.edu/issue/12954 | DavidGreetham| 2 Publications | 5 Citations | Related Authors: https://scispace.com/authors/david-greetham-7vepxzrq69",
+      "success": true,
+      "created_at": "2026-03-17T04:10:55.257435Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:muse.jhu.edu \"Uncoupled: OR, How I Lost My Author(s)\" David Greetham",
+        "max_results": 5
+      },
+      "summary": "Project MUSE -- Verification required!: https://muse.jhu.edu/article/240795/ | Uncoupled: OR, How I Lost My Author(s) - Project MUSE: https://muse.jhu.edu/article/240795/figure/fig02 | Project MUSE - Textual Cultures: Texts, Contexts ...: https://muse.jhu.edu/issue/12954",
+      "success": true,
+      "created_at": "2026-03-17T04:11:06.633866Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"obscured not by a cloak of print but by the veil of scribal confusion and mis-transmission\" Greetham",
+        "max_results": 5
+      },
+      "summary": "Torah as Blast: Did the original have spaces between words?: https://davidporush.com/2018/11/19/torah-as-a-blast-did-the-original-have-any-spaces-between-the-words/ | \u201cArise from the Dust\u201d: Insights from Dust-Related Themes in: https://journal.interpreterfoundation.org/arise-from-the-dust-insights-from-dust-related-themes-in-the-book-of-mormon-part-1-tracks-from-the-book-of-moses/ | Volunteer \u2013 the SCAllion: https://thescallion.blog/category/volunteer/",
+      "success": true,
+      "created_at": "2026-03-17T04:11:14.179542Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"cloak of print\" \"veil of scribal confusion\" Greetham textual",
+        "max_results": 5
+      },
+      "summary": "WebVoyager/data/GAIA_web.jsonl at main \u00b7 MinorJerry/WebVoyager: https://github.com/MinorJerry/WebVoyager/blob/main/data/GAIA_web.jsonl | zyang39/GAIA \u00b7 Datasets at Hugging Face: https://hf.global-rail.com/datasets/zyang39/GAIA | MikeMpapa/prm-v0 \u00b7 Datasets at Hugging Face: https://huggingface.co/datasets/MikeMpapa/prm-v0",
+      "success": true,
+      "created_at": "2026-03-17T04:11:25.327878Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "David Greetham textual criticism scribal transmission \"print culture\"",
+        "max_results": 5
+      },
+      "summary": "Bibliography.TextualCriticismand Philology \u20ac Music Editing and...: http://img.kb.dk/export/sites/kb_dk/da/nb/dcm/udgivelser/download/music_editing_bibliography.pdf | TextualCriticism\u2013 Literary Theory andCriticism: https://literariness.org/2020/10/20/textual-criticism/ | TextualCultures: https://www.examenapium.it/cs/biblio/Robins2011.pdf",
+      "success": true,
+      "created_at": "2026-03-17T04:11:31.101635Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:scholar.google.com \"Uncoupled: OR, How I Lost My Author(s)\" Greetham",
+        "max_results": 3
+      },
+      "summary": "Google Scholar: https://scholar.google.com/ | Google Scholar Profiles: https://scholar.google.com/intl//scholar/citations.html | Emma Brunskill - Google Scholar: https://scholar.google.com/citations?user=HaN8b2YAAAAJ&hl=en",
+      "success": true,
+      "created_at": "2026-03-17T04:11:39.714116Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "doi:10.2979/tex.2008.3.1.44 \"Uncoupled: OR, How I Lost My Author(s)\" David Greetham"
+      },
+      "summary": "Project MUSE - Textual Cultures: Texts, Contexts,: https://muse.jhu.edu/issue/12954",
+      "success": true,
+      "created_at": "2026-03-17T04:11:53.227525Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Uncoupled: OR, How I Lost My Author(s)\" David Greetham Textual Cultures 2008"
+      },
+      "summary": "DavidGreetham- Graduate Center of the City University of New York: https://gc-cuny.academia.edu/DavidGreetham | zyang39/GAIA \u00b7 Datasets at Hugging Face: https://huggingface.co/datasets/zyang39/GAIA | DavidGreetham| 2 Publications | 5 Citations | Related Authors: https://scispace.com/authors/david-greetham-7vepxzrq69",
+      "success": true,
+      "created_at": "2026-03-17T04:11:58.279755Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"obscured not by a cloak of print but by the veil of scribal confusion and mis-transmission\" Greetham"
+      },
+      "summary": "Torah as Blast: Did the original have spaces between words?: https://davidporush.com/2018/11/19/torah-as-a-blast-did-the-original-have-any-spaces-between-the-words/ | \u201cArise from the Dust\u201d: Insights from Dust-Related Themes in: https://journal.interpreterfoundation.org/arise-from-the-dust-insights-from-dust-related-themes-in-the-book-of-mormon-part-1-tracks-from-the-book-of-moses/ | Volunteer \u2013 the SCAllion: https://thescallion.blog/category/volunteer/",
+      "success": true,
+      "created_at": "2026-03-17T04:12:08.377633Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:muse.jhu.edu \"10.2979/tex.2008.3.1.44\" OR \"Uncoupled: OR, How I Lost My Author(s)\""
+      },
+      "summary": "sayan1101/gaia_filtered_text_only \u00b7 Datasets at Hugging Face: https://huggingface.co/datasets/sayan1101/gaia_filtered_text_only/viewer/default/validation",
+      "success": true,
+      "created_at": "2026-03-17T04:12:18.086959Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Textual Cultures\" journal vol 3 no 1 2008 Project MUSE"
+      },
+      "summary": "TextualCultures: https://scholarworks.iu.edu/journals/index.php/textual | ProjectMUSE: https://web.archive.org/web/20190325133805/http://muse.jhu.edu/search | (PDF) Review Language LettersTextualCultures... - Academia.edu: https://www.academia.edu/43142232/Review_Language_Letters_Textual_Cultures_13_1",
+      "success": true,
+      "created_at": "2026-03-17T04:12:23.238155Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://scholarworks.iu.edu/journals/index.php/textual"
+      },
+      "summary": "Title: Textual Cultures\n\nTextual Cultures Journals Indiana University Libraries Menu ##plugins.themes.iuljournals.adminMenu## Register Login Search Search Toggle navigation Textual Cultures Current Archives About About the Journal Editorial Team Textual Cultures: Texts, Contexts, Interpretation is devoted to textual scholarship in all language traditions. With an expansive definition of text and t",
+      "success": true,
+      "created_at": "2026-03-17T04:12:30.474361Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_muse_jhu_edu_article_240795",
+      "source_type": "web_fetch",
+      "source_uri": "https://muse.jhu.edu/article/240795",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/e4e91f1c-1dcd-439e-9fdd-cb976f5293fd/https_muse_jhu_edu_article_240795.txt",
+      "excerpt": "Title: Project MUSE -- Verification required!\n\nProject MUSE -- Verification required! Verification required! In order to better serve you and keep this site secure,\n  please complete this challenge. If you are trying to perform text/data mining, please contact Customer Service for assistance."
+    },
+    {
+      "name": "https_muse_jhu_edu_issue_12954",
+      "source_type": "web_fetch",
+      "source_uri": "https://muse.jhu.edu/issue/12954",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/e4e91f1c-1dcd-439e-9fdd-cb976f5293fd/https_muse_jhu_edu_issue_12954.txt",
+      "excerpt": "Title: Project MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008\n\nProject MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008 This website uses cookies to ensure you get the best experience on our website. Without cookies your experience may not be seamless. [Skip to main content] Institutional Login LOG IN Accessibility Please log into MyMUSE to save this to your account Browse OR Search: Search: menu Advanced Search Browse User Settings MyMUSE Account Access via Institution Log In / Sign Up Contact Support Textual "
+    },
+    {
+      "name": "https_muse_jhu_edu_issue_12954",
+      "source_type": "web_fetch",
+      "source_uri": "https://muse.jhu.edu/issue/12954",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/e4e91f1c-1dcd-439e-9fdd-cb976f5293fd/https_muse_jhu_edu_issue_12954.txt",
+      "excerpt": "Title: Project MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008\n\nProject MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008 This website uses cookies to ensure you get the best experience on our website. Without cookies your experience may not be seamless. [Skip to main content] Institutional Login LOG IN Accessibility Please log into MyMUSE to save this to your account Browse OR Search: Search: menu Advanced Search Browse User Settings MyMUSE Account Access via Institution Log In / Sign Up Contact Support Textual "
+    },
+    {
+      "name": "https_muse_jhu_edu_issue_12954",
+      "source_type": "web_fetch",
+      "source_uri": "https://muse.jhu.edu/issue/12954",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/e4e91f1c-1dcd-439e-9fdd-cb976f5293fd/https_muse_jhu_edu_issue_12954.txt",
+      "excerpt": "Title: Project MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008\n\nProject MUSE - Textual Cultures:  Texts, Contexts, Interpretation-Volume 3, Number 1, Spring 2008 This website uses cookies to ensure you get the best experience on our website. Without cookies your experience may not be seamless. [Skip to main content] Institutional Login LOG IN Accessibility Please log into MyMUSE to save this to your account Browse OR Search: Search: menu Advanced Search Browse User Settings MyMUSE Account Access via Institution Log In / Sign Up Contact Support Textual "
+    },
+    {
+      "name": "https_scholarworks_iu_edu_journals_index_php_textual",
+      "source_type": "web_fetch",
+      "source_uri": "https://scholarworks.iu.edu/journals/index.php/textual",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/e4e91f1c-1dcd-439e-9fdd-cb976f5293fd/https_scholarworks_iu_edu_journals_index_php_textual.txt",
+      "excerpt": "Title: Textual Cultures\n\nTextual Cultures Journals Indiana University Libraries Menu ##plugins.themes.iuljournals.adminMenu## Register Login Search Search Toggle navigation Textual Cultures Current Archives About About the Journal Editorial Team Textual Cultures: Texts, Contexts, Interpretation is devoted to textual scholarship in all language traditions. With an expansive definition of text and textuality to include a variety of disciplines and materials, the journal proposes as well an exchange between critics interested in textual interpretation and specialists devoted to the analysis and p"
+    }
+  ],
+  "duration_seconds": 598.0031801669975,
+  "created_at": "2026-03-17T04:13:47.950469Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for \u201cgreetham uncoupled project muse\u201d.\n2. Click result, an article that matches the given citation.\n3. Ctrl-F for \u201cobscured\u201d.\n4. Find the quote from the question, which describes a \u201cveil of print\u201d, not a cloak.\n5. Express the answer in the specified format, No.",
+      "Number of steps": "5",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  }
+}

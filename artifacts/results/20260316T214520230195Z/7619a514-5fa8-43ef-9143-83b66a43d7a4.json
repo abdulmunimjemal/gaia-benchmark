@@ -1,0 +1,55 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "7619a514-5fa8-43ef-9143-83b66a43d7a4",
+  "question": "According to github, when was Regression added to the oldest closed numpy.polynomial issue that has the Regression label in MM/DD/YY?",
+  "answer": "",
+  "raw_answer": "",
+  "scorer_answer": "",
+  "expected_answer": "04/15/18",
+  "score": 0.0,
+  "passed": false,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 0,
+  "error_taxonomy": "tool_failure",
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": false,
+    "needs_web": false,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [],
+    "working_plan": [
+      "Task failed before completion."
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "",
+    "confidence": "low",
+    "citations": [],
+    "reasoning_summary": "AgentRuntimeError: CancelledError: "
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "CancelledError: "
+    ],
+    "revised_answer": ""
+  },
+  "tool_calls": [],
+  "artifacts_used": [],
+  "duration_seconds": 0.0,
+  "created_at": "2026-03-16T23:30:26.135230Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"numpy github\" on Google search.\n2. Opened the NumPy GitHub page.\n3. Clicked \"Issues\" in the repo tabs.\n4. Clicked \"Closed\" on the filter bar.\n5. Set the filter to the \"numpy.polynomial\" label.\n6. Set the filter to the \"06 - Regression\" label.\n7. Opened the oldest Regression post.\n8. Scrolled down to find when the Regression label was added (Apr 15, 2018).\n9. Converted to MM/DD/YY (04/15/18).",
+      "Number of steps": "9",
+      "How long did this take?": "10 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    },
+    "failure_type": "AgentRuntimeError"
+  }
+}

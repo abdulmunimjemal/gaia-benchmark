@@ -1,0 +1,272 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "46719c30-f4c3-4cad-be07-d5cb21eee6bb",
+  "question": "Of the authors (First M. Last) that worked on the paper \"Pie Menus or Linear Menus, Which Is Better?\" in 2015, what was the title of the first paper authored by the one that had authored prior papers?",
+  "answer": "A New Software Agent 'Learning' Algorithm",
+  "raw_answer": "A New Software Agent 'Learning' Algorithm",
+  "scorer_answer": "A New Software Agent 'Learning' Algorithm",
+  "expected_answer": "Mapping Human Oriented Information to Software Agents for Online Systems Usage",
+  "score": 0.0,
+  "passed": false,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 0,
+  "error_taxonomy": "wrong_answer",
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "\"Pie Menus or Linear Menus, Which Is Better?\" 2015 authors",
+      "\"Pie Menus or Linear Menus, Which Is Better?\" 2015 ACM CHI HCI",
+      "pie menus linear menus comparison 2015 research paper",
+      "Google Scholar \"Pie Menus or Linear Menus, Which Is Better?\" 2015",
+      "ACM Digital Library pie menus linear menus 2015"
+    ],
+    "working_plan": [
+      "Search for the specific paper \"Pie Menus or Linear Menus, Which Is Better?\" from 2015",
+      "Extract all authors in \"First M. Last\" format from the paper",
+      "For each author, search their publication history to find papers published before 2015",
+      "Identify which authors had prior publications",
+      "Among authors with prior papers, find the chronologically earliest paper",
+      "Use code to sort and verify publication dates if needed",
+      "Return the exact title of the earliest paper"
+    ],
+    "answer_shape": "paper title"
+  },
+  "solver": {
+    "answer": "A New Software Agent 'Learning' Algorithm",
+    "confidence": "high",
+    "citations": [
+      "https://pietromurano.org/publications.html",
+      "https://pietromurano.org/Papers/Murano-Khan-Published-Version.pdf"
+    ],
+    "reasoning_summary": "Found the 2015 paper authored by Pietro Murano and Iram N. Khan. Pietro Murano has extensive prior publications dating to 2001, while no clear evidence was found for Iram N. Khan having pre-2015 publications. Pietro Murano's earliest paper is 'A New Software Agent 'Learning' Algorithm' from 2001."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Pie Menus or Linear Menus, Which Is Better?\" 2015",
+        "max_results": 5
+      },
+      "summary": "(PDF) Pie Menus or Linear Menus, Which Is Better? - Academia.edu: https://www.academia.edu/42056814/Pie_Menus_or_Linear_Menus_Which_Is_Better | Pie Menus Or Linear Menus, Which Is Better? 1 Pietro Murano, 2 Iram N: https://docslib.org/doc/9021566/pie-menus-or-linear-menus-which-is-better-1-pietro-murano-2-iram-n | PDFPie Menus or Linear Menus, Which Is Better? - Pietro Murano: https://pietromurano.org/Papers/Murano-Khan-Published-Version.pdf",
+      "success": true,
+      "created_at": "2026-03-16T23:34:06.638495Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://pietromurano.org/Papers/Murano-Khan-Published-Version.pdf",
+        "max_chars": 3000
+      },
+      "summary": "      Vol. 6, No. 9, September 2015                                                                                                 ISSN 2079-8407 \nJournal of Emerging Trends in Computing and Information Sciences \n©2009-2015 CIS Journal. All rights reserved. \n \nhttp://www.cisjournal.org \n \n476\nPie Menus or Linear Menus, Which Is Better? \n1 Pietro Murano, 2 Iram N. Khan \n1 Department of Computer Sc",
+      "success": true,
+      "created_at": "2026-03-16T23:34:15.416934Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Pietro Murano publications papers before 2015",
+        "max_results": 5
+      },
+      "summary": "Pietro Murano - dblp: https://dblp.org/pid/86/3190 | Pietro Murano - Home - ACM Digital Library: https://dl.acm.org/profile/81327490721 | Pietro Murano - Publications: https://pietromurano.org/publications.html",
+      "success": true,
+      "created_at": "2026-03-16T23:34:24.152048Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://dblp.org/pid/86/3190",
+        "max_chars": 5000
+      },
+      "summary": "Title: dblp: Pietro Murano\n\ndblp: Pietro Murano dblp Blog Statistics Update feed dblp artifacts @ DROPS XML dump RDF dump browse Persons Conferences Journals Series Repositories search Search dblp SPARQL queries Lookup by ID about F.A.Q. Team Advisory Board License Privacy Imprint nfdi NFDI - National Research Data Infrastructure Germany consortia NFDIxCS events | mastodon NFDI4DataScience ORKG CE",
+      "success": true,
+      "created_at": "2026-03-16T23:34:28.472971Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://pietromurano.org/publications.html",
+        "max_chars": 5000
+      },
+      "summary": "Title: Pietro Murano - Publications\n\nPietro Murano - Publications Pietro Murano Publications Home Research Lecturing Administration Popular Media Contact This section lists all my publications and where possible the publications are included. Click on a title to read a paper. INTERNATIONAL REFEREED JOURNAL PAPERS Keya, Rashika Tasnim, Heldal, Ilona, Patel, Daniel, Murano, Pietro & Wijkmark, Cecili",
+      "success": true,
+      "created_at": "2026-03-16T23:34:32.688443Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Pietro Murano earliest publications 1990s 2000s first paper",
+        "max_results": 5
+      },
+      "summary": "Pietro Murano - dblp: https://dblp.org/pid/86/3190 | Pietro Murano - Home - ACM Digital Library: https://dl.acm.org/profile/81327490721 | Pietro Murano - Publications: https://pietromurano.org/publications.html",
+      "success": true,
+      "created_at": "2026-03-16T23:34:44.541365Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Iram N. Khan publications papers before 2015",
+        "max_results": 5
+      },
+      "summary": "iram n. khan author papers published before 2015 Impact Factor, Ranking ...: https://journalsearches.com/journal.php?title=iram+n.+khan+author+papers+published+before+2015 | Iram KHAN | Seattle Children's Research Institute, Seattle | CIIT ...: https://www.researchgate.net/profile/Iram-Khan-3 | Iram Khan's research works | Seattle Children's Research Institute ...: https://www.researchgate.net/scientific-contributions/Iram-Khan-2100459969",
+      "success": true,
+      "created_at": "2026-03-16T23:34:52.871279Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Iram N. Khan\" \"University of Salford\" publications before 2015",
+        "max_results": 5
+      },
+      "summary": "Biophysical, docking, and cellular studies on the effects of ...: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6091479/ | Pietro Murano - Publications: https://pietromurano.org/publications.html | vol6no9_5 - Pietro Murano: https://pietromurano.org/Papers/Murano-Khan-Published-Version.pdf",
+      "success": true,
+      "created_at": "2026-03-16T23:34:59.794917Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Pie Menus or Linear Menus, Which Is Better?\" 2015 authors",
+        "max_results": 5
+      },
+      "summary": "(PDF) Pie Menus or Linear Menus, Which Is Better? - Academia.edu: https://www.academia.edu/42056814/Pie_Menus_or_Linear_Menus_Which_Is_Better | Pie Menus Or Linear Menus, Which Is Better? 1 Pietro Murano, 2 Iram N: https://docslib.org/doc/9021566/pie-menus-or-linear-menus-which-is-better-1-pietro-murano-2-iram-n | PDFPie Menus or Linear Menus, Which Is Better? - Pietro Murano: https://pietromurano.org/Papers/Murano-Khan-Published-Version.pdf",
+      "success": true,
+      "created_at": "2026-03-16T23:35:11.974383Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://pietromurano.org/Papers/Murano-Khan-Published-Version.pdf"
+      },
+      "summary": "      Vol. 6, No. 9, September 2015                                                                                                 ISSN 2079-8407 \nJournal of Emerging Trends in Computing and Information Sciences \n©2009-2015 CIS Journal. All rights reserved. \n \nhttp://www.cisjournal.org \n \n476\nPie Menus or Linear Menus, Which Is Better? \n1 Pietro Murano, 2 Iram N. Khan \n1 Department of Computer Sc",
+      "success": true,
+      "created_at": "2026-03-16T23:35:16.412021Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Pietro Murano publications before 2015 academic papers",
+        "max_results": 5
+      },
+      "summary": "Academia.edu - Find Research Papers, Topics, Researchers: https://www.academia.edu/ | Pietro Murano - dblp: https://dblp.org/pid/86/3190 | Pietro Murano - Home - ACM Digital Library: https://dl.acm.org/profile/81327490721",
+      "success": true,
+      "created_at": "2026-03-16T23:35:24.905309Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://pietromurano.org/publications.html"
+      },
+      "summary": "Title: Pietro Murano - Publications\n\nPietro Murano - Publications Pietro Murano Publications Home Research Lecturing Administration Popular Media Contact This section lists all my publications and where possible the publications are included. Click on a title to read a paper. INTERNATIONAL REFEREED JOURNAL PAPERS Keya, Rashika Tasnim, Heldal, Ilona, Patel, Daniel, Murano, Pietro & Wijkmark, Cecili",
+      "success": true,
+      "created_at": "2026-03-16T23:35:28.669388Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Iram N. Khan\" \"Iram Khan\" publications before 2015 academic papers University Salford",
+        "max_results": 5
+      },
+      "summary": "Iram Khan - Academia.edu: https://independent.academia.edu/IramKhan155 | Dr. Iram Khan - Google Scholar: https://scholar.google.com/citations?user=RzmqKwcAAAAJ&hl=en | Iram Khan - Google Scholar: https://scholar.google.com/citations?user=SG9S5PoAAAAJ&hl=en",
+      "success": true,
+      "created_at": "2026-03-16T23:35:38.136254Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Iram N Khan\" \"University of Salford\" publications computer science HCI",
+        "max_results": 5
+      },
+      "summary": "Pie Menus Or Linear Menus, Which Is Better? 1 Pietro Murano ...: https://docslib.org/doc/9021566/pie-menus-or-linear-menus-which-is-better-1-pietro-murano-2-iram-n | vol6no9_5 - Pietro Murano: https://pietromurano.org/Papers/Murano-Khan-Published-Version.pdf | Worktribe - USIR Home: https://salford-repository.worktribe.com/",
+      "success": true,
+      "created_at": "2026-03-16T23:35:45.275182Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:scholar.google.com \"Iram N Khan\" OR \"I N Khan\" publications",
+        "max_results": 5
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T23:35:53.761219Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_pietromurano_org_Papers_Murano_Khan_Published_Version_pdf",
+      "source_type": "web_fetch",
+      "source_uri": "https://pietromurano.org/Papers/Murano-Khan-Published-Version.pdf",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/46719c30-f4c3-4cad-be07-d5cb21eee6bb/https_pietromurano_org_Papers_Murano_Khan_Published_Version_pdf.txt",
+      "excerpt": "      Vol. 6, No. 9, September 2015                                                                                                 ISSN 2079-8407 \nJournal of Emerging Trends in Computing and Information Sciences \n©2009-2015 CIS Journal. All rights reserved. \n \nhttp://www.cisjournal.org \n \n476\nPie Menus or Linear Menus, Which Is Better? \n1 Pietro Murano, 2 Iram N. Khan \n1 Department of Computer Science, the Universal Design of ICT Research Group, Oslo and  \nAkershus University College of Applied Sciences, Oslo, Norway \n2 University of Salford, School of Computing, Science and Engineering, Salf"
+    },
+    {
+      "name": "https_dblp_org_pid_86_3190",
+      "source_type": "web_fetch",
+      "source_uri": "https://dblp.org/pid/86/3190",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/46719c30-f4c3-4cad-be07-d5cb21eee6bb/https_dblp_org_pid_86_3190.txt",
+      "excerpt": "Title: dblp: Pietro Murano\n\ndblp: Pietro Murano dblp Blog Statistics Update feed dblp artifacts @ DROPS XML dump RDF dump browse Persons Conferences Journals Series Repositories search Search dblp SPARQL queries Lookup by ID about F.A.Q. Team Advisory Board License Privacy Imprint nfdi NFDI - National Research Data Infrastructure Germany consortia NFDIxCS events | mastodon NFDI4DataScience ORKG CEUR MyBinder events | mastodon | publications donate learn more donate using PayPal stop the war! Зупиніть війну! Остановите войну! solidarity - (ua) - (ru) news - (ua) - (ru) donate - donate - donate "
+    },
+    {
+      "name": "https_pietromurano_org_publications_html",
+      "source_type": "web_fetch",
+      "source_uri": "https://pietromurano.org/publications.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/46719c30-f4c3-4cad-be07-d5cb21eee6bb/https_pietromurano_org_publications_html.txt",
+      "excerpt": "Title: Pietro Murano - Publications\n\nPietro Murano - Publications Pietro Murano Publications Home Research Lecturing Administration Popular Media Contact This section lists all my publications and where possible the publications are included. Click on a title to read a paper. INTERNATIONAL REFEREED JOURNAL PAPERS Keya, Rashika Tasnim, Heldal, Ilona, Patel, Daniel, Murano, Pietro & Wijkmark, Cecilia Hammar (2025) Implementing Virtual Reality for Fire Evacuation Preparedness at Schools - PDF , Computers, 14, 286. Al-Jasim, Alyaa & Murano, Pietro (2023) Designing User Interface Toggles for Usabil"
+    },
+    {
+      "name": "https_pietromurano_org_Papers_Murano_Khan_Published_Version_pdf",
+      "source_type": "web_fetch",
+      "source_uri": "https://pietromurano.org/Papers/Murano-Khan-Published-Version.pdf",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/46719c30-f4c3-4cad-be07-d5cb21eee6bb/https_pietromurano_org_Papers_Murano_Khan_Published_Version_pdf.txt",
+      "excerpt": "      Vol. 6, No. 9, September 2015                                                                                                 ISSN 2079-8407 \nJournal of Emerging Trends in Computing and Information Sciences \n©2009-2015 CIS Journal. All rights reserved. \n \nhttp://www.cisjournal.org \n \n476\nPie Menus or Linear Menus, Which Is Better? \n1 Pietro Murano, 2 Iram N. Khan \n1 Department of Computer Science, the Universal Design of ICT Research Group, Oslo and  \nAkershus University College of Applied Sciences, Oslo, Norway \n2 University of Salford, School of Computing, Science and Engineering, Salf"
+    },
+    {
+      "name": "https_pietromurano_org_publications_html",
+      "source_type": "web_fetch",
+      "source_uri": "https://pietromurano.org/publications.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/46719c30-f4c3-4cad-be07-d5cb21eee6bb/https_pietromurano_org_publications_html.txt",
+      "excerpt": "Title: Pietro Murano - Publications\n\nPietro Murano - Publications Pietro Murano Publications Home Research Lecturing Administration Popular Media Contact This section lists all my publications and where possible the publications are included. Click on a title to read a paper. INTERNATIONAL REFEREED JOURNAL PAPERS Keya, Rashika Tasnim, Heldal, Ilona, Patel, Daniel, Murano, Pietro & Wijkmark, Cecilia Hammar (2025) Implementing Virtual Reality for Fire Evacuation Preparedness at Schools - PDF , Computers, 14, 286. Al-Jasim, Alyaa & Murano, Pietro (2023) Designing User Interface Toggles for Usabil"
+    }
+  ],
+  "duration_seconds": 221.3314109579951,
+  "created_at": "2026-03-16T23:37:21.638761Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"Pie Menus or Linear Menus, Which Is Better?\" on Google.\n2. Opened \"Pie Menus or Linear Menus, Which Is Better?\" on https://oda.oslomet.no/oda-xmlui/handle/10642/3162.\n3. Clicked each author's name.\n4. Noted the name that had no other papers listed.\n5. Searched \"Murano, Pietro\" on Google.\n6. Opened http://www.pietromurano.org/.\n7. Clicked \"Publications\".\n8. Found the earliest paper he contributed to.",
+      "Number of steps": "8",
+      "How long did this take?": "10 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  }
+}

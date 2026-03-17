@@ -1,0 +1,246 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "73c1b9fe-ee1d-4cf4-96ca-35c08f97b054",
+  "question": "According to the USGS, in what year was the American Alligator first found west of Texas (not including Texas)?",
+  "answer": "1954",
+  "raw_answer": "1954",
+  "scorer_answer": "1954",
+  "expected_answer": "1954",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 0,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "USGS American Alligator distribution west of Texas first recorded",
+      "American Alligator historical range expansion USGS",
+      "USGS alligator sightings west Texas first documented year",
+      "American Alligator California Arizona New Mexico first found USGS",
+      "USGS wildlife survey American Alligator western states historical"
+    ],
+    "working_plan": [
+      "Search USGS databases and publications for American Alligator distribution records",
+      "Look for historical surveys or wildlife reports mentioning first western sightings",
+      "Focus on states immediately west of Texas (New Mexico, Arizona, California, etc.)",
+      "Verify the specific year from authoritative USGS sources",
+      "Cross-check multiple sources to ensure accuracy of the first documented occurrence"
+    ],
+    "answer_shape": "4-digit year"
+  },
+  "solver": {
+    "answer": "1954",
+    "confidence": "high",
+    "citations": [
+      "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=221",
+      "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=221&State=CA&YearTo=1954",
+      "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=156000"
+    ],
+    "reasoning_summary": "According to the USGS Nonindigenous Aquatic Species database, the American Alligator was first documented west of Texas in 1954 in California. The database shows California as having the earliest first observation date (1954) among all states west of Texas, with specimen ID 156000 documenting an alligator found in the Colorado River. Other western states have later first records: Colorado (1978), Arizona (1990), and Nevada (2009)."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "USGS American Alligator first found west of Texas historical distribution records",
+        "max_results": 10
+      },
+      "summary": "en.wikipedia.org/wiki/Oklahoma: https://en.wikipedia.org/wiki/Oklahoma | Corsicana, Texas - Wikipedia: https://en.wikipedia.org/wiki/Corsicana,_Texas | Whooping crane - Wikipedia: https://en.wikipedia.org/wiki/Whooping_crane",
+      "success": true,
+      "created_at": "2026-03-16T22:21:06.073271Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=221"
+      },
+      "summary": "Title: American alligator (Alligator mississippiensis) - Species Profile\n\nAmerican alligator (Alligator mississippiensis) - Species Profile Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query B",
+      "success": true,
+      "created_at": "2026-03-16T22:21:12.936821Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "American Alligator California 1954 first record USGS Bury Luckenbach Colorado River",
+        "max_results": 10
+      },
+      "summary": "American alligator - Wikipedia: https://en.wikipedia.org/wiki/American_alligator | American alligator - Collections - Nonindigenous Aquatic Species: https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=221&State=CA&YearTo=1954 | American alligator (Alligator mississippiensis) - Species Profile: https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=221",
+      "success": true,
+      "created_at": "2026-03-16T22:21:32.053472Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=221&State=CA&YearTo=1954"
+      },
+      "summary": "Title: American alligator - Collections\n\nAmerican alligator - Collections Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC",
+      "success": true,
+      "created_at": "2026-03-16T22:21:44.184816Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"American alligator\" \"west of Texas\" earliest first record before 1954 historical",
+        "max_results": 10
+      },
+      "summary": "American alligator - Wikipedia: https://en.wikipedia.org/wiki/American_alligator | American alligator (Alligator mississippiensis) - Collection record: https://nas.er.usgs.gov/queries/specimenviewer.aspx?SpecimenID=1547058 | American alligator (Alligator mississippiensis) - Species Profile: https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=221",
+      "success": true,
+      "created_at": "2026-03-16T22:22:05.701602Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "USGS American Alligator first found west of Texas historical distribution",
+        "max_results": 5
+      },
+      "summary": "en.wikipedia.org/wiki/Oklahoma: https://en.wikipedia.org/wiki/Oklahoma | Corsicana, Texas - Wikipedia: https://en.wikipedia.org/wiki/Corsicana,_Texas | Texas Flood Hysteria: Media’s Climate Blame Drowned by: https://wattsupwiththat.com/2025/07/20/texas-flood-hysteria-medias-climate-blame-drowned-by-history-and-data/",
+      "success": true,
+      "created_at": "2026-03-16T22:22:15.658773Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "American Alligator distribution USGS California Arizona New Mexico first documented",
+        "max_results": 5
+      },
+      "summary": "American alligator - Wikipedia: https://en.wikipedia.org/wiki/American_alligator | American alligator (Alligator mississippiensis) - Species Profile: https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=221 | Alligator Range Map in the United States - Vivid Maps: https://vividmaps.com/alligator-range-map-in-the-united-states/",
+      "success": true,
+      "created_at": "2026-03-16T22:22:21.012299Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=221"
+      },
+      "summary": "Title: American alligator (Alligator mississippiensis) - Species Profile\n\nAmerican alligator (Alligator mississippiensis) - Species Profile Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query B",
+      "success": true,
+      "created_at": "2026-03-16T22:22:26.385109Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"USGS\" American alligator California 1954 first documented west Texas",
+        "max_results": 5
+      },
+      "summary": "American alligator (Alligator mississippiensis) - Species: https://nas.er.usgs.gov:443/queries/factsheet.aspx?SpeciesID=221 | Kansas Herpetofaunal Atlas: https://webapps.fhsu.edu/ksherp/account.aspx?o=30&t=4 | A Disastrous Article: http://themediadesk.com/files9/disasters.htm",
+      "success": true,
+      "created_at": "2026-03-16T22:22:36.567322Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Bury Luckenbach 1978 American alligator Colorado River California carnival",
+        "max_results": 5
+      },
+      "summary": "American alligator (Alligator mississippiensis) - Species Profile: https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=221 | American alligator - Collections - Nonindigenous Aquatic Species: https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=221&yearto=1978 | American alligator (Alligator mississippiensis) - Species: https://nas.er.usgs.gov:443/queries/factsheet.aspx?SpeciesID=221",
+      "success": true,
+      "created_at": "2026-03-16T22:22:45.376762Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "American alligator California 1954 first record Colorado River USGS",
+        "max_results": 5
+      },
+      "summary": "American alligator - Wikipedia: https://en.wikipedia.org/wiki/American_alligator | American alligator (Alligator mississippiensis) - Species Profile: https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=221 | American alligator - Collections - Nonindigenous Aquatic Species: https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=221&State=CA&YearTo=1954",
+      "success": true,
+      "created_at": "2026-03-16T22:22:55.733709Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=221&State=CA&YearTo=1954"
+      },
+      "summary": "Title: American alligator - Collections\n\nAmerican alligator - Collections Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC",
+      "success": true,
+      "created_at": "2026-03-16T22:22:59.582164Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=156000"
+      },
+      "summary": "Title: American alligator (Alligator mississippiensis) - Collection record\n\nAmerican alligator (Alligator mississippiensis) - Collection record Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Que",
+      "success": true,
+      "created_at": "2026-03-16T22:23:03.600862Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_nas_er_usgs_gov_queries_factsheet_aspx_SpeciesID_221",
+      "source_type": "web_fetch",
+      "source_uri": "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=221",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/73c1b9fe-ee1d-4cf4-96ca-35c08f97b054/https_nas_er_usgs_gov_queries_factsheet_aspx_SpeciesID_221.txt",
+      "excerpt": "Title: American alligator (Alligator mississippiensis) - Species Profile\n\nAmerican alligator (Alligator mississippiensis) - Species Profile Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8 Spatial Query Graphs & Charts Reference Database Database Info Database FAQ Metadata Data Disclaimer Database Characterization eDNA"
+    },
+    {
+      "name": "https_nas_er_usgs_gov_queries_CollectionInfo_aspx_SpeciesID_221_State_CA_YearTo_",
+      "source_type": "web_fetch",
+      "source_uri": "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=221&State=CA&YearTo=1954",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/73c1b9fe-ee1d-4cf4-96ca-35c08f97b054/https_nas_er_usgs_gov_queries_CollectionInfo_aspx_SpeciesID_221_State_CA_YearTo.txt",
+      "excerpt": "Title: American alligator - Collections\n\nAmerican alligator - Collections Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8 Spatial Query Graphs & Charts Reference Database Database Info Database FAQ Metadata Data Disclaimer Database Characterization eDNA API Documentation Data Disclaimer Taxa Information Vertebrates Am"
+    },
+    {
+      "name": "https_nas_er_usgs_gov_queries_factsheet_aspx_SpeciesID_221",
+      "source_type": "web_fetch",
+      "source_uri": "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=221",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/73c1b9fe-ee1d-4cf4-96ca-35c08f97b054/https_nas_er_usgs_gov_queries_factsheet_aspx_SpeciesID_221.txt",
+      "excerpt": "Title: American alligator (Alligator mississippiensis) - Species Profile\n\nAmerican alligator (Alligator mississippiensis) - Species Profile Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8 Spatial Query Graphs & Charts Reference Database Database Info Database FAQ Metadata Data Disclaimer Database Characterization eDNA"
+    },
+    {
+      "name": "https_nas_er_usgs_gov_queries_CollectionInfo_aspx_SpeciesID_221_State_CA_YearTo_",
+      "source_type": "web_fetch",
+      "source_uri": "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=221&State=CA&YearTo=1954",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/73c1b9fe-ee1d-4cf4-96ca-35c08f97b054/https_nas_er_usgs_gov_queries_CollectionInfo_aspx_SpeciesID_221_State_CA_YearTo.txt",
+      "excerpt": "Title: American alligator - Collections\n\nAmerican alligator - Collections Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8 Spatial Query Graphs & Charts Reference Database Database Info Database FAQ Metadata Data Disclaimer Database Characterization eDNA API Documentation Data Disclaimer Taxa Information Vertebrates Am"
+    },
+    {
+      "name": "https_nas_er_usgs_gov_queries_SpecimenViewer_aspx_SpecimenID_156000",
+      "source_type": "web_fetch",
+      "source_uri": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=156000",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/73c1b9fe-ee1d-4cf4-96ca-35c08f97b054/https_nas_er_usgs_gov_queries_SpecimenViewer_aspx_SpecimenID_156000.txt",
+      "excerpt": "Title: American alligator (Alligator mississippiensis) - Collection record\n\nAmerican alligator (Alligator mississippiensis) - Collection record Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8 Spatial Query Graphs & Charts Reference Database Database Info Database FAQ Metadata Data Disclaimer Database Characterization "
+    }
+  ],
+  "duration_seconds": 191.03344429199933,
+  "created_at": "2026-03-16T22:23:49.441686Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “American Alligator USGS”.\n2. Click result for the USGS Species Profile.\n3. Click “Animated Map”.\n4. Click the “Skip years with no recorded sightings” button.\n5. Zoom out on the map to better view the whole U.S.\n6. Move the slider back to the beginning, then advance it until I see a red dot pop up west of Texas.\n7. Note the year that the dot appears, 1954.",
+      "Number of steps": "7",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser\n3. Image recognition",
+      "Number of tools": "3"
+    }
+  }
+}

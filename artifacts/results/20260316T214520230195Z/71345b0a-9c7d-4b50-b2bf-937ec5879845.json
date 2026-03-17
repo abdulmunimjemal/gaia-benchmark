@@ -1,0 +1,339 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "71345b0a-9c7d-4b50-b2bf-937ec5879845",
+  "question": "On a leap day before the year 2008, a joke was removed from the Wikipedia page for “Dragon”. What was the phrase that was removed? Give the phrase as it appeared on the page, but without punctuation.",
+  "answer": "Ni",
+  "raw_answer": "Ni",
+  "scorer_answer": "Ni",
+  "expected_answer": "Here be dragons",
+  "score": 0.0,
+  "passed": false,
+  "route": "code",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": "wrong_answer",
+  "planner": {
+    "route": "code",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "On a leap day before the year 2008, a joke was removed from the Wikipedia page for “Dragon”. What was the phrase that was removed? Give the phrase as it appeared on the page, but without punctuation.",
+      "On a leap day before the year 2008,",
+      "it appeared on the page, but without punctuation."
+    ],
+    "working_plan": [
+      "Fetch only the specific cited source or page requested by the task.",
+      "Extract the exact factual inputs needed for the calculation.",
+      "Use sandboxed code for the computation and rounding.",
+      "Return only the final benchmark-formatted answer."
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "Ni",
+    "confidence": "medium",
+    "citations": [],
+    "reasoning_summary": "Based on the feedback that Knights who say Ni are primarily known for saying 'Ni!' repeatedly, and that if 'ni' references were removed the phrase would more likely involve 'Ni' directly rather than 'We demand a shrubbery', the most probable removed phrase would be the simple exclamation 'Ni!' which becomes 'Ni' when punctuation is removed."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "RETRIEVAL ERROR: No actual verification of what was removed from Wikipedia's Dragon page. The reasoning is purely speculative without checking actual edit history.",
+      "TEMPORAL ERROR: No verification of which specific leap day before 2008 this occurred on (could be Feb 29, 2004, Feb 29, 2000, etc.).",
+      "EVIDENCE GAP: No citations or sources provided to support what phrase was actually removed. Answer appears to be guesswork based on Monty Python knowledge rather than Wikipedia edit verification.",
+      "METHODOLOGY FLAW: The reasoning admits this is 'most probable' rather than verified fact, which is insufficient for exact-match scoring."
+    ],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia Dragon page joke removed leap day February 29 2004 revision history"
+      },
+      "summary": "Wikipedia:Goings-on/February 29, 2004 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Goings-on/February_29,_2004 | Wikipedia page \"dragon\" revision history joke removed on february 29 ...: https://theresanaiforthat.com/s/Wikipedia+page+\"Dragon\"+revision+history+joke+removed+on+February+29+2004+leap+day+before+2008+exact+text+phrase | Results for 'wikipedia dragon article edit history on leap day february ...: https://www.britishnewspaperarchive.co.uk/search/results?basicsearch=wikipedia+dragon+article+edit+history+on+leap+day+february+29+2004:+find+the+removed+joke+text&place=coventry,+warwickshire,+england&county=warwickshire,+england&retrievecountrycounts=false",
+      "success": true,
+      "created_at": "2026-03-16T23:33:56.421139Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Dragon\" wikipedia \"February 29 2004\" joke removed edit history revision"
+      },
+      "summary": "Brother Bear -Wikipedia: https://en.wikipedia.org/wiki/Brother_Bear | Revolutionary Movements in WorldHistory: From 1750 to the Present...: https://epdf.pub/revolutionary-movements-in-world-history-from-1750-to-the-present-3-vol-set.html | WikipediaDragonjokeremovedleap day exact phrase answer: https://www.nedir.org/arama.php?ne=Wikipedia-Dragon-joke-removed-leap-day-exact-phrase-answer",
+      "success": true,
+      "created_at": "2026-03-16T23:34:02.354236Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org Dragon revision history \"February 29 2004\""
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T23:34:10.948486Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Dragon"
+      },
+      "summary": "Title: Dragon - Wikipedia\n\nDragon - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar",
+      "success": true,
+      "created_at": "2026-03-16T23:34:14.902181Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Dragon&action=history"
+      },
+      "summary": "Title: Dragon: Revision history - Wikipedia\n\nDragon: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Donate ",
+      "success": true,
+      "created_at": "2026-03-16T23:34:20.501329Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Wikipedia\" \"Dragon\" \"February 29 2004\" \"joke\" \"removed\" edit"
+      },
+      "summary": "2 Search Results for \"which edit removed joke from dragon wikipedia ...: https://www.nasa.gov/?search=which+edit+removed+joke+from+dragon+wikipedia+page+on+february+29+2004 | Results for 'wikipedia dragon article edit history on leap day february ...: https://www.britishnewspaperarchive.co.uk/search/results?basicsearch=wikipedia+dragon+article+edit+history+on+leap+day+february+29+2004:+find+the+removed+joke+text&place=coventry,+warwickshire,+england&county=warwickshire,+england&retrievecountrycounts=false | All Items matching: \"Dragon\" Wikipedia page joke removed ... - COMC: https://www.comc.com/Cards,=~22Dragon~22+Wikipedia+page+joke+removed+February+29+2004+leap+day+before+2008+the+phrase+that+was+removed+as+it+appeared+on+the+page+without+punctuation+exact+text+February+29+2004",
+      "success": true,
+      "created_at": "2026-03-16T23:34:29.698185Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:web.archive.org wikipedia Dragon February 2004"
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T23:34:38.829029Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Dragons prefer...\" \"treasure hoard\" Wikipedia joke removed 2004"
+      },
+      "summary": "Draconomicon, The Book ofDragons: https://dragondreaming.wordpress.com/wp-content/uploads/2013/09/dungeonsdragonsdraconomicon.pdf | Dragon Hoard - TV Tropes: https://tvtropes.org/pmwiki/pmwiki.php/Main/DragonHoard | Why do your dragons horde treasure? : r/worldbuilding - Reddit: https://www.reddit.com/r/worldbuilding/comments/r74obi/why_do_your_dragons_horde_treasure/",
+      "success": true,
+      "created_at": "2026-03-16T23:34:46.868587Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia Dragon page joke removed leap day February 29 2004 edit history"
+      },
+      "summary": "Wikipedia:Goings-on/February 29, 2004 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Goings-on/February_29,_2004 | Wikipedia page \"dragon\" revision history joke removed on february 29 ...: https://theresanaiforthat.com/s/Wikipedia+page+\"Dragon\"+revision+history+joke+removed+on+February+29+2004+leap+day+before+2008+exact+text+phrase | Results for 'wikipedia dragon article edit history on leap day february ...: https://www.britishnewspaperarchive.co.uk/search/results?basicsearch=wikipedia+dragon+article+edit+history+on+leap+day+february+29+2004:+find+the+removed+joke+text&place=coventry,+warwickshire,+england&county=warwickshire,+england&retrievecountrycounts=false",
+      "success": true,
+      "created_at": "2026-03-16T23:35:53.823254Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Wikipedia:Goings-on/February_29,_2004"
+      },
+      "summary": "Title: Wikipedia:Goings-on/February 29, 2004 - Wikipedia\n\nWikipedia:Goings-on/February 29, 2004 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Person",
+      "success": true,
+      "created_at": "2026-03-16T23:35:58.081705Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org Dragon revision history 2004"
+      },
+      "summary": "Historicalrevisionism - Wikipedia: https://en.wikipedia.org/wiki/Historical_revisionism | Dungeons &Dragonscampaign settings - Wikipedia: https://en.wikipedia.org/wiki/List_of_Dungeons_&_Dragons_settings | List of Dungeons &Dragonsrulebooks - Wikipedia: https://en.wikipedia.org/wiki/List_of_Dungeons_&_Dragons_rulebooks",
+      "success": true,
+      "created_at": "2026-03-16T23:36:14.149516Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org/wiki/Dragon"
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T23:36:25.828109Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia Dragon page"
+      },
+      "summary": "Dragon - Wikipedia: https://en.wikipedia.org/wiki/Dragon | Dragon Ball - Wikipedia: https://en.wikipedia.org/wiki/Dragon_Ball | Wikipedia: https://www.wikipedia.org/",
+      "success": true,
+      "created_at": "2026-03-16T23:36:30.231276Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Dragon"
+      },
+      "summary": "Title: Dragon - Wikipedia\n\nDragon - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar",
+      "success": true,
+      "created_at": "2026-03-16T23:36:34.043135Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia Dragon page joke removed February 29 2004 leap day edit history",
+        "max_results": 10
+      },
+      "summary": "Wikipedia:Goings-on/February 29, 2004 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Goings-on/February_29,_2004 | what+was+the+text+of+the+joke+removed+from+Wikipedia+Dragon+page+on ...: https://mods.paradoxplaza.com/games/what+was+the+text+of+the+joke+removed+from+Wikipedia+Dragon+page+on+leap+day+2004 | Results for 'wikipedia dragon article edit history on leap day february ...: https://www.britishnewspaperarchive.co.uk/search/results?basicsearch=wikipedia+dragon+article+edit+history+on+leap+day+february+29+2004:+find+the+removed+joke+text&place=coventry,+warwickshire,+england&county=warwickshire,+england&retrievecountrycounts=false",
+      "success": true,
+      "created_at": "2026-03-16T23:37:19.618658Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Dragon\" Wikipedia revision history February 29 2004 wayback machine archive joke",
+        "max_results": 10
+      },
+      "summary": "Search results for: Wikipedia \"Dragon\" page old revision archive.org ...: https://diva.sfsu.edu/collections/sfbatv/search?q=Wikipedia+\"Dragon\"+page+old+revision+archive.org+wayback+machine+2004 | Search Results for: wikipedia revision history \"dragon\" February 29 ...: https://www.nasa.gov/?search=wikipedia+revision+history+\"dragon\"+February+29+2004+joke+deletion+text+removed | wikipedia revision history archive \"dragon\" page february 2004 edit \"ni ...: https://journalsearches.com/journal.php?title=wikipedia+revision+history+archive+\"dragon\"+page+february+2004+edit+\"ni\"",
+      "success": true,
+      "created_at": "2026-03-16T23:37:42.726693Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia Dragon page \"ni\" joke removed February 29 2004 \"Knights who say ni\"",
+        "max_results": 10
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T23:38:03.612331Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia Dragon page joke removed leap day February 29 2004 2000 edit history"
+      },
+      "summary": "Wikipedia:Goings-on/February 29, 2004 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Goings-on/February_29,_2004 | Article:+What+was+the+removed+joke+from+Wikipedia+\"Dragon ...: https://mods.paradoxplaza.com/games/Article:+What+was+the+removed+joke+from+Wikipedia+\"Dragon\"+page+on+leap+day+(February+29+2000,+etc.)? | Results for 'wikipedia dragon article edit history on leap ...: https://www.britishnewspaperarchive.co.uk/search/results?basicsearch=wikipedia+dragon+article+edit+history+on+leap+day+february+29+2004:+find+the+removed+joke+text&place=coventry,+warwickshire,+england&county=warwickshire,+england&retrievecountrycounts=false",
+      "success": true,
+      "created_at": "2026-03-16T23:39:47.701407Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Dragon\" Wikipedia page February 29 2004 edit removed joke \"ni\" Knights Monty Python"
+      },
+      "summary": "Full text of \"NEW\" - Archive.org: https://archive.org/stream/NEW_1/NEW.txt&wzmacniacz;ld=201 | Wikipedia:Deleted articles with freaky titles - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Deleted_articles_with_freaky_titles | directory-list-2.3-small.txt - GitLab: https://gitlab.com/kalilinux/packages/dirbuster/blob/c89ce3752a4b7b217915d454c730cae176356efc/directory-list-2.3-small.txt",
+      "success": true,
+      "created_at": "2026-03-16T23:39:57.511108Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia Dragon page revision history February 2004 joke Monty Python \"We are the knights who say Ni\""
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T23:40:20.184385Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia Dragon page joke removed leap day February 29 2004 2000 edit history"
+      },
+      "summary": "Wikipedia:Goings-on/February 29, 2004 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Goings-on/February_29,_2004 | Results for 'wikipedia dragon article edit history on leap day february ...: https://www.britishnewspaperarchive.co.uk/search/results?basicsearch=wikipedia+dragon+article+edit+history+on+leap+day+february+29+2004:+find+the+removed+joke+text&place=coventry,+warwickshire,+england&county=warwickshire,+england&retrievecountrycounts=false | Wikipedia edit history for Dragon page on leap day before 2008 and a ...: https://www.wordplays.com/crossword-solver/Wikipedia-edit-history-for-Dragon-page-on-leap-day-before-2008-and-a-joke-was-removed",
+      "success": true,
+      "created_at": "2026-03-16T23:41:04.266098Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Dragon\" site:en.wikipedia.org edit history \"February 29\" joke removed Monty Python"
+      },
+      "summary": "How to Train Your Dragon: The Hidden World - Wikipedia: https://en.wikipedia.org/wiki/How_to_Train_Your_Dragon:_The_Hidden_World | How to Train Your Dragon (2025 film) - Wikipedia: https://en.wikipedia.org/wiki/How_to_Train_Your_Dragon_(2025_film) | How to Train Your Dragon (2010 film) - Wikipedia: https://en.wikipedia.org/wiki/How_to_Train_Your_Dragon_(2010_film)",
+      "success": true,
+      "created_at": "2026-03-16T23:41:24.991740Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Dragon"
+      },
+      "summary": "Title: Dragon - Wikipedia\n\nDragon - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar",
+      "success": true,
+      "created_at": "2026-03-16T23:41:30.677270Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_en_wikipedia_org_wiki_Dragon",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Dragon",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/71345b0a-9c7d-4b50-b2bf-937ec5879845/https_en_wikipedia_org_wiki_Dragon.txt",
+      "excerpt": "Title: Dragon - Wikipedia\n\nDragon - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Etymology 2 Theorised origins 3 Africa Toggle Africa subsection 3.1 Egypt 3.2 Ethiopia 4 West Asia Toggle West Asia subsection 4.1 Mesopotamia 4.2 Levant 4.3 Iran 5 East Asia Toggle East"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Dragon_action_history",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Dragon&action=history",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/71345b0a-9c7d-4b50-b2bf-937ec5879845/https_en_wikipedia_org_w_index_php_title_Dragon_action_history.txt",
+      "excerpt": "Title: Dragon: Revision history - Wikipedia\n\nDragon: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Dragon: Revision history Help Article Talk English Read View source View history Tools Tools move to sidebar hide Actions Read View source View history General What links here Re"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Wikipedia_Goings_on_February_29_2004",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Wikipedia:Goings-on/February_29,_2004",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/71345b0a-9c7d-4b50-b2bf-937ec5879845/https_en_wikipedia_org_wiki_Wikipedia_Goings_on_February_29_2004.txt",
+      "excerpt": "Title: Wikipedia:Goings-on/February 29, 2004 - Wikipedia\n\nWikipedia:Goings-on/February 29, 2004 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Wikipedia : Goings-on/February 29, 2004 Add languages Add links Project page Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edi"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Dragon",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Dragon",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/71345b0a-9c7d-4b50-b2bf-937ec5879845/https_en_wikipedia_org_wiki_Dragon.txt",
+      "excerpt": "Title: Dragon - Wikipedia\n\nDragon - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Etymology 2 Theorised origins 3 Africa Toggle Africa subsection 3.1 Egypt 3.2 Ethiopia 4 West Asia Toggle West Asia subsection 4.1 Mesopotamia 4.2 Levant 4.3 Iran 5 East Asia Toggle East"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Dragon",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Dragon",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/71345b0a-9c7d-4b50-b2bf-937ec5879845/https_en_wikipedia_org_wiki_Dragon.txt",
+      "excerpt": "Title: Dragon - Wikipedia\n\nDragon - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Etymology 2 Theorised origins 3 Africa Toggle Africa subsection 3.1 Egypt 3.2 Ethiopia 4 West Asia Toggle West Asia subsection 4.1 Mesopotamia 4.2 Levant 4.3 Iran 5 East Asia Toggle East"
+    }
+  ],
+  "duration_seconds": 544.4181414999766,
+  "created_at": "2026-03-16T23:42:51.013459Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “dragon wikipedia”.\n2. Click the Wikipedia result.\n3. Click “View history” to see changes made to the page.\n4. Navigate through the edits until I get to the beginning of 2008.\n5. Browse the edits before 2008 for a change made on February 29, which would be a leap day.\n6. Find an edit made on February 29, 2004, with a comment indicating the prior edit was humorous.\n7. Click the February 29 version of the page, and examine it.\n8. Return to the revision history, and click the previous version of the page.\n9. Note the phrase at the top of the page that wasn’t present in the later version: “Here be dragons”.",
+      "Number of steps": "9",
+      "How long did this take?": "10-15 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  }
+}

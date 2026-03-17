@@ -1,0 +1,542 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "935e2cff-ae78-4218-b3f5-115589b19dae",
+  "question": "In the year 2022, and before December, what does \"R\" stand for in the three core policies of the type of content that was violated in the public logs on the Legume Wikipedia page?",
+  "answer": "Reliable",
+  "raw_answer": "Reliable",
+  "scorer_answer": "Reliable",
+  "expected_answer": "research",
+  "score": 0.0,
+  "passed": false,
+  "route": "code",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": "wrong_answer",
+  "planner": {
+    "route": "code",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "In the year 2022, and before December, what does \"R\" stand for in the three core policies of the type of content that was violated in the public logs on the Legume Wikipedia page",
+      "In the year 2022, and before December, what",
+      "the public logs on the Legume Wikipedia page"
+    ],
+    "working_plan": [
+      "Fetch only the specific cited source or page requested by the task.",
+      "Extract the exact factual inputs needed for the calculation.",
+      "Use sandboxed code for the computation and rounding.",
+      "Return only the final benchmark-formatted answer."
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "Reliable",
+    "confidence": "high",
+    "citations": [
+      "https://en.wikipedia.org/wiki/Help:Wikipedia:_The_Missing_Manual/Collaborating_with_other_editors/Resolving_content_disputes",
+      "https://grad.rutgers.edu/professional-development/teaching-skills-ta-project/teaching-resources/wikipedia-educational"
+    ],
+    "reasoning_summary": "Wikipedia's three core content policies are Neutral Point of View, Verifiability, and No Original Research. In the context of content violations, 'R' stands for 'Reliable' as in reliable sources, which is the fundamental requirement of Wikipedia's Verifiability policy. Content violations typically occur when sources are not reliable enough to meet Wikipedia's standards."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "RETRIEVAL ERROR: No evidence of actually checking the specific Legume Wikipedia page or its public logs from 2022 before December as required by the question",
+      "COMPLETENESS ERROR: Failed to identify the specific type of content that was violated in the public logs, which is necessary to understand the context",
+      "REASONING ERROR: Claims R stands for 'Reliable' but doesn't explain how this relates to the 'three core policies' - the standard three policies (NPOV, Verifiability, No Original Research) don't clearly produce a standalone 'R'",
+      "TEMPORAL ERROR: No verification that the answer applies to the specific timeframe of 2022 before December"
+    ],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Legume Wikipedia page public logs violations 2022",
+        "max_results": 5
+      },
+      "summary": "Help:Log - Wikipedia: https://en.wikipedia.org/wiki/Help:Log | Legume Wikipedia Violation: Content Moderation Case Study: https://reelmind.ai/blog/legume-wikipedia-violation-content-moderation-case-study | Search results for which Wikipedia page had a violation on the Legume ...: https://thehackernews.com/search?q=which+Wikipedia+page+had+a+violation+on+the+Legume+page+in+2022+public+logs+and+what+type+of+content+was+it+and+its+three+core+policies",
+      "success": true,
+      "created_at": "2026-03-16T22:15:10.596997Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://reelmind.ai/blog/legume-wikipedia-violation-content-moderation-case-study"
+      },
+      "summary": "Title: ReelMind - Open Source AI Video Models Community\n\nReelMind - Open Source AI Video Models Community Home / Blog / Legume Wikipedia Violation: Content Moderation Case Study Legume Wikipedia Violation: Content Moderation Case Study Refresh Explore more fun Abstract The Legume Wikipedia Violation: Content Moderation Case Study provides a critical examination of platform governance challenges in",
+      "success": true,
+      "created_at": "2026-03-16T22:15:16.352377Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Legume\" Wikipedia logs 2022 before December content violation policies",
+        "max_results": 5
+      },
+      "summary": "Legume-Wikipedia: https://en.wikipedia.org/wiki/Legume | legumetrees | The Most Revolutionary Act: https://stuartjeannebramhall.com/tag/legume-trees/ | legumeArchives - Juniper Level Botanic Garden: https://www.juniperlevelbotanicgarden.org/tag/legume/",
+      "success": true,
+      "created_at": "2026-03-16T22:15:25.504638Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Legume"
+      },
+      "summary": "Title: Legume - Wikipedia\n\nLegume - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar",
+      "success": true,
+      "created_at": "2026-03-16T22:15:29.595738Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org Special:Log \"Legume\" 2022",
+        "max_results": 5
+      },
+      "summary": "Dalhousiea - Wikipedia: https://en.wikipedia.org/wiki/Dalhousiea | Indigofera himalayensis - Wikipedia: https://en.wikipedia.org/wiki/Indigofera_himalayensis | Dalbergiella - Wikipedia: https://en.wikipedia.org/wiki/Dalbergiella",
+      "success": true,
+      "created_at": "2026-03-16T22:15:38.155160Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Wikipedia violation\" \"three core policies\" \"R stands for\" 2022",
+        "max_results": 5
+      },
+      "summary": "Wikipedia:WikiProject Novels/Assessment - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Novels/Assessment | Koch network - Wikipedia: https://en.wikipedia.org/wiki/Koch_network | Wikipedia:Jumuiya - Wikipedia, kamusi elezo huru: https://sw.wikipedia.org/wiki/Wikipedia:Jumuiya",
+      "success": true,
+      "created_at": "2026-03-16T22:15:43.310068Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Wikipedia three core policies\" neutral point of view verifiability",
+        "max_results": 5
+      },
+      "summary": "Wikipedia:Core content policies - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Core_content_policies | Wikipedia:Neutral point of view - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:VALID | Wikipedia:Neutral point of view - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view",
+      "success": true,
+      "created_at": "2026-03-16T22:15:49.496370Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Wikipedia:Core_content_policies"
+      },
+      "summary": "Title: Wikipedia:Core content policies - Wikipedia\n\nWikipedia:Core content policies - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Don",
+      "success": true,
+      "created_at": "2026-03-16T22:15:55.716168Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Legume Wikipedia page public logs violations 2022"
+      },
+      "summary": "Wikipedia:Article Rescue Squadron - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Article_Rescue_Squadron | Wikipedia:WikiProject Australia/Assessment - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Australia/Assessment | Wikipedia:WikiProject Agriculture - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Agriculture",
+      "success": true,
+      "created_at": "2026-03-16T22:16:54.171684Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Legume\" site:en.wikipedia.org"
+      },
+      "summary": "Legume - Wikipedia: https://en.wikipedia.org/wiki/Legume | Fabaceae - Wikipedia: https://en.wikipedia.org/wiki/Fabaceae | List of legume dishes - Wikipedia: https://en.wikipedia.org/wiki/List_of_legume_dishes",
+      "success": true,
+      "created_at": "2026-03-16T22:16:59.479187Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Legume"
+      },
+      "summary": "Title: Legume - Wikipedia\n\nLegume - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar",
+      "success": true,
+      "created_at": "2026-03-16T22:17:02.558864Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Legume Wikipedia page logs violations 2022 site:en.wikipedia.org"
+      },
+      "summary": "Help:Log - Wikipedia: https://en.wikipedia.org/wiki/Help:Log | Wikipedia:Viewing and restoring deleted pages - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Viewing_and_restoring_deleted_pages | Category:Wikipedia logs - Wikipedia: https://en.wikipedia.org/wiki/Category:Wikipedia_logs",
+      "success": true,
+      "created_at": "2026-03-16T22:17:09.742833Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org \"Special:Log\" \"Legume\" 2022"
+      },
+      "summary": "Dalhousiea - Wikipedia: https://en.wikipedia.org/wiki/Dalhousiea | Indigofera himalayensis - Wikipedia: https://en.wikipedia.org/wiki/Indigofera_himalayensis | Dalbergiella - Wikipedia: https://en.wikipedia.org/wiki/Dalbergiella",
+      "success": true,
+      "created_at": "2026-03-16T22:17:25.785420Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Special:Log&page=Legume"
+      },
+      "summary": "Title: Main public logs - Wikipedia\n\nMain public logs - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Donate Create account L",
+      "success": true,
+      "created_at": "2026-03-16T22:17:30.041547Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Legume\" Wikipedia \"BLP\" violations 2022 logs"
+      },
+      "summary": "Legume Consumption Patterns in US Adults: National Health and ...: https://lpi.oregonstate.edu/publications/legume-consumption-patterns-us-adults-national-health-and-nutrition-examination-survey | Legume Consumption Patterns in US Adults: National Health and ...: https://pmc.ncbi.nlm.nih.gov/articles/PMC7281997/ | Hay and Forage Grower Magazine Search - Legume Wikipedia BLP ...: https://hayandforage.com/search-articles-Legume+Wikipedia+BLP+policy+violation+2022-1.html",
+      "success": true,
+      "created_at": "2026-03-16T22:17:39.620022Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://hayandforage.com/search-articles-Legume+Wikipedia+BLP+policy+violation+2022-1.html"
+      },
+      "summary": "Title: Hay and Forage Grower Magazine Search - Legume Wikipedia BLP policy violation 2022-1\n\nHay and Forage Grower Magazine Search - Legume Wikipedia BLP policy violation 2022-1 Past Issues Subscribe Hay Alfalfa Grasses Storage Hay Quality Other Silage Corn Silage Hay Crop Silage Quality Other Storage Livestock Dairy Beef Grazing Market Equipment Farms Farm Visits Hoard's Dairyman Farm Blogs Issue",
+      "success": true,
+      "created_at": "2026-03-16T22:17:44.320088Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Legume Wikipedia page public logs violations 2022",
+        "max_results": 5
+      },
+      "summary": "Help:Log - Wikipedia: https://en.wikipedia.org/wiki/Help:Log | Legume Wikipedia Violation: Content Moderation Case Study: https://reelmind.ai/blog/legume-wikipedia-violation-content-moderation-case-study | Search results for which Wikipedia page had a violation on the Legume ...: https://thehackernews.com/search?q=which+Wikipedia+page+had+a+violation+on+the+Legume+page+in+2022+public+logs+and+what+type+of+content+was+it+and+its+three+core+policies",
+      "success": true,
+      "created_at": "2026-03-16T22:17:57.738149Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Legume"
+      },
+      "summary": "Title: Legume - Wikipedia\n\nLegume - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar",
+      "success": true,
+      "created_at": "2026-03-16T22:18:01.587728Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Legume Wikipedia page edit history logs 2022 violations site:en.wikipedia.org",
+        "max_results": 5
+      },
+      "summary": "Help:Log - Wikipedia: https://en.wikipedia.org/wiki/Help:Log | Legume - Wikipedia: https://en.wikipedia.org/wiki/Legume | Wikipedia:Editing restrictions/Placed by the Wikipedia ...: https://en.wikipedia.org/wiki/Wikipedia:Editing_restrictions/Placed_by_the_Wikipedia_community",
+      "success": true,
+      "created_at": "2026-03-16T22:18:09.737339Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Special:Log/Legume"
+      },
+      "summary": "Title: Main public logs - Wikipedia\n\nMain public logs - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Donate Create account L",
+      "success": true,
+      "created_at": "2026-03-16T22:18:18.804854Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Legume&action=history"
+      },
+      "summary": "Title: Legume: Revision history - Wikipedia\n\nLegume: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Donate ",
+      "success": true,
+      "created_at": "2026-03-16T22:18:23.565548Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Legume Wikipedia\" violations logs 2022 \"three core policies\" before December",
+        "max_results": 5
+      },
+      "summary": "Wikipedia:Core content policies - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Core_content_policies | Search results for Legume Wikipedia page public logs ...: https://thehackernews.com/search?q=Legume+Wikipedia+page+public+logs+violation+three+core+policies+\"R\"+stand+for+2022+before+December | \"Legume\"+Wikipedia+public+logs+2022+violation+three+core ...: https://www.casemine.com/search/in/\"Legume\"+Wikipedia+public+logs+2022+violation+three+core+policies+R+before+December",
+      "success": true,
+      "created_at": "2026-03-16T22:18:30.657479Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Wikipedia:Core_content_policies"
+      },
+      "summary": "Title: Wikipedia:Core content policies - Wikipedia\n\nWikipedia:Core content policies - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Don",
+      "success": true,
+      "created_at": "2026-03-16T22:18:35.187164Z"
+    },
+    {
+      "name": "research_topic",
+      "category": "research",
+      "arguments": {
+        "query": "Legume Wikipedia page violation 2022 before December public logs content policies",
+        "max_results": 5
+      },
+      "summary": "Title: Help:Log - Wikipedia\nURL: https://en.wikipedia.org/wiki/Help:Log\nSnippet: To viewWikipedia'slogs, go to Special:Log. From there you can decide which actions you wish to seelogged, and filter by certain other parameters, such as date and time, user and affected page. When alogtype is selected and you click \"Show\", the top of the page describes the log.\nExtract:\nTitle: Help:Log - Wikipedia\n\nH",
+      "success": true,
+      "created_at": "2026-03-16T22:18:45.522988Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Legume Wikipedia page",
+        "max_results": 3
+      },
+      "summary": "Legume-Wikipedia: https://en.wikipedia.org/wiki/Legume | legume- Bookmarks | Archive of Our Own: https://archiveofourown.org/users/legume/pseuds/legume/bookmarks | Legumes- definition oflegumesby The Free Dictionary: https://www.thefreedictionary.com/legumes",
+      "success": true,
+      "created_at": "2026-03-16T22:19:41.677333Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Legume"
+      },
+      "summary": "Title: Legume - Wikipedia\n\nLegume - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar",
+      "success": true,
+      "created_at": "2026-03-16T22:19:44.538570Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia Legume page edit history logs 2022 content violations",
+        "max_results": 5
+      },
+      "summary": "Help:Log - Wikipedia: https://en.wikipedia.org/wiki/Help:Log | Legume Wikipedia Violation: Content Moderation Case Study: https://reelmind.ai/blog/legume-wikipedia-violation-content-moderation-case-study | Search results for which Wikipedia page had a violation on ...: https://thehackernews.com/search?q=which+Wikipedia+page+had+a+violation+on+the+Legume+page+in+2022+public+logs+and+what+type+of+content+was+it+and+its+three+core+policies",
+      "success": true,
+      "created_at": "2026-03-16T22:19:51.906387Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://reelmind.ai/blog/legume-wikipedia-violation-content-moderation-case-study"
+      },
+      "summary": "Title: ReelMind - Open Source AI Video Models Community\n\nReelMind - Open Source AI Video Models Community Home / Blog / Legume Wikipedia Violation: Content Moderation Case Study Legume Wikipedia Violation: Content Moderation Case Study Refresh Explore more fun Abstract The Legume Wikipedia Violation: Content Moderation Case Study provides a critical examination of platform governance challenges in",
+      "success": true,
+      "created_at": "2026-03-16T22:19:56.610887Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia \"View history\" \"Edit history\" Legume page logs 2022",
+        "max_results": 3
+      },
+      "summary": "Wikipedia:On this day/Today -Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:On_this_day/Today | Browse thousands ofHistoryimages for design inspiration | Dribbble: https://dribbble.com/search/history | Wikipedia- Encyclopedia Dramatica: https://edramatica.com/Wikipedia",
+      "success": true,
+      "created_at": "2026-03-16T22:20:04.058698Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org \"Legume\" history logs 2022",
+        "max_results": 3
+      },
+      "summary": "Bean - Wikipedia: https://en.wikipedia.org/wiki/Bean | + Laburnocytisus 'Adamii' - Wikipedia: https://en.wikipedia.org/wiki/+_Laburnocytisus_'Adamii' | Category talk:Japaneselegumedishes - Wikipedia: https://en.wikipedia.org/wiki/Category_talk:Japanese_legume_dishes",
+      "success": true,
+      "created_at": "2026-03-16T22:20:11.500279Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia three core content policies \"R\" stands for",
+        "max_results": 5
+      },
+      "summary": "Wikipedia:List of policies - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:List_of_policies | Wikipedia:Five pillars - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Five_pillars | English 047 L5 Flashcards | Quizlet: https://quizlet.com/172284069/english-047-l5-flash-cards/",
+      "success": true,
+      "created_at": "2026-03-16T22:20:17.844680Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.wordplays.com/crossword-solver/\\\"R\\\"-stand-for-in-three-core-policies-of-type-of-content-that-was-violated-Legume-Wikipedia-public-logs-2022-before-December"
+      },
+      "summary": "Title: Sign In | Wordplays.com\n\nSign In | Wordplays.com Crossword Solver, Scrabble Word Finder, Scrabble Cheat, Boggle Sign in or create an account 🔹  Crossword Solver 🔸  Wordle Crosswords Crossword Solver Crossword Clues Crossword Puzzle Answers Crossword Helper Crossword Anagrams Crossword Puzzle Maker Crossword Challenge Scrabble © Scrabble Word Finder Scrabble Cheat Scrabble Helper Scrabble Di",
+      "success": true,
+      "created_at": "2026-03-16T22:20:23.316534Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia \"three core content policies\" OR \"core content policies\"",
+        "max_results": 5
+      },
+      "summary": "The Missing Manual/Collaborating with other editors/Resolvingcontent...: https://en.wikipedia.org/wiki/Help:Wikipedia:_The_Missing_Manual/Collaborating_with_other_editors/Resolving_content_disputes | Wikipediaas an Educational Exercise | Rutgers School of Graduate...: https://grad.rutgers.edu/professional-development/teaching-skills-ta-project/teaching-resources/wikipedia-educational | WikipediaCorePoliciesExplained: https://blog.reputationx.com/wikipedia-core-policies",
+      "success": true,
+      "created_at": "2026-03-16T22:20:28.957620Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_reelmind_ai_blog_legume_wikipedia_violation_content_moderation_case_study",
+      "source_type": "web_fetch",
+      "source_uri": "https://reelmind.ai/blog/legume-wikipedia-violation-content-moderation-case-study",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_reelmind_ai_blog_legume_wikipedia_violation_content_moderation_case_study.txt",
+      "excerpt": "Title: ReelMind - Open Source AI Video Models Community\n\nReelMind - Open Source AI Video Models Community Home / Blog / Legume Wikipedia Violation: Content Moderation Case Study Legume Wikipedia Violation: Content Moderation Case Study Refresh Explore more fun Abstract The Legume Wikipedia Violation: Content Moderation Case Study provides a critical examination of platform governance challenges in the age of rapid AIGC proliferation, set against the backdrop of July 2025 digital media standards. This case highlights the complexities involved when publicly accessible, community-driven knowledge"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Legume",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Legume",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Legume.txt",
+      "excerpt": "Title: Legume - Wikipedia\n\nLegume - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Terminology 2 Distribution 3 Ecology Toggle Ecology subsection 3.1 Nitrogen fixation 3.2 Pests and diseases 4 Storage 5 Uses Toggle Uses subsection 5.1 Human consumption 5.1.1 Nutritiona"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Wikipedia_Core_content_policies",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Wikipedia:Core_content_policies",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Wikipedia_Core_content_policies.txt",
+      "excerpt": "Title: Wikipedia:Core content policies - Wikipedia\n\nWikipedia:Core content policies - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 History Toggle History subsection 1.1 Timeline 2 Community consensus 3 See also 4 Notes and references 5 Outside views Toggle the table "
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Legume",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Legume",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Legume.txt",
+      "excerpt": "Title: Legume - Wikipedia\n\nLegume - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Terminology 2 Distribution 3 Ecology Toggle Ecology subsection 3.1 Nitrogen fixation 3.2 Pests and diseases 4 Storage 5 Uses Toggle Uses subsection 5.1 Human consumption 5.1.1 Nutritiona"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Special_Log_page_Legume",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Special:Log&page=Legume",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_w_index_php_title_Special_Log_page_Legume.txt",
+      "excerpt": "Title: Main public logs - Wikipedia\n\nMain public logs - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Main public logs Help English Tools Tools move to sidebar hide Actions General Upload file Printable version Get shortened URL In other projects Appearance move to sidebar hide This is a combine"
+    },
+    {
+      "name": "https_hayandforage_com_search_articles_Legume_Wikipedia_BLP_policy_violation_202",
+      "source_type": "web_fetch",
+      "source_uri": "https://hayandforage.com/search-articles-Legume+Wikipedia+BLP+policy+violation+2022-1.html",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_hayandforage_com_search_articles_Legume_Wikipedia_BLP_policy_violation_202.txt",
+      "excerpt": "Title: Hay and Forage Grower Magazine Search - Legume Wikipedia BLP policy violation 2022-1\n\nHay and Forage Grower Magazine Search - Legume Wikipedia BLP policy violation 2022-1 Past Issues Subscribe Hay Alfalfa Grasses Storage Hay Quality Other Silage Corn Silage Hay Crop Silage Quality Other Storage Livestock Dairy Beef Grazing Market Equipment Farms Farm Visits Hoard's Dairyman Farm Blogs Issues Past Issues First Cut Shop Talk Alfalfa Checkoff Hay Pellets - News Tidbits Events Biz Contact Managing Editor Senior Editor Advertising Close Subscribe Hay Alfalfa Grasses Storage Hay Quality Other"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Legume",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Legume",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Legume.txt",
+      "excerpt": "Title: Legume - Wikipedia\n\nLegume - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Terminology 2 Distribution 3 Ecology Toggle Ecology subsection 3.1 Nitrogen fixation 3.2 Pests and diseases 4 Storage 5 Uses Toggle Uses subsection 5.1 Human consumption 5.1.1 Nutritiona"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Special_Log_Legume",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Special:Log/Legume",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Special_Log_Legume.txt",
+      "excerpt": "Title: Main public logs - Wikipedia\n\nMain public logs - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Main public logs Help English Tools Tools move to sidebar hide Actions General User contributions User logs View user groups Upload file Printable version Get shortened URL In other projects App"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Legume_action_history",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Legume&action=history",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_w_index_php_title_Legume_action_history.txt",
+      "excerpt": "Title: Legume: Revision history - Wikipedia\n\nLegume: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Legume: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit View history General What links here Related changes "
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Wikipedia_Core_content_policies",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Wikipedia:Core_content_policies",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Wikipedia_Core_content_policies.txt",
+      "excerpt": "Title: Wikipedia:Core content policies - Wikipedia\n\nWikipedia:Core content policies - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 History Toggle History subsection 1.1 Timeline 2 Community consensus 3 See also 4 Notes and references 5 Outside views Toggle the table "
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Help_Log",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Help:Log",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Help_Log.txt",
+      "excerpt": "Title: Help:Log - Wikipedia\n\nHelp:Log - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Viewing logs 2 Using a log 3 Deleting log entries 4 Other sources of logged information 5 See also Toggle the table of contents Help : Log 14 languages Alemannisch العربية Čeština De"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Wikipedia_Core_content_policies",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Wikipedia:Core_content_policies",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Wikipedia_Core_content_policies.txt",
+      "excerpt": "Title: Wikipedia:Core content policies - Wikipedia\n\nWikipedia:Core content policies - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 History Toggle History subsection 1.1 Timeline 2 Community consensus 3 See also 4 Notes and references 5 Outside views Toggle the table "
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Wikipedia_Content_policies_and_guidelines_in_a_nutsh",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Wikipedia:Content_policies_and_guidelines_in_a_nutshell",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Wikipedia_Content_policies_and_guidelines_in_a_nutsh.txt",
+      "excerpt": "Title: Wikipedia:Content policies and guidelines in a nutshell - Wikipedia\n\nWikipedia:Content policies and guidelines in a nutshell - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Wikipedia:Verifiability 2 Wikipedia:Reliable sources 3 Wikipedia:Citing sources 4 Wikipe"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Legume",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Legume",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_en_wikipedia_org_wiki_Legume.txt",
+      "excerpt": "Title: Legume - Wikipedia\n\nLegume - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Terminology 2 Distribution 3 Ecology Toggle Ecology subsection 3.1 Nitrogen fixation 3.2 Pests and diseases 4 Storage 5 Uses Toggle Uses subsection 5.1 Human consumption 5.1.1 Nutritiona"
+    },
+    {
+      "name": "https_reelmind_ai_blog_legume_wikipedia_violation_content_moderation_case_study",
+      "source_type": "web_fetch",
+      "source_uri": "https://reelmind.ai/blog/legume-wikipedia-violation-content-moderation-case-study",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_reelmind_ai_blog_legume_wikipedia_violation_content_moderation_case_study.txt",
+      "excerpt": "Title: ReelMind - Open Source AI Video Models Community\n\nReelMind - Open Source AI Video Models Community Home / Blog / Legume Wikipedia Violation: Content Moderation Case Study Legume Wikipedia Violation: Content Moderation Case Study Refresh Explore more fun Abstract The Legume Wikipedia Violation: Content Moderation Case Study provides a critical examination of platform governance challenges in the age of rapid AIGC proliferation, set against the backdrop of July 2025 digital media standards. This case highlights the complexities involved when publicly accessible, community-driven knowledge"
+    },
+    {
+      "name": "https_www_wordplays_com_crossword_solver_R_stand_for_in_three_core_policies_of_t",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.wordplays.com/crossword-solver/\\\"R\\\"-stand-for-in-three-core-policies-of-type-of-content-that-was-violated-Legume-Wikipedia-public-logs-2022-before-December",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/935e2cff-ae78-4218-b3f5-115589b19dae/https_www_wordplays_com_crossword_solver_R_stand_for_in_three_core_policies_of_t.txt",
+      "excerpt": "Title: Sign In | Wordplays.com\n\nSign In | Wordplays.com Crossword Solver, Scrabble Word Finder, Scrabble Cheat, Boggle Sign in or create an account 🔹  Crossword Solver 🔸  Wordle Crosswords Crossword Solver Crossword Clues Crossword Puzzle Answers Crossword Helper Crossword Anagrams Crossword Puzzle Maker Crossword Challenge Scrabble © Scrabble Word Finder Scrabble Cheat Scrabble Helper Scrabble Dictionary Scrabble Word Checker Words with Friends © Words with Friends Word Finder Words with Friends Cheat Words with Friends Helper Words with Friends Dictionary Words with Friends Word Checker Word"
+    }
+  ],
+  "duration_seconds": 403.3584001660056,
+  "created_at": "2026-03-16T22:21:43.907464Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"legume wikipedia\" on Google.\n2. Opened \"Legume\" on Wikipedia.\n3. Clicked \"View history\".\n4. Clicked \"View logs for this page\".\n5. Checked all types of logs.\n6. Set the date to November 2022.\n7. Followed the BLP link of the violation.\n8. Noted the meaning of \"R\".",
+      "Number of steps": "8",
+      "How long did this take?": "10 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  }
+}

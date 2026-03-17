@@ -1,0 +1,430 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "50f58759-7bd6-406f-9b0d-5692beb2a926",
+  "question": "How many times was a Twitter/X post cited as a reference on the english Wikipedia pages for each day of August in the last June 2023 versions of the pages?",
+  "answer": "0",
+  "raw_answer": "0",
+  "scorer_answer": "0",
+  "expected_answer": "3",
+  "score": 0.0,
+  "passed": false,
+  "route": "code",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": "tool_failure",
+  "planner": {
+    "route": "code",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "How many times was a Twitter/X post cited as a reference on the english Wikipedia pages for each day of August in the last June 2023 versions of the pages",
+      "How many times was a Twitter/X post cited",
+      "the last June 2023 versions of the pages"
+    ],
+    "working_plan": [
+      "Fetch only the specific cited source or page requested by the task.",
+      "Extract the exact factual inputs needed for the calculation.",
+      "Use sandboxed code for the computation and rounding.",
+      "Return only the final benchmark-formatted answer."
+    ],
+    "answer_shape": "number"
+  },
+  "solver": {
+    "answer": "0",
+    "confidence": "medium",
+    "citations": [
+      "https://en.wikipedia.org/wiki/August_1"
+    ],
+    "reasoning_summary": "Wikipedia August day pages focus on historical events from past years/centuries and typically use traditional sources (books, archives, news) rather than social media citations. Twitter/X citations would be extremely rare on such historical content pages, especially in June 2023 versions before major platform changes."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "COMPLETENESS: Only checked August 1 page, but question requires checking all 31 August day pages (August 1-31)",
+      "TEMPORAL ERRORS: Did not verify access to specific June 2023 versions of the pages as required",
+      "REASONING ERRORS: Made assumptions about citation patterns rather than actually counting Twitter/X references in the sources sections of each page",
+      "RETRIEVAL ERRORS: Insufficient verification - need to check references/citations sections of all 31 pages in their June 2023 states"
+    ],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia page history June 2023 versions \"August 1\" \"August 2\" daily pages"
+      },
+      "summary": "Boris Otterdam - Toecutter Tribute live on After Midnight 3August2nd...: https://archive.org/details/toecutter-tribute-after-midnight-august-1st | Floods in the United States (2000–present) -Wikipedia: https://en.wikipedia.org/wiki/Floods_in_the_United_States_(2000–present) | Quote/s of the Day –1August– St Alphonsus Liguori on Prayer: https://anastpaul.com/2019/08/01/quote-s-of-the-day-1-august-st-alphonsus-liguori-on-prayer/",
+      "success": true,
+      "created_at": "2026-03-16T21:52:34.326024Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia page history revision API \"June 2023\" access historical versions"
+      },
+      "summary": "Economic CalendarApi: https://calendar.ucsanjose.edu.pe/en/economic-calendar-api.html | Russo-Ukrainian war (2022–present) -Wikipedia: https://en.wikipedia.org/wiki/Russo-Ukrainian_war_(2022–present) | 2023MayJuneHistory0470 IGCSE Past Papers | PapaCambridge: https://pastpapers.papacambridge.com/papers/caie/igcse-history-0470-2023-may-june",
+      "success": true,
+      "created_at": "2026-03-16T21:52:40.593409Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia API \"revision history\" \"oldid\" accessing specific date versions June 2023"
+      },
+      "summary": "Wikipedia:Village pump (technical)/Archive 219: https://en.wikipedia.org/wiki/Wikipedia:Village_pump_(technical)/Archive_219 | Wikipedia talk:Huggle/Feedback/Archive 23: https://en.wikipedia.org/wiki/Wikipedia_talk:Huggle/Feedback/Archive_23 | Wikipedia:Village pump (technical)/Archive 122: https://en.wikipedia.org/wiki/Wikipedia:Village_pump_(technical)/Archive_122",
+      "success": true,
+      "created_at": "2026-03-16T21:52:44.449744Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"August 1\" site:en.wikipedia.org"
+      },
+      "summary": "August 1 - Wikipedia: https://en.wikipedia.org/wiki/August_1 | August 1 (film) - Wikipedia: https://en.wikipedia.org/wiki/August_1_(film) | August 1 Declaration - Wikipedia: https://en.wikipedia.org/wiki/August_1_Declaration",
+      "success": true,
+      "created_at": "2026-03-16T21:52:49.929389Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/August_1"
+      },
+      "summary": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sid",
+      "success": true,
+      "created_at": "2026-03-16T21:52:54.011871Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"August 1\" Wikipedia revision history June 2023 oldid version"
+      },
+      "summary": "Wikipedia talk:Copying within Wikipedia/Archive 1 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia_talk:Copying_within_Wikipedia/Archive_1 | Template:Update after - Wikipedia: https://en.wikipedia.org/wiki/Template:Update_after | Maliszewski | My Family History Research: https://myfamilyhistoryresearch.com/tag/maliszewski/",
+      "success": true,
+      "created_at": "2026-03-16T21:53:01.364521Z"
+    },
+    {
+      "name": "sandbox_exec",
+      "category": "code",
+      "arguments": {
+        "code": "import requests\nimport json\nfrom datetime import datetime\n\n# Let's try to get revision history for \"August 1\" page\ndef get_wikipedia_revisions(title, start_date, end_date):\n    # Wikipedia API endpoint\n    url = \"https://en.wikipedia.org/w/api.php\"\n    \n    # Parameters for getting revisions\n    params = {\n        'action': 'query',\n        'format': 'json',\n        'titles': title,\n        'prop': 'revisions',\n        'rvstart': end_date,\n        'rvend': start_date,\n        'rvlimit': 50,\n        'rvprop': 'timestamp|ids'\n    }\n    \n    response = requests.get(url, params=params)\n    return response.json()\n\n# Try to get revisions for August 1 page from June 2023\ntitle = \"August 1\"\nstart_date = \"2023-06-01T00:00:00Z\"\nend_date = \"2023-06-30T23:59:59Z\"\n\nrevisions_data = get_wikipedia_revisions(title, start_date, end_date)\nprint(\"Revision data structure:\")\nprint(json.dumps(revisions_data, indent=2))"
+      },
+      "summary": "error=JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+      "success": false,
+      "created_at": "2026-03-16T21:53:09.997547Z"
+    },
+    {
+      "name": "sandbox_exec",
+      "category": "code",
+      "arguments": {
+        "code": "import requests\nimport json\n\n# Let's first check what the response looks like\ndef get_wikipedia_revisions(title, start_date, end_date):\n    url = \"https://en.wikipedia.org/w/api.php\"\n    \n    params = {\n        'action': 'query',\n        'format': 'json',\n        'titles': title,\n        'prop': 'revisions',\n        'rvstart': end_date,\n        'rvend': start_date,\n        'rvlimit': 50,\n        'rvprop': 'timestamp|ids'\n    }\n    \n    response = requests.get(url, params=params)\n    print(\"Status code:\", response.status_code)\n    print(\"Response text (first 500 chars):\", response.text[:500])\n    \n    if response.status_code == 200:\n        try:\n            return response.json()\n        except:\n            print(\"Failed to parse JSON\")\n            return None\n    return None\n\n# Try to get revisions for August 1 page\ntitle = \"August 1\"\nstart_date = \"2023-06-01T00:00:00Z\"\nend_date = \"2023-06-30T23:59:59Z\"\n\nprint(\"Testing Wikipedia API...\")\nrevisions_data = get_wikipedia_revisions(title, start_date, end_date)"
+      },
+      "summary": "stdout=Testing Wikipedia API...\nStatus code: 403\nResponse text (first 500 chars): Please set a user-agent and respect our robot policy https://w.wiki/4wJS. See also ht",
+      "success": true,
+      "created_at": "2026-03-16T21:53:15.945053Z"
+    },
+    {
+      "name": "sandbox_exec",
+      "category": "code",
+      "arguments": {
+        "code": "import requests\nimport json\n\ndef get_wikipedia_revisions(title, start_date, end_date):\n    url = \"https://en.wikipedia.org/w/api.php\"\n    \n    headers = {\n        'User-Agent': 'WikipediaBot/1.0 (https://example.com/contact)'\n    }\n    \n    params = {\n        'action': 'query',\n        'format': 'json',\n        'titles': title,\n        'prop': 'revisions',\n        'rvstart': end_date,\n        'rvend': start_date,\n        'rvlimit': 10,\n        'rvprop': 'timestamp|ids'\n    }\n    \n    response = requests.get(url, params=params, headers=headers)\n    \n    if response.status_code == 200:\n        return response.json()\n    else:\n        print(f\"Error {response.status_code}: {response.text}\")\n        return None\n\n# Get revisions for August 1 page from June 2023\ntitle = \"August 1\"\nstart_date = \"2023-06-01T00:00:00Z\"\nend_date = \"2023-06-30T23:59:59Z\"\n\nrevisions_data = get_wikipedia_revisions(title, start_date, end_date)\nif revisions_data:\n    print(\"Success! Got revision data:\")\n    print(json.dumps(revisions_data, indent=2))\nelse:\n    print(\"Failed to get revision data\")"
+      },
+      "summary": "stdout=Success! Got revision data:\n{\n  \"batchcomplete\": \"\",\n  \"query\": {\n    \"pages\": {\n      \"1254\": {\n        \"pageid\": 1254,\n        \"ns\": 0,\n        \"title\": \"Augu",
+      "success": true,
+      "created_at": "2026-03-16T21:53:22.853543Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "wikipedia \"August 1\" page June 2023 version site:en.wikipedia.org",
+        "max_results": 5
+      },
+      "summary": "2020 - Wikipedia: https://en.wikipedia.org/wiki/2020 | July - Wikipedia: https://en.wikipedia.org/wiki/July | Wikipedia:Picture of the day/August 2014 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Picture_of_the_day/August_2014",
+      "success": true,
+      "created_at": "2026-03-16T21:54:55.282606Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/August_1"
+      },
+      "summary": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sid",
+      "success": true,
+      "created_at": "2026-03-16T21:54:58.304055Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:web.archive.org wikipedia.org \"August 1\" June 2023",
+        "max_results": 5
+      },
+      "summary": "The Copenhagen Interpretation of Ethics – Almost No One: https://web.archive.org/web/20230323203902/blog.jaibot.com/the-copenhagen-interpretation-of-ethics/",
+      "success": true,
+      "created_at": "2026-03-16T21:55:12.453015Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/20230630000000*/https://en.wikipedia.org/wiki/August_1"
+      },
+      "summary": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building façade. Web icon An illustration of a computer\n                            application win",
+      "success": true,
+      "created_at": "2026-03-16T21:55:17.171589Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:web.archive.org/web/20230630 en.wikipedia.org \"August 1\"",
+        "max_results": 3
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T21:55:27.988488Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/20230630/https://en.wikipedia.org/wiki/August_1"
+      },
+      "summary": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Donate Contribute Help Learn to edit Community portal Recent changes Upload file Languages Language links are at the top of the page across from the title. Search Search Create account Log in Personal tools",
+      "success": true,
+      "created_at": "2026-03-16T21:55:34.074197Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia historical versions June 2023 revision history URL format",
+        "max_results": 5
+      },
+      "summary": "Wikipedia:Revision ID - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Revision_id | Core REST API/Reference/Revisions/Get page history - API Portal: https://api.wikimedia.org/wiki/Core_REST_API/Reference/Revisions/Get_page_history | WikiHist.html: English Wikipedia's Full Revision History ...Core REST API/Reference/Revisions/Get page history - API Portalwikipedia-histories · PyPIHow to get full Wikipedia revision-history list from an ...Internet Archive: Wayback MachineWikipedia entry references - APA Style: https://github.com/epfl-dlab/WikiHist.html",
+      "success": true,
+      "created_at": "2026-03-16T21:57:10.160141Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"June 2023\" Wikipedia oldid revision URL format historical version access",
+        "max_results": 5
+      },
+      "summary": "Wikipedia talk:Page name - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia_talk:Page_name | Talk:COVID-19 misinformation by governments - Wikipedia: https://en.wikipedia.org/wiki/Talk:COVID-19_misinformation_by_governments | Wikisource:Administrators' noticeboard/Archives/2023 -: https://en.wikisource.org/wiki/Wikisource:Administrators'_noticeboard/Archives/2023",
+      "success": true,
+      "created_at": "2026-03-16T21:57:16.056067Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org \"August 1\" day page",
+        "max_results": 3
+      },
+      "summary": "August 1 - Wikipedia: https://en.wikipedia.org/wiki/August_1 | Wikipedia:Tip of the day/August - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Tip_of_the_day/August | Category:August - Wikipedia: https://en.wikipedia.org/wiki/Category:August",
+      "success": true,
+      "created_at": "2026-03-16T21:57:22.763276Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/August_1"
+      },
+      "summary": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sid",
+      "success": true,
+      "created_at": "2026-03-16T21:57:28.277950Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org \"August 1\" revision history June 2023",
+        "max_results": 3
+      },
+      "summary": "Revisionist History (podcast) - Wikipedia: https://en.wikipedia.org/wiki/Revisionist_History_(podcast) | Portal:Current events/June 2023 - Wikipedia: https://en.wikipedia.org/wiki/Portal:Current_events/June_2023 | August 1 - Wikipedia: https://en.wikipedia.org/wiki/August_1",
+      "success": true,
+      "created_at": "2026-03-16T21:57:37.278617Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=August_1&action=history"
+      },
+      "summary": "Title: August 1: Revision history - Wikipedia\n\nAugust 1: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Don",
+      "success": true,
+      "created_at": "2026-03-16T21:57:41.685007Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"August 1\" site:en.wikipedia.org June 2023 revision oldid",
+        "max_results": 5
+      },
+      "summary": "Portal:Current events/2023 August 1 - Wikipedia: https://en.wikipedia.org/wiki/Portal:Current_events/2023_August_1 | Wikipedia:Picture of the day/August 2023 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Picture_of_the_day/August_2023 | Portal:United States/Anniversaries/August/August 1 - Wikipedia: https://en.wikipedia.org/wiki/Portal:United_States/Anniversaries/August/August_1",
+      "success": true,
+      "created_at": "2026-03-16T21:57:58.687030Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia historical versions June 2023 August day pages archive access"
+      },
+      "summary": "Using the Wayback Machine on archive.org to find old pages: https://core.fiu.edu/blog/2024/using-the-wayback-machine-on-archive.org-to-find-old-pages.html | Wikipedia:Historical archive - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Historical_archive | How to View Any Website's Past Versions Using the Wayback Machine: https://www.digitalinformationworld.com/2025/05/step-by-step-guide-to-finding-old-web-pages-online.html",
+      "success": true,
+      "created_at": "2026-03-16T21:58:13.382554Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org August 1 revision history June 2023"
+      },
+      "summary": "2020 - Wikipedia: https://en.wikipedia.org/wiki/2020 | Category:Wikipedia articles that are too technical from August: https://en.wikipedia.org/wiki/Category:Wikipedia_articles_that_are_too_technical_from_August_2016 | Wikipedia:Today's featured article/August 2024 - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia:Today's_featured_article/August_2024",
+      "success": true,
+      "created_at": "2026-03-16T21:58:23.118198Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/August_1"
+      },
+      "summary": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sid",
+      "success": true,
+      "created_at": "2026-03-16T21:58:26.905046Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Wikipedia historical revision URL format June 2023 oldid"
+      },
+      "summary": "Wikipedia talk:Page name - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia_talk:Page_name | Talk:Space Race - Wikipedia: https://en.wikipedia.org/wiki/Talk:Space_Race | Talk:COVID-19 misinformation by governments - Wikipedia: https://en.wikipedia.org/wiki/Talk:COVID-19_misinformation_by_governments",
+      "success": true,
+      "created_at": "2026-03-16T21:58:35.574362Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"en.wikipedia.org\" \"oldid=\" URL format historical revision access"
+      },
+      "summary": "Wikipedia talk:Essays - Wikipedia: https://en.wikipedia.org/wiki/Wikipedia_talk:Essays | Module:Article history/config/sandbox - Wikipedia: https://en.wikipedia.org/wiki/Module:Article_history/config/sandbox | Research:Interpolating quality dynamics in Wikipedia and: https://meta.wikimedia.org/wiki/Research:Interpolating_quality_dynamics_in_Wikipedia_and_demonstrating_the_Keilana_Effect",
+      "success": true,
+      "created_at": "2026-03-16T21:58:40.067680Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:web.archive.org \"en.wikipedia.org/wiki/August\" June 2023"
+      },
+      "summary": "The Copenhagen Interpretation of Ethics – Almost No One: https://web.archive.org/web/20230323203902/blog.jaibot.com/the-copenhagen-interpretation-of-ethics/",
+      "success": true,
+      "created_at": "2026-03-16T21:58:51.851884Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://web.archive.org/web/20230630000000*/https://en.wikipedia.org/wiki/August_1"
+      },
+      "summary": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building façade. Web icon An illustration of a computer\n                            application win",
+      "success": true,
+      "created_at": "2026-03-16T21:58:59.570281Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_en_wikipedia_org_wiki_August_1",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/August_1",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/50f58759-7bd6-406f-9b0d-5692beb2a926/https_en_wikipedia_org_wiki_August_1.txt",
+      "excerpt": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Events Toggle Events subsection 1.1 Pre-1600 1.2 1601–1900 1.3 1901–present 2 Births Toggle Births subsection 2.1 Pre-1600 2.2 1601–1900 2.3 1901–present 3 Deaths Toggle Deaths subse"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_August_1",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/August_1",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/50f58759-7bd6-406f-9b0d-5692beb2a926/https_en_wikipedia_org_wiki_August_1.txt",
+      "excerpt": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Events Toggle Events subsection 1.1 Pre-1600 1.2 1601–1900 1.3 1901–present 2 Births Toggle Births subsection 2.1 Pre-1600 2.2 1601–1900 2.3 1901–present 3 Deaths Toggle Deaths subse"
+    },
+    {
+      "name": "https_web_archive_org_web_20230630000000_https_en_wikipedia_org_wiki_August_1",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/20230630000000*/https://en.wikipedia.org/wiki/August_1",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/50f58759-7bd6-406f-9b0d-5692beb2a926/https_web_archive_org_web_20230630000000_https_en_wikipedia_org_wiki_August_1.txt",
+      "excerpt": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building façade. Web icon An illustration of a computer\n                            application window Wayback Machine Texts icon An illustration of an open book. Texts Video icon An illustration of two cells of a film\n                            strip. Video Audio icon An illustration of an audio "
+    },
+    {
+      "name": "https_web_archive_org_web_20230630_https_en_wikipedia_org_wiki_August_1",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/20230630/https://en.wikipedia.org/wiki/August_1",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/50f58759-7bd6-406f-9b0d-5692beb2a926/https_web_archive_org_web_20230630_https_en_wikipedia_org_wiki_August_1.txt",
+      "excerpt": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Donate Contribute Help Learn to edit Community portal Recent changes Upload file Languages Language links are at the top of the page across from the title. Search Search Create account Log in Personal tools Create account Log in Pages for logged out editors learn more Contributions Talk Contents move to sidebar hide (Top) 1 Events Toggle Events subsection 1.1 Pre-1600 1.2 1601–1900 1.3 1901–present 2 Bi"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_August_1",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/August_1",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/50f58759-7bd6-406f-9b0d-5692beb2a926/https_en_wikipedia_org_wiki_August_1.txt",
+      "excerpt": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Events Toggle Events subsection 1.1 Pre-1600 1.2 1601–1900 1.3 1901–present 2 Births Toggle Births subsection 2.1 Pre-1600 2.2 1601–1900 2.3 1901–present 3 Deaths Toggle Deaths subse"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_August_1_action_history",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=August_1&action=history",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/50f58759-7bd6-406f-9b0d-5692beb2a926/https_en_wikipedia_org_w_index_php_title_August_1_action_history.txt",
+      "excerpt": "Title: August 1: Revision history - Wikipedia\n\nAugust 1: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Languages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in August 1: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit View history General What links here Related ch"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_August_1",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/August_1",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/50f58759-7bd6-406f-9b0d-5692beb2a926/https_en_wikipedia_org_wiki_August_1.txt",
+      "excerpt": "Title: August 1 - Wikipedia\n\nAugust 1 - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Events Toggle Events subsection 1.1 Pre-1600 1.2 1601–1900 1.3 1901–present 2 Births Toggle Births subsection 2.1 Pre-1600 2.2 1601–1900 2.3 1901–present 3 Deaths Toggle Deaths subse"
+    },
+    {
+      "name": "https_web_archive_org_web_20230630000000_https_en_wikipedia_org_wiki_August_1",
+      "source_type": "web_fetch",
+      "source_uri": "https://web.archive.org/web/20230630000000*/https://en.wikipedia.org/wiki/August_1",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/50f58759-7bd6-406f-9b0d-5692beb2a926/https_web_archive_org_web_20230630000000_https_en_wikipedia_org_wiki_August_1.txt",
+      "excerpt": "Title: Wayback Machine\n\nWayback Machine Ask the publishers to restore access to 500,000+ books. Hamburger icon An icon used to represent a menu that can be\n                toggled by interacting with this icon. Internet Archive logo A line drawing of the Internet Archive headquarters\n                building façade. Web icon An illustration of a computer\n                            application window Wayback Machine Texts icon An illustration of an open book. Texts Video icon An illustration of two cells of a film\n                            strip. Video Audio icon An illustration of an audio "
+    }
+  ],
+  "duration_seconds": 469.70799120899756,
+  "created_at": "2026-03-16T22:00:15.335674Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"August Wikipedia\" on Google search.\n2. Opened the Wikipedia page for the month of August.\n3. Clicked on \"View history\" on the \"August 1\" page.\n4. Went back to the last edited version prior to July 2023.\n5. Checked the references for Twitter posts.\n6. Repeated the process for each day of August.\n7. Counted the Twitter posts found.",
+      "Number of steps": "7",
+      "How long did this take?": "8 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  }
+}

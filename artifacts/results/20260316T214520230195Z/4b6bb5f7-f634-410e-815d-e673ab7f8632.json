@@ -1,0 +1,148 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "4b6bb5f7-f634-410e-815d-e673ab7f8632",
+  "question": "In Series 9, Episode 11 of Doctor Who, the Doctor is trapped inside an ever-shifting maze. What is this location called in the official script for the episode? Give the setting exactly as it appears in the first scene heading.",
+  "answer": "THE CASTLE",
+  "raw_answer": "THE CASTLE",
+  "scorer_answer": "THE CASTLE",
+  "expected_answer": "THE CASTLE",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 0,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "Doctor Who Series 9 Episode 11 Heaven Sent title",
+      "Doctor Who Heaven Sent official script BBC",
+      "Heaven Sent Doctor Who script first scene heading confession dial",
+      "Doctor Who Series 9 Episode 11 official script PDF",
+      "Heaven Sent script scene headings maze castle location"
+    ],
+    "working_plan": [
+      "Confirm Series 9, Episode 11 is 'Heaven Sent'",
+      "Find official BBC script or production script for Heaven Sent",
+      "Locate the first scene heading describing the maze/castle location",
+      "Extract exact wording as it appears in the scene heading",
+      "Verify source authenticity to ensure it's the official script"
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "THE CASTLE",
+    "confidence": "high",
+    "citations": [
+      "https://www.bbc.co.uk/writers/documents/doctor-who-s9-ep11-heaven-sent-steven-moffat.pdf"
+    ],
+    "reasoning_summary": "Found the official BBC script for Doctor Who Series 9, Episode 11 ('Heaven Sent') written by Steven Moffat. The first scene heading in the script is 'INT. THE CASTLE - DAY1 1'. The location/setting name as it appears in this first scene heading is 'THE CASTLE', which refers to the ever-shifting maze where the Doctor is trapped."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Doctor Who Series 9 Episode 11 Heaven Sent title official",
+        "max_results": 5
+      },
+      "summary": "Heaven Sent (Doctor Who) - Wikipedia: https://en.wikipedia.org/wiki/Heaven_Sent_(Doctor_Who) | BBC One - Doctor Who (2005-2022), Series 9, Heaven Sent: https://www.bbc.co.uk/programmes/b06rhv99 | Heaven Sent - Doctor Who: https://www.doctorwho.tv/stories/heaven-sent",
+      "success": true,
+      "created_at": "2026-03-16T23:58:59.027829Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Doctor Who Heaven Sent official script BBC Steven Moffat PDF",
+        "max_results": 5
+      },
+      "summary": "Doctor Who: all the full episode scripts available to download: https://cultbox.co.uk/news/doctor-who-all-the-full-episode-scripts-available-to-download | DW9 - EP 11 Heaven Sent BLUE 240815 - BBC: https://www.bbc.co.uk/writers/documents/doctor-who-s9-ep11-heaven-sent-steven-moffat.pdf | Doctor Who Series 9 (2015) - BBC: https://www.bbc.co.uk/writers/scripts/whoniverse/doctor-who/series-9-2015",
+      "success": true,
+      "created_at": "2026-03-16T23:59:08.308066Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.bbc.co.uk/writers/documents/doctor-who-s9-ep11-heaven-sent-steven-moffat.pdf",
+        "max_chars": 5000
+      },
+      "summary": "DOCTOR WHO\nSERIES 9\nEPISODE 11\n\"Heaven Sent\"\nby\n STEVEN MOFFAT\n  BLUE AMENDMENTS\n 24/08/2015\n (SHOOTING BLOCK 6)\n(c) BBC Wales 2015\nINT. THE CASTLE - DAY1 1\nSpires and towers, an ancient sprawling castle. \nNow a familiar voice:\nTHE DOCTOR\n(V.O.)\nAs you come into this world, \nsomething else is also born. \nPulling back -\nWe are looking at the sunrise through a row of windows in an \nancient, stone wa",
+      "success": true,
+      "created_at": "2026-03-16T23:59:14.059931Z"
+    },
+    {
+      "name": "sandbox_exec",
+      "category": "code",
+      "arguments": {
+        "code": "# Let me extract and analyze the first few lines of the script to confirm the first scene heading\nscript_text = \"\"\"DOCTOR WHO\nSERIES 9\nEPISODE 11\n\"Heaven Sent\"\nby\n STEVEN MOFFAT\n  BLUE AMENDMENTS\n 24/08/2015\n (SHOOTING BLOCK 6)\n(c) BBC Wales 2015\nINT. THE CASTLE - DAY1 1\nSpires and towers, an ancient sprawling castle.\"\"\"\n\nlines = script_text.split('\\n')\nfor i, line in enumerate(lines):\n    print(f\"Line {i+1}: '{line.strip()}'\")\n    if line.strip().startswith('INT.') or line.strip().startswith('EXT.'):\n        print(f\"  ^^ This is the first scene heading (Line {i+1})\")\n        break",
+        "language": "python"
+      },
+      "summary": "stdout=Line 1: 'DOCTOR WHO'\nLine 2: 'SERIES 9'\nLine 3: 'EPISODE 11'\nLine 4: '\"Heaven Sent\"'\nLine 5: 'by'\nLine 6: 'STEVEN MOFFAT'\nLine 7: 'BLUE AMENDMENTS'\nLine 8: '24/",
+      "success": true,
+      "created_at": "2026-03-16T23:59:22.928494Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.bbc.co.uk/writers/documents/doctor-who-s9-ep11-heaven-sent-steven-moffat.pdf",
+        "max_chars": 8000
+      },
+      "summary": "DOCTOR WHO\nSERIES 9\nEPISODE 11\n\"Heaven Sent\"\nby\n STEVEN MOFFAT\n  BLUE AMENDMENTS\n 24/08/2015\n (SHOOTING BLOCK 6)\n(c) BBC Wales 2015\nINT. THE CASTLE - DAY1 1\nSpires and towers, an ancient sprawling castle. \nNow a familiar voice:\nTHE DOCTOR\n(V.O.)\nAs you come into this world, \nsomething else is also born. \nPulling back -\nWe are looking at the sunrise through a row of windows in an \nancient, stone wa",
+      "success": true,
+      "created_at": "2026-03-16T23:59:29.254852Z"
+    },
+    {
+      "name": "sandbox_exec",
+      "category": "code",
+      "arguments": {
+        "code": "# Let me analyze the first scene heading to extract the setting/location name\nscene_heading = \"INT. THE CASTLE - DAY1 1\"\nprint(f\"Full scene heading: '{scene_heading}'\")\n\n# In script format, the structure is typically: INT./EXT. [LOCATION] - [TIME] [additional numbers]\n# The location/setting is the part between INT./EXT. and the dash\nimport re\nmatch = re.match(r'(INT\\.|EXT\\.)\\s+([^-]+)\\s*-', scene_heading)\nif match:\n    location_part = match.group(2).strip()\n    print(f\"Location/setting part: '{location_part}'\")\nelse:\n    print(\"Could not parse scene heading\")",
+        "language": "python"
+      },
+      "summary": "stdout=Full scene heading: 'INT. THE CASTLE - DAY1 1'\nLocation/setting part: 'THE CASTLE'\n",
+      "success": true,
+      "created_at": "2026-03-16T23:59:44.737186Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_www_bbc_co_uk_writers_documents_doctor_who_s9_ep11_heaven_sent_steven_moff",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.bbc.co.uk/writers/documents/doctor-who-s9-ep11-heaven-sent-steven-moffat.pdf",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/4b6bb5f7-f634-410e-815d-e673ab7f8632/https_www_bbc_co_uk_writers_documents_doctor_who_s9_ep11_heaven_sent_steven_moff.txt",
+      "excerpt": "DOCTOR WHO\nSERIES 9\nEPISODE 11\n\"Heaven Sent\"\nby\n STEVEN MOFFAT\n  BLUE AMENDMENTS\n 24/08/2015\n (SHOOTING BLOCK 6)\n(c) BBC Wales 2015\nINT. THE CASTLE - DAY1 1\nSpires and towers, an ancient sprawling castle. \nNow a familiar voice:\nTHE DOCTOR\n(V.O.)\nAs you come into this world, \nsomething else is also born. \nPulling back -\nWe are looking at the sunrise through a row of windows in an \nancient, stone wall.\nTHE DOCTOR (cont’d)\n(V.O.)\nYou begin your life and it begins a \njourney - towards you. \nTime lapse photography: as the sun moves in the sky, the \nsunbeams sweep round the room like searchlights..."
+    },
+    {
+      "name": "https_www_bbc_co_uk_writers_documents_doctor_who_s9_ep11_heaven_sent_steven_moff",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.bbc.co.uk/writers/documents/doctor-who-s9-ep11-heaven-sent-steven-moffat.pdf",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/4b6bb5f7-f634-410e-815d-e673ab7f8632/https_www_bbc_co_uk_writers_documents_doctor_who_s9_ep11_heaven_sent_steven_moff.txt",
+      "excerpt": "DOCTOR WHO\nSERIES 9\nEPISODE 11\n\"Heaven Sent\"\nby\n STEVEN MOFFAT\n  BLUE AMENDMENTS\n 24/08/2015\n (SHOOTING BLOCK 6)\n(c) BBC Wales 2015\nINT. THE CASTLE - DAY1 1\nSpires and towers, an ancient sprawling castle. \nNow a familiar voice:\nTHE DOCTOR\n(V.O.)\nAs you come into this world, \nsomething else is also born. \nPulling back -\nWe are looking at the sunrise through a row of windows in an \nancient, stone wall.\nTHE DOCTOR (cont’d)\n(V.O.)\nYou begin your life and it begins a \njourney - towards you. \nTime lapse photography: as the sun moves in the sky, the \nsunbeams sweep round the room like searchlights..."
+    }
+  ],
+  "duration_seconds": 106.09080291699502,
+  "created_at": "2026-03-17T00:00:12.462594Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “Doctor Who series 9 episode 11 official script”.\n2. Click result on the BBC website.\n3. Scroll through the PDF to read the script, noting that it takes place in a mechanical castle location.\n4. Scroll back to the first scene heading to note the answer, THE CASTLE",
+      "Number of steps": "4",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser\n3. PDF viewer",
+      "Number of tools": "3"
+    }
+  }
+}

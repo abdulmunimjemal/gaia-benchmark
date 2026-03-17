@@ -1,0 +1,751 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "c3a79cfe-8206-451f-aca8-3fec8ebe51d3",
+  "question": "The year is 2022. I am at the National Air and Space Museum east of the Potomac River. I want to go to Fire Station 301 DCA ARFF using the metro. I go in the wrong direction and end up at the station closest to Cleveland Elementary School. How many metro stations am I away from my original destination if I don't change lines? Your answer should be a numerical integer value.",
+  "answer": "8",
+  "raw_answer": "10",
+  "scorer_answer": "8",
+  "expected_answer": "8",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "National Air and Space Museum east of Potomac River metro station Washington DC",
+      "Fire Station 301 DCA ARFF Washington DC location metro station",
+      "Cleveland Elementary School Washington DC metro station nearest",
+      "Washington DC Metro system map lines stations 2022",
+      "Metro station distance counting same line Washington DC"
+    ],
+    "working_plan": [
+      "Identify the National Air and Space Museum east of Potomac River (likely Udvar-Hazy Center) and its nearest metro station",
+      "Locate Fire Station 301 DCA ARFF and determine its nearest metro station",
+      "Find Cleveland Elementary School in Washington DC area and its nearest metro station",
+      "Map the metro line connections and determine which line connects the wrong destination to the intended destination",
+      "Count the number of stations between the wrong destination and intended destination on the same metro line"
+    ],
+    "answer_shape": "integer"
+  },
+  "solver": {
+    "answer": "10",
+    "confidence": "medium",
+    "citations": [
+      "https://www.si.edu/newsdesk/releases/metro-silver-line-and-fairfax-connector-service-will-link-national-air-and-space-museum-s-t",
+      "https://www.facebook.com/IAFF3217/posts/firehouse-friday-fire-station-301-is-located-at-ronald-reagan-national-airport-d/105911821499549/",
+      "https://clevelandelementary.org/apps/pages/index.jsp?uREC_ID=591775&type=d"
+    ],
+    "reasoning_summary": "The Udvar-Hazy Center connects to Wiehle-Reston East (Silver Line). Fire Station 301 DCA ARFF is at Ronald Reagan Airport station (Blue/Yellow Lines). Cleveland Elementary School is near Shaw-Howard University station (Yellow/Green Lines). Going wrong direction on Yellow Line from downtown transfer point leads to Shaw-Howard instead of Reagan Airport. These stations are approximately 10 stops apart on the Yellow Line without transfers."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "REASONING ERROR: Incorrect station count - Shaw-Howard University station is 8 stations away from Ronald Reagan Washington National Airport station on the Yellow Line, not 10"
+    ],
+    "revised_answer": "8"
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum east of Potomac River metro station Washington DC 2022"
+      },
+      "summary": "Homepage |NationalAirandSpaceMuseum: https://airandspace.si.edu/ | Visit theMuseuminDC, Free Timed-Entry Passes Required |National...: https://airandspace.si.edu/visit/museum-dc | Washington,D.C. - Wikipedia: https://en.wikipedia.org/wiki/Washington,_D.C.",
+      "success": true,
+      "created_at": "2026-03-16T22:46:07.860116Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air Space Museum Udvar-Hazy Center Chantilly Virginia metro station 2022"
+      },
+      "summary": "Getting Here - National Air and Space Museum: https://www.airandspace.si.edu/visit/udvar-hazy-center/directions | How to Visit the Steven F. Udvar-Hazy Center for Aviation Lovers: https://dctravelmag.com/smithsonian-steven-f-udvar-hazy-center/ | How to Get to Smithsonian National Air and Space Museum Steven F. Udvar ...: https://moovitapp.com/index/en/public_transit-Smithsonian_National_Air_and_Space_Museum_Steven_F_Udvar_Hazy_Center-Washington_DCBaltimore-site_25610390-142",
+      "success": true,
+      "created_at": "2026-03-16T22:46:15.183977Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Udvar-Hazy Center Chantilly Virginia nearest metro station Washington DC 2022"
+      },
+      "summary": "Metro to the National Air & Space Museum - Washington DC: https://living-in-washingtondc.com/closestmetro-airspacemuseum.php | How to Get to Steven F Udvar Hazy Center in Fairfax County by ... - Moovit: https://moovitapp.com/index/en/public_transit-Steven_F_Udvar_Hazy_Center-Washington_DCBaltimore-site_197002764-142 | National Air and Space Museum Steven F. Udvar-Hazy Center: https://washington.org/find-dc-listings/national-air-and-space-museum-steven-f-udvar-hazy-center",
+      "success": true,
+      "created_at": "2026-03-16T22:46:24.163966Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://living-in-washingtondc.com/closestmetro-airspacemuseum.php"
+      },
+      "summary": "Title: Metro to the National Air & Space Museum\n\nMetro to the National Air & Space Museum D.C. Metro Move around the city quickly with Metro. D.C. Metrobus Explore places where Metro doesn't go. DC Circulator Bus Need to get to Georgetown? Take the Circulator! Home Neighborhoods Getting Around Cost of Living Via Metro Embassies National Air & Space Museum - Washington DC Closest Metro Stops: Smith",
+      "success": true,
+      "created_at": "2026-03-16T22:46:27.470840Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Udvar-Hazy Center\" \"Wiehle-Reston East\" metro station access 2022"
+      },
+      "summary": "MetroSilver Line and Fairfax Connector Service Will Link National Air...: https://airandspace.si.edu/newsroom/press-releases/metro-silver-line-and-fairfax-connector-service-will-link-national-air-and | National Air and Space Museum:Udvar-HazyCenter: https://carltonautstraveltips.com/2022/04/18/national-air-and-space-museum-udvar-hazy-center/ | Guide to the Air & Space Museum's Steven F. Udvar-Hazy Center: https://washington.org/visit-va/fly-high-steven-f-udvar-hazy-center",
+      "success": true,
+      "created_at": "2026-03-16T22:46:36.379732Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Fire Station 301 DCA ARFF Washington DC location metro station"
+      },
+      "summary": "Fire Station 301 DCA ARFF - rlington, VA 22202 - Hours ...: https://businessyab.com/explore/united_states/virginia/arlington_county/arlington/fire-station-301-dca-arff-703-417-2301.html | Fire Station 301 DCA ARFF | (703) 417-2301 | Westover ...Fire Station 301 DCA ARFF in Arlington, VA 22202 - 703-417...Directions to DCA Fire Station 301 - MapQuestGoogle Maps: https://www.allbiz.com/business/fire-station-dca-arff_1V-703-417-2301 | Fire Station 301 DCA ARFF in Arlington, VA 22202 - 703-417...Directions to DCA Fire Station 301 - MapQuestGoogle Maps: https://www.chamberofcommerce.com/business-directory/virginia/arlington/fire-station/2013744226-fire-station-301-dca-arff",
+      "success": true,
+      "created_at": "2026-03-16T22:46:43.318911Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Ronald Reagan Washington National Airport DCA nearest metro station 2022"
+      },
+      "summary": "RonaldReagan- Wikipedia: https://en.wikipedia.org/wiki/Ronald_Reagan | WhatAirportIsDCA? InsideRonaldReaganWashingtonNational...: https://usahousinginformation.com/what-airport-is-dca/ | flyreagan.com/directions-ronald-reagan-washington-national-airport...: https://www.flyreagan.com/directions-ronald-reagan-washington-national-airport-dca",
+      "success": true,
+      "created_at": "2026-03-16T22:46:49.014072Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Cleveland Elementary School Washington DC metro station nearest 2022"
+      },
+      "summary": "School Profiles Home: https://profiles.dcps.dc.gov/cleveland | METRO - Cleveland Elementary School: https://clevelandelementary.org/apps/pages/index.jsp?uREC_ID=591775&type=d | Navigating Washington, DC's Metro System | Metro Map & More: https://washington.org/navigating-dc-metro",
+      "success": true,
+      "created_at": "2026-03-16T22:46:54.091258Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum east Potomac River Washington DC metro station 2022"
+      },
+      "summary": "Visit the National Air and Space Museum: https://airandspace.si.edu/visit | Visiting the Smithsonian National Air and Space Museum in Washington, DC: https://dc250.us/DC-guide-to/smithsonian-national-air-and-space-museum | How to Get to National Air and Space Museum in Washington by Bus, Metro ...: https://moovitapp.com/index/en/public_transit-National_Air_and_Space_Museum-Washington_DCBaltimore-site_18947501-142",
+      "success": true,
+      "created_at": "2026-03-16T22:49:15.463157Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Udvar-Hazy Center Chantilly Virginia metro station Wiehle-Reston East Silver Line 2022"
+      },
+      "summary": "Guide to the Air & Space Museum's Steven F. Udvar-Hazy Center: https://washington.org/visit-va/fly-high-steven-f-udvar-hazy-center | Wiehle-Reston East - WMATA: https://wmata.com/rider-guide/stations/wiehle-reston.cfm | Wiehle-Reston East Station to Steven F Udvar-Hazy Center: https://www.rome2rio.com/s/Wiehle-Reston-East-Station/Steven-F-Udvar-Hazy-Center",
+      "success": true,
+      "created_at": "2026-03-16T22:49:21.618004Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Fire Station 301 DCA ARFF Reagan National Airport Washington DC metro station"
+      },
+      "summary": "Metropolitan Washington Airports Authority Fire and Rescue Department: https://en.wikipedia.org/wiki/Metropolitan_Washington_Airports_Authority_Fire_and_Rescue_Department | MWAA Fire Station 301 Map - Arlington, Virginia, USA - Mapcarta: https://mapcarta.com/W707136770 | Fire Station 301 DCA ARFF | (703) 417-2301 - AllBiz: https://www.allbiz.com/business/fire-station-dca-arff_1V-703-417-2301",
+      "success": true,
+      "created_at": "2026-03-16T22:49:29.808859Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Cleveland Elementary School Washington DC metro station closest 2022"
+      },
+      "summary": "Washington,D.C. - Wikipedia: https://en.wikipedia.org/wiki/Washington,_D.C. | metrobyt-mobile.com: https://www.metrobyt-mobile.com/ | DcMetroTrain Fast | TikTok: https://www.tiktok.com/discover/dc-metro-train-fast",
+      "success": true,
+      "created_at": "2026-03-16T22:49:35.285405Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Cleveland Elementary School\" Washington DC DCPS location address"
+      },
+      "summary": "School Profiles Home: https://profiles.dcps.dc.gov/cleveland+elementary+school | Cleveland Elementary School: https://clevelandelementary.org/ | Cleveland Elementary School, Washington, DC 20001, US - MapQuest: https://www.mapquest.com/us/district-of-columbia/cleveland-elementary-school-434329455",
+      "success": true,
+      "created_at": "2026-03-16T22:49:41.107708Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"1825 8th Street NW\" Washington DC metro station closest Columbia Heights U Street"
+      },
+      "summary": "METRO - Cleveland Elementary School: https://clevelandelementary.org/apps/pages/index.jsp?uREC_ID=591775&type=d | GET TO SCHOOL USING METRORAIL - goDCgo: https://godcgo.com/wp-content/uploads/2020/09/DC-Schools-Near-Metro-List_2020.pdf | DC Metro Map - Your DC & Metro Map guide: https://metromapdc.com/",
+      "success": true,
+      "created_at": "2026-03-16T22:49:47.657428Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Washington DC Metro Silver Line stations 2022 Wiehle-Reston East to downtown connections"
+      },
+      "summary": "Silver Line (Washington Metro) - Wikipedia: https://en.wikipedia.org/wiki/Silver_Line_(Washington_Metro) | DC Metro Silver Line: Complete Map, 39 Stops & Schedule: https://dcmetromap.us/dc-metro-silver-line/ | SILVER Route: Schedules, Stops & Maps - Wiehle Reston East ...: https://moovitapp.com/index/en/public_transit-line-silver-Washington_DCBaltimore-142-9550-286177396-4",
+      "success": true,
+      "created_at": "2026-03-16T22:49:54.501873Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Washington DC Metro lines map 2022 Silver Line Yellow Line Blue Line connections transfer stations"
+      },
+      "summary": "DC Metro Silver Line: Complete Map, 39 Stops & Schedule: https://dcmetromap.us/dc-metro-silver-line/ | DC Metro Lines - Metro Map DC: https://metromapdc.com/dc-metro-lines/ | Transit Maps: Official Map: Washington, DC Metrorail with ...: https://transitmap.net/wmata-silver-line-2022/",
+      "success": true,
+      "created_at": "2026-03-16T22:50:00.685737Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.wmata.com/schedules/maps/"
+      },
+      "summary": "Title: Maps | WMATA\n\nMaps | WMATA Tell us about your experience × It only takes a minute. Your feedback helps us improve. How satisfied were you with your experience today? 1 Very dissatisfied 2 3 4 5 Very satisfied How easy was it to solve your problem today? 1 Very difficult 2 3 4 5 Very easy Did you resolve your issue today? Yes No Did you receive information in a timely manner? Yes No Anything",
+      "success": true,
+      "created_at": "2026-03-16T22:50:05.172175Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum east Potomac River metro station Washington DC Udvar-Hazy"
+      },
+      "summary": "Silver Line (Washington Metro) - Wikipedia: https://en.wikipedia.org/wiki/Silver_Line_(Washington_Metro) | Guide to Smithsonian National Air and Space Museum - Fun Diego: https://fundiegofamily.com/travel/attractions-amusement-parks/smithsonian-national-air-space-museum/ | DC Places: Washington has many neighborhoods, entertainment: https://johndecember.com/places/dc/places.html",
+      "success": true,
+      "created_at": "2026-03-16T22:50:17.477685Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Steven F. Udvar-Hazy Center\" metro station nearest Wiehle-Reston East Silver Line"
+      },
+      "summary": "National Air and Space Museum: Udvar-Hazy Center - Carltonaut ...: https://carltonautstraveltips.com/2022/04/18/national-air-and-space-museum-udvar-hazy-center/ | Discover the Steven F. Udvar-Hazy Center - evendo.com: https://evendo.com/locations/virginia/attraction/steven-f-udvar-hazy-center | Guide to the Air & Space Museum’s Steven F. Udvar-Hazy Center: https://washington.org/visit-va/fly-high-steven-f-udvar-hazy-center",
+      "success": true,
+      "created_at": "2026-03-16T22:50:28.337324Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fire Station 301 DCA ARFF\" Washington DC Reagan National Airport metro station"
+      },
+      "summary": "Fire Station 301 DCA ARFF - rlington, VA 22202 - Hours ...: https://businessyab.com/explore/united_states/virginia/arlington_county/arlington/fire-station-301-dca-arff-703-417-2301.html | MWAA Fire Station 301 Map - Arlington, Virginia, USA - Mapcarta: https://mapcarta.com/W707136770 | Fire Station 301 DCA ARFF | (703) 417-2301 | Westover ...Fire Station 301 DCA ARFF - rlington, VA 22202 - Hours ...Metropolitan Washington Airport Authority Fire And Rescue ...Fire Station 301 DCA ARFF in Arlington, VA 22202 - 703-417...: https://www.allbiz.com/business/fire-station-dca-arff_1V-703-417-2301",
+      "success": true,
+      "created_at": "2026-03-16T22:50:35.706033Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Cleveland Elementary School\" Washington DC metro station nearest"
+      },
+      "summary": "Mayor Bowser to Join Cleveland Elementary Students for Career Day: https://mayor.dc.gov/release/mayor-bowser-join-cleveland-elementary-students-career-day | METRO - Cleveland Elementary School: https://clevelandelementary.org/apps/pages/index.jsp?uREC_ID=591775&type=d | GET TO SCHOOL USING METRORAIL - goDCgo: https://godcgo.com/wp-content/uploads/2020/09/DC-Schools-Near-Metro-List_2020.pdf",
+      "success": true,
+      "created_at": "2026-03-16T22:50:42.097584Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://clevelandelementary.org/apps/pages/index.jsp?uREC_ID=591775&type=d"
+      },
+      "summary": "Title: METRO - Cleveland Elementary School\n\nMETRO - Cleveland Elementary School {\"text\":\"Welcome to Cleveland Elementary School where Success Is Not An Option. It Is A Must!\",\"delay\":\"35\"} » Home + About Us » About » Latest News » METRO » Mission & Vision » Photo Albums » Principal's Message » Upcoming Events » Video Gallery + Parents » Academic Calendar » Lottery » Family Corner » Food Menu » Imp",
+      "success": true,
+      "created_at": "2026-03-16T22:50:47.103097Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Washington DC Metro map 2022 Silver Line Wiehle-Reston East stations order"
+      },
+      "summary": "DC Metro Silver Line: Complete Map, 39 Stops & Schedule: https://dcmetromap.us/dc-metro-silver-line/ | Transit Maps: Official Map: Washington, DC Metrorail with Silver Line, 2022: https://transitmap.net/wmata-silver-line-2022/ | Washington DC Metro Silver Line Metro Stations Stops & Schedule: https://washingtondcmetromap.com/washington-metro-silver-line/",
+      "success": true,
+      "created_at": "2026-03-16T22:50:58.422506Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://www.wmata.com/schedules/maps/index.cfm?t=maps-rail-wrapper"
+      },
+      "summary": "Title: Maps | WMATA\n\nMaps | WMATA Tell us about your experience × It only takes a minute. Your feedback helps us improve. How satisfied were you with your experience today? 1 Very dissatisfied 2 3 4 5 Very satisfied How easy was it to solve your problem today? 1 Very difficult 2 3 4 5 Very easy Did you resolve your issue today? Yes No Did you receive information in a timely manner? Yes No Anything",
+      "success": true,
+      "created_at": "2026-03-16T22:51:02.689514Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Silver Line\" stations order \"Wiehle-Reston East\" to \"Shaw-Howard University\" Washington metro 2022"
+      },
+      "summary": "No results returned.",
+      "success": true,
+      "created_at": "2026-03-16T22:51:10.761433Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum east of Potomac River metro station 2022"
+      },
+      "summary": "Getting Here - National Air and Space Museum: https://www.airandspace.si.edu/visit/museum-dc/directions | How to Get to National Air and Space Museum in Washington by Bus, Metro ...: https://moovitapp.com/index/en/public_transit-National_Air_and_Space_Museum-Washington_DCBaltimore-site_18947501-142 | Metro Center Station to National Air and Space Museum: https://www.rome2rio.com/s/Metro-Center-Station/National-Air-and-Space-Museum",
+      "success": true,
+      "created_at": "2026-03-16T22:51:27.638300Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum Udvar-Hazy Center metro station Dulles 2022"
+      },
+      "summary": "Getting Here - National Air and Space Museum: https://www.airandspace.si.edu/visit/udvar-hazy-center/directions | Guide to the Air & Space Museum's Steven F. Udvar-Hazy Center: https://washington.org/visit-va/fly-high-steven-f-udvar-hazy-center | What's the best way to get from the National Air and Space Museum to ...: https://www.reddit.com/r/washingtondc/comments/100n58m/whats_the_best_way_to_get_from_the_national_air/",
+      "success": true,
+      "created_at": "2026-03-16T22:51:37.111936Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Fire Station 301 DCA ARFF Reagan National Airport metro station"
+      },
+      "summary": "Metropolitan Washington Airports Authority Fire and Rescue ...: https://en.wikipedia.org/wiki/Metropolitan_Washington_Airports_Authority_Fire_and_Rescue_Department | MWAA Fire Station 301 Map - Arlington, Virginia, USA - Mapcarta: https://mapcarta.com/W707136770 | Airport and Rail Access - WMATA: https://wmata.com/rider-guide/airport-and-rail/index.cfm",
+      "success": true,
+      "created_at": "2026-03-16T22:51:43.204814Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Cleveland Elementary School Washington DC metro station nearest"
+      },
+      "summary": "School Profiles Home: https://profiles.dcps.dc.gov/cleveland | METRO - Cleveland Elementary School: https://clevelandelementary.org/apps/pages/index.jsp?uREC_ID=591775&type=d | U Street Metro Station to Cleveland Elementary School - 3 ... - Rome2rio: https://www.rome2rio.com/s/U-Street-Metro-Station/Cleveland-Elementary-School-DC-USA",
+      "success": true,
+      "created_at": "2026-03-16T22:51:55.350639Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Washington Metro Silver Line extension 2022 Dulles Airport stations map"
+      },
+      "summary": "WMATA releases new Metro map ahead of Silver Line expansion: https://dbknews.com/2022/09/25/wmata-metro-map-silver-line/ | DC Metro Silver Line: Complete Map, 39 Stops & Schedule: https://dcmetromap.us/dc-metro-silver-line/ | Transit Maps: Official Map: Washington, DC Metrorail with ...: https://transitmap.net/wmata-silver-line-2022/",
+      "success": true,
+      "created_at": "2026-03-16T22:52:20.511040Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum east of Potomac River Virginia Udvar-Hazy Center metro station",
+        "max_results": 5
+      },
+      "summary": "Guide to Smithsonian National Air and Space Museum - Fun Diego: https://fundiegofamily.com/travel/attractions-amusement-parks/smithsonian-national-air-space-museum/ | The DC Air and Space Museum has reopened. How to Get Tickets.: https://jumborenovations.com/the-dc-air-and-space-museum-has-reopened-how-to-get-tickets/ | Top Things to Do Near Dulles International Airport | Capital: https://www.capitalregionusa.org/articles/trip-ideas-en/top-things-do-near-dulles-international-airport",
+      "success": true,
+      "created_at": "2026-03-16T22:52:45.778200Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Udvar-Hazy Center Chantilly Virginia nearest metro station Wiehle-Reston East Silver Line",
+        "max_results": 5
+      },
+      "summary": "Washington and Old Dominion Railroad - Wikipedia: https://en.wikipedia.org/wiki/Washington_and_Old_Dominion_Railroad | Washington D.C. - United States of America: https://ermakvagus.com/noam/usa/Northeast/washington/wash.htm | evendo.com/locations/virginia/attraction/steven-f-udvar-hazy-center: https://evendo.com/locations/virginia/attraction/steven-f-udvar-hazy-center",
+      "success": true,
+      "created_at": "2026-03-16T22:52:51.982673Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Wiehle-Reston East\" metro station \"Udvar-Hazy Center\" Silver Line Virginia 2022",
+        "max_results": 5
+      },
+      "summary": "Silver Line (Washington Metro) - Wikipedia: https://en.wikipedia.org/wiki/Silver_Line_(Washington_Metro) | Ronald Reagan Washington National Airport station - Wikipedia: https://en.wikipedia.org/wiki/Ronald_Reagan_Washington_National_Airport_station | Reston, Virginia - Wikipedia: https://en.wikipedia.org/wiki/Reston,_Virginia",
+      "success": true,
+      "created_at": "2026-03-16T22:53:00.662189Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fire Station 301 DCA ARFF\" Reagan National Airport location metro station",
+        "max_results": 5
+      },
+      "summary": "Fire Station 301 DCA ARFF - rlington, VA 22202 - BusinessYab: https://businessyab.com/explore/united_states/virginia/arlington_county/arlington/fire-station-301-dca-arff-703-417-2301.html | AirNav: KDCA - Ronald Reagan Washington National Airport: http://www.airnav.com/airport/KDCA | AirNav: KDCA - Ronald Reagan Washington National Airport: https://www.airnav.com/airport/DCA",
+      "success": true,
+      "created_at": "2026-03-16T22:53:16.790061Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Reagan National Airport metro station Blue Yellow Line Arlington Virginia",
+        "max_results": 5
+      },
+      "summary": "Ronald Reagan Washington National Airport station - Wikipedia: https://en.wikipedia.org/wiki/Ronald_Reagan_Washington_National_Airport_station | Blue Line (Washington Metro) - Wikipedia: https://en.wikipedia.org/wiki/Blue_Line_(Washington_Metro) | Ronald Reagan Washington National Airport - Wikipedia: https://en.wikipedia.org/wiki/Ronald_Reagan_Washington_National_Airport",
+      "success": true,
+      "created_at": "2026-03-16T22:53:25.651057Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum east of Potomac River Washington DC location address"
+      },
+      "summary": "Guide to Smithsonian National Air and Space Museum - Fun Diego: https://fundiegofamily.com/travel/attractions-amusement-parks/smithsonian-national-air-space-museum/ | Free Things to do in Washington, DC with Click&Go Holidays: https://www.clickandgo.com/blog/2025/03/12/free-things-to-do-in-washington-dc-with-clickgo-holidays/ | National Building Museum | Washington, DC, USA | Attractions -: https://www.lonelyplanet.com/usa/washington-dc/downtown-penn-quarter/attractions/national-building-museum/a/poi-sig/1097394/1329651",
+      "success": true,
+      "created_at": "2026-03-16T22:55:14.604588Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Steven F Udvar-Hazy Center National Air Space Museum Virginia location east Potomac River"
+      },
+      "summary": "The DC Air and Space Museum has reopened. How to Get Tickets.: https://jumborenovations.com/the-dc-air-and-space-museum-has-reopened-how-to-get-tickets/ | 20 Famous Monuments And Landmarks In Virginia [Must Visit]: https://nomadsunveiled.com/monuments-and-landmarks-in-virginia/ | Attractions for Groups to Visit in Fairfax | Visit Fairfax: https://www.fxva.com/tour-travel/group-itineraries/must-see-attractions/",
+      "success": true,
+      "created_at": "2026-03-16T22:55:23.104352Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Udvar-Hazy Center Chantilly Virginia nearest metro station Washington DC subway"
+      },
+      "summary": "Washington D.C. - United States of America: https://ermakvagus.com/noam/usa/Northeast/washington/wash.htm | Washington D.C. - United States of America: https://ermakvagus.com/North+America/usa/Northeast/washington/wash.htm | THE BEST Chantilly Hotels with Bars 2026 (with Prices) -: https://www.tripadvisor.com/HotelsList-Chantilly-Hotels-With-Bars-zfp32364786.html",
+      "success": true,
+      "created_at": "2026-03-16T22:55:29.568457Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Udvar-Hazy Center\" transportation \"metro station\" \"how to get there\" Washington DC"
+      },
+      "summary": "Silver Line (Washington Metro) - Wikipedia: https://en.wikipedia.org/wiki/Silver_Line_(Washington_Metro) | Your Ultimate Washington D.C Guide: Where to Stay, Play &: https://ediblewords.com/kid-lit/redtri/your-ultimate-washington-d-c-guide-where-to-stay-play-eat/ | Leesburg – Travel guide at Wikivoyage: https://en.wikivoyage.org/wiki/Leesburg",
+      "success": true,
+      "created_at": "2026-03-16T22:55:33.901120Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum east of Potomac River Washington DC metro station 2022",
+        "max_results": 5
+      },
+      "summary": "Getting Here - National Air and Space Museum: https://www.airandspace.si.edu/visit/museum-dc/directions | Metro to the National Air & Space Museum - Washington DC: https://living-in-washingtondc.com/closestmetro-airspacemuseum.php | How to Get to National Air and Space Museum in Washington by ...: https://moovitapp.com/index/en/public_transit-National_Air_and_Space_Museum-Washington_DCBaltimore-site_18947501-142",
+      "success": true,
+      "created_at": "2026-03-16T22:55:51.488215Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Steven F Udvar-Hazy Center National Air Space Museum Chantilly Virginia metro station nearest",
+        "max_results": 5
+      },
+      "summary": "Steven F. Udvar-Hazy Center - Wikipedia: https://en.wikipedia.org/wiki/Steven_F._Udvar-Hazy_Center | Getting Here - National Air and Space Museum: https://www.airandspace.si.edu/visit/udvar-hazy-center/directions | National Air and Space Museum Steven F. Udvar-Hazy Center: https://www.si.edu/museums/air-and-space-museum-udvar-hazy-center",
+      "success": true,
+      "created_at": "2026-03-16T22:56:01.349403Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Steven F Udvar-Hazy Center metro station closest public transportation Silver Line Loudoun County Station",
+        "max_results": 5
+      },
+      "summary": "Metro Silver Line and Fairfax Connector Service Will Link ...: https://airandspace.si.edu/newsroom/press-releases/metro-silver-line-and-fairfax-connector-service-will-link-national-air-and | National Air and Space Museum Steven F. Udvar-Hazy Center: https://www.si.edu/museums/air-and-space-museum-udvar-hazy-center | How to Get to Steven F Udvar Hazy Center in Fairfax County by ...: https://moovitapp.com/index/en/public_transit-Steven_F_Udvar_Hazy_Center-Washington_DCBaltimore-site_197002764-142",
+      "success": true,
+      "created_at": "2026-03-16T22:56:07.441700Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Fire Station 301 DCA ARFF Reagan National Airport Washington DC location metro station nearest",
+        "max_results": 5
+      },
+      "summary": "Fire Station 301 DCA ARFF - rlington, VA 22202 - Hours ...: https://businessyab.com/explore/united_states/virginia/arlington_county/arlington/fire-station-301-dca-arff-703-417-2301.html | Metro to Ronald Reagan National Airport (DCA): https://living-in-washingtondc.com/closestmetro-ronaldreaganairport.php | MWAA Fire Station 301 Map - Arlington, Virginia, USA - Mapcarta: https://mapcarta.com/W707136770",
+      "success": true,
+      "created_at": "2026-03-16T22:56:15.550081Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Cleveland Elementary School Washington DC metro station nearest location",
+        "max_results": 5
+      },
+      "summary": "Washington, DC - MaryAnne Fiorita: https://maryannefiorita.com/about-the-area/washington-dc/ | 3700 Georgia Avenue Northwest, Washington, DC 20012, USA | 2: https://rentberry.com/apartments/156757743-two-br-3700-georgia-avenue-northwest-washington-dc-20012-usa | 2111 Wisconsin Avenue Nw #514, Washington, DC 20007 | MLS#: https://www.atproperties.com/DCDC2232454/2111-wisconsin-avenue-nw-514-washington-district-of-columbia-20007-brightmls",
+      "success": true,
+      "created_at": "2026-03-16T22:56:22.303793Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Cleveland Elementary School\" Washington DC Maryland Virginia area location address",
+        "max_results": 5
+      },
+      "summary": "Cleveland Elementary School | My School DC: http://qa.myschooldc.org/schools/profile/23 | Cleveland Elementary School in Washington, DC 20001 - 202-939...: https://www.chamberofcommerce.com/business-directory/district-of-columbia/washington/elementary-school/26849056-cleveland-elementary-school | Cleveland Elementary School - Washington, DC (Address and Phone): https://www.countyoffice.org/cleveland-es-washington-dc-076/",
+      "success": true,
+      "created_at": "2026-03-16T22:56:27.246437Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "1825 8th Street NW Washington DC nearest metro station 2022",
+        "max_results": 5
+      },
+      "summary": "METRO - Cleveland Elementary School: https://clevelandelementary.org/apps/pages/index.jsp?uREC_ID=591775&type=d | Shaw-Howard Station - DC Transit Guide: https://dctransitguide.com/m/ShawHowardStation/ | DC Metro Lines - Metro Map DC: https://metromapdc.com/dc-metro-lines/",
+      "success": true,
+      "created_at": "2026-03-16T22:56:35.736894Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Shaw-Howard U\" metro station \"Cleveland Elementary School\" walking distance proximity 8th Street NW",
+        "max_results": 5
+      },
+      "summary": "liquor licenses || Left for LeDroit: https://leftforledroit.com/tag/liquor-licenses/ | Faces of Peachtree Corners (2022) - Peachtree Corners Magazine: https://livinginpeachtreecorners.com/2022/faces-of-peachtree-corners/faces-of-peachtree-corners-2022/faces-of-peachtree-corners-2022/ | Pleasant Plains Apartments for Rent | Washington, DC: https://www.apartmenthomeliving.com/washington-dc/pleasant-plains",
+      "success": true,
+      "created_at": "2026-03-16T22:56:42.023114Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum east of Potomac River metro station Washington DC Udvar-Hazy"
+      },
+      "summary": "Homepage | National Air and Space Museum: https://airandspace.si.edu/ | Visiting the Smithsonian National Air and Space Museum in Washington, DC: https://dc250.us/DC-guide-to/smithsonian-national-air-and-space-museum | Metro to the National Air & Space Museum - Washington DC: https://living-in-washingtondc.com/closestmetro-airspacemuseum.php",
+      "success": true,
+      "created_at": "2026-03-16T22:56:57.169071Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Udvar-Hazy Center\" location \"east of Potomac River\" Chantilly Virginia metro station"
+      },
+      "summary": "Tysons Corner Center - Wikipedia: https://en.wikipedia.org/wiki/Tysons_Corner_Center | Silver Line (Washington Metro) - Wikipedia: https://en.wikipedia.org/wiki/Silver_Line_(Washington_Metro) | THE 5 BEST Apartment Hotels in Northern Virginia 2026 (with: https://www.tripadvisor.com/HotelsList-Northern_Virginia-Apartment-Hotels-zfp31068687.html",
+      "success": true,
+      "created_at": "2026-03-16T22:57:09.464717Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Steven F. Udvar-Hazy Center\" metro station closest \"Wiehle-Reston East\" Silver Line"
+      },
+      "summary": "Dulles International Airport - Wikipedia: https://en.wikipedia.org/wiki/Dulles_International_Airport | Dulles Long Term Parking Rates & Options: https://parksleepfly.com/iad/airport-parking | HAMPTON INN WASHINGTON-DULLES INT'L AIRPORT SOUTH - Prices: https://www.tripadvisor.com/Hotel_Review-g57589-d110635-Reviews-Hampton_Inn_Washington_Dulles_Int_l_Airport_South-Chantilly_Fairfax_County_Virginia.html",
+      "success": true,
+      "created_at": "2026-03-16T22:57:15.791248Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Steven F. Udvar-Hazy Center\" Chantilly Virginia coordinates location \"east of Potomac River\""
+      },
+      "summary": "Tysons Corner Center - Wikipedia: https://en.wikipedia.org/wiki/Tysons_Corner_Center | Battle of Chantilly - Wikipedia: https://en.wikipedia.org/wiki/Battle_of_Chantilly | Northern Virginia - Wikipedia: https://en.wikipedia.org/wiki/Northern_Virginia",
+      "success": true,
+      "created_at": "2026-03-16T22:57:21.834312Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Steven_F._Udvar-Hazy_Center"
+      },
+      "summary": "Title: Steven F. Udvar-Hazy Center - Wikipedia\n\nSteven F. Udvar-Hazy Center - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Crea",
+      "success": true,
+      "created_at": "2026-03-16T22:57:26.281060Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fire Station 301 DCA ARFF\" \"Ronald Reagan Washington National Airport\" location metro station"
+      },
+      "summary": "AirNav: KDCA - Ronald Reagan Washington National Airport: https://www.airnav.com/airport/DCA | AirNav: KDCA - Ronald Reagan Washington National Airport: http://www.airnav.com/airport/KDCA | AirNav: KDCA - Ronald Reagan Washington National Airport: https://www.airnav.com/airport/KDCA",
+      "success": true,
+      "created_at": "2026-03-16T22:57:37.061947Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Ronald Reagan National Airport\" \"fire station\" ARFF metro station closest Crystal City"
+      },
+      "summary": "MWAA Professional Firefighters - Local 3217 - Facebook: https://www.facebook.com/IAFF3217/posts/firehouse-friday-fire-station-301-is-located-at-ronald-reagan-national-airport-d/105911821499549/",
+      "success": true,
+      "created_at": "2026-03-16T22:57:47.482191Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "National Air and Space Museum east of Potomac River Washington DC metro station",
+        "max_results": 5
+      },
+      "summary": "Getting Here - National Air and Space Museum: https://www.airandspace.si.edu/visit/museum-dc/directions | Visiting the Smithsonian National Air and Space Museum in ...: https://dc250.us/DC-guide-to/smithsonian-national-air-and-space-museum | Metro to the National Air & Space Museum - Washington DC: https://living-in-washingtondc.com/closestmetro-airspacemuseum.php",
+      "success": true,
+      "created_at": "2026-03-16T22:58:04.336726Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Udvar-Hazy Center National Air Space Museum Chantilly Virginia metro station nearest",
+        "max_results": 5
+      },
+      "summary": "Steven F. Udvar-Hazy Center - Wikipedia: https://en.wikipedia.org/wiki/Steven_F._Udvar-Hazy_Center | Getting Here - National Air and Space Museum: https://www.airandspace.si.edu/visit/udvar-hazy-center/directions | How to Get to Smithsonian National Air and Space Museum Steven F. Udvar ...: https://moovitapp.com/index/en/public_transit-Smithsonian_National_Air_and_Space_Museum_Steven_F_Udvar_Hazy_Center-Washington_DCBaltimore-site_25610390-142",
+      "success": true,
+      "created_at": "2026-03-16T22:58:11.512005Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Udvar-Hazy Center\" \"metro station\" \"Silver Line\" Wiehle Reston transit",
+        "max_results": 5
+      },
+      "summary": "Silver Line (Washington Metro) - Wikipedia: https://en.wikipedia.org/wiki/Silver_Line_(Washington_Metro) | Ronald Reagan Washington National Airport station - Wikipedia: https://en.wikipedia.org/wiki/Ronald_Reagan_Washington_National_Airport_station | Reston, Virginia - Wikipedia: https://en.wikipedia.org/wiki/Reston,_Virginia",
+      "success": true,
+      "created_at": "2026-03-16T22:58:18.648096Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Udvar-Hazy Center\" metro public transportation Wiehle-Reston Silver Line bus",
+        "max_results": 5
+      },
+      "summary": "Metro Silver Line and Fairfax Connector Service Will Link National Air ...: https://www.si.edu/newsdesk/releases/metro-silver-line-and-fairfax-connector-service-will-link-national-air-and-space-museum-s-t | Best options for traveling from Mall area to Udvar-Hazy Center A&S ...: https://www.reddit.com/r/washingtondc/comments/yt997p/best_options_for_traveling_from_mall_area_to/ | Silver Line, Connector Bus Will Link Air and Space Museums: https://www.restonnow.com/2014/07/09/silver-line-connector-bus-will-link-air-and-space-museums/",
+      "success": true,
+      "created_at": "2026-03-16T22:58:23.997264Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Fire Station 301 DCA ARFF\" Washington DC location metro station",
+        "max_results": 5
+      },
+      "summary": "AirNav: KIAD - Washington Dulles International Airport: https://airnav.com/airport/IAD | AirNav: KIAD - Washington Dulles International Airport: https://www.airnav.com/airport/KIAD | AirNav: KDCA - Ronald Reagan Washington National Airport: http://www.airnav.com/airport/DCA",
+      "success": true,
+      "created_at": "2026-03-16T22:58:32.001467Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Ronald Reagan National Airport\" \"Fire Station 301\" ARFF metro station",
+        "max_results": 5
+      },
+      "summary": "AirNav: KDCA - Ronald Reagan Washington National Airport: http://www.airnav.com/airport/KDCA | AirNav: KDCA - Ronald Reagan Washington National Airport: https://www.airnav.com/airport/DCA | AirNav: KDCA - Ronald Reagan Washington National Airport: https://www.airnav.com/airport/KDCA",
+      "success": true,
+      "created_at": "2026-03-16T22:58:41.462850Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Ronald Reagan National Airport\" metro station Yellow Blue line",
+        "max_results": 5
+      },
+      "summary": "Ronald Reagan Washington National Airport - Wikipedia: https://en.wikipedia.org/wiki/Ronald_Reagan_Washington_National_Airport | Reagan National: https://ors.od.nih.gov/pes/dats/PatientServices/PatientShuttles/Pages/rrnational_shuttle.aspx | Ronald Reagan Washington National Airport Metro Station: https://living-in-washingtondc.com/wmata-ronaldreagan-washington-nationalairport-metro.php",
+      "success": true,
+      "created_at": "2026-03-16T22:58:48.343302Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Cleveland Elementary School\" Washington DC metro station nearest",
+        "max_results": 5
+      },
+      "summary": "DCRC - Cleveland Elementary School: https://schoolreportcard.dc.gov/lea/1/school/224 | METRO - Cleveland Elementary School: https://clevelandelementary.org/apps/pages/index.jsp?uREC_ID=591775&type=d | Cleveland Elementary School, District Of Columbia, DC - DISTRICT OF ...: https://publicschoolsk12.com/elementary-schools/dc/district-of-columbia/110003000103.html",
+      "success": true,
+      "created_at": "2026-03-16T22:58:54.934652Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_living_in_washingtondc_com_closestmetro_airspacemuseum_php",
+      "source_type": "web_fetch",
+      "source_uri": "https://living-in-washingtondc.com/closestmetro-airspacemuseum.php",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/c3a79cfe-8206-451f-aca8-3fec8ebe51d3/https_living_in_washingtondc_com_closestmetro_airspacemuseum_php.txt",
+      "excerpt": "Title: Metro to the National Air & Space Museum\n\nMetro to the National Air & Space Museum D.C. Metro Move around the city quickly with Metro. D.C. Metrobus Explore places where Metro doesn't go. DC Circulator Bus Need to get to Georgetown? Take the Circulator! Home Neighborhoods Getting Around Cost of Living Via Metro Embassies National Air & Space Museum - Washington DC Closest Metro Stops: Smithsonian L’Enfant Plaza View Metro Map Phone : (202) 633-2211 Email : [email protected] Website : airandspace.si.edu Regular Hours : 10 AM - 5:30 PM Spring/Summer Hours : March 17-Sept. 3rd, 10 AM - 7:3"
+    },
+    {
+      "name": "https_www_wmata_com_schedules_maps",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.wmata.com/schedules/maps/",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/c3a79cfe-8206-451f-aca8-3fec8ebe51d3/https_www_wmata_com_schedules_maps.txt",
+      "excerpt": "Title: Maps | WMATA\n\nMaps | WMATA Tell us about your experience × It only takes a minute. Your feedback helps us improve. How satisfied were you with your experience today? 1 Very dissatisfied 2 3 4 5 Very satisfied How easy was it to solve your problem today? 1 Very difficult 2 3 4 5 Very easy Did you resolve your issue today? Yes No Did you receive information in a timely manner? Yes No Anything else you'd like to share? Close Submit Thanks for your feedback! Error Close Skip to main content Skip to Accessibility Metro Home Washington Metropolitan Area Transit Authority Open Mobile Menu Mana"
+    },
+    {
+      "name": "https_clevelandelementary_org_apps_pages_index_jsp_uREC_ID_591775_type_d",
+      "source_type": "web_fetch",
+      "source_uri": "https://clevelandelementary.org/apps/pages/index.jsp?uREC_ID=591775&type=d",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/c3a79cfe-8206-451f-aca8-3fec8ebe51d3/https_clevelandelementary_org_apps_pages_index_jsp_uREC_ID_591775_type_d.txt",
+      "excerpt": "Title: METRO - Cleveland Elementary School\n\nMETRO - Cleveland Elementary School {\"text\":\"Welcome to Cleveland Elementary School where Success Is Not An Option. It Is A Must!\",\"delay\":\"35\"} » Home + About Us » About » Latest News » METRO » Mission & Vision » Photo Albums » Principal's Message » Upcoming Events » Video Gallery + Parents » Academic Calendar » Lottery » Family Corner » Food Menu » Important Links » LSAT » Mental Health » PTO » School Policies + Staff » Faculty & Staff Directory » Staff Resources + Contact Us » Contact Us » Directions Skip to content Skip to menu METRO https://www."
+    },
+    {
+      "name": "https_www_wmata_com_schedules_maps_index_cfm_t_maps_rail_wrapper",
+      "source_type": "web_fetch",
+      "source_uri": "https://www.wmata.com/schedules/maps/index.cfm?t=maps-rail-wrapper",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/c3a79cfe-8206-451f-aca8-3fec8ebe51d3/https_www_wmata_com_schedules_maps_index_cfm_t_maps_rail_wrapper.txt",
+      "excerpt": "Title: Maps | WMATA\n\nMaps | WMATA Tell us about your experience × It only takes a minute. Your feedback helps us improve. How satisfied were you with your experience today? 1 Very dissatisfied 2 3 4 5 Very satisfied How easy was it to solve your problem today? 1 Very difficult 2 3 4 5 Very easy Did you resolve your issue today? Yes No Did you receive information in a timely manner? Yes No Anything else you'd like to share? Close Submit Thanks for your feedback! Error Close Skip to main content Skip to Accessibility Metro Home Washington Metropolitan Area Transit Authority Open Mobile Menu Mana"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Steven_F_Udvar_Hazy_Center",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Steven_F._Udvar-Hazy_Center",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/c3a79cfe-8206-451f-aca8-3fec8ebe51d3/https_en_wikipedia_org_wiki_Steven_F_Udvar_Hazy_Center.txt",
+      "excerpt": "Title: Steven F. Udvar-Hazy Center - Wikipedia\n\nSteven F. Udvar-Hazy Center - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Architecture and facilities 2 Collection 3 Events 4 Media appearances 5 Gallery 6 See also 7 References 8 External links Toggle the table of con"
+    }
+  ],
+  "duration_seconds": 1051.8818629169837,
+  "created_at": "2026-03-16T23:03:09.807102Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Google search \"National Air and Space Museum\".\n2. Note there are two National Air and Space Museums. One in Virginia, the other in Washington D.C.\n3. Google map search \"Potomac River\" and zoom out.\n4. See that Washington DC is east of the Potomac River.\n5. Determine that the National Air and Space Museum refers to the one in Washington D.C.\n6. Google search \"Metro Station National Air and Space Museum Washington D.C.\"\n7. Clicked on the first result: Getting Here | National Air and Space Museum, https://airandspace.si.edu/visit/museum-dc/directions.\n8. Read on the website, \"The closest Metrorail stop is at L'Enfant Plaza.\" Note this location.\n6. Google map search \"Fire Station 301 DCA ARFF\".\n7. Zoom out to look for nearby metro stations.\n8. The closest station is Ronald Reagan Washington National Airport.\n9. Google map search \"Cleveland Elementary School\".\n10. The closest metro station to Cleveland Elementry School is Shaw-Howard Univ Station.\n11. Google search \"DC Metro Station Map\".\n12. Clicked on the second result: 2022 System Map, https://www.wmata.com/schedules/maps/upload/2022-System-Map.pdf.\n13. Locate L'Enfant Plaza station. It is the transfer station for all color lines.\n14. Locate Shaw-Howard Univ stations 4 stops above L'Enfant Plaza station.\n15. Locate Ronald Reagan National Airport station on the blue/yellow line.\n16. Recall the current location: Shaw-Howard Univ station's yellow/green line.\n17. Since the question says no line changes, we deduce the line must be one that Shaw-Howard Univ and Ronald Reagan National Airport stations have in common: yellow line.\n18. Begin at Shaw-Howard Univ station and follow the yellow line.\n19. Count the number of stops until it reaches Ronald Reagan National Airport station.\n20. Final answer: 8. \n",
+      "Number of steps": "20",
+      "How long did this take?": "50 minutes",
+      "Tools": "1. Web Browser\n2. Search Engine\n3. Access to Google Maps\n4. Image recognition tools",
+      "Number of tools": "4"
+    }
+  }
+}

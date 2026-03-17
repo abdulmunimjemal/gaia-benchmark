@@ -1,0 +1,186 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "17b5a6a3-bc87-42e8-b0fb-6ab0781ef2cc",
+  "question": "I’m researching species that became invasive after people who kept them as pets released them. There’s a certain species of fish that was popularized as a pet by being the main character of the movie Finding Nemo. According to the USGS, where was this fish found as a nonnative species, before the year 2020? I need the answer formatted as the five-digit zip codes of the places the species was found, separated by commas if there is more than one place.",
+  "answer": "34689",
+  "raw_answer": "34689",
+  "scorer_answer": "34689",
+  "expected_answer": "34689",
+  "score": 1.0,
+  "passed": true,
+  "route": "web",
+  "risk": "medium",
+  "retry_count": 0,
+  "error_taxonomy": null,
+  "planner": {
+    "route": "web",
+    "risk": "medium",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": true,
+    "needs_artifact": false,
+    "research_queries": [
+      "Finding Nemo main character fish species clownfish",
+      "USGS nonindigenous aquatic species database",
+      "USGS nonnative clownfish Amphiprion ocellaris invasive",
+      "USGS invasive species database before 2020",
+      "clownfish nonnative species United States zip codes"
+    ],
+    "working_plan": [
+      "Identify the exact fish species that was the main character in Finding Nemo",
+      "Search USGS nonindigenous aquatic species database for this species",
+      "Find records of nonnative occurrences before 2020",
+      "Extract location data and convert to zip codes",
+      "Format answer as comma-separated five-digit zip codes"
+    ],
+    "answer_shape": "comma-separated zip codes"
+  },
+  "solver": {
+    "answer": "34689",
+    "confidence": "high",
+    "citations": [
+      "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=3243",
+      "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=3243",
+      "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1468741",
+      "https://en.wikipedia.org/wiki/Clownfish",
+      "https://boatzia.com/florida/pinellas/fred-howard-park-wave-runner-launch-area/"
+    ],
+    "reasoning_summary": "I identified that the main character fish in Finding Nemo is Amphiprion ocellaris (clown anemonefish). According to the USGS Nonindigenous Aquatic Species Database, there was exactly one record of this species found as a nonnative species before 2020: one individual collected in July 2018 at Fred Howard Park, Pinellas County, Florida. The pathway was confirmed as 'released aquarium' matching the question's context. Fred Howard Park is located at 1700 Sunset Drive, Tarpon Springs, FL 34689."
+  },
+  "judge": {
+    "is_sufficient": true,
+    "issues": [],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Finding Nemo main character fish species scientific name clownfish",
+        "max_results": 5
+      },
+      "summary": "Clownfish - Wikipedia: https://en.wikipedia.org/wiki/Clownfish | Clownfish Animal Facts - Amphiprion ocellaris - A-Z Animals: https://a-z-animals.com/animals/clownfish/ | 17 Real Fish From Finding Nemo: Which Ones Can You Actually Keep?: https://aquariumstoredepot.com/blogs/news/fish-from-finding-nemo",
+      "success": true,
+      "created_at": "2026-03-17T00:17:35.637868Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "USGS nonindigenous aquatic species database Amphiprion ocellaris clownfish nonnative invasive",
+        "max_results": 5
+      },
+      "summary": "clown anemonefish (Amphiprion ocellaris) - Nonindigenous Aquatic Species: https://nas.er.usgs.gov/viewer/omap.aspx?SpeciesID=3243 | Nonindigenous Aquatic Species: https://nas.er.usgs.gov/queries/default.aspx | The U.S. Geological Survey's nonindigenous aquatic species database ...: https://pubs.usgs.gov/publication/70155981",
+      "success": true,
+      "created_at": "2026-03-17T00:17:41.649798Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://nas.er.usgs.gov/viewer/omap.aspx?SpeciesID=3243"
+      },
+      "summary": "Title: clown anemonefish (Amphiprion ocellaris)\n\nclown anemonefish (Amphiprion ocellaris) Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HU",
+      "success": true,
+      "created_at": "2026-03-17T00:17:47.979483Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:nas.er.usgs.gov Amphiprion ocellaris clown anemonefish occurrence records nonnative invasive United States",
+        "max_results": 5
+      },
+      "summary": "clown anemonefish (Amphiprion ocellaris): https://nas.er.usgs.gov/viewer/omap.aspx?SpeciesID=3243 | clownanemonefish(Amphiprionocellaris) - Species Profile: https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=3243 | clown anemonefish (Amphiprion ocellaris) - Species Profile: https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3243",
+      "success": true,
+      "created_at": "2026-03-17T00:17:59.003216Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=3243"
+      },
+      "summary": "Title: clown anemonefish (Amphiprion ocellaris) - Species Profile\n\nclown anemonefish (Amphiprion ocellaris) - Species Profile Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query ",
+      "success": true,
+      "created_at": "2026-03-17T00:18:03.229989Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "Fred Howard Park Pinellas County Florida zip code address",
+        "max_results": 5
+      },
+      "summary": "Fred Howard Park - Pinellas County: https://pinellas.gov/parks/fred-howard-park/ | Fred Howard Park - Wave Runner Launch Area Boat Ramp: https://boatzia.com/florida/pinellas/fred-howard-park-wave-runner-launch-area/__URL__ | Fred Howard Park in Tarpon Springs, FL 34689 - 727-582...Howard Park in Tarpon Springs, FL - County OfficeFred Howard Park in Tarpon Springs | VISIT FLORIDA: https://www.chamberofcommerce.com/business-directory/florida/tarpon-springs/tourist-attraction/2003063797-fred-howard-park",
+      "success": true,
+      "created_at": "2026-03-17T00:18:12.510394Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=3243"
+      },
+      "summary": "Title: clown anemonefish - Collections\n\nclown anemonefish - Collections Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8",
+      "success": true,
+      "created_at": "2026-03-17T00:18:18.283455Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1468741"
+      },
+      "summary": "Title: clown anemonefish (Amphiprion ocellaris) - Collection record\n\nclown anemonefish (Amphiprion ocellaris) - Collection record Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Qu",
+      "success": true,
+      "created_at": "2026-03-17T00:18:24.769645Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_nas_er_usgs_gov_viewer_omap_aspx_SpeciesID_3243",
+      "source_type": "web_fetch",
+      "source_uri": "https://nas.er.usgs.gov/viewer/omap.aspx?SpeciesID=3243",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/17b5a6a3-bc87-42e8-b0fb-6ab0781ef2cc/https_nas_er_usgs_gov_viewer_omap_aspx_SpeciesID_3243.txt",
+      "excerpt": "Title: clown anemonefish (Amphiprion ocellaris)\n\nclown anemonefish (Amphiprion ocellaris) Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8 Spatial Query Graphs & Charts Reference Database Database Info Database FAQ Metadata Data Disclaimer Database Characterization eDNA API Documentation Data Disclaimer Taxa Informatio"
+    },
+    {
+      "name": "https_nas_er_usgs_gov_queries_FactSheet_aspx_speciesID_3243",
+      "source_type": "web_fetch",
+      "source_uri": "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=3243",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/17b5a6a3-bc87-42e8-b0fb-6ab0781ef2cc/https_nas_er_usgs_gov_queries_FactSheet_aspx_speciesID_3243.txt",
+      "excerpt": "Title: clown anemonefish (Amphiprion ocellaris) - Species Profile\n\nclown anemonefish (Amphiprion ocellaris) - Species Profile Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8 Spatial Query Graphs & Charts Reference Database Database Info Database FAQ Metadata Data Disclaimer Database Characterization eDNA API Documenta"
+    },
+    {
+      "name": "https_nas_er_usgs_gov_queries_CollectionInfo_aspx_SpeciesID_3243",
+      "source_type": "web_fetch",
+      "source_uri": "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=3243",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/17b5a6a3-bc87-42e8-b0fb-6ab0781ef2cc/https_nas_er_usgs_gov_queries_CollectionInfo_aspx_SpeciesID_3243.txt",
+      "excerpt": "Title: clown anemonefish - Collections\n\nclown anemonefish - Collections Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8 Spatial Query Graphs & Charts Reference Database Database Info Database FAQ Metadata Data Disclaimer Database Characterization eDNA API Documentation Data Disclaimer Taxa Information Vertebrates Amph"
+    },
+    {
+      "name": "https_nas_er_usgs_gov_queries_SpecimenViewer_aspx_SpecimenID_1468741",
+      "source_type": "web_fetch",
+      "source_uri": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=1468741",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260316T214520230195Z/_artifacts/17b5a6a3-bc87-42e8-b0fb-6ab0781ef2cc/https_nas_er_usgs_gov_queries_SpecimenViewer_aspx_SpecimenID_1468741.txt",
+      "excerpt": "Title: clown anemonefish (Amphiprion ocellaris) - Collection record\n\nclown anemonefish (Amphiprion ocellaris) - Collection record Search Search NAS - Nonindigenous Aquatic Species Home About NAS Staff FAQ Partners Alert System Browse Archive Flowchart-How It Works About User Statistics Email Alert Sign-up Register Login Database & Queries NAS Database Text Queries Simple Advanced Query By State Query By County Query By HUC 2 Query By HUC 6 Query By HUC 8 Spatial Query Graphs & Charts Reference Database Database Info Database FAQ Metadata Data Disclaimer Database Characterization eDNA API Docum"
+    }
+  ],
+  "duration_seconds": 109.0163904580113,
+  "created_at": "2026-03-17T00:19:01.194759Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “finding nemo main character”.\n2. Note the results, which state that the main character is a clownfish.\n3. Search the web for “usgs nonnative species database”.\n4. Click result for the Nonindigenous Aquatic Species site.\n5. Click “Marine Fishes”.\n6. Click “Species List of Nonindigenous Marine Fish”.\n7. Scroll through the list until I find the clown anenomefish, and click “Collection info”.\n8. Note the place that a clown anenomefish was found, in Fred Howard Park at the Gulf of Mexico.\n9. Search the web for “fred howard park florida zip code”.\n10. Note the zip code, 34689. Since only one clownfish was found before the year 2020, this is the answer.",
+      "Number of steps": "10",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  }
+}

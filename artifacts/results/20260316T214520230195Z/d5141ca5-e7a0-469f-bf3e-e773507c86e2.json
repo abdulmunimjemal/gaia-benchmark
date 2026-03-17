@@ -1,0 +1,394 @@
+{
+  "run_id": "20260316T214520230195Z",
+  "task_id": "d5141ca5-e7a0-469f-bf3e-e773507c86e2",
+  "question": "When was a picture of St. Thomas Aquinas first added to the Wikipedia page on the Principle of double effect? Answer using the format DD/MM/YYYY.",
+  "answer": "06/03/2006",
+  "raw_answer": "06/03/2006",
+  "scorer_answer": "06/03/2006",
+  "expected_answer": "19/02/2009",
+  "score": 0.0,
+  "passed": false,
+  "route": "web",
+  "risk": "high",
+  "retry_count": 2,
+  "error_taxonomy": "wrong_answer",
+  "planner": {
+    "route": "web",
+    "risk": "high",
+    "use_verifier": true,
+    "needs_web": true,
+    "needs_code": false,
+    "needs_artifact": false,
+    "research_queries": [
+      "\"Principle of double effect\" wikipedia",
+      "Wikipedia edit history \"Principle of double effect\"",
+      "St. Thomas Aquinas image wikipedia \"Principle of double effect\"",
+      "Wikipedia revision history search St. Thomas Aquinas image",
+      "\"Principle of double effect\" wikipedia page history St. Thomas Aquinas picture"
+    ],
+    "working_plan": [
+      "Navigate to the Wikipedia page on 'Principle of double effect'",
+      "Access the page's edit/revision history",
+      "Search through the history for additions of images, specifically St. Thomas Aquinas",
+      "Identify the exact date when the St. Thomas Aquinas image was first added",
+      "Format the date as DD/MM/YYYY",
+      "Verify the result by double-checking the edit history"
+    ],
+    "answer_shape": "short"
+  },
+  "solver": {
+    "answer": "06/03/2006",
+    "confidence": "medium",
+    "citations": [
+      "https://en.wikipedia.org/wiki/Principle_of_double_effect",
+      "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history",
+      "https://en.wikipedia.org/wiki/Talk:Principle_of_double_effect"
+    ],
+    "reasoning_summary": "Research of the Wikipedia page history revealed a major merge occurred on March 6, 2006, when content from 'Principle of double effect (temporary)' was merged into the main article. The current page features a comprehensive Thomas Aquinas infobox template that would include his image. This merge date represents the most likely point when substantial content including the Thomas Aquinas image was added to the page, as infobox templates typically include images and require significant markup that would constitute a substantial edit."
+  },
+  "judge": {
+    "is_sufficient": false,
+    "issues": [
+      "REASONING ERRORS: The answer is based on assumption rather than verification. The reasoning assumes that because there's currently a Thomas Aquinas infobox, it must have been added during the 2006 merge, but provides no direct evidence that an image was actually added on that date.",
+      "RETRIEVAL ERRORS: The reasoning doesn't verify the actual edit history for when an image of Thomas Aquinas was first added. It speculates based on a merge date rather than checking specific revisions that added images or infoboxes.",
+      "COMPLETENESS: The question asks for when a picture was 'first added' but the reasoning only identifies a likely candidate date without confirming that an image was actually added then, or ruling out earlier additions.",
+      "EVIDENCE ISSUES: The reasoning is speculative ('most likely point') rather than definitive. For Wikipedia edit history questions, specific revision verification is required, not assumptions based on major edits."
+    ],
+    "revised_answer": null
+  },
+  "tool_calls": [
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Principle of double effect\" wikipedia",
+        "max_results": 3
+      },
+      "summary": "Principle of double effect - Wikipedia: https://en.wikipedia.org/wiki/Principle_of_double_effect | List of philosophical concepts - Wikipedia: https://en.wikipedia.org/wiki/List_of_philosophical_concepts | en.wikipedia.org/wiki/Exit_International: https://en.wikipedia.org/wiki/Exit_International",
+      "success": true,
+      "created_at": "2026-03-17T04:31:31.428908Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Principle_of_double_effect"
+      },
+      "summary": "Title: Principle of double effect - Wikipedia\n\nPrinciple of double effect - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create",
+      "success": true,
+      "created_at": "2026-03-17T04:31:34.927003Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "wikipedia \"Principle of double effect\" edit history revisions St Thomas Aquinas image",
+        "max_results": 5
+      },
+      "summary": "ThomasAquinas-Wikipedia: https://en.wikipedia.org/wiki/Thomas_Aquinas | DoctrineofDoubleEffect(Stanford Encyclopedia of...): https://plato.stanford.edu/archives/spr2025/entries/double-effect/ | Double-Effect\u2013 Thomistic Philosophy Page: https://aquinasonline.com/double-effect/",
+      "success": true,
+      "created_at": "2026-03-17T04:31:44.795365Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org \"Principle_of_double_effect\" action=history",
+        "max_results": 3
+      },
+      "summary": "Principle of double effect - Wikipedia: https://en.wikipedia.org/wiki/Principle_of_double_effect | List of philosophical concepts - Wikipedia: https://en.wikipedia.org/wiki/List_of_philosophical_concepts | en.wikipedia.org/wiki/Exit_International: https://en.wikipedia.org/wiki/Exit_International",
+      "success": true,
+      "created_at": "2026-03-17T04:31:54.668768Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history"
+      },
+      "summary": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account",
+      "success": true,
+      "created_at": "2026-03-17T04:31:59.081986Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&offset=20210101000000"
+      },
+      "summary": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account",
+      "success": true,
+      "created_at": "2026-03-17T04:32:08.373048Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&dir=prev&limit=50"
+      },
+      "summary": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account",
+      "success": true,
+      "created_at": "2026-03-17T04:32:15.736941Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Principle of double effect\" wikipedia",
+        "max_results": 5
+      },
+      "summary": "Principle of double effect - Wikipedia: https://en.wikipedia.org/wiki/Principle_of_double_effect | List of philosophical concepts - Wikipedia: https://en.wikipedia.org/wiki/List_of_philosophical_concepts | en.wikipedia.org/wiki/Exit_International: https://en.wikipedia.org/wiki/Exit_International",
+      "success": true,
+      "created_at": "2026-03-17T04:33:27.283084Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Principle_of_double_effect",
+        "max_chars": 5000
+      },
+      "summary": "Title: Principle of double effect - Wikipedia\n\nPrinciple of double effect - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create",
+      "success": true,
+      "created_at": "2026-03-17T04:33:31.904746Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org \"Principle of double effect\" history revision St. Thomas Aquinas image",
+        "max_results": 5
+      },
+      "summary": "Summa Theologica - Wikipedia: https://en.wikipedia.org/wiki/Summa_Theologica | John of Damascus - Wikipedia: https://en.wikipedia.org/wiki/John_of_Damascus | Personalism - Wikipedia: https://en.wikipedia.org/wiki/Personalism",
+      "success": true,
+      "created_at": "2026-03-17T04:33:41.144049Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history",
+        "max_chars": 10000
+      },
+      "summary": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account",
+      "success": true,
+      "created_at": "2026-03-17T04:33:45.680307Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&limit=250",
+        "max_chars": 20000
+      },
+      "summary": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account",
+      "success": true,
+      "created_at": "2026-03-17T04:33:55.965117Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&dir=prev&limit=250",
+        "max_chars": 20000
+      },
+      "summary": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account",
+      "success": true,
+      "created_at": "2026-03-17T04:34:04.482588Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&dir=next&offset=20040101000000",
+        "max_chars": 15000
+      },
+      "summary": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account",
+      "success": true,
+      "created_at": "2026-03-17T04:34:15.079490Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Principle of double effect\" site:en.wikipedia.org",
+        "max_results": 3
+      },
+      "summary": "Principle of double effect - Wikipedia: https://en.wikipedia.org/wiki/Principle_of_double_effect | List of philosophical concepts - Wikipedia: https://en.wikipedia.org/wiki/List_of_philosophical_concepts | en.wikipedia.org/wiki/Virtue_ethics: https://en.wikipedia.org/wiki/Virtue_ethics",
+      "success": true,
+      "created_at": "2026-03-17T04:35:19.313684Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/wiki/Principle_of_double_effect"
+      },
+      "summary": "Title: Principle of double effect - Wikipedia\n\nPrinciple of double effect - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create",
+      "success": true,
+      "created_at": "2026-03-17T04:35:23.580830Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Principle of double effect\" wikipedia edit history revision history",
+        "max_results": 5
+      },
+      "summary": "G. E. M. Anscombe - Wikipedia: https://en.wikipedia.org/wiki/Gertrude_Elizabeth_Margaret_Anscombe | Consequentialism - Wikipedia: https://en.wikipedia.org/wiki/Consequentialism | Bernard Lonergan - Wikipedia: https://en.wikipedia.org/wiki/Bernard_Lonergan",
+      "success": true,
+      "created_at": "2026-03-17T04:35:37.152601Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history"
+      },
+      "summary": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account",
+      "success": true,
+      "created_at": "2026-03-17T04:35:40.768794Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "\"Principle of double effect\" wikipedia Thomas Aquinas image infobox template first added",
+        "max_results": 5
+      },
+      "summary": "Doctrine of Double Effect - Stanford Encyclopedia of Philosophy: https://plato.stanford.edu/entries/double-effect/ | Principle of double effect - Simple English Wikipedia, the free ...: https://simple.wikipedia.org/wiki/Principle_of_double_effect | The Principle of Double Effect - Saint Mary's College: https://www.saintmarys.edu/~incandel/doubleeffect.html",
+      "success": true,
+      "created_at": "2026-03-17T04:35:53.115307Z"
+    },
+    {
+      "name": "fetch_url",
+      "category": "research",
+      "arguments": {
+        "url": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&offset=20210101000000"
+      },
+      "summary": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account",
+      "success": true,
+      "created_at": "2026-03-17T04:35:58.755278Z"
+    },
+    {
+      "name": "web_search",
+      "category": "research",
+      "arguments": {
+        "query": "site:en.wikipedia.org \"Principle of double effect\" first created history infobox Thomas Aquinas",
+        "max_results": 5
+      },
+      "summary": "Principle of double effect - Wikipedia: https://en.wikipedia.org/wiki/Principle_of_double_effect | Five Ways (Aquinas) - Wikipedia: https://en.wikipedia.org/wiki/Five_Ways_(Aquinas) | Thomas Aquinas - Wikipedia: https://en.wikipedia.org/wiki/Thomas_Aquinas",
+      "success": true,
+      "created_at": "2026-03-17T04:36:06.506230Z"
+    }
+  ],
+  "artifacts_used": [
+    {
+      "name": "https_en_wikipedia_org_wiki_Principle_of_double_effect",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Principle_of_double_effect",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_wiki_Principle_of_double_effect.txt",
+      "excerpt": "Title: Principle of double effect - Wikipedia\n\nPrinciple of double effect - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Intentional harm vis-\u00e0-vis side effects 2 Criticisms 3 See also 4 Notes 5 References 6 External links Toggle the table of contents Principle of do"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo.txt",
+      "excerpt": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Principle of double effect: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit Vie"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&offset=20210101000000",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo.txt",
+      "excerpt": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Principle of double effect: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit Vie"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&dir=prev&limit=50",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo.txt",
+      "excerpt": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Principle of double effect: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit Vie"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Principle_of_double_effect",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Principle_of_double_effect",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_wiki_Principle_of_double_effect.txt",
+      "excerpt": "Title: Principle of double effect - Wikipedia\n\nPrinciple of double effect - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Intentional harm vis-\u00e0-vis side effects 2 Criticisms 3 See also 4 Notes 5 References 6 External links Toggle the table of contents Principle of do"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo.txt",
+      "excerpt": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Principle of double effect: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit Vie"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&limit=250",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo.txt",
+      "excerpt": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Principle of double effect: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit Vie"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&dir=prev&limit=250",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo.txt",
+      "excerpt": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Principle of double effect: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit Vie"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&dir=next&offset=20040101000000",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo.txt",
+      "excerpt": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Principle of double effect: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit Vie"
+    },
+    {
+      "name": "https_en_wikipedia_org_wiki_Principle_of_double_effect",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/wiki/Principle_of_double_effect",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_wiki_Principle_of_double_effect.txt",
+      "excerpt": "Title: Principle of double effect - Wikipedia\n\nPrinciple of double effect - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Contents move to sidebar hide (Top) 1 Intentional harm vis-\u00e0-vis side effects 2 Criticisms 3 See also 4 Notes 5 References 6 External links Toggle the table of contents Principle of do"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo.txt",
+      "excerpt": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Principle of double effect: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit Vie"
+    },
+    {
+      "name": "https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo",
+      "source_type": "web_fetch",
+      "source_uri": "https://en.wikipedia.org/w/index.php?title=Principle_of_double_effect&action=history&offset=20210101000000",
+      "kind": "web_text",
+      "stored_path": "artifacts/results/20260317T040107299090Z/_artifacts/d5141ca5-e7a0-469f-bf3e-e773507c86e2/https_en_wikipedia_org_w_index_php_title_Principle_of_double_effect_action_histo.txt",
+      "excerpt": "Title: Principle of double effect: Revision history - Wikipedia\n\nPrinciple of double effect: Revision history - Wikipedia Jump to content Main menu Main menu move to sidebar hide Navigation Main page Contents Current events Random article About Wikipedia Contact us Contribute Help Learn to edit Community portal Recent changes Upload file Special pages Search Search Appearance Donate Create account Log in Personal tools Donate Create account Log in Principle of double effect: Revision history Help Article Talk English Read Edit View history Tools Tools move to sidebar hide Actions Read Edit Vie"
+    }
+  ],
+  "duration_seconds": 670.0212165419944,
+  "created_at": "2026-03-17T04:42:13.240106Z",
+  "metadata": {
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for \u201cprinciple of double effect wikipedia\u201d.\n2. Note a picture of St. Thomas Aquinas on the page, which is part of the Wikipedia \u201cseries on\u201d template.\n3. Click \u201cView history\u201d to see the page\u2019s revision history.\n4. Click to display more edits on the page.\n5. Ctrl-F for \u201ctemplate\u201d.\n6. Browse the mentions of \u201ctemplate\u201d until I find the revision that added the picture.\n7. Note the date that the template was added, 19 February 2009.\n8. Browse earlier revisions to ensure that a picture was not added earlier. ",
+      "Number of steps": "8",
+      "How long did this take?": "10 minutes",
+      "Tools": "1. Search engine\n2. Web browser\n3. Image recognition",
+      "Number of tools": "3"
+    }
+  }
+}
