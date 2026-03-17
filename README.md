@@ -159,15 +159,60 @@ Recommended loop:
 
 See [docs/benchmarking.md](/Users/abdulmunimjundurahman/work/upwork/gaia-bot/docs/benchmarking.md) for the detailed runbook.
 
-## Current Results Snapshot
+## Current Results
 
-Local preview run:
+Full validation run on `2023_all` (165 tasks):
 
-- run id: `20260315T041323853151Z`
-- location: `artifacts/results/20260315T041323853151Z/`
-- tasks: `40`
-- average score: `0.575`
-- passed tasks: `23`
+- **Run ID:** `20260316T214520230195Z`
+- **Score:** 86/165 (52.1%)
+- **Avg duration:** 291s/task
+- **Total tool calls:** 2,359
+
+### Pass Rate by Route
+
+| Route | Passed | Total | Rate |
+|-------|--------|-------|------|
+| direct | 3 | 4 | 75.0% |
+| web | 47 | 79 | 59.5% |
+| code | 20 | 44 | 45.5% |
+| artifact | 14 | 38 | 36.8% |
+
+### Failure Analysis (79 failures)
+
+| Category | Count | Description |
+|----------|-------|-------------|
+| Wrong answer | 60 | Reasoning, calculation, or factual errors |
+| Multimodal (unsupported) | 16 | Audio, video, and image tasks the agent cannot process |
+| Tool failure | 7 | Runtime crashes (sandbox 502, stream closed, TaskGroup errors) |
+| Retrieval miss | 4 | Retrieved wrong source or outdated information |
+
+#### Multimodal Limitations (16 tasks)
+
+The GAIA benchmark includes tasks that require processing audio, video, and image content. Our agent pipeline is **text-only** — it uses web search, URL fetching, and E2B code execution, but has no native multimodal perception. These 16 tasks are expected failures:
+
+- **Video (6 tasks):** Questions referencing YouTube videos, requiring watching specific timestamps or identifying visual content. Example: *"At the two-minute mark in the YouTube video uploaded by GameGrumps..."*
+- **Image (7 tasks):** Questions requiring reading charts, chess positions, screenshots, or visual puzzles. Example: *"Review the chess position provided in the image..."*
+- **Audio (3 tasks):** Questions requiring listening to MP3 recordings or identifying spoken content. Example: *"I was out sick from my classes on Friday, so I'm trying to figure out what I missed from the audio recording..."*
+
+Without multimodal support, these tasks receive either a best-effort answer from web context or a fallback from model knowledge. Adding vision (via Claude's multimodal API) and audio transcription (via Whisper or similar) would recover an estimated 8-12 of these tasks.
+
+#### Tool and Runtime Failures (7 tasks)
+
+These tasks failed due to infrastructure issues, not reasoning:
+
+- **Sandbox crashes (3):** E2B sandbox returned 502 or "sandbox not found" mid-execution. The agent now auto-recreates sandboxes on failure, but some tasks hit the retry limit.
+- **CancelledError / timeout (2):** Tasks exceeded the 12-minute hard limit, typically on complex multi-step research requiring many sequential tool calls.
+- **Stream disconnects (2):** The Claude CLI subprocess lost its connection mid-query. Retry logic now handles this, but concurrent load can still trigger it.
+
+#### Wrong Answers (60 tasks)
+
+The largest failure category. Common patterns:
+
+- **Close but not exact (12):** Agent retrieved the right entity but got a detail wrong — e.g., wrong name in a pair, off-by-one in a count, wrong date format.
+- **Outdated or wrong source (15):** Agent used a secondary source instead of the authoritative one, or confused similar entities (e.g., wrong NASA grant number, wrong Wikipedia revision date).
+- **Complex multi-hop reasoning (18):** Tasks requiring 4+ steps of chained reasoning where the agent lost track or made an error in an intermediate step.
+- **Calculation / counting errors (8):** Numerical tasks where the agent's code execution produced an incorrect result or the agent didn't use code when it should have.
+- **Artifact parsing gaps (7):** PDF or spreadsheet content was partially extracted, leading to incomplete data for the answer.
 
 ## Documentation Index
 
